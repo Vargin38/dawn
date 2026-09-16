@@ -13,8 +13,11 @@
         "title": {
           "type": "title"
         },
-        "price": {
-          "type": "price"
+        "sku": {
+          "type": "sku",
+          "settings": {
+            "text_style": "subtitle"
+          }
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -23,14 +26,10 @@
             "swatch_shape": "circle"
           }
         },
-        "quantity_selector": {
-          "type": "quantity_selector"
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
+        "quote_button": {
+          "type": "custom_liquid",
           "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
+            "custom_liquid": "<a href=\"#teklif-formu\" class=\"button button--full-width\">Teklif İste</a>\n<p class=\"caption\" style=\"margin-top: 1rem;\">Fiyat ve teslimat süresi, firmanıza özel teklifle iletilir.</p>"
           }
         },
         "description": {
@@ -39,17 +38,16 @@
         "share": {
           "type": "share",
           "settings": {
-            "share_label": "Share"
+            "share_label": "Paylaş"
           }
         }
       },
       "block_order": [
         "vendor",
         "title",
-        "price",
+        "sku",
         "variant_picker",
-        "quantity_selector",
-        "buy_buttons",
+        "quote_button",
         "description",
         "share"
       ],
@@ -76,10 +74,22 @@
         "padding_bottom": 0
       }
     },
+    "quote_request": {
+      "type": "quote-request",
+      "settings": {
+        "heading": "Bu ürün için teklif isteyin",
+        "heading_size": "h1",
+        "text": "<p>Formu doldurun, firmanıza özel fiyat ve teslimat bilgisini içeren teklifimizi e-posta ile iletelim.</p>",
+        "button_label": "Teklif İste",
+        "color_scheme": "scheme-2",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
-        "heading": "You may also like",
+        "heading": "Benzer ürünler",
         "heading_size": "h2",
         "products_to_show": 4,
         "columns_desktop": 4,
@@ -87,7 +97,7 @@
         "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": true,
-        "show_vendor": false,
+        "show_vendor": true,
         "show_rating": false,
         "columns_mobile": "2",
         "padding_top": 36,
@@ -98,6 +108,7 @@
   "order": [
     "main",
     "disclosures",
+    "quote_request",
     "related-products"
   ]
 }

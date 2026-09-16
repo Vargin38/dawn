@@ -299,6 +299,7 @@
         {%- endcase -%}
       {%- endfor -%}
 
+      {%- unless settings.quote_mode -%}
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
         {% if cart == empty %}
           <span class="svg-wrapper">{{ 'icon-cart-empty.svg' | inline_asset_content }}</span>
@@ -315,6 +316,7 @@
           </div>
         {%- endif -%}
       </a>
+      {%- endunless -%}
     </div>
   </header>
 </{{ header_tag }}>

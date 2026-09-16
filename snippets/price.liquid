@@ -40,7 +40,8 @@
   endif
 -%}
 
-{%- unless target == null and placeholder == null -%}
+{%- comment -%} Teklif modunda fiyat hiçbir yerde gösterilmez. {%- endcomment -%}
+{%- unless settings.quote_mode or target == null and placeholder == null -%}
   <div
     class="
       price

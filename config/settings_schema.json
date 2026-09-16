@@ -1453,6 +1453,21 @@
     ]
   },
   {
+    "name": "Teklif modu",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Açıkken fiyatlar, sepet ve satın alma butonları gizlenir; ürün sayfalarında teklif formu kullanılır."
+      },
+      {
+        "type": "checkbox",
+        "id": "quote_mode",
+        "label": "Teklif modunu etkinleştir",
+        "default": true
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.customer_accounts.name",
     "settings": [
       {
