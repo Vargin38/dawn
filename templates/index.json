@@ -122,56 +122,146 @@
       }
     },
     "how_it_works": {
-      "type": "multicolumn",
+      "type": "ss-steps-12",
       "blocks": {
-        "step_1": {
-          "type": "column",
+        "ss-heading-1": {
+          "type": "heading",
           "settings": {
-            "title": "1. Ürünü seçin",
-            "text": "<p>Katalogdan ihtiyacınıza uygun makine veya cihazın sayfasını açın, teknik özelliklerini inceleyin.</p>",
-            "link_label": "",
-            "link": ""
+            "heading": "<h2>Nasıl teklif alırsınız?</h2>",
+            "heading_custom": true,
+            "heading_font": "inter_n4",
+            "heading_size": 36,
+            "heading_size_mobile": 26,
+            "heading_advanced": false,
+            "heading_height": 110,
+            "heading_mt": 0,
+            "heading_mt_mobile": 0,
+            "heading_color": "#1A1A1A",
+            "use_gradient": false,
+            "gradient_start": "#1A1A1A",
+            "gradient_end": "#1A1A1A"
           }
         },
-        "step_2": {
-          "type": "column",
+        "ss-text-2": {
+          "type": "text",
           "settings": {
-            "title": "2. Teklif formunu doldurun",
-            "text": "<p>Firma bilgilerinizi, istediğiniz adedi ve teslimat şehrini ürün sayfasındaki forma yazın.</p>",
-            "link_label": "",
-            "link": ""
+            "text": "<p>Üç adımda firmanıza özel fiyat ve teslimat bilgisi.</p>",
+            "text_custom": false,
+            "text_font": "inter_n4",
+            "text_size": 16,
+            "text_size_mobile": 14,
+            "text_advanced": false,
+            "text_height": 150,
+            "text_mt": 12,
+            "text_mt_mobile": 12,
+            "text_color": "#1A1A1A"
           }
         },
-        "step_3": {
-          "type": "column",
+        "ss-item-3": {
+          "type": "item",
           "settings": {
-            "title": "3. Teklifinizi alın",
-            "text": "<p>Fiyat, teslimat süresi ve ödeme koşullarını içeren teklifimizi e-posta ile iletelim.</p>",
-            "link_label": "",
-            "link": ""
+            "badge": "01",
+            "icon": "target",
+            "heading": "<h3>Ürünü seçin</h3>",
+            "text": "<p>Katalogdan ihtiyacınıza uygun makine veya cihazın sayfasını açın, teknik özelliklerini inceleyin.</p>"
+          }
+        },
+        "ss-item-4": {
+          "type": "item",
+          "settings": {
+            "badge": "02",
+            "icon": "pin_tack",
+            "heading": "<h3>Teklif formunu doldurun</h3>",
+            "text": "<p>Firma bilgilerinizi, istediğiniz adedi ve teslimat şehrini ürün sayfasındaki forma yazın.</p>"
+          }
+        },
+        "ss-item-5": {
+          "type": "item",
+          "settings": {
+            "badge": "03",
+            "icon": "envelope",
+            "heading": "<h3>Teklifinizi alın</h3>",
+            "text": "<p>Fiyat, teslimat süresi ve ödeme koşullarını içeren teklifimizi e-posta ile iletelim.</p>"
           }
         }
       },
       "block_order": [
-        "step_1",
-        "step_2",
-        "step_3"
+        "ss-heading-1",
+        "ss-text-2",
+        "ss-item-3",
+        "ss-item-4",
+        "ss-item-5"
       ],
       "settings": {
-        "title": "Nasıl teklif alırsınız?",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "scheme-2",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 60,
-        "padding_bottom": 60
+        "content_align": "center",
+        "content_align_mobile": "center",
+        "steps_advanced": false,
+        "steps_mt": 40,
+        "steps_mt_mobile": 20,
+        "steps_gap": 40,
+        "step_padding_horizontal": 36,
+        "step_padding_horizontal_mobile": 0,
+        "progress_bar_width": 2,
+        "steps_align": "left",
+        "steps_align_mobile": "center",
+        "icon_size": 32,
+        "icon_size_mobile": 28,
+        "icon_radius": 4,
+        "icon_border_thickness": 0,
+        "badge_custom": false,
+        "badge_font": "inter_n4",
+        "badge_size": 12,
+        "badge_size_mobile": 12,
+        "badge_advanced": false,
+        "badge_height": 100,
+        "badge_padding_horizontal": 12,
+        "badge_padding_horizontal_mobile": 12,
+        "badge_padding_vertical": 8,
+        "badge_padding_vertical_mobile": 8,
+        "badge_radius": 4,
+        "badge_border_thickness": 0,
+        "step_heading_custom": false,
+        "step_heading_font": "inter_n4",
+        "step_heading_size": 20,
+        "step_heading_size_mobile": 18,
+        "step_heading_advanced": false,
+        "step_heading_height": 130,
+        "step_heading_mt": 0,
+        "step_heading_mt_mobile": 0,
+        "step_text_custom": false,
+        "step_text_font": "inter_n4",
+        "step_text_size": 14,
+        "step_text_size_mobile": 14,
+        "step_text_advanced": false,
+        "step_text_height": 150,
+        "step_text_mt": 12,
+        "step_text_mt_mobile": 12,
+        "text_hide_on_mobile": false,
+        "icon_color": "#0072A8",
+        "icon_bg_color": "#ffffff",
+        "icon_border_color": "#DDE1E5",
+        "badge_text_color": "#0072A8",
+        "badge_bg_color": "#ffffff",
+        "badge_border_color": "#DDE1E5",
+        "step_heading_color": "#1A1A1A",
+        "step_text_color": "#1A1A1A",
+        "progress_bar_bg": "#0072A8",
+        "background_style": "solid",
+        "background_color": "#F5F6F7",
+        "background_gradient": "",
+        "border_color": "#DDE1E5",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "width": "page",
+        "content_width": 1200,
+        "border_thickness": 0,
+        "section_radius": 0
       }
     },
     "contact_cta": {
