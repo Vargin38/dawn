@@ -1,0 +1,1168 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "sku": {
+          "type": "sku",
+          "settings": {
+            "text_style": "subtitle"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quote_button": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<a href=\"#teklif-formu\" class=\"button button--full-width\">Teklif İste</a>\n<p class=\"caption\" style=\"margin-top: 1rem;\">Fiyat ve teslimat süresi, firmanıza özel teklifle iletilir.</p>"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Paylaş"
+          }
+        },
+        "08e031560d67ccd4": {
+          "type": "shopify://apps/section-store/blocks/block-badge/d7a2e423-ea88-4344-b866-6d0fb487c3dd",
+          "settings": {
+            "first_icon": "shield_check",
+            "first_title": "Kett laboratuvar",
+            "first_bg_color": "#12181C",
+            "first_title_color": "#FFFFFF",
+            "second_icon": "check_mark",
+            "second_title": "Tahıl ve pirinç QC",
+            "second_bg_color": "#C99A2E",
+            "second_title_color": "#12181C",
+            "third_icon": "none",
+            "third_title": "",
+            "third_bg_color": "#12181C",
+            "third_title_color": "#FFFFFF",
+            "title_size": 11,
+            "icon_size": 15,
+            "font_weight": "600",
+            "effect": "glow",
+            "card_border": "none",
+            "card_border_width": 0.5,
+            "card_border_color": "#C5CBC7",
+            "card_radius": 10,
+            "card_align": "left",
+            "padding_vertical": 0,
+            "padding_sides": 0,
+            "card_padding_horizontal": 12,
+            "card_padding_vertical": 6
+          }
+        },
+        "954ef37dce42503d": {
+          "type": "shopify://apps/section-store/blocks/block-review-summary/d7a2e423-ea88-4344-b866-6d0fb487c3dd",
+          "settings": {
+            "star_style": "sharp",
+            "stars_count": 5.0,
+            "stars_size": 13,
+            "stars_gap": 2,
+            "stars_color": "#FBB91C",
+            "stars_bg_color": "#FBB91C",
+            "stars_bg_half_color": "#C5CBC7",
+            "avatars_position": "none",
+            "avatars_size": 20,
+            "avatars_animate": false,
+            "first_text": "<p>&nbsp;</p>",
+            "first_text_size": 12,
+            "first_text_color": "#12181C",
+            "second_text": "<p><strong>4.9</strong> verified reviews</p>",
+            "second_text_size": 12,
+            "second_text_color": "#12181C",
+            "border": "none",
+            "border_thickness": 1.0,
+            "border_color": "#C5CBC7",
+            "radius": 0,
+            "effect": "none",
+            "block_padding_top": 0,
+            "block_padding_bottom": 0,
+            "padding_vertical": 6,
+            "padding_horizontal": 0,
+            "background": "",
+            "background_gradient": ""
+          }
+        },
+        "ea0c5d9e84f04d41": {
+          "type": "shopify://apps/section-store/blocks/block-benefits-list/d7a2e423-ea88-4344-b866-6d0fb487c3dd",
+          "settings": {
+            "items_gap": 10,
+            "first_text": "<p><strong>Nem veya beyazlık</strong> — tahıl, tohum ve pirinç QC</p>",
+            "second_text": "<p><strong>Dielektrik veya yansıma</strong> — 50 MHz veya mavi LED</p>",
+            "third_text": "<p><strong>Hazır numune</strong> — 240 mL hazne veya standart plaka</p>",
+            "fourth_text": "<p><strong>Saha veya tezgâh</strong> — AA pil veya AC şebeke</p>",
+            "icon_selection": "check_mark",
+            "icon_size": 16,
+            "icon_color": "#12181C",
+            "text_size": 13,
+            "text_color": "#12181C",
+            "content_align": "left",
+            "border": "none",
+            "border_thickness": 1.0,
+            "border_color": "#12181C",
+            "radius": 0,
+            "padding_vertical": 0,
+            "padding_horizontal": 0,
+            "background": "",
+            "background_gradient": ""
+          }
+        },
+        "89d411497bc70bae": {
+          "type": "shopify://apps/section-store/blocks/block-atc-style/d7a2e423-ea88-4344-b866-6d0fb487c3dd",
+          "settings": {
+            "background_color": "#C99A2E",
+            "text_color": "#FFFFFF",
+            "hover_background_color": "#12181C",
+            "hover_text_color": "#FFFFFF",
+            "font_size": 0,
+            "font_weight": "default",
+            "border_style": "none",
+            "border_width": 1.0,
+            "border_color": "#C99A2E",
+            "border_radius": 3,
+            "background_effect": "lift",
+            "gradient_color_end": "#333333",
+            "hover_effect": "shine_lift",
+            "animation": "none",
+            "button_icon": "arrow_right",
+            "use_custom_text": false,
+            "button_text": "Add to cart",
+            "show_price": true,
+            "round_price": false,
+            "compare_at_price_color": "#999999"
+          }
+        },
+        "ff895df754bbd9e9": {
+          "type": "shopify://apps/section-store/blocks/block-shipping-info/d7a2e423-ea88-4344-b866-6d0fb487c3dd",
+          "settings": {
+            "use_dot": true,
+            "icon_color": "#15C625",
+            "icon_size": 10,
+            "ships_by_text": "Receive by",
+            "shipping_within_days": 5,
+            "include_weekend": true,
+            "ships_by_font_size": 11,
+            "ships_by_text_color": "#12181C",
+            "fast_shipping_text": "COUNTRY_FLAG <strong>Fast</strong> COUNTRY_CODE Shipping",
+            "allow_all_countries": true,
+            "allowed_countries": "US,CH,DE,AT,FR,IT",
+            "fast_shipping_text_for_rest_countries": "Fast International Shipping",
+            "fast_shipping_text_color": "#12181C",
+            "border_style": "solid",
+            "border_width": 0.5,
+            "border_color": "#CFCECE",
+            "border_radius": 14,
+            "bg_color": "#FCFCFC",
+            "padding_vertical": 6,
+            "padding_horizontal": 15
+          }
+        },
+        "61c5f04e5c3e3ff2": {
+          "type": "shopify://apps/section-store/blocks/block-space-divide/d7a2e423-ea88-4344-b866-6d0fb487c3dd",
+          "settings": {
+            "height": 16,
+            "show_line": true,
+            "line_style": "solid",
+            "line_width": 100,
+            "line_thickness": 1,
+            "line_roundness": 0,
+            "line_color": "#E0E0E0"
+          }
+        },
+        "730a6a2d5ecb0ed0": {
+          "type": "shopify://apps/section-store/blocks/block-countdown-timer/d7a2e423-ea88-4344-b866-6d0fb487c3dd",
+          "settings": {
+            "hour": 0,
+            "minute": 46,
+            "second": 26,
+            "progress_start": 70,
+            "action_on_complete": "reset",
+            "number_size": 14,
+            "number_color": "#12181C",
+            "text": "<p>Teklif penceresi kapanmadan stok teyidi alın</p>",
+            "text_size": 13,
+            "text_color": "#12181C",
+            "progress_default_color": "#E4E6E2",
+            "progress_active_color": "#C99A2E",
+            "border": "none",
+            "border_thickness": 1.0,
+            "border_color": "#12181C",
+            "radius": 0,
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "padding_left": 0,
+            "padding_right": 0,
+            "background": ""
+          }
+        },
+        "51743c4457efe946": {
+          "type": "shopify://apps/section-store/blocks/block-banner/d7a2e423-ea88-4344-b866-6d0fb487c3dd",
+          "settings": {
+            "gap": 6,
+            "text_align": "left",
+            "use_image": true,
+            "icon": "shield_check",
+            "image_size": 30,
+            "image_position": "left",
+            "icon_color": "#C99A2E",
+            "title_text": "<p><strong>30-Day Money-Back Guarantee</strong></p>",
+            "title_size": 18,
+            "title_color": "#111111",
+            "body_text": "<p>Cihazı <strong>kendi laboratuvarınızda</strong> kontrol edin.</p>",
+            "body_size": 13,
+            "body_color": "#111111",
+            "border": "solid",
+            "border_thickness": 2.5,
+            "border_color": "#C99A2E",
+            "radius": 10,
+            "background": "#F6F6F6",
+            "shadow": "none",
+            "padding_vertical": 14,
+            "padding_horizontal": 18,
+            "background_gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "08e031560d67ccd4",
+        "954ef37dce42503d",
+        "vendor",
+        "title",
+        "ea0c5d9e84f04d41",
+        "sku",
+        "variant_picker",
+        "quote_button",
+        "description",
+        "share",
+        "89d411497bc70bae",
+        "ff895df754bbd9e9",
+        "61c5f04e5c3e3ff2",
+        "730a6a2d5ecb0ed0",
+        "51743c4457efe946"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "Benzer ürünler",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": false,
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "ss-feature-54-1": {
+      "type": "ss-feature-54",
+      "settings": {
+        "layout": "image_content",
+        "layout_mobile": "image_content",
+        "image_width": 40,
+        "layout_gap": 60,
+        "layout_gap_mobile": 32,
+        "content_vertical_align": "center",
+        "image_ratio": "original",
+        "image_ratio_mobile": "original",
+        "image_radius": 4,
+        "image_border_thickness": 0,
+        "features_mt": 30,
+        "features_mt_mobile": 30,
+        "features_horizontal": 0,
+        "features_horizontal_mobile": 0,
+        "features_padding_vertical": 24,
+        "features_padding_vertical_mobile": 18,
+        "features_padding_horizontal": 24,
+        "features_padding_horizontal_mobile": 18,
+        "features_radius": 4,
+        "features_border_thickness": 0,
+        "liquid_glass": false,
+        "feature_gap": 10,
+        "feature_gap_mobile": 10,
+        "feature_mt": 34,
+        "feature_mt_mobile": 20,
+        "feature_icon_size": 28,
+        "feature_icon_size_mobile": 24,
+        "feature_title_custom": false,
+        "feature_title_font": "josefin_sans_n4",
+        "feature_title_size": 16,
+        "feature_title_size_mobile": 15,
+        "feature_title_height": 130,
+        "feature_text_custom": false,
+        "feature_text_font": "josefin_sans_n4",
+        "feature_text_size": 14,
+        "feature_text_size_mobile": 13,
+        "feature_text_height": 150,
+        "features_background_style": "solid",
+        "features_bg_color": "#FFFFFF",
+        "features_bg_gradient": "",
+        "features_border_color": "#C5CBC7",
+        "feature_icon_color": "#12181C",
+        "feature_title_color": "#12181C",
+        "feature_text_color": "#12181C",
+        "image_border_color": "#C5CBC7",
+        "background_style": "solid",
+        "background_color": "#EFF0ED",
+        "background_gradient": "",
+        "border_color": "#C5CBC7",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0.0,
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "width": "page",
+        "content_width": 1200,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "features_advanced": false,
+        "feature_advanced": false,
+        "image": "shopify://shop_images/pdp-image-8e925283.png"
+      },
+      "custom_css": [
+        "@media(max-width:1023px){[class*=\"section-\"][class*=\"-settings\"]{padding-top:36px;padding-bottom:36px;}}h1,h2{font-family:\"Arial Black\",Arial!important;font-weight:700!important;letter-spacing:-0.02em;line-height:1.05}p,li,a,button,h3,h4{font-family:\"Trebuchet MS\",Arial!important}[class*=button]{font-weight:600!important;text-transform:none}h3,h4{font-weight:600;letter-spacing:-0.01em}[class*=caption]{letter-spacing:0.06em}"
+      ],
+      "blocks": {
+        "ss-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h2>Değirmen ve laboratuvar için tahıl nemi ve pirinç beyazlığı</h2>",
+            "heading_custom": false,
+            "heading_font": "josefin_sans_n4",
+            "heading_accent_font": "playfair_n4",
+            "heading_size": 36,
+            "heading_size_mobile": 28,
+            "heading_advanced": false,
+            "heading_height": 110,
+            "heading_mt": 0,
+            "heading_mt_mobile": 0,
+            "heading_color": "#12181C"
+          }
+        },
+        "ss-text-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Kett kalite kontrol cihazları, silo, değirmen ve gıda laboratuvarında tahıl, tohum ve pirinç üzerinde nem veya beyazlık okur. Genel laboratuvar aletleri değil; belgelenmiş Kett yöntemleriyle bu iki parametreye odaklanır.</p>",
+            "text_custom": false,
+            "text_font": "josefin_sans_n4",
+            "text_size": 16,
+            "text_size_mobile": 14,
+            "text_advanced": false,
+            "text_height": 150,
+            "text_mt": 12,
+            "text_mt_mobile": 12,
+            "text_color": "#12181C"
+          }
+        },
+        "ss-button-3": {
+          "type": "button",
+          "settings": {
+            "button": "Select your QC meter",
+            "button_style": "non_outline",
+            "button_custom": false,
+            "button_font": "josefin_sans_n4",
+            "button_size": 14,
+            "button_size_mobile": 14,
+            "button_advanced": false,
+            "button_height": 100,
+            "button_padding_horizontal": 40,
+            "button_padding_horizontal_mobile": 32,
+            "button_padding_vertical": 20,
+            "button_padding_vertical_mobile": 20,
+            "button_radius": 4,
+            "button_border_thickness": 1,
+            "button_mt": 30,
+            "button_mt_mobile": 30,
+            "button_custom_styling": false,
+            "button_color": "#12181C",
+            "button_hover_color": "#FFFFFF",
+            "button_bg_color": "#C99A2E",
+            "button_bg_hover_color": "#12181C",
+            "button_border_color": "#C99A2E",
+            "button_border_hover_color": "#C99A2E",
+            "button_shadow_color": "#12181C",
+            "new_tab": false
+          }
+        },
+        "ss-feature-4": {
+          "type": "feature",
+          "settings": {
+            "icon": "target",
+            "title": "Tahıl ve tohum nemi",
+            "text": "<p>PM serisi, kapasitans/dielektrik (50 MHz) ile %1–40 aralığında nem okur; 240 mL numune, kimyasal hazırlık yok.</p>",
+            "hide_mobile": false
+          }
+        },
+        "ss-feature-5": {
+          "type": "feature",
+          "settings": {
+            "icon": "sliders",
+            "title": "Pirinç beyazlığı",
+            "text": "<p>C-600, ışık yansıması ile 5,0–69,9 aralığında 0,1 çözünürlükte beyazlık değeri verir.</p>",
+            "hide_mobile": false
+          }
+        },
+        "ss-feature-6": {
+          "type": "feature",
+          "settings": {
+            "icon": "box",
+            "title": "Gıda QC hattı",
+            "text": "<p>Koleksiyon, tahıl, pirinç ve diğer gıda ürünlerinde nem ve beyazlık gibi kalite parametrelerini ölçen cihazları bir arada tutar.</p>",
+            "hide_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "ss-heading-1",
+        "ss-text-2",
+        "ss-button-3",
+        "ss-feature-4",
+        "ss-feature-5",
+        "ss-feature-6"
+      ]
+    },
+    "ss-comparison-table-29-2": {
+      "type": "ss-comparison-table-29",
+      "settings": {
+        "primary_title": "PM-450 / PM-650 nem",
+        "primary_badge": "Dielektrik 50 MHz",
+        "competitor_title": "C-600 beyazlık",
+        "competitor_badge": "Mavi LED yansıma",
+        "layout_direction": "heading_first_vertical",
+        "content_gap": 64,
+        "column_width": 150,
+        "column_radius": 4,
+        "row_padding": 16,
+        "image_width": 80,
+        "product_title_custom": false,
+        "product_title_font": "josefin_sans_n4",
+        "product_title_size": 16,
+        "feature_custom": false,
+        "feature_font": "josefin_sans_n4",
+        "feature_font_size": 14,
+        "feature_font_weight": "500",
+        "show_dividers": true,
+        "divider_thickness": 1,
+        "icon_size": 20,
+        "primary_column_use_gradient": false,
+        "primary_column_color": "#E4E6E2",
+        "primary_column_gradient_start": "#E4E6E2",
+        "primary_column_gradient_end": "#E4E6E2",
+        "primary_column_text_color": "#12181C",
+        "feature_text_color": "#12181C",
+        "competitor_text_color": "#12181C",
+        "divider_color": "#C5CBC7",
+        "check_color": "#12181C",
+        "cross_color": "#12181C",
+        "cross_stroke_style": "transparent",
+        "badge_background": "#12181C",
+        "badge_icon_color": "#C99A2E",
+        "background_style": "solid",
+        "background_color": "#EFF0ED",
+        "background_gradient": "",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0.0,
+        "margin_horizontal_mobile": 0.0,
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "padding_horizontal": 5.0,
+        "padding_horizontal_mobile": 1.5,
+        "width": "page",
+        "content_width": 1200,
+        "primary_image": "shopify://shop_images/pdp-primary_image-4ed6b2b5.png",
+        "competitor_image": "shopify://shop_images/pdp-competitor_image-e8e63c51.png"
+      },
+      "custom_css": [
+        "@media(max-width:1023px){.product-comparison{padding-top:36px;padding-bottom:36px;}}h1,h2{font-family:\"Arial Black\",Arial!important;font-weight:700!important;letter-spacing:-0.02em;line-height:1.05}p,li,a,button,h3,h4{font-family:\"Trebuchet MS\",Arial!important}[class*=button]{font-weight:600!important;text-transform:none}h3,h4{font-weight:600;letter-spacing:-0.01em}[class*=caption]{letter-spacing:0.06em}"
+      ],
+      "blocks": {
+        "ss-heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Nem ölçer mi, pirinç beyazlık tezgâhı mı?",
+            "heading_custom": false,
+            "heading_font": "josefin_sans_n4",
+            "heading_tag": "h2",
+            "font_size": 36,
+            "mobile_font_size": 26,
+            "italic": false,
+            "use_gradient": false,
+            "gradient_start": "#12181C",
+            "gradient_end": "#12181C",
+            "heading_color": "#12181C"
+          }
+        },
+        "ss-subtitle-2": {
+          "type": "subtitle",
+          "settings": {
+            "text": "Aynı QC rafında iki sınıf: dielektrik nem (PM) veya yansımalı beyazlık (C-600). İhtiyacınız olan parametreye göre seçin.",
+            "subtitle_custom": false,
+            "subtitle_font": "josefin_sans_n4",
+            "font_size": 16,
+            "font_weight": "400",
+            "subtitle_color": "#12181C"
+          }
+        },
+        "ss-button-3": {
+          "type": "button",
+          "settings": {
+            "button": "Select your QC meter",
+            "open_in_new_tab": false,
+            "button_style": "non_outline",
+            "button_custom": false,
+            "button_font": "josefin_sans_n4",
+            "button_size": 14,
+            "button_size_mobile": 14,
+            "button_advanced": false,
+            "button_height": 100,
+            "button_padding_horizontal": 40,
+            "button_padding_horizontal_mobile": 32,
+            "button_padding_vertical": 20,
+            "button_padding_vertical_mobile": 20,
+            "button_radius": 4,
+            "button_border_thickness": 1,
+            "button_mt": 16,
+            "button_mt_mobile": 16,
+            "button_custom_styling": false,
+            "button_full_width_mobile": false,
+            "button_color": "#12181C",
+            "button_hover_color": "#FFFFFF",
+            "button_bg_color": "#C99A2E",
+            "button_bg_hover_color": "#12181C",
+            "button_border_color": "#C99A2E",
+            "button_border_hover_color": "#C99A2E",
+            "button_shadow_color": "#12181C"
+          }
+        },
+        "ss-text_row-4": {
+          "type": "text_row",
+          "settings": {
+            "feature_name": "Ölçülen büyüklük",
+            "primary_text": "Nem (tahıl, tohum)",
+            "competitor_text": "Beyazlık (pirinç)"
+          }
+        },
+        "ss-text_row-5": {
+          "type": "text_row",
+          "settings": {
+            "feature_name": "Yöntem",
+            "primary_text": "Kapasitans / dielektrik 50 MHz",
+            "competitor_text": "Işık yansıması, mavi LED"
+          }
+        },
+        "ss-text_row-6": {
+          "type": "text_row",
+          "settings": {
+            "feature_name": "Aralık",
+            "primary_text": "%1–40 (numuneye bağlı)",
+            "competitor_text": "5,0–69,9; çözünürlük 0,1"
+          }
+        },
+        "ss-text_row-7": {
+          "type": "text_row",
+          "settings": {
+            "feature_name": "Numune",
+            "primary_text": "240 mL hazne",
+            "competitor_text": "Standart plaka ve numune tabağı"
+          }
+        },
+        "ss-text_row-8": {
+          "type": "text_row",
+          "settings": {
+            "feature_name": "Ekran",
+            "primary_text": "Dijital LCD",
+            "competitor_text": "Vakum floresan (VFD)"
+          }
+        },
+        "ss-text_row-9": {
+          "type": "text_row",
+          "settings": {
+            "feature_name": "Güç",
+            "primary_text": "4× AA alkalin",
+            "competitor_text": "AC 100–120 V veya 220–240 V"
+          }
+        },
+        "ss-text_row-10": {
+          "type": "text_row",
+          "settings": {
+            "feature_name": "Boyut / ağırlık",
+            "primary_text": "Yaklaşık 1,3 kg; saha formu",
+            "competitor_text": "5,0 kg; 290×295×185 mm tezgâh"
+          }
+        },
+        "ss-text_row-11": {
+          "type": "text_row",
+          "settings": {
+            "feature_name": "Çıkış",
+            "primary_text": "—",
+            "competitor_text": "RS-232C"
+          }
+        }
+      },
+      "block_order": [
+        "ss-heading-1",
+        "ss-subtitle-2",
+        "ss-button-3",
+        "ss-text_row-4",
+        "ss-text_row-5",
+        "ss-text_row-6",
+        "ss-text_row-7",
+        "ss-text_row-8",
+        "ss-text_row-9",
+        "ss-text_row-10",
+        "ss-text_row-11"
+      ]
+    },
+    "ss-steps-12-3": {
+      "type": "ss-steps-12",
+      "settings": {
+        "steps_mt": 40,
+        "steps_mt_mobile": 20,
+        "steps_gap": 40,
+        "step_padding_horizontal": 36,
+        "step_padding_horizontal_mobile": 0,
+        "progress_bar_width": 2,
+        "icon_size": 32,
+        "icon_size_mobile": 28,
+        "icon_radius": 4,
+        "icon_border_thickness": 0,
+        "badge_custom": false,
+        "badge_font": "josefin_sans_n4",
+        "badge_size": 12,
+        "badge_size_mobile": 12,
+        "badge_advanced": false,
+        "badge_height": 100,
+        "badge_padding_horizontal": 12,
+        "badge_padding_horizontal_mobile": 12,
+        "badge_padding_vertical": 8,
+        "badge_padding_vertical_mobile": 8,
+        "badge_radius": 4,
+        "badge_border_thickness": 0,
+        "step_heading_custom": false,
+        "step_heading_font": "josefin_sans_n4",
+        "step_heading_size": 20,
+        "step_heading_size_mobile": 18,
+        "step_heading_advanced": false,
+        "step_heading_height": 130,
+        "step_heading_mt": 0,
+        "step_heading_mt_mobile": 0,
+        "step_text_custom": false,
+        "step_text_font": "josefin_sans_n4",
+        "step_text_size": 14,
+        "step_text_size_mobile": 14,
+        "step_text_advanced": false,
+        "step_text_height": 150,
+        "step_text_mt": 12,
+        "step_text_mt_mobile": 12,
+        "icon_color": "#12181C",
+        "icon_bg_color": "#FFFFFF",
+        "icon_border_color": "#C5CBC7",
+        "badge_text_color": "#12181C",
+        "badge_bg_color": "#FFFFFF",
+        "badge_border_color": "#C5CBC7",
+        "step_heading_color": "#12181C",
+        "step_text_color": "#12181C",
+        "progress_bar_bg": "#12181C",
+        "background_style": "solid",
+        "background_color": "#EFF0ED",
+        "background_gradient": "",
+        "border_color": "#C5CBC7",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0.0,
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "width": "page",
+        "content_width": 1200,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "steps_advanced": false,
+        "text_hide_on_mobile": false
+      },
+      "custom_css": [
+        "@media(max-width:1023px){[class*=\"section-\"][class*=\"-settings\"]{padding-top:36px;padding-bottom:36px;}}h1,h2{font-family:\"Arial Black\",Arial!important;font-weight:700!important;letter-spacing:-0.02em;line-height:1.05}p,li,a,button,h3,h4{font-family:\"Trebuchet MS\",Arial!important}[class*=button]{font-weight:600!important;text-transform:none}h3,h4{font-weight:600;letter-spacing:-0.01em}[class*=caption]{letter-spacing:0.06em}"
+      ],
+      "blocks": {
+        "ss-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h2>Doldurun, düzeltme cihazda, okumayı alın</h2>",
+            "heading_custom": false,
+            "heading_font": "josefin_sans_n4",
+            "heading_size": 36,
+            "heading_size_mobile": 26,
+            "heading_advanced": false,
+            "heading_height": 110,
+            "heading_mt": 0,
+            "heading_mt_mobile": 0,
+            "heading_color": "#12181C",
+            "use_gradient": false,
+            "gradient_start": "#12181C",
+            "gradient_end": "#12181C"
+          }
+        },
+        "ss-text-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Numune kimyası yok. PM’de 240 mL hazne; C-600’de tabak ve sabit miktar doldurucu. Cihaz ağırlık/sıcaklık düzeltmesi veya yansıma okuması verir.</p>",
+            "text_custom": false,
+            "text_font": "josefin_sans_n4",
+            "text_size": 16,
+            "text_size_mobile": 14,
+            "text_advanced": false,
+            "text_height": 150,
+            "text_mt": 12,
+            "text_mt_mobile": 12,
+            "text_color": "#12181C"
+          }
+        },
+        "ss-item-3": {
+          "type": "item",
+          "settings": {
+            "badge": "01",
+            "icon": "box",
+            "heading": "<h3>Hazneyi veya tabağı doldurun</h3>",
+            "text": "<p>PM: huni ve 240 mL manuel hazne. C-600: numune kutusu, tabak ve sabit miktar doldurucu. Öğütme veya çözücü yok.</p>"
+          }
+        },
+        "ss-item-4": {
+          "type": "item",
+          "settings": {
+            "badge": "02",
+            "icon": "sliders",
+            "heading": "<h3>Cihaz düzeltmeyi uygular</h3>",
+            "text": "<p>PM-650 otomatik ağırlık ve sıcaklık düzeltmesi yapar. C-600 mavi LED yansımasıyla beyazlık okur.</p>"
+          }
+        },
+        "ss-item-5": {
+          "type": "item",
+          "settings": {
+            "badge": "03",
+            "icon": "target",
+            "heading": "<h3>Değeri ve ortalamayı okuyun</h3>",
+            "text": "<p>LCD veya VFD’de sonuç. Her iki sınıfta ortalama fonksiyonu; tekrar ölçümleri tek bakışta toplayın.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "ss-heading-1",
+        "ss-text-2",
+        "ss-item-3",
+        "ss-item-4",
+        "ss-item-5"
+      ]
+    },
+    "ss-tabs-3-4": {
+      "type": "ss-tabs-3",
+      "settings": {
+        "layout_preset": "balanced",
+        "content_column_width": 30,
+        "image_column_width": 30,
+        "accordion_column_width": 30,
+        "content_vertical_align": "start",
+        "column_gap": 56,
+        "column_gap_mobile": 24,
+        "accordion_open_first": true,
+        "item_border_thickness": 1,
+        "item_radius": 4,
+        "item_shadow": false,
+        "accordion_advanced": false,
+        "item_gap": 16,
+        "item_gap_mobile": 12,
+        "item_padding_vertical": 18,
+        "item_padding_vertical_mobile": 16,
+        "item_padding_horizontal": 24,
+        "item_padding_horizontal_mobile": 18,
+        "title_custom": false,
+        "title_font": "josefin_sans_n4",
+        "title_size": 15,
+        "title_size_mobile": 14,
+        "title_advanced": false,
+        "title_height": 130,
+        "title_gap": 12,
+        "title_gap_mobile": 10,
+        "icon_size": 22,
+        "icon_size_mobile": 20,
+        "toggle_icon_size": 18,
+        "toggle_icon_size_mobile": 16,
+        "toggle_icon_thickness": 2,
+        "answer_custom": false,
+        "answer_font": "josefin_sans_n4",
+        "answer_size": 14,
+        "answer_size_mobile": 13,
+        "answer_advanced": false,
+        "answer_height": 150,
+        "answer_mt": 16,
+        "answer_mt_mobile": 14,
+        "divider_thickness": 1,
+        "title_color": "#12181C",
+        "title_active_color": "#12181C",
+        "answer_color": "#12181C",
+        "icon_color": "#12181C",
+        "icon_active_color": "#12181C",
+        "toggle_icon_color": "#12181C",
+        "toggle_icon_active_color": "#12181C",
+        "item_bg_color": "#FFFFFF",
+        "item_active_bg_color": "#E4E6E2",
+        "item_border_color": "#C5CBC7",
+        "item_active_border_color": "#C5CBC7",
+        "divider_color": "#C5CBC7",
+        "item_shadow_color": "#12181C",
+        "background_style": "solid",
+        "background_color": "#EFF0ED",
+        "background_gradient": "",
+        "border_color": "#C5CBC7",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0.0,
+        "margin_horizontal_mobile": 0.0,
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "padding_horizontal": 5.0,
+        "padding_horizontal_mobile": 1.5,
+        "width": "page",
+        "content_width": 1200,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "image_priority": false
+      },
+      "custom_css": [
+        "@media(max-width:1023px){[class^=\"section-\"]:not([class*=\"-settings\"]){padding-top:36px;padding-bottom:36px;}}h1,h2{font-family:\"Arial Black\",Arial!important;font-weight:700!important;letter-spacing:-0.02em;line-height:1.05}p,li,a,button,h3,h4{font-family:\"Trebuchet MS\",Arial!important}[class*=button]{font-weight:600!important;text-transform:none}h3,h4{font-weight:600;letter-spacing:-0.01em}[class*=caption]{letter-spacing:0.06em}"
+      ],
+      "blocks": {
+        "ss-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h2>Modele göre yöntem, aralık, güç ve aksesuar</h2>",
+            "heading_custom": false,
+            "heading_font": "josefin_sans_n4",
+            "heading_size": 32,
+            "heading_size_mobile": 24,
+            "heading_advanced": false,
+            "heading_height": 105,
+            "heading_mt": 0,
+            "heading_mt_mobile": 0,
+            "heading_color": "#12181C"
+          }
+        },
+        "ss-text-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Satın alma kutusunu kısa tutmak için ikincil teknik satırlar burada. Her satır ilgili ürüne aittir.</p>",
+            "text_custom": false,
+            "text_font": "josefin_sans_n4",
+            "text_size": 15,
+            "text_size_mobile": 14,
+            "text_advanced": false,
+            "text_height": 150,
+            "text_mt": 20,
+            "text_mt_mobile": 16,
+            "text_color": "#12181C",
+            "text_accent_color": "#12181C"
+          }
+        },
+        "ss-button-3": {
+          "type": "button",
+          "settings": {
+            "button": "Select your QC meter",
+            "open_in_new_tab": false,
+            "button_style": "non_outline",
+            "button_custom": false,
+            "button_font": "josefin_sans_n4",
+            "button_size": 14,
+            "button_size_mobile": 14,
+            "button_radius": 4,
+            "button_border_thickness": 1,
+            "button_advanced": false,
+            "button_height": 100,
+            "button_padding_horizontal": 40,
+            "button_padding_horizontal_mobile": 32,
+            "button_padding_vertical": 20,
+            "button_padding_vertical_mobile": 20,
+            "button_mt": 30,
+            "button_mt_mobile": 24,
+            "button_color": "#12181C",
+            "button_hover_color": "#FFFFFF",
+            "button_bg_color": "#C99A2E",
+            "button_bg_hover_color": "#12181C",
+            "button_border_color": "#C99A2E",
+            "button_border_hover_color": "#C99A2E",
+            "button_custom_styling": false,
+            "button_shadow_color": "#12181C"
+          }
+        },
+        "ss-image-4": {
+          "type": "image",
+          "settings": {
+            "image_ratio": "3/2",
+            "image_ratio_mobile": "3/2",
+            "image_radius": 4,
+            "image_hover_zoom": false,
+            "image_mobile": "",
+            "image": "shopify://shop_images/pdp-image-3415e131.png"
+          }
+        },
+        "ss-accordion-5": {
+          "type": "accordion",
+          "settings": {
+            "icon": "sliders",
+            "title": "Ölçüm yöntemi",
+            "answer": "<p>PM-450 ve PM-650: kapasitans / dielektrik 50 MHz. C-600: ışık yansıması, mavi LED kaynak.</p>",
+            "custom_icon": ""
+          }
+        },
+        "ss-accordion-6": {
+          "type": "accordion",
+          "settings": {
+            "icon": "target",
+            "title": "Aralık, çözünürlük, ortam",
+            "answer": "<p>PM: nem %1–40 (numuneye bağlı); PM-650’de rutubeti %20’nin altındaki numunelerde kurutma yöntemine karşı standart hata %0,5 veya altı. Çalışma 0–40 °C. C-600: 5,0–69,9, çözünürlük 0,1; 5–40 °C, %30–85 BN yoğuşmasız.</p>",
+            "custom_icon": ""
+          }
+        },
+        "ss-accordion-7": {
+          "type": "accordion",
+          "settings": {
+            "icon": "bolt",
+            "title": "Ekran ve güç",
+            "answer": "<p>PM: dijital LCD; 4× 1,5 V AA alkalin; PM-650 tüketim 240 mW; otomatik kapanma ve pil göstergesi. C-600: VFD; AC 100–120 V veya 220–240 V, 50/60 Hz.</p>",
+            "custom_icon": ""
+          }
+        },
+        "ss-accordion-8": {
+          "type": "accordion",
+          "settings": {
+            "icon": "box",
+            "title": "Standart aksesuarlar",
+            "answer": "<p>PM-650: huni, manuel hazne, fırça, 4× AA, kılavuz. C-600: beyazlık standart plakası, numune kutusu ve tabağı, sabit miktar doldurucu, kap, cam bezi, yedek sünger, 3 conta, yedek sigorta, güç kablosu, priz adaptörü, kılavuz.</p>",
+            "custom_icon": ""
+          }
+        }
+      },
+      "block_order": [
+        "ss-heading-1",
+        "ss-text-2",
+        "ss-button-3",
+        "ss-image-4",
+        "ss-accordion-5",
+        "ss-accordion-6",
+        "ss-accordion-7",
+        "ss-accordion-8"
+      ]
+    },
+    "ss-faq-17-5": {
+      "type": "ss-faq-17",
+      "settings": {
+        "content_max_width": 72,
+        "toggles_gap": 16,
+        "toggles_gap_mobile": 12,
+        "toggles_mt": 32,
+        "toggles_mt_mobile": 24,
+        "toggle_padding_horizontal": 26,
+        "toggle_padding_horizontal_mobile": 20,
+        "toggle_padding_vertical": 12,
+        "toggle_padding_vertical_mobile": 10,
+        "toggle_radius": 4,
+        "toggle_custom": false,
+        "toggle_font": "josefin_sans_n4",
+        "toggle_size": 14,
+        "toggle_size_mobile": 13,
+        "toggle_height": 130,
+        "tabs_mt": 24,
+        "tabs_mt_mobile": 24,
+        "item_mt": 12,
+        "item_mt_mobile": 12,
+        "item_padding_horizontal": 0,
+        "item_padding_horizontal_mobile": 0,
+        "item_padding_vertical": 20,
+        "item_padding_vertical_mobile": 14,
+        "item_border_thickness": 1,
+        "question_custom": false,
+        "question_font": "josefin_sans_n4",
+        "question_size": 16,
+        "question_size_mobile": 14,
+        "question_height": 150,
+        "icon_size": 22,
+        "icon_size_mobile": 20,
+        "answer_custom": false,
+        "answer_font": "josefin_sans_n4",
+        "answer_size": 14,
+        "answer_size_mobile": 14,
+        "answer_height": 150,
+        "answer_padding_top": 30,
+        "toggles_bg_color": "#EFF0ED",
+        "toggle_bg_color": "#12181C",
+        "toggle_color": "#12181C",
+        "toggle_active_color": "#FFFFFF",
+        "item_border_color": "#C5CBC7",
+        "question_color": "#12181C",
+        "answer_color": "#12181C",
+        "icon_color": "#12181C",
+        "background_color": "#EFF0ED",
+        "border_color": "#C5CBC7",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0.0,
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "content_width": 1000,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "toggle_bg_gradient": "",
+        "background_gradient": ""
+      },
+      "custom_css": [
+        "@media(max-width:1023px){[class*=\"section-\"][class*=\"-settings\"]{padding-top:36px;padding-bottom:36px;}}h1,h2{font-family:\"Arial Black\",Arial!important;font-weight:700!important;letter-spacing:-0.02em;line-height:1.05}p,li,a,button,h3,h4{font-family:\"Trebuchet MS\",Arial!important}[class*=button]{font-weight:600!important;text-transform:none}h3,h4{font-weight:600;letter-spacing:-0.01em}[class*=caption]{letter-spacing:0.06em}"
+      ],
+      "blocks": {
+        "ss-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h2>Pirinç türü, pil ve yazıcı</h2>",
+            "heading_custom": false,
+            "heading_font": "josefin_sans_n4",
+            "heading_size": 32,
+            "heading_size_mobile": 24,
+            "heading_height": 110,
+            "heading_mt": 0,
+            "heading_mt_mobile": 0,
+            "heading_color": "#12181C"
+          }
+        },
+        "ss-text-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Kalan pratik sorular: hangi pirinç, hangi güç, hangi yazıcı. Yalnızca ürün kayıtlarında geçen seçenekler.</p>",
+            "text_custom": false,
+            "text_font": "josefin_sans_n4",
+            "text_size": 15,
+            "text_size_mobile": 14,
+            "text_height": 150,
+            "text_mt": 30,
+            "text_mt_mobile": 20,
+            "text_color": "#12181C"
+          }
+        },
+        "ss-tab-3": {
+          "type": "tab",
+          "settings": {
+            "tab": "Pirinç"
+          }
+        },
+        "ss-faq_item-4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "C-600 hangi pirinçlerde çalışır?",
+            "answer": "<p>Beyazlatılmış (parlatılmış), kahverengi ve ön yıkamalı pirinç — glutenli ve glutensiz.</p>"
+          }
+        },
+        "ss-tab-5": {
+          "type": "tab",
+          "settings": {
+            "tab": "Pil"
+          }
+        },
+        "ss-faq_item-6": {
+          "type": "faq_item",
+          "settings": {
+            "question": "PM serisi hangi pille çalışır?",
+            "answer": "<p>PM-450 ve PM-650: 4 adet 1,5 V alkalin AA. PM-650 güç tüketimi 240 mW.</p>"
+          }
+        },
+        "ss-tab-7": {
+          "type": "tab",
+          "settings": {
+            "tab": "Yazıcı"
+          }
+        },
+        "ss-faq_item-8": {
+          "type": "faq_item",
+          "settings": {
+            "question": "C-600’e yazıcı bağlanır mı?",
+            "answer": "<p>RS-232C çıkışı vardır. Opsiyonel yazıcı: VZ-380.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "ss-heading-1",
+        "ss-text-2",
+        "ss-tab-3",
+        "ss-faq_item-4",
+        "ss-tab-5",
+        "ss-faq_item-6",
+        "ss-tab-7",
+        "ss-faq_item-8"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "ss-feature-54-1",
+    "ss-comparison-table-29-2",
+    "ss-steps-12-3",
+    "ss-tabs-3-4",
+    "ss-faq-17-5",
+    "related-products"
+  ]
+}
