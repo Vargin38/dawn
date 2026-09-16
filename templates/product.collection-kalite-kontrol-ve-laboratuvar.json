@@ -162,9 +162,9 @@
           "type": "heading",
           "settings": {
             "heading": "<h2>Değirmen ve laboratuvar için tahıl nemi ve pirinç beyazlığı</h2>",
-            "heading_custom": false,
+            "heading_custom": true,
             "heading_font": "inter_n4",
-            "heading_accent_font": "playfair_n4",
+            "heading_accent_font": "inter_n4",
             "heading_size": 36,
             "heading_size_mobile": 28,
             "heading_advanced": false,
@@ -343,7 +343,7 @@
           "type": "heading",
           "settings": {
             "text": "Nem ölçer mi, pirinç beyazlık tezgâhı mı?",
-            "heading_custom": false,
+            "heading_custom": true,
             "heading_font": "inter_n4",
             "heading_tag": "h2",
             "font_size": 36,
@@ -545,7 +545,7 @@
           "type": "heading",
           "settings": {
             "heading": "<h2>Doldurun, düzeltme cihazda, okumayı alın</h2>",
-            "heading_custom": false,
+            "heading_custom": true,
             "heading_font": "inter_n4",
             "heading_size": 36,
             "heading_size_mobile": 26,
@@ -696,7 +696,7 @@
           "type": "heading",
           "settings": {
             "heading": "<h2>Modele göre yöntem, aralık, güç ve aksesuar</h2>",
-            "heading_custom": false,
+            "heading_custom": true,
             "heading_font": "inter_n4",
             "heading_size": 32,
             "heading_size_mobile": 24,
@@ -897,7 +897,7 @@
           "type": "heading",
           "settings": {
             "heading": "<h2>Pirinç türü, pil ve yazıcı</h2>",
-            "heading_custom": false,
+            "heading_custom": true,
             "heading_font": "inter_n4",
             "heading_size": 32,
             "heading_size_mobile": 24,
