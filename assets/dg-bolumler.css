@@ -15,6 +15,12 @@
 .dg-hero { position: relative; background: var(--dg-lac); color: #fff; overflow: hidden; isolation: isolate; }
 .dg-hero__medya { position: absolute; inset: 0; z-index: -2; }
 .dg-hero__img { width: 100%; height: 100%; object-fit: cover; object-position: 65% 50%; animation: dg-yakin 14s ease-out both; }
+.dg-hero__medya--gecisli { display: grid; }
+.dg-hero__medya--gecisli .dg-hero__img { grid-area: 1 / 1; opacity: 0; will-change: opacity, transform; }
+@media (prefers-reduced-motion: reduce) {
+  .dg-hero__medya--gecisli .dg-hero__img { animation: none !important; opacity: 0; }
+  .dg-hero__medya--gecisli .dg-hero__img:first-of-type { opacity: 1; }
+}
 @keyframes dg-yakin { from { transform: scale(1.06); } to { transform: scale(1); } }
 .dg-hero:before { content: ''; position: absolute; inset: 0; z-index: -1;
   background: linear-gradient(96deg, rgba(11,34,57,.97) 0%, rgba(11,34,57,.9) 36%, rgba(11,34,57,.5) 70%, rgba(11,34,57,.35) 100%),

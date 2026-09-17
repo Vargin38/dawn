@@ -12,14 +12,43 @@
     "hero": {
       "type": "dg-hero",
       "blocks": {
-        "grup_kalite": { "type": "grup", "settings": { "koleksiyon": "kalite-kontrol-ve-laboratuvar-cihazlari", "etiket": "Kalite kontrol" } },
-        "grup_ambalaj": { "type": "grup", "settings": { "koleksiyon": "ambalaj-makineleri", "etiket": "Ambalaj" } },
-        "grup_gida": { "type": "grup", "settings": { "koleksiyon": "gida-isleme", "etiket": "Gıda işleme" } },
-        "grup_tekstil": { "type": "grup", "settings": { "koleksiyon": "tekstil", "etiket": "Tekstil" } }
+        "grup_kalite": {
+          "type": "grup",
+          "settings": {
+            "koleksiyon": "kalite-kontrol-ve-laboratuvar-cihazlari",
+            "etiket": "Kalite kontrol"
+          }
+        },
+        "grup_ambalaj": {
+          "type": "grup",
+          "settings": {
+            "koleksiyon": "ambalaj-makineleri",
+            "etiket": "Ambalaj"
+          }
+        },
+        "grup_gida": {
+          "type": "grup",
+          "settings": {
+            "koleksiyon": "gida-isleme",
+            "etiket": "Gıda işleme"
+          }
+        },
+        "grup_tekstil": {
+          "type": "grup",
+          "settings": {
+            "koleksiyon": "tekstil",
+            "etiket": "Tekstil"
+          }
+        }
       },
-      "block_order": ["grup_kalite", "grup_ambalaj", "grup_gida", "grup_tekstil"],
+      "block_order": [
+        "grup_kalite",
+        "grup_ambalaj",
+        "grup_gida",
+        "grup_tekstil"
+      ],
       "settings": {
-        "resim": "shopify://shop_images/anasayfa-uretim-holu.jpg",
+        "resim": "shopify://shop_images/degirmen-plaza-bina.jpg",
         "kas": "Değirmen Sanayi ve Ticaret A.Ş. · İstanbul, 1984",
         "baslik": "Tahılın nemini ölçen, poşeti kapatan, unu eleyen ekipman",
         "metin": "Kett ve HAWO'nun Türkiye distribütörüyüz. 1984'ten bu yana kalite kontrol, ambalaj, gıda işleme ve tekstil tesislerine cihaz seçiyor, kuruyor ve servis veriyoruz.",
@@ -27,30 +56,117 @@
         "buton_link": "shopify://collections/all",
         "wa_etiket": "WhatsApp'tan teklif isteyin",
         "whatsapp": "905418890092",
-        "wa_mesaj": "Merhaba, teklif almak istiyorum."
+        "wa_mesaj": "Merhaba, teklif almak istiyorum.",
+        "resim_2": "shopify://shop_images/degirmen-plaza-cephe.jpg",
+        "gecis": 6
       }
     },
     "markalar": {
       "type": "dg-markalar",
       "blocks": {
-        "kett": { "type": "marka", "settings": { "ad": "Kett", "logo": "https://cdn.shopify.com/s/files/1/0809/9279/6871/files/kett-logo.svg?v=1789652594", "etiket": "Nem ve beyazlık ölçümü", "link": "shopify://collections/kalite-kontrol-ve-laboratuvar-cihazlari" } },
-        "hawo": { "type": "marka", "settings": { "ad": "HAWO", "logo": "https://cdn.shopify.com/s/files/1/0809/9279/6871/files/hawo-logo.svg?v=1789652594", "etiket": "Poşet yapıştırma", "link": "shopify://collections/hawo-yapistirma-makineleri" } },
-        "euromesh": { "type": "marka", "settings": { "ad": "EUROMESH", "logo": "https://cdn.shopify.com/s/files/1/0809/9279/6871/files/euromesh-logo.jpg?v=1789643679", "etiket": "Elek, filtre ve baskı bezleri", "link": "shopify://collections/gida-isleme" } }
+        "kett": {
+          "type": "marka",
+          "settings": {
+            "ad": "Kett",
+            "logo": "https://cdn.shopify.com/s/files/1/0809/9279/6871/files/kett-logo.svg?v=1789652594",
+            "etiket": "Nem ve beyazlık ölçümü",
+            "link": "shopify://collections/kalite-kontrol-ve-laboratuvar-cihazlari"
+          }
+        },
+        "hawo": {
+          "type": "marka",
+          "settings": {
+            "ad": "HAWO",
+            "logo": "https://cdn.shopify.com/s/files/1/0809/9279/6871/files/hawo-logo.svg?v=1789652594",
+            "etiket": "Poşet yapıştırma",
+            "link": "shopify://collections/hawo-yapistirma-makineleri"
+          }
+        },
+        "euromesh": {
+          "type": "marka",
+          "settings": {
+            "ad": "EUROMESH",
+            "logo": "https://cdn.shopify.com/s/files/1/0809/9279/6871/files/euromesh-logo.jpg?v=1789643679",
+            "etiket": "Elek, filtre ve baskı bezleri",
+            "link": "shopify://collections/gida-isleme"
+          }
+        }
       },
-      "block_order": ["kett", "hawo", "euromesh"],
-      "settings": { "baslik": "Çalıştığımız markalar" }
+      "block_order": [
+        "kett",
+        "hawo",
+        "euromesh"
+      ],
+      "settings": {
+        "baslik": "Çalıştığımız markalar"
+      }
     },
     "sektorler": {
       "type": "dg-sektorler",
       "blocks": {
-        "tahil": { "type": "sektor", "settings": { "ikon": "tane", "baslik": "Un ve tahıl", "metin": "Buğday, arpa, mısır ve tohumlarda alım ve depolama sırasında nem ölçümü.", "koleksiyon": "tahil-rutubet-olcme-cihazlari" } },
-        "pirinc": { "type": "sektor", "settings": { "ikon": "pirinc", "baslik": "Pirinç işleme", "metin": "Öğütülmüş ve parlatılmış pirinçte beyazlık derecesinin sayısal olarak ölçülmesi.", "koleksiyon": "beyazlik-olcerler" } },
-        "ambalaj": { "type": "sektor", "settings": { "ikon": "poset", "baslik": "Gıda ve medikal ambalaj", "metin": "Folyo ve plastik poşetlerin ısıyla, sızdırmaz biçimde kapatılması.", "koleksiyon": "hawo-yapistirma-makineleri" } },
-        "lab": { "type": "sektor", "settings": { "ikon": "lab", "baslik": "Laboratuvar ve kalite kontrol", "metin": "Numune kontrolünde kullanılan taşınabilir ve masaüstü ölçüm cihazları.", "koleksiyon": "kalite-kontrol-ve-laboratuvar-cihazlari" } },
-        "tekstil": { "type": "sektor", "settings": { "ikon": "bez", "baslik": "Tekstil ve serigrafi", "metin": "Serigrafi ve tekstil baskısında kullanılan polyester baskı bezleri.", "koleksiyon": "euromesh-baski-bezleri" } },
-        "filtre": { "type": "sektor", "settings": { "ikon": "filtre", "baslik": "Eleme ve filtrasyon", "metin": "Un eleklerinde ve endüstriyel filtrasyonda kullanılan dokuma elek bezleri.", "koleksiyon": "euromesh-elek-ve-filtre-bezleri" } }
+        "tahil": {
+          "type": "sektor",
+          "settings": {
+            "ikon": "tane",
+            "baslik": "Un ve tahıl",
+            "metin": "Buğday, arpa, mısır ve tohumlarda alım ve depolama sırasında nem ölçümü.",
+            "koleksiyon": "tahil-rutubet-olcme-cihazlari"
+          }
+        },
+        "pirinc": {
+          "type": "sektor",
+          "settings": {
+            "ikon": "pirinc",
+            "baslik": "Pirinç işleme",
+            "metin": "Öğütülmüş ve parlatılmış pirinçte beyazlık derecesinin sayısal olarak ölçülmesi.",
+            "koleksiyon": "beyazlik-olcerler"
+          }
+        },
+        "ambalaj": {
+          "type": "sektor",
+          "settings": {
+            "ikon": "poset",
+            "baslik": "Gıda ve medikal ambalaj",
+            "metin": "Folyo ve plastik poşetlerin ısıyla, sızdırmaz biçimde kapatılması.",
+            "koleksiyon": "hawo-yapistirma-makineleri"
+          }
+        },
+        "lab": {
+          "type": "sektor",
+          "settings": {
+            "ikon": "lab",
+            "baslik": "Laboratuvar ve kalite kontrol",
+            "metin": "Numune kontrolünde kullanılan taşınabilir ve masaüstü ölçüm cihazları.",
+            "koleksiyon": "kalite-kontrol-ve-laboratuvar-cihazlari"
+          }
+        },
+        "tekstil": {
+          "type": "sektor",
+          "settings": {
+            "ikon": "bez",
+            "baslik": "Tekstil ve serigrafi",
+            "metin": "Serigrafi ve tekstil baskısında kullanılan polyester baskı bezleri.",
+            "koleksiyon": "euromesh-baski-bezleri"
+          }
+        },
+        "filtre": {
+          "type": "sektor",
+          "settings": {
+            "ikon": "filtre",
+            "baslik": "Eleme ve filtrasyon",
+            "metin": "Un eleklerinde ve endüstriyel filtrasyonda kullanılan dokuma elek bezleri.",
+            "koleksiyon": "euromesh-elek-ve-filtre-bezleri"
+          }
+        }
       },
-      "block_order": ["tahil", "pirinc", "ambalaj", "lab", "tekstil", "filtre"],
+      "block_order": [
+        "tahil",
+        "pirinc",
+        "ambalaj",
+        "lab",
+        "tekstil",
+        "filtre"
+      ],
       "settings": {
         "kas": "Uygulama alanları",
         "baslik": "Sektörünüze göre ekipman",
@@ -60,23 +176,90 @@
     "urunler": {
       "type": "dg-urunler",
       "blocks": {
-        "s_kalite": { "type": "sekme", "settings": { "koleksiyon": "kalite-kontrol-ve-laboratuvar-cihazlari", "etiket": "Kalite kontrol" } },
-        "s_ambalaj": { "type": "sekme", "settings": { "koleksiyon": "ambalaj-makineleri", "etiket": "Ambalaj" } },
-        "s_gida": { "type": "sekme", "settings": { "koleksiyon": "gida-isleme", "etiket": "Gıda işleme" } },
-        "s_tekstil": { "type": "sekme", "settings": { "koleksiyon": "tekstil", "etiket": "Tekstil" } }
+        "s_kalite": {
+          "type": "sekme",
+          "settings": {
+            "koleksiyon": "kalite-kontrol-ve-laboratuvar-cihazlari",
+            "etiket": "Kalite kontrol"
+          }
+        },
+        "s_ambalaj": {
+          "type": "sekme",
+          "settings": {
+            "koleksiyon": "ambalaj-makineleri",
+            "etiket": "Ambalaj"
+          }
+        },
+        "s_gida": {
+          "type": "sekme",
+          "settings": {
+            "koleksiyon": "gida-isleme",
+            "etiket": "Gıda işleme"
+          }
+        },
+        "s_tekstil": {
+          "type": "sekme",
+          "settings": {
+            "koleksiyon": "tekstil",
+            "etiket": "Tekstil"
+          }
+        }
       },
-      "block_order": ["s_kalite", "s_ambalaj", "s_gida", "s_tekstil"],
-      "settings": { "kas": "Ürünler", "baslik": "Katalogdaki cihazlar ve bezler", "link_etiket": "Tüm ürünler", "adet": 12 }
+      "block_order": [
+        "s_kalite",
+        "s_ambalaj",
+        "s_gida",
+        "s_tekstil"
+      ],
+      "settings": {
+        "kas": "Ürünler",
+        "baslik": "Katalogdaki cihazlar ve bezler",
+        "link_etiket": "Tüm ürünler",
+        "adet": 12
+      }
     },
     "hizmet": {
       "type": "dg-hizmet",
       "blocks": {
-        "kurulum": { "type": "hizmet", "settings": { "ikon": "kurulum", "baslik": "Kurulum ve devreye alma", "metin": "Makinenin yerine konması, ayarlarının yapılması ve operatörün kullanmaya başlayacak kadar eğitilmesi." } },
-        "bakim": { "type": "hizmet", "settings": { "ikon": "bakim", "baslik": "Bakım ve onarım", "metin": "Kendi atölyemizde onarım; yerinde müdahale gereken durumlarda servis ekibimizle destek." } },
-        "parca": { "type": "hizmet", "settings": { "ikon": "parca", "baslik": "Yedek parça", "metin": "Sattığımız makinelerin parçaları için stok tutuyoruz; stokta olmayanı üreticiden temin ediyoruz." } },
-        "belge": { "type": "hizmet", "settings": { "ikon": "belge", "baslik": "Teknik doküman", "metin": "Her ürünün üretici kataloğu kendi sayfasında; kayıt olmadan indirebilirsiniz." } }
+        "kurulum": {
+          "type": "hizmet",
+          "settings": {
+            "ikon": "kurulum",
+            "baslik": "Kurulum ve devreye alma",
+            "metin": "Makinenin yerine konması, ayarlarının yapılması ve operatörün kullanmaya başlayacak kadar eğitilmesi."
+          }
+        },
+        "bakim": {
+          "type": "hizmet",
+          "settings": {
+            "ikon": "bakim",
+            "baslik": "Bakım ve onarım",
+            "metin": "Kendi atölyemizde onarım; yerinde müdahale gereken durumlarda servis ekibimizle destek."
+          }
+        },
+        "parca": {
+          "type": "hizmet",
+          "settings": {
+            "ikon": "parca",
+            "baslik": "Yedek parça",
+            "metin": "Sattığımız makinelerin parçaları için stok tutuyoruz; stokta olmayanı üreticiden temin ediyoruz."
+          }
+        },
+        "belge": {
+          "type": "hizmet",
+          "settings": {
+            "ikon": "belge",
+            "baslik": "Teknik doküman",
+            "metin": "Her ürünün üretici kataloğu kendi sayfasında; kayıt olmadan indirebilirsiniz."
+          }
+        }
       },
-      "block_order": ["kurulum", "bakim", "parca", "belge"],
+      "block_order": [
+        "kurulum",
+        "bakim",
+        "parca",
+        "belge"
+      ],
       "settings": {
         "kas": "Satış sonrası",
         "baslik": "Cihaz kurulduktan sonra da buradayız",
@@ -100,11 +283,33 @@
     "surec": {
       "type": "dg-surec",
       "blocks": {
-        "sec": { "type": "adim", "settings": { "baslik": "Ürünü seçin", "metin": "Cihazın sayfasında teknik özellikleri ve kataloğu inceleyin; model seçeneği varsa ihtiyacınıza uygun olanı işaretleyin." } },
-        "form": { "type": "adim", "settings": { "baslik": "Talebinizi iletin", "metin": "Firma bilgilerinizi, adedi ve teslimat şehrini ürün sayfasındaki forma yazın ya da WhatsApp'tan gönderin." } },
-        "teklif": { "type": "adim", "settings": { "baslik": "Teklifinizi alın", "metin": "Fiyat, teslim süresi ve ödeme koşullarını içeren teklifimizi genellikle 24 saat içinde iletiyoruz." } }
+        "sec": {
+          "type": "adim",
+          "settings": {
+            "baslik": "Ürünü seçin",
+            "metin": "Cihazın sayfasında teknik özellikleri ve kataloğu inceleyin; model seçeneği varsa ihtiyacınıza uygun olanı işaretleyin."
+          }
+        },
+        "form": {
+          "type": "adim",
+          "settings": {
+            "baslik": "Talebinizi iletin",
+            "metin": "Firma bilgilerinizi, adedi ve teslimat şehrini ürün sayfasındaki forma yazın ya da WhatsApp'tan gönderin."
+          }
+        },
+        "teklif": {
+          "type": "adim",
+          "settings": {
+            "baslik": "Teklifinizi alın",
+            "metin": "Fiyat, teslim süresi ve ödeme koşullarını içeren teklifimizi genellikle 24 saat içinde iletiyoruz."
+          }
+        }
       },
-      "block_order": ["sec", "form", "teklif"],
+      "block_order": [
+        "sec",
+        "form",
+        "teklif"
+      ],
       "settings": {
         "kas": "Nasıl çalışıyoruz",
         "baslik": "Teklif üç adımda gelir",
@@ -125,5 +330,14 @@
       }
     }
   },
-  "order": ["hero", "markalar", "sektorler", "urunler", "hizmet", "katalog", "surec", "cta"]
+  "order": [
+    "hero",
+    "markalar",
+    "sektorler",
+    "urunler",
+    "hizmet",
+    "katalog",
+    "surec",
+    "cta"
+  ]
 }

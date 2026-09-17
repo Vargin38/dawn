@@ -1,11 +1,52 @@
 {%- liquid
   assign wa_mesaj = section.settings.wa_mesaj | url_encode | replace: '+', '%20'
+  assign resim_anahtarlari = 'resim,resim_2,resim_3' | split: ','
+  assign resim_sayisi = 0
+  for anahtar in resim_anahtarlari
+    if section.settings[anahtar] != blank
+      assign resim_sayisi = resim_sayisi | plus: 1
+    endif
+  endfor
+  assign sure = section.settings.gecis | default: 6
+  assign dongu = sure | times: resim_sayisi
 -%}
 <section class="dg-hero" aria-labelledby="dg-hero-{{ section.id }}">
-  <div class="dg-hero__medya">
-    {%- if section.settings.resim != blank -%}
-      {{ section.settings.resim | image_url: width: 2400 | image_tag: widths: '750, 1100, 1500, 1900, 2400', sizes: '100vw', loading: 'eager', fetchpriority: 'high', class: 'dg-hero__img', alt: '' }}
-    {%- endif -%}
+  {%- if resim_sayisi > 1 -%}
+    {%- liquid
+      assign pay = 100.0 | divided_by: resim_sayisi
+      assign gecis_pay = 80.0 | divided_by: dongu
+      assign p_bitis_gorunur = pay | minus: gecis_pay
+      assign p_son_gizli = 100 | minus: gecis_pay
+    -%}
+    {%- style -%}
+      @keyframes dg-hero-gecis-{{ section.id }} {
+        0% { opacity: 1; }
+        {{ p_bitis_gorunur }}% { opacity: 1; }
+        {{ pay }}% { opacity: 0; }
+        {{ p_son_gizli }}% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+      {%- for i in (1..resim_sayisi) -%}
+        {%- assign gecikme = i | minus: 1 | times: sure -%}
+        #shopify-section-{{ section.id }} .dg-hero__medya--gecisli .dg-hero__img:nth-of-type({{ i }}) {
+          animation: dg-hero-gecis-{{ section.id }} {{ dongu }}s linear {{ gecikme }}s infinite, dg-yakin {{ dongu }}s ease-out {{ gecikme }}s infinite;
+        }
+      {%- endfor -%}
+    {%- endstyle -%}
+  {%- endif -%}
+  <div class="dg-hero__medya{% if resim_sayisi > 1 %} dg-hero__medya--gecisli{% endif %}">
+    {%- assign sira = 0 -%}
+    {%- for anahtar in resim_anahtarlari -%}
+      {%- assign resim = section.settings[anahtar] -%}
+      {%- if resim != blank -%}
+        {%- if sira == 0 -%}
+          {{ resim | image_url: width: 2400 | image_tag: widths: '750, 1100, 1500, 1900, 2400', sizes: '100vw', loading: 'eager', fetchpriority: 'high', class: 'dg-hero__img', alt: resim.alt }}
+        {%- else -%}
+          {{ resim | image_url: width: 2400 | image_tag: widths: '750, 1100, 1500, 1900, 2400', sizes: '100vw', loading: 'lazy', class: 'dg-hero__img', alt: resim.alt }}
+        {%- endif -%}
+        {%- assign sira = sira | plus: 1 -%}
+      {%- endif -%}
+    {%- endfor -%}
   </div>
   <div class="dg-hero__ic dg-sayfa">
     <p class="dg-kas dg-hero__kas">{{ section.settings.kas }}</p>
@@ -47,6 +88,9 @@
   "max_blocks": 4,
   "settings": [
     { "type": "image_picker", "id": "resim", "label": "Arka plan fotoğrafı" },
+    { "type": "image_picker", "id": "resim_2", "label": "2. fotoğraf (sırayla geçer)" },
+    { "type": "image_picker", "id": "resim_3", "label": "3. fotoğraf (sırayla geçer)" },
+    { "type": "range", "id": "gecis", "label": "Her fotoğrafın ekranda kalma süresi", "unit": "sn", "min": 3, "max": 12, "step": 1, "default": 6 },
     { "type": "text", "id": "kas", "label": "Üst etiket", "default": "Değirmen Sanayi ve Ticaret A.Ş. · İstanbul, 1984" },
     { "type": "textarea", "id": "baslik", "label": "Başlık", "default": "Tahılın nemini ölçen, poşeti kapatan, unu eleyen ekipman" },
     { "type": "textarea", "id": "metin", "label": "Açıklama" },
