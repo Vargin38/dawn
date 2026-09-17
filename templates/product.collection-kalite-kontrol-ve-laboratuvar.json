@@ -506,7 +506,7 @@
         "ss-text-2": {
           "type": "text",
           "settings": {
-            "text": "<p>Satın alma kutusunu kısa tutmak için ikincil teknik satırlar burada. Her satır ilgili ürüne aittir.</p>",
+            "text": "<p>PM-450, PM-650 ve C-600'ün ölçüm yöntemi, aralığı, güç kaynağı ve standart aksesuarları.</p>",
             "text_custom": false,
             "text_font": "inter_n4",
             "text_size": 15,
