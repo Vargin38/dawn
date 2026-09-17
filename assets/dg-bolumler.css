@@ -55,7 +55,7 @@ html body .dg-hero__baslik { margin: 1.8rem 0 0; max-width: 14.5em; font-size: c
 }
 
 /* Marka şeridi */
-.dg-markalar { background: #fff; border-bottom: 1px solid var(--dg-cizgi); }
+.dg-markalar { background: var(--dg-zemin-acik); border-bottom: 1px solid var(--dg-cizgi); }
 .dg-markalar__ic { display: flex; align-items: center; gap: 4rem; padding-top: 2.8rem; padding-bottom: 2.8rem; flex-wrap: wrap; }
 .dg-markalar__baslik { color: var(--dg-soluk); margin-right: auto; }
 .dg-markalar__liste { display: flex; align-items: center; gap: 5.6rem; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
@@ -84,7 +84,7 @@ html body .dg-sektor h3 { margin: 0 0 1rem; font-size: 2.1rem; color: var(--dg-l
 @media (max-width: 600px) { .dg-sektorler { padding: 6.4rem 0; } .dg-sektorler__liste { grid-template-columns: 1fr; } .dg-sektor a { padding: 2.4rem; } }
 
 /* Ürün ızgarası */
-.dg-urunler { padding: 9.6rem 0; background: #fff; }
+.dg-urunler { padding: 9.6rem 0; background: var(--dg-zemin-acik); }
 .dg-urunler__ust { display: flex; align-items: flex-end; justify-content: space-between; gap: 2.4rem; margin-bottom: 2.8rem; }
 .dg-urunler__ust .dg-baslik-blok { margin-bottom: 0; }
 .dg-urunler__ust > .dg-ok { flex: none; margin-bottom: .8rem; }
@@ -104,7 +104,7 @@ html body .dg-sektor h3 { margin: 0 0 1rem; font-size: 2.1rem; color: var(--dg-l
 }
 
 /* Servis ve hizmetler */
-.dg-hizmet { padding: 9.6rem 0; background: #fff; border-top: 1px solid var(--dg-cizgi); }
+.dg-hizmet { padding: 9.6rem 0; background: var(--dg-zemin-acik); border-top: 1px solid var(--dg-cizgi); }
 html body .dg-hizmet__izgara { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); width: calc(100% - 10rem); max-width: calc(var(--page-width) - 10rem); padding: 0; border: 1px solid var(--dg-cizgi); }
 .dg-hizmet__panel { position: relative; background: var(--dg-lac); color: #fff; padding: 5.6rem 4.8rem 6.4rem; display: flex; flex-direction: column; }
 .dg-hizmet__panel:after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 14px; color: var(--dg-cyan); background: var(--dg-cetvel); opacity: .3; }
@@ -150,7 +150,7 @@ html body .dg-katalog__indir:hover { border-color: var(--dg-lac); background: va
 @media (max-width: 600px) { .dg-katalog { padding: 6.4rem 0; } }
 
 /* Teklif süreci */
-.dg-surec { padding: 9.6rem 0; background: #fff; }
+.dg-surec { padding: 9.6rem 0; background: var(--dg-zemin-acik); }
 .dg-surec__liste { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem; }
 .dg-surec__adim { position: relative; padding-top: 3.2rem; }
 .dg-surec__adim:before { content: ''; position: absolute; left: 0; right: -4rem; top: 0; height: 14px; color: var(--dg-mavi); background: var(--dg-cetvel); opacity: .45; }
