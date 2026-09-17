@@ -1,0 +1,28 @@
+{%- assign menu = linklists[section.settings.menu] -%}
+<div class="dg-icerik">
+  <div class="dg-sayfa dg-icerik__izgara">
+    <div class="rte dg-icerik__metin">{{ page.content }}</div>
+    {%- if menu.links.size > 0 -%}
+      <nav class="dg-icerik__nav" aria-label="{{ section.settings.nav_baslik | escape }}">
+        <p class="dg-kas">{{ section.settings.nav_baslik }}</p>
+        <ul>
+          {%- for l in menu.links -%}
+            <li><a href="{{ l.url }}"{% if l.url == request.path %} aria-current="page"{% endif %}>{{ l.title }}</a></li>
+          {%- endfor -%}
+        </ul>
+      </nav>
+    {%- endif -%}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Sayfa içeriği",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "link_list", "id": "menu", "label": "Yan menü", "default": "footer" },
+    { "type": "text", "id": "nav_baslik", "label": "Yan menü başlığı", "default": "Kurumsal" }
+  ],
+  "presets": [{ "name": "Sayfa içeriği" }]
+}
+{% endschema %}

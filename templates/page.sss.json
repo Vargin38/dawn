@@ -1,192 +1,90 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
+    "ust": { "type": "dg-sayfa-ust", "settings": { "kas": "Destek", "metin": "Teklif, sipariş ve teslimat süreçleriyle ilgili en çok sorulanlar." } },
     "faq": {
       "type": "ss-faq-17",
       "blocks": {
-        "ss-heading-1": {
-          "type": "heading",
-          "settings": {
-            "heading": "<h1>Sık Sorulan Sorular</h1>",
-            "heading_custom": true,
-            "heading_font": "inter_n4",
-            "heading_size": 32,
-            "heading_size_mobile": 24,
-            "heading_height": 110,
-            "heading_mt": 0,
-            "heading_mt_mobile": 0,
-            "heading_color": "#161616"
-          }
-        },
-        "ss-text-2": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Teklif, sipariş ve teslimat süreçleriyle ilgili en çok sorulanlar. Yanıtını bulamadığınız sorular için <a href=\"/pages/contact\">bize yazın</a>.</p>",
-            "text_custom": false,
-            "text_font": "inter_n4",
-            "text_size": 15,
-            "text_size_mobile": 14,
-            "text_height": 150,
-            "text_mt": 30,
-            "text_mt_mobile": 20,
-            "text_color": "#161616"
-          }
-        },
-        "ss-tab-3": {
-          "type": "tab",
-          "settings": {
-            "tab": "Teklif ve fiyat"
-          }
-        },
-        "ss-faq_item-4": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Fiyatlar neden sitede görünmüyor?",
-            "answer": "<p>Fiyatlar; sipariş adedi, teslimat yeri ve güncel tedarik koşullarına göre değiştiği için her talebe özel teklif hazırlıyoruz.</p>"
-          }
-        },
-        "ss-faq_item-5": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Nasıl teklif alabilirim?",
-            "answer": "<p>İlgilendiğiniz ürünün sayfasındaki <strong>Teklif İste</strong> butonuna tıklayıp formu doldurun. Katalogda yer almayan ürünler için <a href=\"/pages/contact\">iletişim sayfasındaki</a> formu kullanabilirsiniz.</p>"
-          }
-        },
-        "ss-faq_item-6": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Teklife ne kadar sürede dönüş yapıyorsunuz?",
-            "answer": "<p>Talepleri hafta içi 09:00–18:00 arasında yanıtlıyoruz; genellikle 24 saat içinde dönüş yapıyoruz.</p>"
-          }
-        },
-        "ss-faq_item-7": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Teklif fiyatlarına KDV dahil mi?",
-            "answer": "<p>KDV ve diğer vergilerin fiyata dahil olup olmadığı teklifte açıkça belirtilir.</p>"
-          }
-        },
-        "ss-tab-8": {
-          "type": "tab",
-          "settings": {
-            "tab": "Sipariş ve ödeme"
-          }
-        },
-        "ss-faq_item-9": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Bireysel olarak satın alabilir miyim?",
-            "answer": "<p>Sitemiz, ticari faaliyeti kapsamında alım yapan firmalara yönelik satış yapmaktadır.</p>"
-          }
-        },
-        "ss-faq_item-10": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Ödeme nasıl yapılır?",
-            "answer": "<p>Ödeme yöntemi ve vadesi teklifte belirtilir. Sipariş, teklifin yazılı olarak onaylanmasıyla kesinleşir.</p>"
-          }
-        },
-        "ss-tab-11": {
-          "type": "tab",
-          "settings": {
-            "tab": "Teslimat ve garanti"
-          }
-        },
-        "ss-faq_item-12": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Teslimat süresi ne kadar?",
-            "answer": "<p>Teslimat süresi ürünün stok durumuna ve teslimat yerine göre değişir; her teklifte ayrıca belirtilir.</p>"
-          }
-        },
-        "ss-faq_item-13": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Ürünler garantili mi?",
-            "answer": "<p>Garanti kapsamı ve süresi ürüne göre değişir ve teklifte belirtilir.</p>"
-          }
-        },
-        "ss-faq_item-14": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Ürün hasarlı ulaşırsa ne yapmalıyım?",
-            "answer": "<p>Teslimatta ambalajı kontrol edin; hasar varsa taşıyıcıya hasar tespit tutanağı düzenletin ve aynı gün bize bildirin. Ayrıntılar için <a href=\"/policies/refund-policy\">İade ve Garanti Koşulları</a> sayfasına bakın.</p>"
-          }
-        }
+        "ss-tab-3": { "type": "tab", "settings": { "tab": "Teklif ve fiyat" } },
+        "ss-faq_item-4": { "type": "faq_item", "settings": { "question": "Fiyatlar neden sitede görünmüyor?", "answer": "<p>Fiyatlar; sipariş adedi, teslimat yeri ve güncel tedarik koşullarına göre değiştiği için her talebe özel teklif hazırlıyoruz.</p>" } },
+        "ss-faq_item-5": { "type": "faq_item", "settings": { "question": "Nasıl teklif alabilirim?", "answer": "<p>İlgilendiğiniz ürünün sayfasındaki <strong>Teklif İste</strong> butonuna tıklayıp formu doldurun. Katalogda yer almayan ürünler için <a href=\"/pages/contact\">iletişim sayfasındaki</a> formu kullanabilirsiniz.</p>" } },
+        "ss-faq_item-6": { "type": "faq_item", "settings": { "question": "Teklife ne kadar sürede dönüş yapıyorsunuz?", "answer": "<p>Talepleri hafta içi 09:00–18:00 arasında yanıtlıyoruz; genellikle 24 saat içinde dönüş yapıyoruz.</p>" } },
+        "ss-faq_item-7": { "type": "faq_item", "settings": { "question": "Teklif fiyatlarına KDV dahil mi?", "answer": "<p>KDV ve diğer vergilerin fiyata dahil olup olmadığı teklifte açıkça belirtilir.</p>" } },
+        "ss-tab-8": { "type": "tab", "settings": { "tab": "Sipariş ve ödeme" } },
+        "ss-faq_item-9": { "type": "faq_item", "settings": { "question": "Bireysel olarak satın alabilir miyim?", "answer": "<p>Sitemiz, ticari faaliyeti kapsamında alım yapan firmalara yönelik satış yapmaktadır.</p>" } },
+        "ss-faq_item-10": { "type": "faq_item", "settings": { "question": "Ödeme nasıl yapılır?", "answer": "<p>Ödeme yöntemi ve vadesi teklifte belirtilir. Sipariş, teklifin yazılı olarak onaylanmasıyla kesinleşir.</p>" } },
+        "ss-tab-11": { "type": "tab", "settings": { "tab": "Teslimat ve garanti" } },
+        "ss-faq_item-12": { "type": "faq_item", "settings": { "question": "Teslimat süresi ne kadar?", "answer": "<p>Teslimat süresi ürünün stok durumuna ve teslimat yerine göre değişir; her teklifte ayrıca belirtilir.</p>" } },
+        "ss-faq_item-13": { "type": "faq_item", "settings": { "question": "Ürünler garantili mi?", "answer": "<p>Garanti kapsamı ve süresi ürüne göre değişir ve teklifte belirtilir.</p>" } },
+        "ss-faq_item-14": { "type": "faq_item", "settings": { "question": "Ürün hasarlı ulaşırsa ne yapmalıyım?", "answer": "<p>Teslimatta ambalajı kontrol edin; hasar varsa taşıyıcıya hasar tespit tutanağı düzenletin ve aynı gün bize bildirin. Ayrıntılar için <a href=\"/policies/refund-policy\">İade ve Garanti Koşulları</a> sayfasına bakın.</p>" } }
       },
-      "block_order": [
-        "ss-heading-1",
-        "ss-text-2",
-        "ss-tab-3",
-        "ss-faq_item-4",
-        "ss-faq_item-5",
-        "ss-faq_item-6",
-        "ss-faq_item-7",
-        "ss-tab-8",
-        "ss-faq_item-9",
-        "ss-faq_item-10",
-        "ss-tab-11",
-        "ss-faq_item-12",
-        "ss-faq_item-13",
-        "ss-faq_item-14"
-      ],
+      "block_order": ["ss-tab-3", "ss-faq_item-4", "ss-faq_item-5", "ss-faq_item-6", "ss-faq_item-7", "ss-tab-8", "ss-faq_item-9", "ss-faq_item-10", "ss-tab-11", "ss-faq_item-12", "ss-faq_item-13", "ss-faq_item-14"],
       "settings": {
-        "content_max_width": 72,
+        "content_max_width": 80,
         "content_align": "center",
         "content_align_mobile": "center",
-        "toggles_gap": 16,
-        "toggles_gap_mobile": 12,
-        "toggles_mt": 32,
-        "toggles_mt_mobile": 24,
-        "toggle_padding_horizontal": 26,
-        "toggle_padding_horizontal_mobile": 20,
+        "toggles_gap": 8,
+        "toggles_gap_mobile": 8,
+        "toggles_mt": 0,
+        "toggles_mt_mobile": 0,
+        "toggle_padding_horizontal": 22,
+        "toggle_padding_horizontal_mobile": 16,
         "toggle_padding_vertical": 12,
         "toggle_padding_vertical_mobile": 10,
-        "toggle_radius": 4,
+        "toggle_radius": 2,
         "toggle_custom": false,
         "toggle_font": "inter_n4",
-        "toggle_size": 14,
-        "toggle_size_mobile": 13,
+        "toggle_size": 15,
+        "toggle_size_mobile": 14,
         "toggle_height": 130,
-        "tabs_mt": 24,
+        "tabs_mt": 32,
         "tabs_mt_mobile": 24,
-        "item_mt": 12,
-        "item_mt_mobile": 12,
+        "item_mt": 0,
+        "item_mt_mobile": 0,
         "item_padding_horizontal": 0,
         "item_padding_horizontal_mobile": 0,
-        "item_padding_vertical": 20,
-        "item_padding_vertical_mobile": 14,
+        "item_padding_vertical": 24,
+        "item_padding_vertical_mobile": 18,
         "item_border_thickness": 1,
         "question_custom": false,
         "question_font": "inter_n4",
-        "question_size": 16,
-        "question_size_mobile": 14,
-        "question_height": 150,
+        "question_size": 18,
+        "question_size_mobile": 16,
+        "question_height": 140,
         "icon_size": 22,
         "icon_size_mobile": 20,
         "answer_custom": false,
         "answer_font": "inter_n4",
-        "answer_size": 14,
-        "answer_size_mobile": 14,
-        "answer_height": 150,
-        "answer_padding_top": 30,
-        "toggles_bg_color": "#F4F4F4",
-        "toggle_bg_color": "#0072A8",
+        "answer_size": 16,
+        "answer_size_mobile": 15,
+        "answer_height": 160,
+        "answer_padding_top": 14,
+        "toggles_bg_color": "#F2F6F9",
+        "toggle_bg_color": "#0B2239",
         "toggle_bg_gradient": "",
-        "toggle_color": "#161616",
+        "toggle_color": "#14202B",
         "toggle_active_color": "#ffffff",
-        "item_border_color": "#E0E0E0",
-        "question_color": "#161616",
-        "answer_color": "#161616",
-        "icon_color": "#0072A8",
+        "item_border_color": "#D5E3EC",
+        "question_color": "#0B2239",
+        "answer_color": "#566876",
+        "icon_color": "#006FA1",
         "background_color": "#FFFFFF",
         "background_gradient": "",
-        "border_color": "#E0E0E0",
+        "border_color": "#D5E3EC",
         "margin_top": 0,
         "margin_bottom": 0,
         "margin_horizontal": 0,
         "margin_horizontal_mobile": 0,
-        "padding_top": 48,
-        "padding_bottom": 64,
+        "padding_top": 72,
+        "padding_bottom": 96,
         "padding_horizontal": 5,
         "padding_horizontal_mobile": 1.5,
         "full_width": false,
@@ -196,42 +94,18 @@
       }
     },
     "cta": {
-      "type": "rich-text",
-      "blocks": {
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Aradığınız yanıtı bulamadınız mı?</p>"
-          }
-        },
-        "button": {
-          "type": "button",
-          "settings": {
-            "button_label": "Bize ulaşın",
-            "button_link": "shopify://pages/contact",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "text",
-        "button"
-      ],
+      "type": "dg-cta",
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-2",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
+        "kas": "Doğrudan ulaşın",
+        "baslik": "Yanıtını bulamadınız mı?",
+        "metin": "Sorunuzu yazın; hafta içi 09:00–18:00 arasında dönüş yapıyoruz.",
+        "whatsapp": "905418890092",
+        "whatsapp_etiket": "0541 889 00 92",
+        "wa_mesaj": "Merhaba, bir sorum var.",
+        "telefon": "+90 212 494 33 33",
+        "eposta": "info@degirmen.com.tr"
       }
     }
   },
-  "order": [
-    "faq",
-    "cta"
-  ]
+  "order": ["ust", "faq", "cta"]
 }

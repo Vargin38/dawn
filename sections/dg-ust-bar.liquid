@@ -1,0 +1,33 @@
+{{ 'dg-tema.css' | asset_url | stylesheet_tag }}
+{{ 'dg-bolumler.css' | asset_url | stylesheet_tag }}
+{{ 'dg-sayfalar.css' | asset_url | stylesheet_tag }}
+{%- if request.page_type == 'product' -%}{{ 'dg-urun.css' | asset_url | stylesheet_tag }}{%- endif -%}
+{%- liquid
+  assign tel_link = section.settings.telefon | remove: ' ' | prepend: 'tel:'
+-%}
+<div class="dg-ust">
+  <div class="dg-ust__ic dg-sayfa">
+    <p class="dg-ust__sol">{{ section.settings.metin }}</p>
+    <nav class="dg-ust__sag" aria-label="Hızlı iletişim">
+      <a href="{{ tel_link }}">{% render 'dg-ikon', ad: 'tel' %}<span>{{ section.settings.telefon }}</span></a>
+      <a href="https://wa.me/{{ section.settings.whatsapp }}" target="_blank" rel="noopener">{% render 'dg-ikon', ad: 'wa' %}<span>WhatsApp</span></a>
+      <a href="{{ section.settings.eposta | prepend: 'mailto:' }}" class="dg-ust__gizle">{% render 'dg-ikon', ad: 'eposta' %}<span>{{ section.settings.eposta }}</span></a>
+      <a href="{{ section.settings.yedek_link }}">{% render 'dg-ikon', ad: 'parca' %}<span>Yedek parça</span></a>
+    </nav>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Üst iletişim şeridi",
+  "tag": "section",
+  "class": "section dg-ust-bolum",
+  "settings": [
+    { "type": "text", "id": "metin", "label": "Sol metin", "default": "Kett ve HAWO Türkiye distribütörü · 1984'ten bu yana" },
+    { "type": "text", "id": "telefon", "label": "Telefon", "default": "+90 212 494 33 33" },
+    { "type": "text", "id": "whatsapp", "label": "WhatsApp numarası (905xxxxxxxxx)", "default": "905418890092" },
+    { "type": "text", "id": "eposta", "label": "E-posta", "default": "info@degirmen.com.tr" },
+    { "type": "url", "id": "yedek_link", "label": "Yedek parça bağlantısı" }
+  ],
+  "presets": [{ "name": "Üst iletişim şeridi" }]
+}
+{% endschema %}

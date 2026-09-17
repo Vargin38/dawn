@@ -1,0 +1,81 @@
+/* Değirmen — ürün sayfası */
+html body .product__info-container > * + * { margin-top: 1.4rem; }
+html body .product__info-container .product__title { margin-bottom: .4rem; }
+html body .product__info-container .product__title h1 { font-size: clamp(2.8rem, 2.8vw, 4rem); }
+
+.dg-giris { margin-top: 1.8rem; font-size: 1.6rem; line-height: 1.65; color: var(--dg-soluk); }
+.dg-giris p { margin: 0; }
+.dg-giris p + p { margin-top: 1rem; }
+
+.dg-ozet { margin: 2rem 0 .4rem; border-top: 2px solid var(--dg-lac); }
+
+.dg-urun-cta { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; margin-top: .8rem; }
+.dg-urun-cta .dg-btn { min-height: 5.6rem; font-size: 1.6rem; }
+.dg-urun-cta__ana svg { width: 1.8rem; height: 1.8rem; transition: transform .2s; }
+.dg-urun-cta__ana:hover svg { transform: translateX(3px); }
+.dg-urun-notlar { list-style: none; margin: 1.8rem 0 0; padding: 1.6rem 0 0; display: grid; gap: 1rem; border-top: 1px solid var(--dg-cizgi); }
+.dg-urun-notlar li { display: flex; align-items: flex-start; gap: 1.1rem; font-size: 1.4rem; line-height: 1.5; color: var(--dg-soluk); }
+.dg-urun-notlar svg { width: 1.8rem; height: 1.8rem; flex: none; color: var(--dg-etkin); margin-top: .15rem; }
+.dg-urun-notlar a { color: var(--dg-etkin); font-weight: 600; text-underline-offset: .3rem; }
+.dg-urun-notlar__boyut { font-family: var(--dg-mono); font-size: 1.2rem; color: var(--dg-soluk); margin-left: .4rem; }
+@media (max-width: 380px) { .dg-urun-cta { grid-template-columns: 1fr; } }
+
+/* Teknik bilgi */
+.dg-detay { padding: 8.8rem 0 8rem; background: #fff; border-top: 1px solid var(--dg-cizgi); }
+.dg-detay__izgara { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 6.4rem; align-items: start; }
+.dg-detay__yan { position: sticky; top: 12rem; }
+html body .dg-detay__yan h2 { margin: 1rem 0 1.2rem; font-size: clamp(2.8rem, 3vw, 3.8rem); color: var(--dg-lac); }
+.dg-detay__not { margin: 0 0 3.2rem; color: var(--dg-soluk); font-size: 1.55rem; line-height: 1.6; }
+.dg-detay__katalog { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 1.6rem; padding: 2rem; border: 1px solid var(--dg-cizgi); border-left: 4px solid var(--dg-mavi); background: var(--dg-zemin); color: var(--dg-lac); text-decoration: none; transition: border-color .2s, background .2s; }
+.dg-detay__katalog:hover { background: #E6F2F8; border-color: var(--dg-mavi); }
+.dg-detay__pdf { display: inline-flex; align-items: flex-end; justify-content: center; width: 4.4rem; height: 5.4rem; padding-bottom: .9rem; background: var(--dg-lac); color: #fff; font-family: var(--dg-mono); font-size: 1.1rem; font-weight: 500; letter-spacing: .06em; clip-path: polygon(0 0, 70% 0, 100% 24%, 100% 100%, 0 100%); }
+.dg-detay__katalog-metin .dg-kas { display: block; font-size: 1.1rem; color: var(--dg-soluk); }
+.dg-detay__katalog-metin strong { display: block; margin-top: .4rem; font-size: 1.5rem; font-weight: 600; line-height: 1.35; }
+.dg-detay__katalog svg { width: 2.2rem; height: 2.2rem; color: var(--dg-etkin); transition: transform .2s; }
+.dg-detay__katalog:hover svg { transform: translateY(2px); }
+.dg-detay__soru { margin-top: 2.4rem; }
+html body .dg-detay__icerik { font-size: 1.5rem; }
+.dg-detay__icerik > :first-child { margin-top: 0; }
+html body .dg-detay__icerik h3 { font-size: 2rem; color: var(--dg-lac); margin: 4.8rem 0 1.4rem; }
+html body .dg-detay__icerik table { width: 100%; border-collapse: collapse; table-layout: auto; margin: 0; }
+html body .dg-detay__icerik table.spec { border-top: 2px solid var(--dg-lac); }
+html body .dg-detay__icerik table.spec tr { border-bottom: 1px solid var(--dg-cizgi); }
+html body .dg-detay__icerik table.spec tr:nth-child(even) { background: #F8FBFD; }
+html body .dg-detay__icerik table.spec th { width: 36%; padding: 1.5rem 2rem 1.5rem 1.6rem; border: 0; text-align: left; vertical-align: top; font-family: var(--dg-mono); font-size: 1.2rem; font-weight: 500; letter-spacing: .05em; text-transform: uppercase; color: var(--dg-soluk); }
+html body .dg-detay__icerik table.spec td { padding: 1.5rem 1.6rem 1.5rem 0; border: 0; color: var(--dg-metin); line-height: 1.55; }
+html body .dg-detay__icerik table:not(.spec) th, html body .dg-detay__icerik table:not(.spec) td { padding: 1rem 1.2rem; border: 1px solid var(--dg-cizgi); font-size: 1.35rem; text-align: left; }
+html body .dg-detay__icerik table:not(.spec) th { background: var(--dg-zemin); font-family: var(--dg-mono); font-weight: 500; font-size: 1.2rem; color: var(--dg-soluk); }
+@media (max-width: 989px) { .dg-detay__izgara { grid-template-columns: 1fr; gap: 3.2rem; } .dg-detay__yan { position: static; } }
+@media (max-width: 749px) { .dg-detay { padding: 5.6rem 0; } html body .dg-detay__icerik table.spec th { width: 42%; padding-left: 1rem; } }
+
+/* Güven şeridi */
+.dg-guven { position: relative; background: var(--dg-lac); color: #fff; padding: 7.2rem 0 7.6rem; }
+.dg-guven__cetvel { position: absolute; left: 0; right: 0; top: 0; color: var(--dg-cyan); opacity: .35; }
+.dg-guven__ust { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4rem; align-items: end; padding-bottom: 4rem; border-bottom: 1px solid rgba(255,255,255,.14); }
+.dg-guven .dg-kas { color: var(--dg-cyan); }
+html body .dg-guven h2 { margin: 1.2rem 0; color: #fff; font-size: clamp(2.6rem, 3vw, 3.8rem); max-width: 20em; }
+.dg-guven__metin { margin: 0; color: rgba(255,255,255,.78); font-size: 1.6rem; line-height: 1.6; max-width: 64rem; }
+.dg-guven__butonlar { display: flex; flex-wrap: wrap; gap: 1.2rem; }
+.dg-guven__liste { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); }
+.dg-guven__oge { padding: 3.2rem 2.8rem 0 0; }
+.dg-guven__oge + .dg-guven__oge { padding-left: 2.8rem; border-left: 1px solid rgba(255,255,255,.14); }
+.dg-guven__oge svg { display: block; width: 2.8rem; height: 2.8rem; color: var(--dg-cyan); margin-bottom: 1.6rem; }
+.dg-guven__oge strong { display: block; font-family: var(--dg-display); font-stretch: 108%; font-size: 1.7rem; font-weight: 600; margin-bottom: .6rem; }
+.dg-guven__oge p { margin: 0; font-size: 1.45rem; line-height: 1.6; color: rgba(255,255,255,.72); }
+@media (max-width: 989px) {
+  .dg-guven__ust { grid-template-columns: 1fr; align-items: start; gap: 2.4rem; }
+  .dg-guven__liste { grid-template-columns: 1fr 1fr; }
+  .dg-guven__oge, .dg-guven__oge + .dg-guven__oge { padding: 2.8rem 2rem 0 0; border-left: 0; }
+}
+@media (max-width: 560px) {
+  .dg-guven { padding: 5.6rem 0; }
+  .dg-guven__liste { grid-template-columns: 1fr; }
+  .dg-guven__butonlar .dg-btn { width: 100%; }
+}
+
+/* Mobil çubuk varken yüzen WhatsApp düğmesi gizlenir */
+@media (max-width: 749px) {
+  body:has(.dg-mobil-bar) .dg-wa { display: none; }
+  .dg-mobil-bar { transition: transform .25s ease; }
+  .dg-mobil-bar.is-gizli { transform: translateY(110%); }
+}

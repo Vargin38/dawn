@@ -1,0 +1,13 @@
+{%- liquid
+  assign secili = product.selected_or_first_available_variant
+  assign mesaj = 'Merhaba, ' | append: product.title
+  unless product.has_only_default_variant
+    assign mesaj = mesaj | append: ' – ' | append: secili.title
+  endunless
+  if secili.sku != blank
+    assign mesaj = mesaj | append: ' (Stok kodu: ' | append: secili.sku | append: ')'
+  endif
+  assign mesaj = mesaj | append: ' için teklif almak istiyorum.'
+  assign kodlu = mesaj | url_encode | replace: '+', '%20'
+  echo 'https://wa.me/905418890092?text=' | append: kodlu
+-%}

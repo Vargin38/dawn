@@ -1,0 +1,56 @@
+<section class="dg-hizmet" aria-labelledby="dg-hizmet-{{ section.id }}">
+  <div class="dg-sayfa dg-hizmet__izgara">
+    <div class="dg-hizmet__panel">
+      <p class="dg-kas">{{ section.settings.kas }}</p>
+      <h2 id="dg-hizmet-{{ section.id }}">{{ section.settings.baslik }}</h2>
+      <p class="dg-hizmet__metin">{{ section.settings.metin }}</p>
+      <div class="dg-hizmet__adres">
+        {% render 'dg-ikon', ad: 'konum' %}
+        <div>
+          <span class="dg-kas">{{ section.settings.adres_baslik }}</span>
+          <p>{{ section.settings.adres }}</p>
+        </div>
+      </div>
+      <div class="dg-hizmet__butonlar">
+        <a class="dg-btn dg-btn--beyaz" href="{{ section.settings.buton_link }}">{{ section.settings.buton_etiket }}{% render 'dg-ikon', ad: 'ok' %}</a>
+        <a class="dg-btn dg-btn--cizgi" href="tel:{{ section.settings.telefon | remove: ' ' }}">{% render 'dg-ikon', ad: 'tel' %}{{ section.settings.telefon }}</a>
+      </div>
+    </div>
+    <ul class="dg-hizmet__liste">
+      {%- for block in section.blocks -%}
+        <li class="dg-hizmet__oge" {{ block.shopify_attributes }}>
+          <span class="dg-hizmet__ikon">{% render 'dg-ikon', ad: block.settings.ikon %}</span>
+          <h3>{{ block.settings.baslik }}</h3>
+          <p>{{ block.settings.metin }}</p>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Servis ve hizmetler",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "kas", "label": "Üst etiket", "default": "Satış sonrası" },
+    { "type": "text", "id": "baslik", "label": "Başlık", "default": "Cihaz kurulduktan sonra da buradayız" },
+    { "type": "textarea", "id": "metin", "label": "Açıklama" },
+    { "type": "text", "id": "adres_baslik", "label": "Adres başlığı", "default": "Servis şubesi" },
+    { "type": "text", "id": "adres", "label": "Adres" },
+    { "type": "text", "id": "telefon", "label": "Telefon" },
+    { "type": "text", "id": "buton_etiket", "label": "Buton", "default": "Yedek parça talebi" },
+    { "type": "url", "id": "buton_link", "label": "Buton bağlantısı" }
+  ],
+  "blocks": [
+    { "type": "hizmet", "name": "Hizmet", "settings": [
+      { "type": "select", "id": "ikon", "label": "İkon", "default": "kurulum", "options": [
+        { "value": "kurulum", "label": "Anahtar" }, { "value": "bakim", "label": "Döngü" }, { "value": "parca", "label": "Dişli" }, { "value": "belge", "label": "Belge" }, { "value": "kalkan", "label": "Kalkan" }
+      ]},
+      { "type": "text", "id": "baslik", "label": "Başlık" },
+      { "type": "textarea", "id": "metin", "label": "Açıklama" }
+    ]}
+  ],
+  "presets": [{ "name": "Servis ve hizmetler" }]
+}
+{% endschema %}

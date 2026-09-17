@@ -1,0 +1,36 @@
+/* Değirmen — sayfalar ve ortak ekler */
+
+/* Sayfa içeriği */
+.dg-icerik { padding: 7.2rem 0 9.6rem; background: #fff; }
+.dg-icerik__izgara { display: grid; grid-template-columns: minmax(0, 1fr) 28rem; gap: 8rem; align-items: start; }
+.dg-icerik__nav { position: sticky; top: 12rem; }
+.dg-icerik__nav .dg-kas { color: var(--dg-soluk); font-size: 1.15rem; padding-bottom: 1.2rem; border-bottom: 2px solid var(--dg-lac); }
+.dg-icerik__nav ul { list-style: none; margin: 0; padding: 0; }
+.dg-icerik__nav li { border-bottom: 1px solid var(--dg-cizgi); }
+.dg-icerik__nav a { display: block; padding: 1.2rem 0; color: var(--dg-metin); font-size: 1.5rem; text-decoration: none; transition: color .2s, padding .2s; }
+.dg-icerik__nav a:hover { color: var(--dg-etkin); padding-left: .6rem; }
+.dg-icerik__nav a[aria-current] { color: var(--dg-etkin); font-weight: 600; box-shadow: inset 3px 0 0 var(--dg-mavi); padding-left: 1.4rem; }
+html body .dg-icerik__metin { max-width: 78rem; font-size: 1.7rem; line-height: 1.75; color: var(--dg-metin); }
+html body .dg-icerik__metin > :first-child { margin-top: 0; }
+html body .dg-icerik__metin > p:first-child { font-size: 2rem; line-height: 1.6; color: var(--dg-lac); }
+html body .dg-icerik__metin h2 { margin: 5.6rem 0 1.6rem; padding-top: 2.4rem; border-top: 1px solid var(--dg-cizgi); font-size: clamp(2.4rem, 2.4vw, 3rem); color: var(--dg-lac); }
+html body .dg-icerik__metin h3 { margin: 3.2rem 0 1rem; font-size: 2rem; color: var(--dg-lac); }
+html body .dg-icerik__metin ul, html body .dg-icerik__metin ol { padding-left: 2.2rem; }
+html body .dg-icerik__metin li { margin-bottom: 1rem; }
+html body .dg-icerik__metin li::marker { color: var(--dg-etkin); }
+html body .dg-icerik__metin a:not([style]) { color: var(--dg-etkin); text-underline-offset: .3rem; }
+@media (max-width: 989px) { .dg-icerik__izgara { grid-template-columns: 1fr; gap: 4.8rem; } .dg-icerik__nav { position: static; } }
+@media (max-width: 749px) { .dg-icerik { padding: 4.8rem 0 6.4rem; } html body .dg-icerik__metin { font-size: 1.6rem; } html body .dg-icerik__metin > p:first-child { font-size: 1.8rem; } }
+
+/* Ürün kartları: görseller tek tip zeminde */
+html body .card-wrapper .card__inner { background: #F3F6F8; }
+html body .card-wrapper .card__media { background: #F3F6F8; }
+html body .card-wrapper .card__media img { mix-blend-mode: multiply; }
+html body .card-wrapper .card__content { background: #fff; }
+
+/* Özet bağlantısı */
+.dg-ozet__tumu { margin-top: 1.2rem; font-size: 1.4rem; }
+
+/* Arama ve boş sayfalar */
+html body .template-search__header .h2, html body .main-search .title { color: var(--dg-lac); }
+html body .search__input.field__input { border-radius: 2px; }

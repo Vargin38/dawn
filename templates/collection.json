@@ -9,21 +9,14 @@
  */
 {
   "sections": {
-    "banner": {
-      "type": "main-collection-banner",
-      "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "scheme-1"
-      }
-    },
+    "banner": { "type": "dg-koleksiyon-ust", "settings": {} },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": false,
         "show_vendor": true,
@@ -33,13 +26,33 @@
         "filter_type": "horizontal",
         "enable_sorting": false,
         "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 56,
+        "padding_bottom": 96
+      }
+    },
+    "surec": {
+      "type": "dg-surec",
+      "blocks": {
+        "sec": { "type": "adim", "settings": { "baslik": "Ürünü seçin", "metin": "Cihazın sayfasında teknik özellikleri ve kataloğu inceleyin; model seçeneği varsa ihtiyacınıza uygun olanı işaretleyin." } },
+        "form": { "type": "adim", "settings": { "baslik": "Talebinizi iletin", "metin": "Firma bilgilerinizi, adedi ve teslimat şehrini ürün sayfasındaki forma yazın ya da WhatsApp'tan gönderin." } },
+        "teklif": { "type": "adim", "settings": { "baslik": "Teklifinizi alın", "metin": "Fiyat, teslim süresi ve ödeme koşullarını içeren teklifimizi genellikle 24 saat içinde iletiyoruz." } }
+      },
+      "block_order": ["sec", "form", "teklif"],
+      "settings": { "kas": "Nasıl çalışıyoruz", "baslik": "Teklif üç adımda gelir", "metin": "Sitede fiyat yazmıyoruz, çünkü fiyat model, adet ve teslimat yerine göre değişiyor." }
+    },
+    "cta": {
+      "type": "dg-cta",
+      "settings": {
+        "kas": "Doğrudan ulaşın",
+        "baslik": "Aradığınız cihaz listede yok mu?",
+        "metin": "Katalogda yer almayan makine ve cihazlar için de yazın; uygulamanıza uygun ekipmanı birlikte bulalım.",
+        "whatsapp": "905418890092",
+        "whatsapp_etiket": "0541 889 00 92",
+        "wa_mesaj": "Merhaba, bir cihaz için bilgi almak istiyorum.",
+        "telefon": "+90 212 494 33 33",
+        "eposta": "info@degirmen.com.tr"
       }
     }
   },
-  "order": [
-    "banner",
-    "product-grid"
-  ]
+  "order": ["banner", "product-grid", "surec", "cta"]
 }

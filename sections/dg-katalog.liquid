@@ -1,0 +1,54 @@
+<section class="dg-katalog" aria-labelledby="dg-katalog-{{ section.id }}">
+  <div class="dg-sayfa">
+    <div class="dg-katalog__ust">
+      <div class="dg-baslik-blok">
+        <p class="dg-kas dg-kas--mavi">{{ section.settings.kas }}</p>
+        <h2 id="dg-katalog-{{ section.id }}">{{ section.settings.baslik }}</h2>
+        <p>{{ section.settings.metin }}</p>
+      </div>
+    </div>
+    <div class="dg-katalog__tablo" role="table" aria-label="{{ section.settings.baslik | escape }}">
+      <div class="dg-katalog__satir dg-katalog__satir--baslik" role="row">
+        <span role="columnheader">Marka</span>
+        <span role="columnheader">Ürün</span>
+        <span role="columnheader">Doküman</span>
+        <span role="columnheader"><span class="visually-hidden">İndir</span></span>
+      </div>
+      {%- assign sayac = 0 -%}
+      {%- assign urunler = collections.all.products | sort: 'vendor' -%}
+      {%- for p in urunler -%}
+        {%- if sayac < section.settings.adet and p.description contains 'class="urun-katalog"' -%}
+          {%- liquid
+            assign kutu = p.description | split: 'class="urun-katalog"' | last
+            assign yol = kutu | split: 'href="https://cdn.shopify.com' | last | split: '"' | first
+            assign pdf = 'https://cdn.shopify.com' | append: yol
+            assign paragraflar = kutu | split: '<p>'
+            assign dokuman = paragraflar[1] | split: ' (PDF' | first | strip_html | strip
+            assign boyut = paragraflar[1] | split: '(PDF, ' | last | split: ')' | first | strip_html | strip
+            assign sayac = sayac | plus: 1
+          -%}
+          <div class="dg-katalog__satir" role="row">
+            <span role="cell" class="dg-kas dg-kas--mavi">{{ p.vendor }}</span>
+            <span role="cell"><a href="{{ p.url }}">{{ p.title }}</a></span>
+            <span role="cell" class="dg-katalog__dokuman">{{ dokuman }}</span>
+            <span role="cell"><a class="dg-katalog__indir" href="{{ pdf }}" target="_blank" rel="noopener" aria-label="{{ dokuman | escape }} — PDF indir">{% render 'dg-ikon', ad: 'indir' %}<span>PDF · {{ boyut }}</span></a></span>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Katalog merkezi",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "kas", "label": "Üst etiket", "default": "Teknik dokümanlar" },
+    { "type": "text", "id": "baslik", "label": "Başlık", "default": "Katalog ve veri sayfaları" },
+    { "type": "textarea", "id": "metin", "label": "Açıklama" },
+    { "type": "range", "id": "adet", "label": "Gösterilecek doküman", "min": 3, "max": 24, "step": 1, "default": 12 }
+  ],
+  "presets": [{ "name": "Katalog merkezi" }]
+}
+{% endschema %}

@@ -1,0 +1,48 @@
+{%- liquid
+  assign ayrac = '<h3>Teknik özellikler</h3>'
+  if product.description contains ayrac
+    assign teknik = product.description | split: ayrac | last
+  else
+    assign teknik = product.description
+  endif
+  assign pdf = ''
+  if teknik contains 'class="urun-katalog"'
+    assign kutu = teknik | split: 'class="urun-katalog"' | last
+    assign teknik = teknik | split: '<div class="urun-katalog"' | first
+    assign yol = kutu | split: 'href="https://cdn.shopify.com' | last | split: '"' | first
+    assign pdf = 'https://cdn.shopify.com' | append: yol
+    assign paragraflar = kutu | split: '<p>'
+    assign dokuman = paragraflar[1] | split: ' (PDF' | first | strip_html | strip
+    assign boyut = paragraflar[1] | split: '(PDF, ' | last | split: ')' | first | strip_html | strip
+  endif
+  assign wa_mesaj = 'Merhaba, ' | append: product.title | append: ' hakkında teknik bir sorum var.'
+  assign wa_mesaj = wa_mesaj | url_encode | replace: '+', '%20'
+-%}
+<section class="dg-detay" id="teknik-ozellikler" aria-labelledby="dg-detay-{{ section.id }}">
+  <div class="dg-sayfa dg-detay__izgara">
+    <div class="dg-detay__yan">
+      <p class="dg-kas dg-kas--mavi">Teknik veri</p>
+      <h2 id="dg-detay-{{ section.id }}">Teknik özellikler</h2>
+      <p class="dg-detay__not">Ayrıntılı ölçüler ve model farkları üretici kataloğunda yer alır.</p>
+      {%- if pdf != '' -%}
+        <a class="dg-detay__katalog" href="{{ pdf }}" target="_blank" rel="noopener">
+          <span class="dg-detay__pdf" aria-hidden="true">PDF</span>
+          <span class="dg-detay__katalog-metin"><span class="dg-kas">Ürün kataloğu · {{ boyut }}</span><strong>{{ dokuman }}</strong></span>
+          {% render 'dg-ikon', ad: 'indir' %}
+        </a>
+      {%- endif -%}
+      <a class="dg-ok dg-detay__soru" href="https://wa.me/905418890092?text={{ wa_mesaj }}" target="_blank" rel="noopener">Teknik bir sorunuz mu var? Yazın{% render 'dg-ikon', ad: 'ok' %}</a>
+    </div>
+    <div class="dg-detay__icerik rte">
+      {{ teknik }}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Ürün teknik bilgi",
+  "tag": "section",
+  "class": "section",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,5 @@
+{%- assign ayrac = '<h3>Teknik özellikler</h3>' -%}
+{%- if product.description contains ayrac -%}
+  {%- assign giris = product.description | split: ayrac | first | strip -%}
+  {%- if giris != blank -%}<div class="dg-giris rte">{{ giris }}</div>{%- endif -%}
+{%- endif -%}

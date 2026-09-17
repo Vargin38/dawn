@@ -11,28 +11,14 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar",
-      "blocks": {
-        "announcement-bar-0": {
-          "type": "announcement",
-          "settings": {
-            "text": "Tüm ürünlerde firmanıza özel fiyat teklifi",
-            "link": "shopify://pages/contact"
-          }
-        }
-      },
-      "block_order": [
-        "announcement-bar-0"
-      ],
+    "dg_ust": {
+      "type": "dg-ust-bar",
       "settings": {
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "color_scheme": "scheme-3",
-        "show_line_separator": false,
-        "show_social": false,
-        "enable_country_selector": false,
-        "enable_language_selector": false
+        "metin": "Kett ve HAWO Türkiye distribütörü · 1984'ten bu yana",
+        "telefon": "+90 212 494 33 33",
+        "whatsapp": "905418890092",
+        "eposta": "info@degirmen.com.tr",
+        "yedek_link": "shopify://pages/servis-ve-yedek-parca"
       }
     },
     "header": {
@@ -41,7 +27,7 @@
         "logo_position": "middle-left",
         "mobile_logo_position": "center",
         "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
+        "menu_type_desktop": "mega",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
         "color_scheme": "scheme-1",
@@ -49,13 +35,10 @@
         "enable_country_selector": false,
         "enable_language_selector": false,
         "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "padding_top": 16,
+        "padding_bottom": 16
       }
     }
   },
-  "order": [
-    "announcement-bar",
-    "header"
-  ]
+  "order": ["dg_ust", "header"]
 }

@@ -1,0 +1,49 @@
+<section class="dg-sektorler" aria-labelledby="dg-sektor-{{ section.id }}">
+  <div class="dg-sayfa">
+    <div class="dg-baslik-blok">
+      <p class="dg-kas dg-kas--mavi">{{ section.settings.kas }}</p>
+      <h2 id="dg-sektor-{{ section.id }}">{{ section.settings.baslik }}</h2>
+      <p>{{ section.settings.metin }}</p>
+    </div>
+    <ul class="dg-sektorler__liste">
+      {%- for block in section.blocks -%}
+        {%- assign c = block.settings.koleksiyon -%}
+        <li class="dg-sektor" {{ block.shopify_attributes }}>
+          <a href="{% if c != blank %}{{ c.url }}{% else %}{{ routes.all_products_collection_url }}{% endif %}">
+            <span class="dg-sektor__ust">
+              <span class="dg-sektor__ikon">{% render 'dg-ikon', ad: block.settings.ikon %}</span>
+              {%- if c != blank -%}<span class="dg-kas">{{ c.products_count }} ürün</span>{%- endif -%}
+            </span>
+            <h3>{{ block.settings.baslik }}</h3>
+            <p>{{ block.settings.metin }}</p>
+            <span class="dg-ok">Ekipmanları görün{% render 'dg-ikon', ad: 'ok' %}</span>
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Sektörlere göre ekipman",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "kas", "label": "Üst etiket", "default": "Uygulama alanları" },
+    { "type": "text", "id": "baslik", "label": "Başlık", "default": "Sektörünüze göre ekipman" },
+    { "type": "textarea", "id": "metin", "label": "Açıklama" }
+  ],
+  "blocks": [
+    { "type": "sektor", "name": "Sektör", "settings": [
+      { "type": "select", "id": "ikon", "label": "İkon", "default": "tane", "options": [
+        { "value": "tane", "label": "Tahıl" }, { "value": "pirinc", "label": "Pirinç" }, { "value": "poset", "label": "Poşet" },
+        { "value": "lab", "label": "Laboratuvar" }, { "value": "bez", "label": "Bez rulosu" }, { "value": "filtre", "label": "Filtre" }
+      ]},
+      { "type": "text", "id": "baslik", "label": "Başlık" },
+      { "type": "textarea", "id": "metin", "label": "Açıklama" },
+      { "type": "collection", "id": "koleksiyon", "label": "Koleksiyon" }
+    ]}
+  ],
+  "presets": [{ "name": "Sektörlere göre ekipman" }]
+}
+{% endschema %}

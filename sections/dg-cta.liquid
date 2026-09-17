@@ -1,0 +1,42 @@
+{%- liquid
+  assign wa_mesaj = section.settings.wa_mesaj | url_encode | replace: '+', '%20'
+-%}
+<section class="dg-cta" aria-labelledby="dg-cta-{{ section.id }}">
+  <span class="dg-cetvel dg-cta__cetvel" aria-hidden="true"></span>
+  <div class="dg-sayfa dg-cta__ic">
+    <div>
+      <p class="dg-kas">{{ section.settings.kas }}</p>
+      <h2 id="dg-cta-{{ section.id }}">{{ section.settings.baslik }}</h2>
+      <p class="dg-cta__metin">{{ section.settings.metin }}</p>
+    </div>
+    <div class="dg-cta__kanallar">
+      <a class="dg-cta__kanal dg-cta__kanal--wa" href="https://wa.me/{{ section.settings.whatsapp }}?text={{ wa_mesaj }}" target="_blank" rel="noopener">
+        {% render 'dg-ikon', ad: 'wa' %}<span><span class="dg-kas">WhatsApp</span><strong>{{ section.settings.whatsapp_etiket }}</strong></span>
+      </a>
+      <a class="dg-cta__kanal" href="tel:{{ section.settings.telefon | remove: ' ' }}">
+        {% render 'dg-ikon', ad: 'tel' %}<span><span class="dg-kas">Telefon</span><strong>{{ section.settings.telefon }}</strong></span>
+      </a>
+      <a class="dg-cta__kanal" href="mailto:{{ section.settings.eposta }}">
+        {% render 'dg-ikon', ad: 'eposta' %}<span><span class="dg-kas">E-posta</span><strong>{{ section.settings.eposta }}</strong></span>
+      </a>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "İletişim bandı",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "kas", "label": "Üst etiket", "default": "Doğrudan ulaşın" },
+    { "type": "text", "id": "baslik", "label": "Başlık", "default": "Aradığınız cihaz listede yok mu?" },
+    { "type": "textarea", "id": "metin", "label": "Açıklama" },
+    { "type": "text", "id": "whatsapp", "label": "WhatsApp numarası", "default": "905418890092" },
+    { "type": "text", "id": "whatsapp_etiket", "label": "WhatsApp görünen numara", "default": "0541 889 00 92" },
+    { "type": "text", "id": "wa_mesaj", "label": "Hazır WhatsApp mesajı", "default": "Merhaba, bir cihaz için bilgi almak istiyorum." },
+    { "type": "text", "id": "telefon", "label": "Telefon", "default": "+90 212 494 33 33" },
+    { "type": "text", "id": "eposta", "label": "E-posta", "default": "info@degirmen.com.tr" }
+  ],
+  "presets": [{ "name": "İletişim bandı" }]
+}
+{% endschema %}

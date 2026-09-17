@@ -1,0 +1,63 @@
+{%- liquid
+  assign ust = nil
+  assign cipler = nil
+  for l1 in linklists['main-menu'].links
+    for l2 in l1.links
+      if l2.url == collection.url
+        assign ust = l2
+        assign cipler = l2.links
+      endif
+      for l3 in l2.links
+        if l3.url == collection.url
+          assign ust = l2
+          assign cipler = l2.links
+        endif
+      endfor
+    endfor
+  endfor
+  assign wa_mesaj = 'Merhaba, ' | append: collection.title | append: ' için hangi modelin uygun olduğunu sormak istiyorum.'
+  assign wa_mesaj = wa_mesaj | url_encode | replace: '+', '%20'
+-%}
+<section class="dg-kol-ust">
+  <div class="dg-sayfa">
+    <nav class="dg-yol" aria-label="Sayfa yolu">
+      <a href="{{ routes.root_url }}">Ana sayfa</a><span aria-hidden="true">/</span>
+      {%- if ust and ust.url != collection.url -%}
+        <a href="{{ ust.url }}">{{ ust.title }}</a><span aria-hidden="true">/</span>
+      {%- endif -%}
+      <span aria-current="page">{{ collection.title }}</span>
+    </nav>
+    <div class="dg-kol-ust__izgara">
+      <div>
+        <p class="dg-kas">{{ collection.products_count }} ürün</p>
+        <h1 class="dg-kol-ust__baslik">{{ collection.title }}</h1>
+        {%- if collection.description != blank -%}
+          <div class="dg-kol-ust__metin">{{ collection.description }}</div>
+        {%- endif -%}
+      </div>
+      <a class="dg-kol-ust__yardim" href="https://wa.me/905418890092?text={{ wa_mesaj }}" target="_blank" rel="noopener">
+        {% render 'dg-ikon', ad: 'wa' %}
+        <span><span class="dg-kas">Seçimde yardım</span><strong>Hangi model uygun? WhatsApp'tan sorun</strong></span>
+      </a>
+    </div>
+    {%- if cipler and cipler.size > 0 -%}
+      <ul class="dg-kol-ust__cipler">
+        <li><a href="{{ ust.url }}"{% if ust.url == collection.url %} aria-current="page"{% endif %}>Tümü<span>{{ ust.object.products_count }}</span></a></li>
+        {%- for l in cipler -%}
+          {%- if l.type == 'collection_link' and l.object.products_count > 0 -%}
+            <li><a href="{{ l.url }}"{% if l.url == collection.url %} aria-current="page"{% endif %}>{{ l.title }}<span>{{ l.object.products_count }}</span></a></li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+  <span class="dg-cetvel dg-kol-ust__cetvel" aria-hidden="true"></span>
+</section>
+{% schema %}
+{
+  "name": "Koleksiyon başlığı",
+  "tag": "section",
+  "class": "section",
+  "settings": []
+}
+{% endschema %}

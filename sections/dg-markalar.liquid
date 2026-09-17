@@ -1,0 +1,32 @@
+<section class="dg-markalar" aria-label="{{ section.settings.baslik | escape }}">
+  <div class="dg-markalar__ic dg-sayfa">
+    <p class="dg-kas dg-markalar__baslik">{{ section.settings.baslik }}</p>
+    <ul class="dg-markalar__liste">
+      {%- for block in section.blocks -%}
+        <li {{ block.shopify_attributes }}>
+          <a href="{{ block.settings.link }}">
+            <img src="{{ block.settings.logo }}" alt="{{ block.settings.ad | escape }}" loading="lazy" height="44">
+            <span class="dg-kas">{{ block.settings.etiket }}</span>
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Marka şeridi",
+  "tag": "section",
+  "class": "section",
+  "settings": [ { "type": "text", "id": "baslik", "label": "Başlık", "default": "Temsil ettiğimiz markalar" } ],
+  "blocks": [
+    { "type": "marka", "name": "Marka", "settings": [
+      { "type": "text", "id": "ad", "label": "Marka adı" },
+      { "type": "text", "id": "logo", "label": "Logo adresi (URL)" },
+      { "type": "text", "id": "etiket", "label": "Etiket" },
+      { "type": "url", "id": "link", "label": "Bağlantı" }
+    ]}
+  ],
+  "presets": [{ "name": "Marka şeridi" }]
+}
+{% endschema %}

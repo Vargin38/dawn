@@ -1,0 +1,25 @@
+{%- comment -%} Uzun teknik tablolarda ilk satırları ürün özetinde gösterir; kısa tablolar yalnızca teknik bilgi bölümünde yer alır. {%- endcomment -%}
+{%- if product.description contains 'class="spec"' -%}
+  {%- liquid
+    assign tablo = product.description | split: 'class="spec"' | last | split: '</table>' | first
+    assign satirlar = tablo | split: '<tr>'
+    assign satir_sayisi = satirlar.size | minus: 1
+    assign sinir = limit | default: 4
+    assign n = 0
+  -%}
+  {%- if satir_sayisi > 6 -%}
+    <dl class="dg-ozet">
+      {%- for s in satirlar -%}
+        {%- if n < sinir and s contains '</th>' -%}
+          {%- liquid
+            assign th = s | split: '</th>' | first | strip_html | strip
+            assign td = s | split: '</th>' | last | split: '</td>' | first | strip_html | strip
+            assign n = n | plus: 1
+          -%}
+          <div><dt>{{ th }}</dt><dd>{{ td }}</dd></div>
+        {%- endif -%}
+      {%- endfor -%}
+    </dl>
+    <a class="dg-ok dg-ozet__tumu" href="#teknik-ozellikler">Tüm teknik özellikler ({{ satir_sayisi }}){% render 'dg-ikon', ad: 'ok' %}</a>
+  {%- endif -%}
+{%- endif -%}

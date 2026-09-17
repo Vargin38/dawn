@@ -1,0 +1,127 @@
+{%- liquid
+  assign marka = product.vendor | downcase
+  assign distributor = false
+  if marka == 'kett' or marka == 'hawo'
+    assign distributor = true
+  endif
+  assign secili = product.selected_or_first_available_variant
+-%}
+<section class="dg-guven" aria-labelledby="dg-guven-{{ section.id }}">
+  <span class="dg-cetvel dg-guven__cetvel" aria-hidden="true"></span>
+  <div class="dg-sayfa">
+    <div class="dg-guven__ust">
+      <div>
+        <p class="dg-kas">Teklif ve destek</p>
+        <h2 id="dg-guven-{{ section.id }}">Teklif talebinize genellikle 24 saat içinde dönüyoruz</h2>
+        <p class="dg-guven__metin">{{ product.title }} için fiyat, teslim süresi ve ödeme koşullarını firmanıza özel olarak hazırlıyoruz.</p>
+      </div>
+      <div class="dg-guven__butonlar">
+        <a class="dg-btn dg-btn--wa dg-guven__wa" href="{% render 'dg-urun-wa', product: product %}" target="_blank" rel="noopener">{% render 'dg-ikon', ad: 'wa' %}WhatsApp'tan sorun</a>
+        <a class="dg-btn dg-btn--cizgi" href="tel:+905418890092">{% render 'dg-ikon', ad: 'tel' %}0541 889 00 92</a>
+      </div>
+    </div>
+    <ul class="dg-guven__liste">
+      <li class="dg-guven__oge">
+        {% render 'dg-ikon', ad: 'saat' %}
+        <strong>24 saat içinde dönüş</strong>
+        <p>Hafta içi 09:00–18:00 arasında gelen taleplere genellikle 24 saat içinde yanıt veriyoruz.</p>
+      </li>
+      <li class="dg-guven__oge">
+        {% render 'dg-ikon', ad: 'konum' %}
+        <strong>1984'ten bu yana</strong>
+        <p>İstanbul merkezli; ambalaj, kalite kontrol, gıda işleme ve tekstil ekipmanı tedarik ediyoruz.</p>
+      </li>
+      {%- if distributor -%}
+        <li class="dg-guven__oge">
+          {% render 'dg-ikon', ad: 'kalkan' %}
+          <strong>{{ product.vendor }} Türkiye distribütörü</strong>
+          <p>{{ product.vendor }} ürünlerini doğrudan distribütöründen, teknik dokümanıyla birlikte alırsınız.</p>
+        </li>
+        <li class="dg-guven__oge">
+          {% render 'dg-ikon', ad: 'kurulum' %}
+          <strong>Satış sonrası destek</strong>
+          <p>Yedek parça ve servis için makinenin marka, model ve seri numarasını iletmeniz yeterli.</p>
+        </li>
+      {%- else -%}
+        <li class="dg-guven__oge">
+          {% render 'dg-ikon', ad: 'filtre' %}
+          <strong>Doğru kodu birlikte seçelim</strong>
+          <p>Uygulamanızı yazın; ihtiyacınıza uygun kodu birlikte belirleyelim.</p>
+        </li>
+        <li class="dg-guven__oge">
+          {% render 'dg-ikon', ad: 'belge' %}
+          <strong>Katalog değerleriyle teklif</strong>
+          <p>Önerilen kod, katalogdaki teknik değerleriyle birlikte teklifte yer alır.</p>
+        </li>
+      {%- endif -%}
+    </ul>
+  </div>
+</section>
+<div class="dg-mobil-bar" data-dg-mobil-bar>
+  <a class="dg-btn dg-btn--mavi" href="#teklif-formu">Teklif İste</a>
+  <a class="dg-btn dg-btn--wa dg-guven__wa" href="{% render 'dg-urun-wa', product: product %}" target="_blank" rel="noopener">{% render 'dg-ikon', ad: 'wa' %}WhatsApp</a>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var bar = document.querySelector('[data-dg-mobil-bar]');
+    var formBolumu = document.getElementById('teklif-formu');
+    if (bar && formBolumu && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (g) {
+        bar.classList.toggle('is-gizli', g[0].isIntersecting);
+      }, { rootMargin: '0px 0px -20% 0px' }).observe(formBolumu);
+    }
+    {%- unless product.has_only_default_variant %}
+    var urun = {{ product.title | json }};
+    var urunAdresi = {{ shop.url | append: product.url | json }};
+    function guncelle(v) {
+      if (!v) return;
+      var form = document.querySelector('#teklif-formu form');
+      if (form) {
+        var sku = form.querySelector('[name="contact[Stok kodu]"]');
+        if (sku) sku.value = v.sku || '';
+        var model = form.querySelector('[name="contact[Model]"]');
+        if (!model) {
+          model = document.createElement('input');
+          model.type = 'hidden';
+          model.name = 'contact[Model]';
+          form.prepend(model);
+        }
+        model.value = v.title;
+        var adres = form.querySelector('[name="contact[Ürün bağlantısı]"]');
+        if (adres) adres.value = urunAdresi + '?variant=' + v.id;
+        var kutu = form.querySelector('.quote-request__product');
+        if (kutu) {
+          kutu.textContent = '';
+          [['Ürün', urun], ['Model', v.title], ['Stok kodu', v.sku]].forEach(function (satir, i) {
+            if (!satir[1]) return;
+            if (i) kutu.appendChild(document.createElement('br'));
+            var etiket = document.createElement('strong');
+            etiket.textContent = satir[0] + ': ';
+            kutu.appendChild(etiket);
+            kutu.appendChild(document.createTextNode(satir[1]));
+          });
+        }
+      }
+      var mesaj = 'Merhaba, ' + urun + ' – ' + v.title + (v.sku ? ' (Stok kodu: ' + v.sku + ')' : '') + ' için teklif almak istiyorum.';
+      document.querySelectorAll('.dg-guven__wa').forEach(function (a) {
+        a.href = 'https://wa.me/905418890092?text=' + encodeURIComponent(mesaj);
+      });
+    }
+    guncelle({{ secili | json }});
+    if (typeof subscribe === 'function' && typeof PUB_SUB_EVENTS !== 'undefined') {
+      subscribe(PUB_SUB_EVENTS.variantChange, function (e) {
+        guncelle(e && e.data && e.data.variant);
+      });
+    }
+    {%- endunless %}
+  });
+</script>
+{% schema %}
+{
+  "name": "Ürün güven şeridi",
+  "tag": "section",
+  "class": "section",
+  "settings": [],
+  "presets": [{ "name": "Ürün güven şeridi" }]
+}
+{% endschema %}

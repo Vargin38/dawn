@@ -1,0 +1,38 @@
+<section class="dg-surec" aria-labelledby="dg-surec-{{ section.id }}">
+  <div class="dg-sayfa">
+    <div class="dg-baslik-blok">
+      <p class="dg-kas dg-kas--mavi">{{ section.settings.kas }}</p>
+      <h2 id="dg-surec-{{ section.id }}">{{ section.settings.baslik }}</h2>
+      <p>{{ section.settings.metin }}</p>
+    </div>
+    <ol class="dg-surec__liste">
+      {%- for block in section.blocks -%}
+        <li class="dg-surec__adim" {{ block.shopify_attributes }}>
+          <span class="dg-surec__no">{{ forloop.index | prepend: '0' }}</span>
+          <h3>{{ block.settings.baslik }}</h3>
+          <p>{{ block.settings.metin }}</p>
+        </li>
+      {%- endfor -%}
+    </ol>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Teklif süreci",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "kas", "label": "Üst etiket", "default": "Nasıl çalışıyoruz" },
+    { "type": "text", "id": "baslik", "label": "Başlık", "default": "Teklif üç adımda gelir" },
+    { "type": "textarea", "id": "metin", "label": "Açıklama" }
+  ],
+  "blocks": [
+    { "type": "adim", "name": "Adım", "settings": [
+      { "type": "text", "id": "baslik", "label": "Başlık" },
+      { "type": "textarea", "id": "metin", "label": "Açıklama" }
+    ]}
+  ],
+  "max_blocks": 4,
+  "presets": [{ "name": "Teklif süreci" }]
+}
+{% endschema %}

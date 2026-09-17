@@ -1,0 +1,26 @@
+{%- liquid
+  assign marka = product.vendor | downcase
+  assign pdf = ''
+  if product.description contains 'class="urun-katalog"'
+    assign kutu = product.description | split: 'class="urun-katalog"' | last
+    assign yol = kutu | split: 'href="https://cdn.shopify.com' | last | split: '"' | first
+    assign pdf = 'https://cdn.shopify.com' | append: yol
+    assign paragraflar = kutu | split: '<p>'
+    assign boyut = paragraflar[1] | split: '(PDF, ' | last | split: ')' | first | strip_html | strip
+  endif
+-%}
+<div class="dg-urun-cta">
+  <a href="#teklif-formu" class="dg-btn dg-btn--mavi dg-urun-cta__ana">Teklif İste{% render 'dg-ikon', ad: 'ok' %}</a>
+  <a href="{% render 'dg-urun-wa', product: product %}" class="dg-btn dg-btn--wa dg-guven__wa" target="_blank" rel="noopener">{% render 'dg-ikon', ad: 'wa' %}WhatsApp</a>
+</div>
+<ul class="dg-urun-notlar">
+  <li>{% render 'dg-ikon', ad: 'saat' %}<span>Fiyat ve teslim süresi firmanıza özel teklifle, genellikle 24 saat içinde iletilir.</span></li>
+  {%- if pdf != '' -%}
+    <li>{% render 'dg-ikon', ad: 'indir' %}<span><a href="{{ pdf }}" target="_blank" rel="noopener">Ürün kataloğunu indirin</a> <span class="dg-urun-notlar__boyut">PDF · {{ boyut }}</span></span></li>
+  {%- endif -%}
+  {%- if marka == 'kett' or marka == 'hawo' -%}
+    <li>{% render 'dg-ikon', ad: 'kalkan' %}<span>{{ product.vendor }} Türkiye distribütöründen; kurulum, servis ve yedek parça desteğiyle.</span></li>
+  {%- else -%}
+    <li>{% render 'dg-ikon', ad: 'belge' %}<span>Uygulamanızı yazın, doğru kodu katalog değerleriyle birlikte seçelim.</span></li>
+  {%- endif -%}
+</ul>

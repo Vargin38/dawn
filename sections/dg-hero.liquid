@@ -1,0 +1,67 @@
+{%- liquid
+  assign wa_mesaj = section.settings.wa_mesaj | url_encode | replace: '+', '%20'
+-%}
+<section class="dg-hero" aria-labelledby="dg-hero-{{ section.id }}">
+  <div class="dg-hero__medya">
+    {%- if section.settings.resim != blank -%}
+      {{ section.settings.resim | image_url: width: 2400 | image_tag: widths: '750, 1100, 1500, 1900, 2400', sizes: '100vw', loading: 'eager', fetchpriority: 'high', class: 'dg-hero__img', alt: '' }}
+    {%- endif -%}
+  </div>
+  <div class="dg-hero__ic dg-sayfa">
+    <p class="dg-kas dg-hero__kas">{{ section.settings.kas }}</p>
+    <h2 id="dg-hero-{{ section.id }}" class="dg-hero__baslik">{{ section.settings.baslik }}</h2>
+    <p class="dg-hero__metin">{{ section.settings.metin }}</p>
+    <div class="dg-hero__butonlar">
+      <a class="dg-btn dg-btn--beyaz" href="{{ section.settings.buton_link }}">{{ section.settings.buton_etiket }}{% render 'dg-ikon', ad: 'ok' %}</a>
+      <a class="dg-btn dg-btn--cizgi" href="https://wa.me/{{ section.settings.whatsapp }}?text={{ wa_mesaj }}" target="_blank" rel="noopener">{% render 'dg-ikon', ad: 'wa' %}{{ section.settings.wa_etiket }}</a>
+    </div>
+  </div>
+  <div class="dg-hero__alt dg-sayfa">
+    <span class="dg-cetvel dg-hero__cetvel" aria-hidden="true"></span>
+    <ul class="dg-hero__gruplar">
+      {%- for block in section.blocks -%}
+        {%- assign c = block.settings.koleksiyon -%}
+        {%- if c != blank -%}
+          <li {{ block.shopify_attributes }}>
+            <a href="{{ c.url }}">
+              <span class="dg-hero__grup-gorsel">
+                {%- if c.featured_image -%}{{ c.featured_image | image_url: width: 180 | image_tag: loading: 'eager', alt: '' }}{%- endif -%}
+              </span>
+              <span class="dg-hero__grup-metin">
+                <span class="dg-kas">{{ c.products_count }} ürün</span>
+                <strong>{{ block.settings.etiket | default: c.title }}</strong>
+              </span>
+              {% render 'dg-ikon', ad: 'ok' %}
+            </a>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Değirmen karşılama",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "image_picker", "id": "resim", "label": "Arka plan fotoğrafı" },
+    { "type": "text", "id": "kas", "label": "Üst etiket", "default": "Değirmen Sanayi ve Ticaret A.Ş. · İstanbul, 1984" },
+    { "type": "textarea", "id": "baslik", "label": "Başlık", "default": "Tahılın nemini ölçen, poşeti kapatan, unu eleyen ekipman" },
+    { "type": "textarea", "id": "metin", "label": "Açıklama" },
+    { "type": "text", "id": "buton_etiket", "label": "Birincil buton", "default": "Ürünleri inceleyin" },
+    { "type": "url", "id": "buton_link", "label": "Birincil buton bağlantısı" },
+    { "type": "text", "id": "wa_etiket", "label": "WhatsApp butonu", "default": "WhatsApp'tan teklif isteyin" },
+    { "type": "text", "id": "whatsapp", "label": "WhatsApp numarası", "default": "905418890092" },
+    { "type": "text", "id": "wa_mesaj", "label": "Hazır WhatsApp mesajı", "default": "Merhaba, teklif almak istiyorum." }
+  ],
+  "blocks": [
+    { "type": "grup", "name": "Ürün grubu", "settings": [
+      { "type": "collection", "id": "koleksiyon", "label": "Koleksiyon" },
+      { "type": "text", "id": "etiket", "label": "Görünen ad" }
+    ]}
+  ],
+  "presets": [{ "name": "Değirmen karşılama" }]
+}
+{% endschema %}

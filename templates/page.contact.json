@@ -9,13 +9,8 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "settings": {
-        "padding_top": 36,
-        "padding_bottom": 12
-      }
-    },
+    "ust": { "type": "dg-sayfa-ust", "settings": { "kas": "Bize ulaşın", "metin": "" } },
+    "icerik": { "type": "dg-sayfa-icerik", "settings": { "menu": "footer", "nav_baslik": "Kurumsal" } },
     "form": {
       "type": "quote-request",
       "settings": {
@@ -23,14 +18,11 @@
         "heading_size": "h2",
         "text": "<p>İlgilendiğiniz ürünü ve adedi yazın; firmanıza özel teklifimizi e-posta ile iletelim.</p>",
         "button_label": "Gönder",
-        "color_scheme": "scheme-1",
-        "padding_top": 12,
-        "padding_bottom": 48
+        "color_scheme": "scheme-2",
+        "padding_top": 88,
+        "padding_bottom": 88
       }
     }
   },
-  "order": [
-    "main",
-    "form"
-  ]
+  "order": ["ust", "icerik", "form"]
 }

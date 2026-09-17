@@ -48,16 +48,26 @@
 -%}
 
 <div id="teklif-formu" class="color-{{ section.settings.color_scheme }} gradient">
-  <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
-    {%- if section.settings.heading != blank -%}
-      <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}">
-        {{ section.settings.heading }}
-      </h2>
-    {%- endif -%}
-    {%- if section.settings.text != blank -%}
-      <div class="rte">{{ section.settings.text }}</div>
-    {%- endif -%}
+  <div class="contact page-width section-{{ section.id }}-padding dg-teklif">
+    <div class="dg-teklif__yan">
+      <p class="dg-kas dg-kas--mavi">Teklif formu</p>
+      {%- if section.settings.heading != blank -%}
+        <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}">
+          {{ section.settings.heading }}
+        </h2>
+      {%- endif -%}
+      {%- if section.settings.text != blank -%}
+        <div class="rte dg-teklif__metin">{{ section.settings.text }}</div>
+      {%- endif -%}
+      <ul class="dg-teklif__kanallar">
+        <li><a href="tel:+902124943333">{% render 'dg-ikon', ad: 'tel' %}<span><span class="dg-kas">Telefon</span>+90 212 494 33 33</span></a></li>
+        <li><a href="https://wa.me/905418890092" target="_blank" rel="noopener">{% render 'dg-ikon', ad: 'wa' %}<span><span class="dg-kas">WhatsApp</span>0541 889 00 92</span></a></li>
+        <li><a href="mailto:info@degirmen.com.tr">{% render 'dg-ikon', ad: 'eposta' %}<span><span class="dg-kas">E-posta</span>info@degirmen.com.tr</span></a></li>
+      </ul>
+      <p class="dg-teklif__saat">{% render 'dg-ikon', ad: 'saat' %}Hafta içi 09:00–18:00</p>
+    </div>
 
+    <div class="dg-teklif__form">
     {%- form 'contact', id: form_id, class: 'isolate' -%}
       {%- if form.posted_successfully? -%}
         <h3 class="form-status form-status-list form__message" tabindex="-1" autofocus>
@@ -186,6 +196,7 @@
         </button>
       </div>
     {%- endform -%}
+    </div>
   </div>
 </div>
 
@@ -195,66 +206,14 @@
   "tag": "section",
   "class": "section",
   "settings": [
-    {
-      "type": "inline_richtext",
-      "id": "heading",
-      "default": "Bu ürün için teklif isteyin",
-      "label": "Başlık"
-    },
-    {
-      "type": "select",
-      "id": "heading_size",
-      "options": [
-        { "value": "h2", "label": "Küçük" },
-        { "value": "h1", "label": "Orta" },
-        { "value": "h0", "label": "Büyük" }
-      ],
-      "default": "h1",
-      "label": "Başlık boyutu"
-    },
-    {
-      "type": "richtext",
-      "id": "text",
-      "default": "<p>Formu doldurun, firmanıza özel fiyat ve teslimat bilgisini içeren teklifimizi e-posta ile iletelim.</p>",
-      "label": "Açıklama"
-    },
-    {
-      "type": "text",
-      "id": "button_label",
-      "default": "Teklif İste",
-      "label": "Buton metni"
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "Renk şeması",
-      "default": "scheme-2"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "Üst boşluk",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "Alt boşluk",
-      "default": 36
-    }
+    { "type": "inline_richtext", "id": "heading", "default": "Bu ürün için teklif isteyin", "label": "Başlık" },
+    { "type": "select", "id": "heading_size", "options": [ { "value": "h2", "label": "Küçük" }, { "value": "h1", "label": "Orta" }, { "value": "h0", "label": "Büyük" } ], "default": "h1", "label": "Başlık boyutu" },
+    { "type": "richtext", "id": "text", "default": "<p>Formu doldurun, firmanıza özel fiyat ve teslimat bilgisini içeren teklifimizi e-posta ile iletelim.</p>", "label": "Açıklama" },
+    { "type": "text", "id": "button_label", "default": "Teklif İste", "label": "Buton metni" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Renk şeması", "default": "scheme-2" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Üst boşluk", "default": 36 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Alt boşluk", "default": 36 }
   ],
-  "presets": [
-    {
-      "name": "Teklif formu"
-    }
-  ]
+  "presets": [ { "name": "Teklif formu" } ]
 }
 {% endschema %}

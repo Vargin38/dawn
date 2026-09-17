@@ -1,0 +1,90 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  assign kaynak = section.settings.koleksiyon
+  if kaynak == blank
+    assign kaynak = collections.all
+  endif
+-%}
+<section class="dg-urunler" aria-labelledby="dg-urunler-{{ section.id }}">
+  <div class="dg-sayfa">
+    <div class="dg-urunler__ust">
+      <div class="dg-baslik-blok">
+        <p class="dg-kas dg-kas--mavi">{{ section.settings.kas }}</p>
+        <h2 id="dg-urunler-{{ section.id }}">{{ section.settings.baslik }}</h2>
+      </div>
+      <a class="dg-ok" href="{{ kaynak.url }}">{{ section.settings.link_etiket }}{% render 'dg-ikon', ad: 'ok' %}</a>
+    </div>
+    {%- if section.blocks.size > 0 -%}
+      <div class="dg-urunler__sekmeler" role="group" aria-label="Ürün grubuna göre süz">
+        <button type="button" class="dg-sekme is-aktif" data-grup="" aria-pressed="true">Tümü<span>{{ kaynak.products_count }}</span></button>
+        {%- for block in section.blocks -%}
+          {%- assign c = block.settings.koleksiyon -%}
+          {%- if c != blank -%}
+            <button type="button" class="dg-sekme" data-grup="{{ c.handle }}" aria-pressed="false" {{ block.shopify_attributes }}>{{ block.settings.etiket | default: c.title }}<span>{{ c.products_count }}</span></button>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+    <ul class="grid product-grid contains-card contains-card--product grid--4-col-desktop grid--2-col-tablet-down dg-urunler__izgara" role="list">
+      {%- for p in kaynak.products limit: section.settings.adet -%}
+        <li class="grid__item" data-gruplar=" {{ p.collections | map: 'handle' | join: ' ' }} ">
+          {% render 'card-product',
+            card_product: p,
+            media_aspect_ratio: 'square',
+            image_shape: 'default',
+            lazy_load: true,
+            show_secondary_image: false,
+            show_vendor: true,
+            show_rating: false,
+            section_id: section.id,
+            quick_add: 'none',
+            product_view_context: 'collection'
+          %}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+<script>
+  (function () {
+    var kok = document.getElementById('dg-urunler-{{ section.id }}').closest('.dg-urunler');
+    var dugmeler = kok.querySelectorAll('.dg-sekme');
+    var ogeler = kok.querySelectorAll('[data-gruplar]');
+    dugmeler.forEach(function (d) {
+      d.addEventListener('click', function () {
+        var g = d.getAttribute('data-grup');
+        dugmeler.forEach(function (x) {
+          var aktif = x === d;
+          x.classList.toggle('is-aktif', aktif);
+          x.setAttribute('aria-pressed', aktif ? 'true' : 'false');
+        });
+        ogeler.forEach(function (o) {
+          o.hidden = !!g && o.getAttribute('data-gruplar').indexOf(' ' + g + ' ') === -1;
+        });
+      });
+    });
+  })();
+</script>
+{% schema %}
+{
+  "name": "Ürün ızgarası",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "collection", "id": "koleksiyon", "label": "Koleksiyon (boşsa tüm ürünler)" },
+    { "type": "text", "id": "kas", "label": "Üst etiket", "default": "Ürünler" },
+    { "type": "text", "id": "baslik", "label": "Başlık", "default": "Katalogdaki cihazlar" },
+    { "type": "text", "id": "link_etiket", "label": "Bağlantı metni", "default": "Tüm ürünler" },
+    { "type": "range", "id": "adet", "label": "Ürün sayısı", "min": 4, "max": 24, "step": 1, "default": 12 }
+  ],
+  "blocks": [
+    { "type": "sekme", "name": "Süzgeç sekmesi", "settings": [
+      { "type": "collection", "id": "koleksiyon", "label": "Koleksiyon" },
+      { "type": "text", "id": "etiket", "label": "Görünen ad" }
+    ]}
+  ],
+  "presets": [{ "name": "Ürün ızgarası" }]
+}
+{% endschema %}
