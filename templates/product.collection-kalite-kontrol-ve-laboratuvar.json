@@ -17,17 +17,17 @@
           "settings": {
             "first_icon": "shield_check",
             "first_title": "Kett laboratuvar",
-            "first_bg_color": "#1a1a1a",
+            "first_bg_color": "#161616",
             "first_background_gradient": "",
             "first_title_color": "#ffffff",
             "second_icon": "check_mark",
             "second_title": "Tahıl ve pirinç QC",
             "second_bg_color": "#0072a8",
             "second_background_gradient": "",
-            "second_title_color": "#1a1a1a",
+            "second_title_color": "#161616",
             "third_icon": "none",
             "third_title": "",
-            "third_bg_color": "#1a1a1a",
+            "third_bg_color": "#161616",
             "third_background_gradient": "",
             "third_title_color": "#ffffff",
             "title_size": 11,
@@ -68,13 +68,13 @@
             "fourth_text": "<p><strong>Saha veya tezgâh</strong> — AA pil veya AC şebeke</p>",
             "icon_selection": "check_mark",
             "icon_size": 16,
-            "icon_color": "#1a1a1a",
+            "icon_color": "#161616",
             "text_size": 13,
-            "text_color": "#1a1a1a",
+            "text_color": "#161616",
             "content_align": "left",
             "border": "none",
             "border_thickness": 1,
-            "border_color": "#1a1a1a",
+            "border_color": "#161616",
             "radius": 0,
             "background": "",
             "background_gradient": "",
@@ -171,7 +171,7 @@
             "heading_height": 110,
             "heading_mt": 0,
             "heading_mt_mobile": 0,
-            "heading_color": "#1a1a1a"
+            "heading_color": "#161616"
           }
         },
         "ss-text-2": {
@@ -186,7 +186,7 @@
             "text_height": 150,
             "text_mt": 12,
             "text_mt_mobile": 12,
-            "text_color": "#1a1a1a"
+            "text_color": "#161616"
           }
         },
         "ss-button-3": {
@@ -214,10 +214,10 @@
             "button_color": "#ffffff",
             "button_hover_color": "#ffffff",
             "button_bg_color": "#0072a8",
-            "button_bg_hover_color": "#12222e",
+            "button_bg_hover_color": "#161616",
             "button_border_color": "#0072a8",
-            "button_border_hover_color": "#12222e",
-            "button_shadow_color": "#1a1a1a"
+            "button_border_hover_color": "#161616",
+            "button_shadow_color": "#161616"
           }
         },
         "ss-feature-4": {
@@ -312,12 +312,12 @@
         "features_bg_color": "#ffffff",
         "features_bg_gradient": "",
         "features_border_color": "#dde1e5",
-        "feature_icon_color": "#1a1a1a",
-        "feature_title_color": "#1a1a1a",
-        "feature_text_color": "#1a1a1a",
+        "feature_icon_color": "#161616",
+        "feature_title_color": "#161616",
+        "feature_text_color": "#161616",
         "image_border_color": "#dde1e5",
         "background_style": "solid",
-        "background_color": "#f5f6f7",
+        "background_color": "#F4F4F4",
         "background_gradient": "",
         "border_color": "#dde1e5",
         "margin_top": 0,
@@ -350,10 +350,10 @@
             "heading_height": 110,
             "heading_mt": 0,
             "heading_mt_mobile": 0,
-            "heading_color": "#1a1a1a",
+            "heading_color": "#161616",
             "use_gradient": false,
-            "gradient_start": "#1a1a1a",
-            "gradient_end": "#1a1a1a"
+            "gradient_start": "#161616",
+            "gradient_end": "#161616"
           }
         },
         "ss-text-2": {
@@ -368,7 +368,7 @@
             "text_height": 150,
             "text_mt": 12,
             "text_mt_mobile": 12,
-            "text_color": "#1a1a1a"
+            "text_color": "#161616"
           }
         },
         "ss-item-3": {
@@ -458,17 +458,17 @@
         "step_text_mt": 12,
         "step_text_mt_mobile": 12,
         "text_hide_on_mobile": false,
-        "icon_color": "#1a1a1a",
+        "icon_color": "#161616",
         "icon_bg_color": "#ffffff",
         "icon_border_color": "#dde1e5",
-        "badge_text_color": "#1a1a1a",
+        "badge_text_color": "#161616",
         "badge_bg_color": "#ffffff",
         "badge_border_color": "#dde1e5",
-        "step_heading_color": "#1a1a1a",
-        "step_text_color": "#1a1a1a",
-        "progress_bar_bg": "#1a1a1a",
+        "step_heading_color": "#161616",
+        "step_text_color": "#161616",
+        "progress_bar_bg": "#161616",
         "background_style": "solid",
-        "background_color": "#f5f6f7",
+        "background_color": "#F4F4F4",
         "background_gradient": "",
         "border_color": "#dde1e5",
         "margin_top": 0,
@@ -500,7 +500,7 @@
             "heading_height": 105,
             "heading_mt": 0,
             "heading_mt_mobile": 0,
-            "heading_color": "#1a1a1a"
+            "heading_color": "#161616"
           }
         },
         "ss-text-2": {
@@ -515,8 +515,8 @@
             "text_height": 150,
             "text_mt": 20,
             "text_mt_mobile": 16,
-            "text_color": "#1a1a1a",
-            "text_accent_color": "#1a1a1a"
+            "text_color": "#161616",
+            "text_accent_color": "#161616"
           }
         },
         "ss-button-3": {
@@ -543,11 +543,11 @@
             "button_color": "#ffffff",
             "button_hover_color": "#ffffff",
             "button_bg_color": "#0072a8",
-            "button_bg_hover_color": "#12222e",
+            "button_bg_hover_color": "#161616",
             "button_border_color": "#0072a8",
-            "button_border_hover_color": "#12222e",
+            "button_border_hover_color": "#161616",
             "button_custom_styling": false,
-            "button_shadow_color": "#1a1a1a"
+            "button_shadow_color": "#161616"
           }
         },
         "ss-image-4": {
@@ -653,21 +653,21 @@
         "answer_mt": 16,
         "answer_mt_mobile": 14,
         "divider_thickness": 1,
-        "title_color": "#1a1a1a",
-        "title_active_color": "#1a1a1a",
-        "answer_color": "#1a1a1a",
-        "icon_color": "#1a1a1a",
-        "icon_active_color": "#1a1a1a",
-        "toggle_icon_color": "#1a1a1a",
-        "toggle_icon_active_color": "#1a1a1a",
+        "title_color": "#161616",
+        "title_active_color": "#161616",
+        "answer_color": "#161616",
+        "icon_color": "#161616",
+        "icon_active_color": "#161616",
+        "toggle_icon_color": "#161616",
+        "toggle_icon_active_color": "#161616",
         "item_bg_color": "#ffffff",
         "item_active_bg_color": "#e6eff5",
         "item_border_color": "#dde1e5",
         "item_active_border_color": "#dde1e5",
         "divider_color": "#dde1e5",
-        "item_shadow_color": "#1a1a1a",
+        "item_shadow_color": "#161616",
         "background_style": "solid",
-        "background_color": "#f5f6f7",
+        "background_color": "#F4F4F4",
         "background_gradient": "",
         "border_color": "#dde1e5",
         "margin_top": 0,
@@ -699,7 +699,7 @@
             "heading_height": 110,
             "heading_mt": 0,
             "heading_mt_mobile": 0,
-            "heading_color": "#1a1a1a"
+            "heading_color": "#161616"
           }
         },
         "ss-text-2": {
@@ -713,7 +713,7 @@
             "text_height": 150,
             "text_mt": 30,
             "text_mt_mobile": 20,
-            "text_color": "#1a1a1a"
+            "text_color": "#161616"
           }
         },
         "ss-tab-3": {
@@ -813,16 +813,16 @@
         "answer_size_mobile": 14,
         "answer_height": 150,
         "answer_padding_top": 30,
-        "toggles_bg_color": "#f5f6f7",
-        "toggle_bg_color": "#1a1a1a",
+        "toggles_bg_color": "#F4F4F4",
+        "toggle_bg_color": "#161616",
         "toggle_bg_gradient": "",
-        "toggle_color": "#1a1a1a",
+        "toggle_color": "#161616",
         "toggle_active_color": "#ffffff",
         "item_border_color": "#dde1e5",
-        "question_color": "#1a1a1a",
-        "answer_color": "#1a1a1a",
-        "icon_color": "#1a1a1a",
-        "background_color": "#f5f6f7",
+        "question_color": "#161616",
+        "answer_color": "#161616",
+        "icon_color": "#161616",
+        "background_color": "#F4F4F4",
         "background_gradient": "",
         "border_color": "#dde1e5",
         "margin_top": 0,

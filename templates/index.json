@@ -136,10 +136,10 @@
             "heading_height": 110,
             "heading_mt": 0,
             "heading_mt_mobile": 0,
-            "heading_color": "#1A1A1A",
+            "heading_color": "#161616",
             "use_gradient": false,
-            "gradient_start": "#1A1A1A",
-            "gradient_end": "#1A1A1A"
+            "gradient_start": "#161616",
+            "gradient_end": "#161616"
           }
         },
         "ss-text-2": {
@@ -154,7 +154,7 @@
             "text_height": 150,
             "text_mt": 12,
             "text_mt_mobile": 12,
-            "text_color": "#1A1A1A"
+            "text_color": "#161616"
           }
         },
         "ss-item-3": {
@@ -239,17 +239,17 @@
         "text_hide_on_mobile": false,
         "icon_color": "#0072A8",
         "icon_bg_color": "#ffffff",
-        "icon_border_color": "#DDE1E5",
+        "icon_border_color": "#E0E0E0",
         "badge_text_color": "#0072A8",
         "badge_bg_color": "#ffffff",
-        "badge_border_color": "#DDE1E5",
-        "step_heading_color": "#1A1A1A",
-        "step_text_color": "#1A1A1A",
+        "badge_border_color": "#E0E0E0",
+        "step_heading_color": "#161616",
+        "step_text_color": "#161616",
         "progress_bar_bg": "#0072A8",
         "background_style": "solid",
-        "background_color": "#F5F6F7",
+        "background_color": "#F4F4F4",
         "background_gradient": "",
-        "border_color": "#DDE1E5",
+        "border_color": "#E0E0E0",
         "margin_top": 0,
         "margin_bottom": 0,
         "margin_horizontal": 0,
