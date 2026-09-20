@@ -18,7 +18,7 @@
           "type": "text",
           "settings": {
             "heading": "Değirmen A.Ş.",
-            "subtext": "<p>1984'ten bu yana ambalaj, gıda işleme, kalite kontrol ve tekstil sektörleri için endüstriyel makine ve cihazlar.</p><p>Değirmen Plaza, Mehmet Akif Mah. Bahariye Cad. Akarsu Sk. No:4, 34307 İkitelli / İstanbul</p>"
+            "subtext": "<p>1984'ten bu yana ambalaj, gıda işleme, kalite kontrol ve tekstil sektörleri için endüstriyel makine ve cihazlar.</p><p>Değirmen Plaza, Mehmet Akif Mah. Bahariye Cad. Akarsu Sk. No:4, 34307 İkitelli / İstanbul</p><p>MERSİS No: 0273000737700017<br/>Hocapaşa V.D. · 2730007377</p>"
           }
         },
         "contact": {
@@ -28,19 +28,9 @@
             "subtext": "<p>E-posta: <a href=\"mailto:info@degirmen.com.tr\" title=\"info@degirmen.com.tr\">info@degirmen.com.tr</a><br/>Telefon: <a href=\"tel:+902124943333\" title=\"+90 212 494 33 33\">+90 212 494 33 33</a><br/>WhatsApp: <a href=\"https://wa.me/905418890092\" title=\"WhatsApp\">+90 541 889 00 92</a><br/>Yedek parça: <a href=\"tel:+905432447308\" title=\"+90 543 244 73 08\">+90 543 244 73 08</a><br/>Hafta içi 09:00–18:00</p>"
           }
         },
-        "links": {
-          "type": "link_list",
-          "settings": {
-            "heading": "Kurumsal",
-            "menu": "footer"
-          }
-        }
+        "links": { "type": "link_list", "settings": { "heading": "Kurumsal", "menu": "footer" } }
       },
-      "block_order": [
-        "company",
-        "contact",
-        "links"
-      ],
+      "block_order": ["company", "contact", "links"],
       "settings": {
         "color_scheme": "scheme-4",
         "newsletter_enable": false,
@@ -66,8 +56,5 @@
       }
     }
   },
-  "order": [
-    "footer",
-    "whatsapp"
-  ]
+  "order": ["footer", "whatsapp"]
 }

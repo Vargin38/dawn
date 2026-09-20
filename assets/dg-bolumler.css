@@ -9,7 +9,16 @@
 .dg-ust__sag a:hover { color: var(--dg-cyan); }
 .dg-ust__sag svg { width: 1.5rem; height: 1.5rem; }
 @media (max-width: 989px) { .dg-ust__sol, .dg-ust__gizle { display: none !important; } .dg-ust__ic { justify-content: center; } }
-@media (max-width: 480px) { .dg-ust__sag { gap: 1.8rem; } .dg-ust__sag a span { font-size: 1.2rem; } }
+@media (max-width: 989px) {
+  /* Dokunma alanı: her bağlantı en az 44x44px, aralarında en az 12px boşluk */
+  .dg-ust__sag { gap: 1.2rem; }
+  .dg-ust__sag a { min-height: 4.4rem; padding: 0 .8rem; font-size: 1.35rem; }
+  .dg-ust__sag svg { width: 1.8rem; height: 1.8rem; }
+}
+@media (max-width: 480px) {
+  .dg-ust__sag { gap: 1.2rem; }
+  .dg-ust__sag a span { font-size: 1.25rem; }
+}
 
 /* Karşılama */
 .dg-hero { position: relative; background: var(--dg-lac); color: #fff; overflow: hidden; isolation: isolate; }
@@ -99,7 +108,26 @@ html body .dg-sektor h3 { margin: 0 0 1rem; font-size: 2.1rem; color: var(--dg-l
 @media (max-width: 749px) {
   .dg-urunler { padding: 6.4rem 0; }
   .dg-urunler__ust { flex-direction: column; align-items: flex-start; }
-  .dg-urunler__sekmeler { flex-wrap: nowrap; overflow-x: auto; margin-left: -1.6rem; margin-right: -1.6rem; padding-left: 1.6rem; padding-right: 1.6rem; scrollbar-width: none; }
+  .dg-urunler__sekmeler {
+    flex-wrap: nowrap; overflow-x: auto; margin-left: -1.6rem; margin-right: -1.6rem;
+    padding-left: 1.6rem; padding-right: 1.6rem; scrollbar-width: none;
+    /* Sağ kenarda solma: devamında başka filtre olduğunu gösterir.
+       Kaydırma sona gelince maske kalkar (scroll-driven animation desteklenen tarayıcılarda). */
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 4.8rem), transparent 100%);
+    mask-image: linear-gradient(to right, #000 calc(100% - 4.8rem), transparent 100%);
+  }
+  .dg-urunler__sekmeler::-webkit-scrollbar { display: none; }
+  @supports (animation-timeline: scroll(self inline)) {
+    .dg-urunler__sekmeler {
+      animation: dg-kaydirma-maskesi linear both;
+      animation-timeline: scroll(self inline);
+      animation-range: contain;
+    }
+    @keyframes dg-kaydirma-maskesi {
+      to { -webkit-mask-image: linear-gradient(to right, #000 100%, transparent 100%);
+           mask-image: linear-gradient(to right, #000 100%, transparent 100%); }
+    }
+  }
   .dg-sekme { flex: none; }
 }
 
@@ -226,4 +254,8 @@ html body .dg-teklif__form .contact__button .button { min-width: 20rem; min-heig
   .dg-mobil-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 41; display: grid; grid-template-columns: 1fr 1fr; background: #fff; box-shadow: 0 -6px 20px rgba(11,34,57,.16); padding-bottom: env(safe-area-inset-bottom); }
   .dg-mobil-bar .dg-btn { border-radius: 0; min-height: 5.6rem; }
   html body:has(.dg-mobil-bar) .footer { padding-bottom: 5.6rem; }
+  /* Sabit WhatsApp butonu içeriğin üstüne binmesin: sayfa altına güvenli alan.
+     Ürün sayfasında alt bar (dg-mobil-bar) varsa WhatsApp gizlendiği için bu alan eklenmez. */
+  html body:not(:has(.dg-mobil-bar)) .footer { padding-bottom: calc(8rem + env(safe-area-inset-bottom)); }
+  html body:not(:has(.dg-mobil-bar)) .dg-wa { bottom: calc(1.4rem + env(safe-area-inset-bottom)); }
 }

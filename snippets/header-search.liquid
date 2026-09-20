@@ -1,11 +1,7 @@
 {% comment %}
-  Renders a header search modal. Should be used with 'header.liquid'
-
+  Başlıktaki arama: masaüstünde görünür arama kutusu, açılınca lacivert arama paneli.
   Accepts:
   - input_id: {String} Id for the search input element (required)
-
-  Usage:
-  {% render 'header-search', input_id: 'My-Id'%}
 {% endcomment %}
 
 <details-modal class="header__search">
@@ -22,6 +18,8 @@
         <span class="svg-wrapper header__icon-close">
           {{- 'icon-close.svg' | inline_asset_content -}}
         </span>
+        <span class="dg-ara-etiket">Ürün, marka veya model ara</span>
+        <kbd class="dg-ara-kisayol" aria-hidden="true">/</kbd>
       </span>
     </summary>
     <div
@@ -31,10 +29,8 @@
       aria-label="{{ 'general.search.search' | t }}"
     >
       <div class="modal-overlay"></div>
-      <div
-        class="search-modal__content{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} search-modal__content-top{% else %} search-modal__content-bottom{% endif %}"
-        tabindex="-1"
-      >
+      <div class="search-modal__content search-modal__content-bottom dg-ara" tabindex="-1">
+        <p class="dg-kas dg-ara__kas">Katalogda ara</p>
         {%- if settings.predictive_search_enabled -%}
           <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
         {%- else -%}
@@ -48,7 +44,7 @@
               type="search"
               name="q"
               value="{{ search.terms | escape }}"
-              placeholder="{{ 'general.search.search' | t }}"
+              placeholder="Ürün, marka veya model ara"
               {%- if settings.predictive_search_enabled -%}
                 role="combobox"
                 aria-expanded="false"
@@ -62,7 +58,7 @@
                 spellcheck="false"
               {%- endif -%}
             >
-            <label class="field__label" for="{{ input_id }}">{{ 'general.search.search' | t }}</label>
+            <label class="field__label" for="{{ input_id }}">Ürün, marka veya model ara</label>
             <input type="hidden" name="options[prefix]" value="last">
             <button
               type="reset"
@@ -93,6 +89,15 @@
         {%- else -%}
           </search-form>
         {%- endif -%}
+        <div class="dg-ara__oneri">
+          <span class="dg-kas">Sık arananlar</span>
+          <ul>
+            {%- assign oneriler = 'Kett PM-450|Tahıl nem ölçer|Beyazlık ölçer|Poşet yapıştırma|Çuval dikiş|Elek bezi|Baskı bezi' | split: '|' -%}
+            {%- for o in oneriler -%}
+              <li><a href="{{ routes.search_url }}?q={{ o | url_encode }}&options%5Bprefix%5D=last">{{ o }}</a></li>
+            {%- endfor -%}
+          </ul>
+        </div>
         <button
           type="button"
           class="search-modal__close-button modal__close-button link link--text focus-inset"
@@ -106,3 +111,16 @@
     </div>
   </details>
 </details-modal>
+{%- if input_id == 'Search-In-Modal' -%}
+<script>
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== '/' || e.ctrlKey || e.metaKey || e.altKey) return;
+    var hedef = e.target;
+    if (hedef && (hedef.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(hedef.tagName))) return;
+    var ozetler = document.querySelectorAll('.header__search summary');
+    for (var i = 0; i < ozetler.length; i++) {
+      if (ozetler[i].offsetParent !== null) { e.preventDefault(); ozetler[i].click(); break; }
+    }
+  });
+</script>
+{%- endif -%}

@@ -1,0 +1,95 @@
+/* Değirmen — arama */
+
+/* Başlıkta görünür arama kutusu (masaüstü) */
+/* Dawn'ın base.css dosyasındaki ".header__icon span { display:flex }" kuralı
+   ".dg-ara-etiket" kuralından daha güçlü olduğu için etiket mobilde görünüyordu.
+   Aşağıdaki seçici o kuralı geçecek özgüllükte yazıldı. */
+html body .header__icon--search .dg-ara-etiket,
+html body .header__icon--search .dg-ara-kisayol { display: none; }
+
+/* Mobilde hamburger ve büyüteç: 44x44 dokunma alanı, aralarında en az 8px boşluk */
+@media (max-width: 989px) {
+  html body .header:not(.drawer-menu) .header__icon--search,
+  html body .header .header__icon--menu { width: 4.4rem; height: 4.4rem; margin: 0; padding: 0; }
+  /* Dawn başlığı bir CSS ızgarası ve margin'i kendi kurallarıyla sıfırlıyor.
+     Bu yüzden boşluğu sütun aralığıyla veriyoruz: hamburger ve büyüteç birbirine yapışmaz. */
+  html body .header { column-gap: .8rem; }
+  html body .header__icon--search > span { width: 100%; height: 100%; justify-content: center; }
+}
+@media (min-width: 990px) {
+  html body .header__icons .header__icon--search {
+    width: 28rem; height: 4.4rem; margin-right: 1.2rem; padding: 0 1.2rem 0 1.4rem;
+    justify-content: flex-start; border: 1px solid #D3E0EA; border-radius: 2px; background: #fff;
+    text-decoration: none; transition: border-color .2s, box-shadow .2s;
+  }
+  html body .header__icons .header__icon--search > span { display: flex; align-items: center; gap: 1rem; width: 100%; height: 100%; }
+  html body .header__icons .header__icon--search .svg-wrapper:not(.header__icon-close) { flex: none; width: 2rem; height: 100%; color: var(--dg-etkin); }
+  html body .header__icons .header__icon--search .svg-wrapper svg { width: 1.8rem; height: 1.8rem; }
+  html body .header__icons .header__icon--search:hover { border-color: var(--dg-etkin); box-shadow: 0 0 0 3px rgba(0,111,161,.1); }
+  html body .header__icons .header__icon--search .dg-ara-etiket { display: flex; align-items: center; height: 100%; line-height: 1; font-size: 1.4rem; color: var(--dg-soluk); white-space: nowrap; text-decoration: none; }
+  html body .header__icons .header__icon--search .dg-ara-kisayol { display: inline-flex; align-self: center; height: auto; margin-left: auto; min-width: 2.2rem; justify-content: center; padding: .1rem .5rem; border: 1px solid #D3E0EA; font: 500 1.15rem/1.4 var(--dg-mono); color: var(--dg-soluk); background: #F5F9FC; }
+  html body details[open] > .header__icon--search .dg-ara-etiket,
+  html body details[open] > .header__icon--search .dg-ara-kisayol { visibility: hidden; }
+}
+
+/* Arama paneli */
+html body .search-modal {
+  min-height: auto; border-bottom: 0;
+  background: linear-gradient(180deg, #1D4468 0%, #16385A 55%, #12304E 100%);
+  box-shadow: 0 36px 60px -26px rgba(10,28,46,.6);
+}
+html body .search-modal__content.dg-ara {
+  display: flex; flex-direction: column; align-items: stretch; gap: 1.6rem;
+  max-width: calc(var(--page-width) - 10rem); margin: 0 auto; padding: 4rem 0 4.4rem; height: auto;
+}
+.dg-ara__kas { color: var(--dg-cyan); }
+html body .dg-ara .search-modal__form { width: 100%; max-width: none; }
+html body .dg-ara .field { position: relative; }
+html body .dg-ara .field:before, html body .dg-ara .field:after { display: none; }
+html body .dg-ara .field__input {
+  height: 6.8rem; padding: 2.2rem 12rem 1rem 2.2rem; border: 0; border-radius: 2px; background: #fff;
+  font: 500 2rem/1 var(--dg-body); color: var(--dg-metin); box-shadow: 0 0 0 1px rgba(255,255,255,.2);
+}
+html body .dg-ara .field__input:focus { box-shadow: 0 0 0 3px var(--dg-cyan); outline: none; }
+html body .dg-ara .field__label { left: 2.2rem; top: 2.3rem; font-size: 1.8rem; color: var(--dg-soluk); letter-spacing: 0; }
+html body .dg-ara .field__input:focus ~ .field__label,
+html body .dg-ara .field__input:not(:placeholder-shown) ~ .field__label { top: 1rem; font-size: 1.15rem; font-family: var(--dg-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--dg-etkin); }
+html body .dg-ara .field__button { height: 6.8rem; width: 5.6rem; color: var(--dg-etkin); }
+html body .dg-ara .search__button { right: 0; background: var(--dg-etkin); color: #fff; border-radius: 0 2px 2px 0; }
+html body .dg-ara .search__button:hover { background: #005A83; }
+html body .dg-ara .search__button .svg-wrapper, html body .dg-ara .search__button svg { width: 2.2rem; height: 2.2rem; }
+html body .dg-ara .reset__button { right: 5.6rem; }
+
+.dg-ara__oneri { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.4rem; }
+.dg-ara__oneri .dg-kas { color: rgba(255,255,255,.6); font-size: 1.1rem; }
+.dg-ara__oneri ul { display: flex; flex-wrap: wrap; gap: .8rem; list-style: none; margin: 0; padding: 0; }
+.dg-ara__oneri a { display: inline-flex; align-items: center; min-height: 3.4rem; padding: 0 1.3rem; border: 1px solid rgba(255,255,255,.24); color: #fff; font-size: 1.35rem; text-decoration: none; transition: background .2s, border-color .2s; }
+.dg-ara__oneri a:hover { background: rgba(255,255,255,.1); border-color: #fff; }
+
+html body .dg-ara .search-modal__close-button { position: absolute; top: 2.4rem; right: -4rem; color: #fff; }
+html body .dg-ara .search-modal__close-button:hover { color: var(--dg-cyan); }
+
+/* Anlık öneri listesi */
+html body .dg-ara .predictive-search { top: calc(100% + .6rem); border: 0; border-radius: 2px; background: #fff; box-shadow: 0 24px 48px -16px rgba(4,14,26,.45); }
+html body .predictive-search__heading { font-family: var(--dg-mono); font-size: 1.15rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--dg-soluk); border-bottom-color: var(--dg-cizgi); }
+html body .predictive-search__item { border-radius: 0; }
+html body .predictive-search__item:hover, html body .predictive-search__item[aria-selected='true'] { background: #F2F6F9; }
+html body .predictive-search__item-heading { font-family: var(--dg-display); font-stretch: 105%; font-weight: 600; color: var(--dg-lac); }
+html body .predictive-search__item-vendor { font-family: var(--dg-mono); font-size: 1.1rem; letter-spacing: .06em; color: var(--dg-etkin); }
+html body .predictive-search__image { background: #F3F6F8; mix-blend-mode: multiply; }
+html body .predictive-search__item--term { color: var(--dg-etkin); font-weight: 600; }
+
+@media (max-width: 989px) {
+  html body .search-modal__content.dg-ara { max-width: none; padding: 2.4rem 1.6rem 2.8rem; }
+  html body .dg-ara .search-modal__close-button { top: 1.2rem; right: 1rem; }
+  html body .dg-ara .field__input { height: 5.6rem; font-size: 1.6rem; padding-right: 10rem; }
+  html body .dg-ara .field__label { top: 1.8rem; font-size: 1.5rem; }
+  html body .dg-ara .field__button { height: 5.6rem; }
+  .dg-ara__oneri ul { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-right: -1.6rem; padding-right: 1.6rem; }
+  .dg-ara__oneri a { white-space: nowrap; }
+}
+
+/* Arama sonuçları sayfası */
+html body .template-search__header { padding-top: 4.8rem; }
+html body .template-search__header .h2, html body .main-search .title { font-family: var(--dg-display); font-stretch: 115%; color: var(--dg-lac); }
+html body .template-search__search .field__input { height: 5.6rem; border-radius: 2px; }

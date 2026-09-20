@@ -1,0 +1,19 @@
+{%- comment -%}
+  Fiyat ve sepetin gösterilip gösterilmeyeceğine karar verir; izin varsa "evet" yazar.
+  Kural: ürün "Satışta" etiketli VE giriş yapan müşteri "Onaylı" etiketli.
+  Kullanım: {% capture izin %}{% render 'dg-satis', product: product %}{% endcapture %}
+{%- endcomment -%}
+{%- liquid
+  assign izin = false
+  unless settings.quote_mode
+    assign izin = true
+  endunless
+  if product.tags contains 'Satışta' and customer
+    if customer.tags contains 'Onaylı'
+      assign izin = true
+    endif
+  endif
+  if izin
+    echo 'evet'
+  endif
+-%}

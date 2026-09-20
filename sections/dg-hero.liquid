@@ -50,7 +50,12 @@
   </div>
   <div class="dg-hero__ic dg-sayfa">
     <p class="dg-kas dg-hero__kas">{{ section.settings.kas }}</p>
-    <h2 id="dg-hero-{{ section.id }}" class="dg-hero__baslik">{{ section.settings.baslik }}</h2>
+    {%- comment -%} SEO: ana sayfada slogan <h1>, diğer şablonlarda <h2> olarak çıkar. {%- endcomment -%}
+    {%- if request.page_type == 'index' -%}
+      <h1 id="dg-hero-{{ section.id }}" class="dg-hero__baslik">{{ section.settings.baslik }}</h1>
+    {%- else -%}
+      <h2 id="dg-hero-{{ section.id }}" class="dg-hero__baslik">{{ section.settings.baslik }}</h2>
+    {%- endif -%}
     <p class="dg-hero__metin">{{ section.settings.metin }}</p>
     <div class="dg-hero__butonlar">
       <a class="dg-btn dg-btn--beyaz" href="{{ section.settings.buton_link }}">{{ section.settings.buton_etiket }}{% render 'dg-ikon', ad: 'ok' %}</a>

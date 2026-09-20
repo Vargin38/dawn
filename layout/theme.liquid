@@ -22,8 +22,15 @@
       {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
     </title>
 
-    {% if page_description %}
-      <meta name="description" content="{{ page_description | escape }}">
+    {%- liquid
+      # SEO: açıklama sırası — sayfanın kendi açıklaması, mağaza açıklaması, tema ayarındaki yedek metin.
+      assign dg_aciklama = page_description | default: shop.description
+      if dg_aciklama == blank
+        assign dg_aciklama = settings.dg_meta_aciklama
+      endif
+    -%}
+    {% if dg_aciklama != blank %}
+      <meta name="description" content="{{ dg_aciklama | strip_html | strip_newlines | truncate: 320 | escape }}">
     {% endif %}
 
     {% render 'meta-tags' %}

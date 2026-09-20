@@ -1481,5 +1481,26 @@
         "label": "t:settings_schema.customer_accounts.settings.customer_account_menu.label"
       }
     ]
+  },
+  {
+    "name": "SEO yedekleri",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Sayfanın kendi SEO açıklaması boşsa bu metin kullanılır (ana sayfa dahil)."
+      },
+      {
+        "type": "textarea",
+        "id": "dg_meta_aciklama",
+        "label": "Yedek meta açıklaması",
+        "default": "Kett ve HAWO Türkiye distribütörü Değirmen A.Ş.: tahıl nem ölçerler, pirinç beyazlık cihazları, poşet yapıştırma makineleri, un eleme ve filtre bezleri. 1984'ten bu yana İstanbul."
+      },
+      {
+        "type": "image_picker",
+        "id": "dg_og_gorsel",
+        "label": "Paylaşım görseli (og:image)",
+        "info": "WhatsApp ve sosyal medyada bağlantı paylaşıldığında görünür. Önerilen 1200x630 piksel."
+      }
+    ]
   }
 ]

@@ -1,9 +1,19 @@
 {{ 'dg-tema.css' | asset_url | stylesheet_tag }}
 {{ 'dg-bolumler.css' | asset_url | stylesheet_tag }}
 {{ 'dg-sayfalar.css' | asset_url | stylesheet_tag }}
+{{ 'dg-satis.css' | asset_url | stylesheet_tag }}
+{{ 'dg-arama.css' | asset_url | stylesheet_tag }}
+{{ 'dg-arama-ek.css' | asset_url | stylesheet_tag }}
 {%- if request.page_type == 'product' -%}{{ 'dg-urun.css' | asset_url | stylesheet_tag }}{%- endif -%}
 {%- liquid
   assign tel_link = section.settings.telefon | remove: ' ' | prepend: 'tel:'
+  assign sepet_goster = false
+  if cart.item_count > 0
+    assign sepet_goster = true
+  endif
+  if customer and customer.tags contains 'Onaylı'
+    assign sepet_goster = true
+  endif
 -%}
 <div class="dg-ust">
   <div class="dg-ust__ic dg-sayfa">
@@ -13,6 +23,9 @@
       <a href="https://wa.me/{{ section.settings.whatsapp }}" target="_blank" rel="noopener">{% render 'dg-ikon', ad: 'wa' %}<span>WhatsApp</span></a>
       <a href="{{ section.settings.eposta | prepend: 'mailto:' }}" class="dg-ust__gizle">{% render 'dg-ikon', ad: 'eposta' %}<span>{{ section.settings.eposta }}</span></a>
       <a href="{{ section.settings.yedek_link }}">{% render 'dg-ikon', ad: 'parca' %}<span>Yedek parça</span></a>
+      {%- if sepet_goster -%}
+        <a href="{{ routes.cart_url }}" class="dg-ust__sepet">{% render 'dg-ikon', ad: 'poset' %}<span>Sepet{% if cart.item_count > 0 %} · {{ cart.item_count }}{% endif %}</span></a>
+      {%- endif -%}
     </nav>
   </div>
 </div>

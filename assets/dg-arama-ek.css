@@ -1,0 +1,3 @@
+/* Arama paneli yüksekliği: içerik kadar uzasın (Dawn paneli başlık yüksekliğine sabitliyor) */
+html body .search-modal, html body details[open] > .search-modal { bottom: auto; height: auto; min-height: 0; align-items: flex-start; }
+html body .search-modal__content.dg-ara { height: auto; min-height: 0; top: auto; transform: none; }

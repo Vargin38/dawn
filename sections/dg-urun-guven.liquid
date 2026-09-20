@@ -1,8 +1,10 @@
 {%- liquid
   assign marka = product.vendor | downcase
-  assign distributor = false
+  assign tur = 'makine'
   if marka == 'kett' or marka == 'hawo'
-    assign distributor = true
+    assign tur = 'distributor'
+  elsif marka == 'euromesh'
+    assign tur = 'bez'
   endif
   assign secili = product.selected_or_first_available_variant
 -%}
@@ -31,29 +33,41 @@
         <strong>1984'ten bu yana</strong>
         <p>İstanbul merkezli; ambalaj, kalite kontrol, gıda işleme ve tekstil ekipmanı tedarik ediyoruz.</p>
       </li>
-      {%- if distributor -%}
-        <li class="dg-guven__oge">
-          {% render 'dg-ikon', ad: 'kalkan' %}
-          <strong>{{ product.vendor }} Türkiye distribütörü</strong>
-          <p>{{ product.vendor }} ürünlerini doğrudan distribütöründen, teknik dokümanıyla birlikte alırsınız.</p>
-        </li>
-        <li class="dg-guven__oge">
-          {% render 'dg-ikon', ad: 'kurulum' %}
-          <strong>Satış sonrası destek</strong>
-          <p>Yedek parça ve servis için makinenin marka, model ve seri numarasını iletmeniz yeterli.</p>
-        </li>
-      {%- else -%}
-        <li class="dg-guven__oge">
-          {% render 'dg-ikon', ad: 'filtre' %}
-          <strong>Doğru kodu birlikte seçelim</strong>
-          <p>Uygulamanızı yazın; ihtiyacınıza uygun kodu birlikte belirleyelim.</p>
-        </li>
-        <li class="dg-guven__oge">
-          {% render 'dg-ikon', ad: 'belge' %}
-          <strong>Katalog değerleriyle teklif</strong>
-          <p>Önerilen kod, katalogdaki teknik değerleriyle birlikte teklifte yer alır.</p>
-        </li>
-      {%- endif -%}
+      {%- case tur -%}
+        {%- when 'distributor' -%}
+          <li class="dg-guven__oge">
+            {% render 'dg-ikon', ad: 'kalkan' %}
+            <strong>{{ product.vendor }} Türkiye distribütörü</strong>
+            <p>{{ product.vendor }} ürünlerini doğrudan distribütöründen, teknik dokümanıyla birlikte alırsınız.</p>
+          </li>
+          <li class="dg-guven__oge">
+            {% render 'dg-ikon', ad: 'kurulum' %}
+            <strong>Satış sonrası destek</strong>
+            <p>Yedek parça ve servis için makinenin marka, model ve seri numarasını iletmeniz yeterli.</p>
+          </li>
+        {%- when 'bez' -%}
+          <li class="dg-guven__oge">
+            {% render 'dg-ikon', ad: 'filtre' %}
+            <strong>Doğru kodu birlikte seçelim</strong>
+            <p>Uygulamanızı yazın; ihtiyacınıza uygun kodu birlikte belirleyelim.</p>
+          </li>
+          <li class="dg-guven__oge">
+            {% render 'dg-ikon', ad: 'belge' %}
+            <strong>Katalog değerleriyle teklif</strong>
+            <p>Önerilen kod, katalogdaki teknik değerleriyle birlikte teklifte yer alır.</p>
+          </li>
+        {%- else -%}
+          <li class="dg-guven__oge">
+            {% render 'dg-ikon', ad: 'belge' %}
+            <strong>Doğru modeli birlikte seçelim</strong>
+            <p>Uygulamanızı ve günlük kullanım miktarınızı yazın; ihtiyacınıza uygun modeli birlikte belirleyelim.</p>
+          </li>
+          <li class="dg-guven__oge">
+            {% render 'dg-ikon', ad: 'kurulum' %}
+            <strong>Satış sonrası destek</strong>
+            <p>Yedek parça ve servis için makinenin marka, model ve seri numarasını iletmeniz yeterli.</p>
+          </li>
+      {%- endcase -%}
     </ul>
   </div>
 </section>

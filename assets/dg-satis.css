@@ -1,0 +1,68 @@
+/* Değirmen — online satış (onaylı firma hesapları) */
+
+/* Fiyat ve KDV etiketi */
+html body .price .price__container { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem .8rem; }
+.dg-kdv { font-family: var(--dg-mono); font-size: 1.2rem; font-weight: 500; letter-spacing: .04em; color: var(--dg-soluk); }
+html body .card-wrapper .price { display: block; margin-top: .8rem; }
+html body .card-wrapper .price .price-item { font-family: var(--dg-display); font-stretch: 105%; font-size: 1.6rem; font-weight: 600; color: var(--dg-lac); }
+html body .card-wrapper .dg-kdv { font-size: 1.05rem; }
+
+/* Ürün sayfası: fiyat */
+html body .product__info-container .price { margin: 1.6rem 0 .2rem; }
+html body .product__info-container .price .price-item { font-family: var(--dg-display); font-stretch: 110%; font-size: clamp(2.6rem, 2.4vw, 3.2rem); font-weight: 700; letter-spacing: -.01em; color: var(--dg-lac); }
+html body .product__info-container .product__tax { font-size: 1.3rem; color: var(--dg-soluk); margin-top: .2rem; }
+
+/* Ürün sayfası: sepete ekle */
+html body .product-form__buttons { max-width: none; }
+html body .product-form__submit.button { min-height: 5.6rem; border-radius: 2px; font: 600 1.6rem/1 var(--dg-body); letter-spacing: .01em; background: var(--dg-etkin); color: #fff; margin-bottom: 0; }
+html body .product-form__submit.button:after { box-shadow: none; }
+html body .product-form__submit.button:hover { background: #005A83; }
+
+.dg-satis-not { display: flex; align-items: center; gap: .9rem; margin: 1.2rem 0 0; font-size: 1.35rem; color: var(--dg-soluk); }
+.dg-satis-not svg { width: 1.7rem; height: 1.7rem; flex: none; color: var(--dg-etkin); }
+.dg-urun-cta--ikincil .dg-btn { min-height: 4.8rem; font-size: 1.45rem; }
+
+/* Firma girişi kutusu (ürün sayfasında) */
+.dg-uye-kutu { margin-top: 1.4rem; padding: 1.8rem 2rem; border: 1px solid var(--dg-cizgi); border-left: 3px solid var(--dg-mavi); background: #F4F8FB; }
+.dg-uye-kutu strong { display: block; font-family: var(--dg-display); font-stretch: 105%; font-size: 1.6rem; color: var(--dg-lac); }
+.dg-uye-kutu p { margin: .6rem 0 0; font-size: 1.4rem; line-height: 1.55; color: var(--dg-soluk); }
+.dg-uye-kutu__baglantilar { display: flex; flex-wrap: wrap; gap: .4rem 1rem; }
+.dg-uye-kutu__baglantilar a, .dg-uye-kutu__basvuru { color: var(--dg-etkin); font-size: 1.4rem; font-weight: 600; text-underline-offset: .3rem; }
+.dg-uye-kutu__giris { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.8rem; margin-top: 1.6rem; }
+.dg-giris__dugme { min-height: 4.8rem; font-size: 1.45rem; }
+.dg-giris__dugme svg { width: 1.8rem; height: 1.8rem; }
+
+/* Shopify giriş penceresi (başlıktaki hesap simgesi ve ürün sayfasındaki düğme) */
+html body shopify-account.dg-giris, html body shopify-account.header__icon {
+  --shopify-account-font-heading: var(--dg-display);
+  --shopify-account-font-heading-weight: 700;
+  --shopify-account-font-body: var(--dg-body);
+  --shopify-account-font-body-weight: 400;
+  --shopify-account-radius-base: 2px;
+  --shopify-account-radius-button: 2px;
+  --shopify-account-radius-button-small: 2px;
+  --shopify-account-radius-input: 2px;
+  --shopify-account-color-background: #FFFFFF;
+  --shopify-account-color-text: #14202B;
+  --shopify-account-color-accent: #006FA1;
+  --shopify-account-color-accent-text: #FFFFFF;
+}
+html body shopify-account.dg-giris { display: inline-flex; --shopify-account-dialog-position-top: var(--account-dialog-top, 0px); }
+
+/* Üst şeritte sepet */
+html body .dg-ust__sepet { padding: .4rem 1rem; border: 1px solid rgba(255,255,255,.3); }
+html body .dg-ust__sepet:hover { border-color: var(--dg-cyan); }
+
+/* Sepet sayfası */
+html body .template-cart .title--primary, html body .cart__warnings .cart__empty-text { font-family: var(--dg-display); color: var(--dg-lac); }
+html body .cart-items th { font-family: var(--dg-mono); font-size: 1.15rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--dg-soluk); }
+html body .cart-item__name { font-family: var(--dg-display); font-stretch: 105%; font-weight: 600; color: var(--dg-lac); text-decoration: none; }
+html body .totals__total { font-family: var(--dg-mono); font-size: 1.3rem; letter-spacing: .06em; text-transform: uppercase; color: var(--dg-soluk); }
+html body .totals__total-value { font-family: var(--dg-display); font-stretch: 110%; font-size: 2.4rem; color: var(--dg-lac); }
+html body .cart__checkout-button { min-height: 5.6rem; border-radius: 2px; font: 600 1.6rem/1 var(--dg-body); }
+html body .cart__note textarea { border-radius: 2px; min-height: 9rem; }
+html body .cart__note label { font-size: 1.4rem; color: var(--dg-metin); }
+.dg-onay { display: flex; gap: 1rem; align-items: flex-start; margin: 0 0 1.6rem; padding: 1.4rem 1.6rem; border: 1px solid var(--dg-cizgi); background: #fff; font-size: 1.4rem; line-height: 1.5; color: var(--dg-metin); text-align: left; cursor: pointer; transition: border-color .2s, box-shadow .2s; }
+.dg-onay input { width: 1.9rem; height: 1.9rem; margin-top: .1rem; flex: none; accent-color: var(--dg-etkin); }
+.dg-onay a { color: var(--dg-etkin); font-weight: 600; text-underline-offset: .3rem; }
+.dg-onay--uyari { border-color: #C0392B; box-shadow: 0 0 0 3px rgba(192,57,43,.12); }

@@ -1,7 +1,7 @@
 /* Değirmen — sayfalar ve ortak ekler */
 
 /* Sayfa içeriği */
-.dg-icerik { padding: 7.2rem 0 9.6rem; background: var(--dg-zemin-acik); }
+.dg-icerik { padding: 7.2rem 0 9.6rem; background: #fff; }
 .dg-icerik__izgara { display: grid; grid-template-columns: minmax(0, 1fr) 28rem; gap: 8rem; align-items: start; }
 .dg-icerik__nav { position: sticky; top: 12rem; }
 .dg-icerik__nav .dg-kas { color: var(--dg-soluk); font-size: 1.15rem; padding-bottom: 1.2rem; border-bottom: 2px solid var(--dg-lac); }
@@ -22,11 +22,12 @@ html body .dg-icerik__metin a:not([style]) { color: var(--dg-etkin); text-underl
 @media (max-width: 989px) { .dg-icerik__izgara { grid-template-columns: 1fr; gap: 4.8rem; } .dg-icerik__nav { position: static; } }
 @media (max-width: 749px) { .dg-icerik { padding: 4.8rem 0 6.4rem; } html body .dg-icerik__metin { font-size: 1.6rem; } html body .dg-icerik__metin > p:first-child { font-size: 1.8rem; } }
 
-/* Ürün kartları: görseller tek tip zeminde */
+/* Ürün kartları: görseller tek tip zeminde (görselin üstündeki iç katman saydam kalmalı) */
 html body .card-wrapper .card__inner { background: #F3F6F8; }
 html body .card-wrapper .card__media { background: #F3F6F8; }
 html body .card-wrapper .card__media img { mix-blend-mode: multiply; }
-html body .card-wrapper .card__content { background: #fff; }
+html body .card-wrapper .card__inner .card__content { background: transparent; }
+html body .card-wrapper .card > .card__content { background: #fff; }
 
 /* Özet bağlantısı */
 .dg-ozet__tumu { margin-top: 1.2rem; font-size: 1.4rem; }
@@ -34,3 +35,82 @@ html body .card-wrapper .card__content { background: #fff; }
 /* Arama ve boş sayfalar */
 html body .template-search__header .h2, html body .main-search .title { color: var(--dg-lac); }
 html body .search__input.field__input { border-radius: 2px; }
+
+/* ================================================================
+   Yumuşak tonlar: koyu bölümler orta lacivert, açık bölümler
+   saf beyaz yerine hafif mavi-gri geçişli
+   ================================================================ */
+html:root {
+  --dg-koyu-1: #1D4468;
+  --dg-koyu-2: #16385A;
+  --dg-koyu-3: #12304E;
+  --dg-koyu-grad: linear-gradient(180deg, var(--dg-koyu-1) 0%, var(--dg-koyu-2) 55%, var(--dg-koyu-3) 100%);
+  --dg-acik-1: #F7FAFC;
+  --dg-acik-2: #EDF3F7;
+  --dg-acik-3: #E3ECF3;
+}
+
+/* Üst şerit ve başlık */
+html body .dg-ust { background: var(--dg-koyu-3); }
+html body .section-header .header-wrapper { background: linear-gradient(180deg, #FFFFFF 0%, var(--dg-acik-2) 100%); border-bottom-color: #D9E5EE; }
+html body .section-header .header__menu-item { color: var(--dg-lac); }
+
+/* Açılır menü */
+html body .mega-menu__content {
+  border-top: 0;
+  background: linear-gradient(180deg, var(--dg-koyu-1) 0%, var(--dg-koyu-2) 60%, var(--dg-koyu-3) 100%);
+  box-shadow: 0 1px 0 rgba(255,255,255,.08) inset, 0 36px 60px -26px rgba(10,28,46,.55);
+}
+html body .mega-menu__content:after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 14px;
+  color: var(--dg-cyan); background: var(--dg-cetvel); opacity: .3; pointer-events: none;
+}
+html.js body .mega-menu__content {
+  opacity: 0; transform: translateY(-.8rem);
+  transition: opacity .28s ease, transform .32s cubic-bezier(.2,.7,.2,1);
+}
+html.js body .mega-menu[open] .mega-menu__content { opacity: 1; transform: none; }
+html body .mega-menu__list { padding-top: 4rem; padding-bottom: 5.6rem; }
+html body .mega-menu__link--level-2 { color: var(--dg-cyan); border-bottom-color: rgba(255,255,255,.16); }
+html body .mega-menu__link--level-2:hover { color: #fff; }
+html body .mega-menu__link:not(.mega-menu__link--level-2) { color: rgba(255,255,255,.82); transition: color .2s, transform .2s; }
+html body .mega-menu__link:not(.mega-menu__link--level-2):hover,
+html body .mega-menu__link--active:not(.mega-menu__link--level-2) { color: #fff; transform: translateX(3px); text-decoration: none; }
+html body main { transition: filter .3s ease; }
+html body:has(.mega-menu[open]) main { filter: brightness(.8) saturate(.92); }
+
+/* Karşılama: fotoğraf biraz daha görünür, örtü orta lacivert */
+html body .dg-hero { background: var(--dg-koyu-2); }
+html body .dg-hero:before {
+  background: linear-gradient(96deg, rgba(22,56,90,.95) 0%, rgba(22,56,90,.84) 36%, rgba(22,56,90,.42) 70%, rgba(22,56,90,.22) 100%),
+              linear-gradient(0deg, rgba(18,48,78,.92) 0%, rgba(18,48,78,0) 42%);
+}
+html body .dg-hero__gruplar a { background: rgba(22,56,90,.66); }
+html body .dg-hero__gruplar a:hover { background: rgba(0,111,161,.62); }
+
+/* Açık bölümler */
+html body .dg-markalar { background: linear-gradient(180deg, #FFFFFF 0%, var(--dg-acik-1) 100%); border-bottom-color: #DCE7EF; }
+html body .dg-sektorler { background: linear-gradient(180deg, var(--dg-acik-1) 0%, var(--dg-acik-2) 100%); }
+html body .dg-sektorler__liste { background: #D9E5EE; border-color: #D9E5EE; }
+html body .dg-urunler { background: linear-gradient(180deg, var(--dg-acik-2) 0%, #FFFFFF 22%, #FFFFFF 78%, var(--dg-acik-1) 100%); }
+html body .dg-hizmet { background: linear-gradient(180deg, var(--dg-acik-1) 0%, var(--dg-acik-2) 100%); border-top: 0; }
+html body .dg-hizmet__liste { background: #FFFFFF; }
+html body .dg-katalog { background: linear-gradient(180deg, var(--dg-acik-2) 0%, var(--dg-acik-1) 100%); }
+html body .dg-surec { background: linear-gradient(180deg, var(--dg-acik-1) 0%, #FFFFFF 40%, var(--dg-acik-3) 100%); }
+html body .dg-icerik { background: linear-gradient(180deg, var(--dg-acik-1) 0%, #FFFFFF 30%, #FFFFFF 70%, var(--dg-acik-2) 100%); }
+html body .dg-detay { background: linear-gradient(180deg, var(--dg-acik-1) 0%, #FFFFFF 30%); border-top-color: #DCE7EF; }
+
+/* Koyu bölümler: orta lacivert geçiş */
+html body .dg-hizmet__panel,
+html body .dg-cta,
+html body .dg-kol-ust,
+html body .dg-guven { background: var(--dg-koyu-grad); }
+html body .dg-cta__kanallar { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.16); }
+html body .dg-cta__kanal { background: rgba(10,30,50,.28); }
+html body .dg-cta__kanal:hover { background: rgba(10,30,50,.12); }
+html body .footer { background: linear-gradient(180deg, var(--dg-koyu-3) 0%, #0F2A45 100%); }
+
+/* Açıktan koyuya geçişlerde yumuşak ışık */
+html body .dg-cta, html body .dg-guven, html body .dg-kol-ust { box-shadow: inset 0 28px 36px -30px rgba(255,255,255,.18); }
+
+@media (prefers-reduced-motion: reduce) { html.js body .mega-menu__content { transition: none; transform: none; } }
