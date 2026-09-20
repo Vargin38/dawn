@@ -31,7 +31,11 @@
 >
   <div class="page-width">
     <div class="title-wrapper-with-link">
-      <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
+      <div>
+        <p class="dg-cart-eyebrow">SİPARİŞİNİZİ GÖZDEN GEÇİRİN</p>
+        <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
+        <p class="dg-cart-intro">Fiyatlar KDV dahildir. Ürün ve adet bilgilerini kontrol ettikten sonra güvenli ödeme adımına geçebilirsiniz.</p>
+      </div>
       <a href="{{ routes.all_products_collection_url }}" class="underlined-link">
         {{- 'general.continue_shopping' | t -}}
       </a>

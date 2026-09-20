@@ -37,7 +37,15 @@
         </cart-note>
       {%- endif -%}
 
-      <div class="cart__blocks">
+      <div class="cart__blocks dg-cart-summary-card">
+        <div class="dg-cart-summary-head">
+          <div>
+            <p class="dg-cart-eyebrow">SİPARİŞ ÖZETİ</p>
+            <h2>Güvenli şekilde tamamlayın</h2>
+          </div>
+          <span class="dg-cart-item-count">{{ cart.item_count }} ürün</span>
+        </div>
+
         {% for block in section.blocks %}
           {%- case block.type -%}
             {%- when '@app' -%}
@@ -86,11 +94,34 @@
                   {% endif %}
                   form="cart"
                 >
-                  {{ 'sections.cart.checkout' | t }}
+                  Güvenli ödemeye geç
                 </button>
               </div>
           {%- endcase -%}
         {% endfor %}
+
+        <div class="dg-cart-trust" role="list" aria-label="Sipariş güven bilgileri">
+          <div class="dg-cart-trust__item" role="listitem">
+            <span class="dg-cart-trust__icon" aria-hidden="true">✓</span>
+            <span><strong>KDV dahil fiyat</strong><small>Ödeme adımında ek KDV yok</small></span>
+          </div>
+          <div class="dg-cart-trust__item" role="listitem">
+            <span class="dg-cart-trust__icon" aria-hidden="true">✓</span>
+            <span><strong>Shopify güvenli ödeme</strong><small>Ödeme bilgileri güvenli checkout'ta alınır</small></span>
+          </div>
+          <div class="dg-cart-trust__item" role="listitem">
+            <span class="dg-cart-trust__icon" aria-hidden="true">↻</span>
+            <span><strong>Tüketici siparişlerinde 14 gün</strong><small>Kanuni istisnalar ve ticari alımlar saklıdır</small></span>
+          </div>
+        </div>
+
+        <div class="dg-cart-help">
+          <div>
+            <strong>Sipariş öncesi sorunuz mu var?</strong>
+            <span>Ürün, teslimat veya teklif için bize yazın.</span>
+          </div>
+          <a href="https://wa.me/905418890092?text=Merhaba%2C%20sepetimdeki%20%C3%BCr%C3%BCn%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp'tan danışın</a>
+        </div>
 
         <div id="cart-errors"></div>
       </div>
