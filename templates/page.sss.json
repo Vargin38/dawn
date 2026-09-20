@@ -50,7 +50,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Fiyatlara KDV dahil mi?",
-            "answer": "<p>Sitede yazan fiyatlar KDV hariçtir; KDV ödeme adımında eklenir ve toplam tutarda görünür. Tekliflerde KDV durumu ayrıca belirtilir.</p>"
+            "answer": "<p>Sitede yazan fiyatlar Türk lirası cinsinden ve KDV dahildir. Ödeme adımında ek KDV eklenmez; kargo ücreti alıcı ödemelidir. Tekliflerde toplam bedel ve varsa teslimat masrafları ayrıca belirtilir.</p>"
           }
         },
         "ss-tab-8": {

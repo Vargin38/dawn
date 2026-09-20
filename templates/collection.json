@@ -47,7 +47,7 @@
           "type": "adim",
           "settings": {
             "baslik": "Fiyatlıysa sepete ekleyin",
-            "metin": "Fiyatı yazan ürünlerde sepete ekleyip kartla ödeyin. Fiyatlar KDV hariçtir; KDV ödeme adımında eklenir."
+            "metin": "Fiyatı yazan ürünlerde sepete ekleyip kartla ödeyin. Sitede yazan fiyatlar KDV dahildir."
           }
         },
         "teklif": {
