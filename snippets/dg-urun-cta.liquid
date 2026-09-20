@@ -16,7 +16,7 @@
 -%}
 {%- capture dg_izin -%}{%- render 'dg-satis', product: product -%}{%- endcapture -%}
 {%- if dg_izin contains 'evet' -%}
-  <p class="dg-satis-not">{% render 'dg-ikon', ad: 'kalkan' %}<span>Fiyatlar KDV hariçtir · KDV ödeme adımında eklenir · Kargo alıcı ödemelidir</span></p>
+  <p class="dg-satis-not">{% render 'dg-ikon', ad: 'kalkan' %}<span>Fiyatlar KDV dahildir · Kargo alıcı ödemelidir</span></p>
   <div class="dg-urun-cta dg-urun-cta--ikincil">
     <a href="#teklif-formu" class="dg-btn dg-btn--koyu-cizgi">Toplu alım için teklif</a>
     <a href="{% render 'dg-urun-wa', product: product %}" class="dg-btn dg-btn--wa dg-guven__wa" target="_blank" rel="noopener">{% render 'dg-ikon', ad: 'wa' %}WhatsApp</a>
