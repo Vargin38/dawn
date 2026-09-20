@@ -59,12 +59,12 @@
                 </div>
 
                 <div class="totals">
-                  <h2 class="totals__total">Ara toplam (KDV hariç)</h2>
+                  <h2 class="totals__total">Ara toplam (KDV dahil)</h2>
                   <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
                 </div>
 
                 <small class="tax-note caption-large rte">
-                  KDV ödeme adımında eklenir. Kargo alıcı ödemelidir; ücreti teslimatta taşıyıcıya ödenir.
+                  Fiyatlara KDV dahildir. Kargo alıcı ödemelidir; ücreti teslimatta taşıyıcıya ödenir.
                 </small>
               </div>
             {%- else -%}
