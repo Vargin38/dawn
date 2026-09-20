@@ -42,7 +42,11 @@
   -%}
 
   <product-component view-event-payload="{{ card_product | standard_event_data: 'view', context: product_view_context | escape }}">
-    <div class="card-wrapper product-card-wrapper underline-links-hover">
+    {%- comment -%} Ürün doğrudan satışa açık mı? (fiyat + sepet gösterimi bu koşula bağlı) {%- endcomment -%}
+    {%- capture dg_izin_kart -%}{%- render 'dg-satis', product: card_product -%}{%- endcapture -%}
+    {%- assign dg_kart_satista = false -%}
+    {%- if dg_izin_kart contains 'evet' -%}{%- assign dg_kart_satista = true -%}{%- endif -%}
+<div class="card-wrapper product-card-wrapper underline-links-hover">
       <div
         class="
           card card--{{ settings.card_style }}
@@ -127,7 +131,7 @@
               </h3>
             </div>
             <div class="card__badge {{ settings.badge_position }}">
-              {%- if settings.quote_mode -%}
+              {%- if settings.quote_mode or dg_kart_satista == false -%}
               {%- comment -%} Teklif modunda tükendi/indirim etiketi gösterilmez. {%- endcomment -%}
               {%- elsif card_product.available == false -%}
                 <span
@@ -553,7 +557,7 @@
             {% endif %}
           {% endif %}
           <div class="card__badge {{ settings.badge_position }}">
-            {%- if settings.quote_mode -%}
+            {%- if settings.quote_mode or dg_kart_satista == false -%}
             {%- comment -%} Teklif modunda tükendi/indirim etiketi gösterilmez. {%- endcomment -%}
             {%- elsif card_product.available == false -%}
               <span

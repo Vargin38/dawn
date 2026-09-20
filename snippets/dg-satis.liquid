@@ -1,17 +1,22 @@
 {%- comment -%}
-  Fiyat ve sepetin gösterilip gösterilmeyeceğine karar verir; izin varsa "evet" yazar.
-  Kural: ürün "Satışta" etiketli VE giriş yapan müşteri "Onaylı" etiketli.
+  Ürünün doğrudan satışa açık olup olmadığına karar verir; açıksa "evet" yazar.
+  Fiyat, sepete ekleme ve ödeme yalnızca "evet" dönen ürünlerde gösterilir.
+
+  Kural:
+  1) Ürün "Satışta" etiketli olacak.
+  2) Ürünün tüm varyantlarının fiyatı sıfırdan büyük olacak (0 TL sipariş güvenlik ağı).
+  3) Tema ayarlarındaki "Teklif modu" kapalı olacak (açıkken tüm mağaza teklif usulüne döner).
+
+  Fiyatı girilmemiş ürünler otomatik olarak teklif akışında kalır.
   Kullanım: {% capture izin %}{% render 'dg-satis', product: product %}{% endcapture %}
 {%- endcomment -%}
 {%- liquid
   assign izin = false
-  unless settings.quote_mode
+  if product.tags contains 'Satışta' and product.price_min > 0
     assign izin = true
-  endunless
-  if product.tags contains 'Satışta' and customer
-    if customer.tags contains 'Onaylı'
-      assign izin = true
-    endif
+  endif
+  if settings.quote_mode
+    assign izin = false
   endif
   if izin
     echo 'evet'
