@@ -9,7 +9,10 @@
  */
 {
   "sections": {
-    "banner": { "type": "dg-koleksiyon-ust", "settings": {} },
+    "banner": {
+      "type": "dg-koleksiyon-ust",
+      "settings": {}
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -33,12 +36,38 @@
     "surec": {
       "type": "dg-surec",
       "blocks": {
-        "sec": { "type": "adim", "settings": { "baslik": "Ürünü seçin", "metin": "Cihazın sayfasında teknik özellikleri ve kataloğu inceleyin; model seçeneği varsa ihtiyacınıza uygun olanı işaretleyin." } },
-        "form": { "type": "adim", "settings": { "baslik": "Talebinizi iletin", "metin": "Firma bilgilerinizi, adedi ve teslimat şehrini ürün sayfasındaki forma yazın ya da WhatsApp'tan gönderin." } },
-        "teklif": { "type": "adim", "settings": { "baslik": "Teklifinizi alın", "metin": "Fiyat, teslim süresi ve ödeme koşullarını içeren teklifimizi genellikle 24 saat içinde iletiyoruz." } }
+        "sec": {
+          "type": "adim",
+          "settings": {
+            "baslik": "Ürünü seçin",
+            "metin": "Cihazın sayfasında teknik özellikleri ve kataloğu inceleyin; model seçeneği varsa ihtiyacınıza uygun olanı işaretleyin."
+          }
+        },
+        "form": {
+          "type": "adim",
+          "settings": {
+            "baslik": "Fiyatlıysa sepete ekleyin",
+            "metin": "Fiyatı yazan ürünlerde sepete ekleyip kartla ödeyin. Fiyatlar KDV hariçtir; KDV ödeme adımında eklenir."
+          }
+        },
+        "teklif": {
+          "type": "adim",
+          "settings": {
+            "baslik": "Fiyat yoksa teklif isteyin",
+            "metin": "Fiyatı görünmeyen ürünlerde formu doldurun; fiyat, teslim süresi ve ödeme koşullarını genellikle 24 saat içinde iletiyoruz."
+          }
+        }
       },
-      "block_order": ["sec", "form", "teklif"],
-      "settings": { "kas": "Nasıl çalışıyoruz", "baslik": "Teklif üç adımda gelir", "metin": "Sitede fiyat yazmıyoruz, çünkü fiyat model, adet ve teslimat yerine göre değişiyor." }
+      "block_order": [
+        "sec",
+        "form",
+        "teklif"
+      ],
+      "settings": {
+        "kas": "Nasıl satın alırsınız",
+        "baslik": "İki şekilde sipariş verebilirsiniz",
+        "metin": "Fiyatı yazan ürünleri doğrudan sepete ekleyip kartla ödeyebilirsiniz. Fiyatı görünmeyen makineler modele, adede ve teslimat yerine göre fiyatlandığı için teklifle satılır."
+      }
     },
     "cta": {
       "type": "dg-cta",
@@ -54,5 +83,10 @@
       }
     }
   },
-  "order": ["banner", "product-grid", "surec", "cta"]
+  "order": [
+    "banner",
+    "product-grid",
+    "surec",
+    "cta"
+  ]
 }

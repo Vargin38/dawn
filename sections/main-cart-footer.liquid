@@ -64,13 +64,13 @@
                 </div>
 
                 <small class="tax-note caption-large rte">
-                  KDV ödeme adımında eklenir. Kargo alıcı ödemelidir; ücreti teslimatta taşıyıcıya ödenir. Ödeme havale/EFT ile yapılır.
+                  KDV ödeme adımında eklenir. Kargo alıcı ödemelidir; ücreti teslimatta taşıyıcıya ödenir.
                 </small>
               </div>
             {%- else -%}
               <div class="cart__ctas" {{ block.shopify_attributes }}>
                 <label class="dg-onay" for="DgOnay">
-                  <input type="checkbox" id="DgOnay" form="cart" required>
+                  <input type="checkbox" id="DgOnay" name="attributes[Ön Bilgilendirme ve Mesafeli Satış Sözleşmesi]" value="Onaylandı" form="cart" required>
                   <span>
                     <a href="{{ pages['on-bilgilendirme-formu'].url | default: '/pages/on-bilgilendirme-formu' }}" target="_blank" rel="noopener">Ön Bilgilendirme Formu</a>'nu ve
                     <a href="{{ pages['mesafeli-satis-sozlesmesi'].url | default: '/pages/mesafeli-satis-sozlesmesi' }}" target="_blank" rel="noopener">Mesafeli Satış Sözleşmesi</a>'ni okudum, kabul ediyorum.

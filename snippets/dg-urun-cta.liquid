@@ -16,7 +16,7 @@
 -%}
 {%- capture dg_izin -%}{%- render 'dg-satis', product: product -%}{%- endcapture -%}
 {%- if dg_izin contains 'evet' -%}
-  <p class="dg-satis-not">{% render 'dg-ikon', ad: 'kalkan' %}<span>Fiyatlar KDV hariçtir · Kargo alıcı ödemelidir · Havale/EFT ile ödeme</span></p>
+  <p class="dg-satis-not">{% render 'dg-ikon', ad: 'kalkan' %}<span>Fiyatlar KDV hariçtir · KDV ödeme adımında eklenir · Kargo alıcı ödemelidir</span></p>
   <div class="dg-urun-cta dg-urun-cta--ikincil">
     <a href="#teklif-formu" class="dg-btn dg-btn--koyu-cizgi">Toplu alım için teklif</a>
     <a href="{% render 'dg-urun-wa', product: product %}" class="dg-btn dg-btn--wa dg-guven__wa" target="_blank" rel="noopener">{% render 'dg-ikon', ad: 'wa' %}WhatsApp</a>
@@ -26,28 +26,11 @@
     <a href="#teklif-formu" class="dg-btn dg-btn--mavi dg-urun-cta__ana">Teklif İste{% render 'dg-ikon', ad: 'ok' %}</a>
     <a href="{% render 'dg-urun-wa', product: product %}" class="dg-btn dg-btn--wa dg-guven__wa" target="_blank" rel="noopener">{% render 'dg-ikon', ad: 'wa' %}WhatsApp</a>
   </div>
+  {%- comment -%} "Satışta" etiketli ama fiyatı henüz girilmemiş ürünler için kısa not. {%- endcomment -%}
   {%- if satista -%}
     <div class="dg-uye-kutu">
-      {%- if customer -%}
-        <strong>Firma hesabınız onay bekliyor</strong>
-        <p>{{ customer.email }} ile giriş yaptınız. Hesabınız onaylandığında bu ürünün fiyatını görebilir, sepete ekleyip havale/EFT ile sipariş verebilirsiniz.</p>
-        <p class="dg-uye-kutu__baglantilar">
-          <a href="https://wa.me/905418890092?text={{ basvuru_wa }}" target="_blank" rel="noopener">Onay için WhatsApp'tan yazın</a>
-        </p>
-      {%- else -%}
-        <strong>Firmanız için online sipariş</strong>
-        <p>Onaylı firma hesabınızla giriş yaptığınızda bu ürünün fiyatını görebilir, sepete ekleyip havale/EFT ile sipariş verebilirsiniz. Giriş için şifre gerekmez; e-posta adresinize gelen kodu girmeniz yeterli.</p>
-        <div class="dg-uye-kutu__giris">
-          {%- if shop.customer_accounts_enabled -%}
-            <shopify-account menu="{{ settings.customer_account_menu | default: 'customer-account-main-menu' }}" class="dg-giris">
-              <span slot="signed-out-avatar" class="dg-btn dg-btn--mavi dg-giris__dugme">{% render 'dg-ikon', ad: 'kalkan' %}Firma hesabıyla giriş yap</span>
-            </shopify-account>
-          {%- else -%}
-            <a class="dg-btn dg-btn--mavi dg-giris__dugme" href="{{ routes.account_login_url }}">Firma hesabıyla giriş yap</a>
-          {%- endif -%}
-          <a class="dg-uye-kutu__basvuru" href="https://wa.me/905418890092?text={{ basvuru_wa }}" target="_blank" rel="noopener">Hesabınız yok mu? Başvurun</a>
-        </div>
-      {%- endif -%}
+      <strong>Bu ürünün fiyatı henüz yayımlanmadı</strong>
+      <p>Güncel fiyat, teslim süresi ve ödeme koşulları için teklif isteyin; genellikle 24 saat içinde dönüyoruz.</p>
     </div>
   {%- endif -%}
 {%- endif -%}

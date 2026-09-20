@@ -293,15 +293,15 @@
         "form": {
           "type": "adim",
           "settings": {
-            "baslik": "Talebinizi iletin",
-            "metin": "Firma bilgilerinizi, adedi ve teslimat şehrini ürün sayfasındaki forma yazın ya da WhatsApp'tan gönderin."
+            "baslik": "Fiyatlıysa sepete ekleyin",
+            "metin": "Fiyatı yazan ürünlerde sepete ekleyip kartla ödeyin. Fiyatlar KDV hariçtir; KDV ödeme adımında eklenir."
           }
         },
         "teklif": {
           "type": "adim",
           "settings": {
-            "baslik": "Teklifinizi alın",
-            "metin": "Fiyat, teslim süresi ve ödeme koşullarını içeren teklifimizi genellikle 24 saat içinde iletiyoruz."
+            "baslik": "Fiyat yoksa teklif isteyin",
+            "metin": "Fiyatı görünmeyen ürünlerde formu doldurun; fiyat, teslim süresi ve ödeme koşullarını genellikle 24 saat içinde iletiyoruz."
           }
         }
       },
@@ -311,9 +311,9 @@
         "teklif"
       ],
       "settings": {
-        "kas": "Nasıl çalışıyoruz",
-        "baslik": "Teklif üç adımda gelir",
-        "metin": "Sitede fiyat yazmıyoruz, çünkü fiyat model, adet ve teslimat yerine göre değişiyor."
+        "kas": "Nasıl satın alırsınız",
+        "baslik": "İki şekilde sipariş verebilirsiniz",
+        "metin": "Fiyatı yazan ürünleri doğrudan sepete ekleyip kartla ödeyebilirsiniz. Fiyatı görünmeyen makineler modele, adede ve teslimat yerine göre fiyatlandığı için teklifle satılır."
       }
     },
     "cta": {

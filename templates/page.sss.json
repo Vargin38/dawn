@@ -9,24 +9,120 @@
  */
 {
   "sections": {
-    "ust": { "type": "dg-sayfa-ust", "settings": { "kas": "Destek", "metin": "Teklif, sipariş ve teslimat süreçleriyle ilgili en çok sorulanlar." } },
+    "ust": {
+      "type": "dg-sayfa-ust",
+      "settings": {
+        "kas": "Destek",
+        "metin": "Teklif, sipariş ve teslimat süreçleriyle ilgili en çok sorulanlar."
+      }
+    },
     "faq": {
       "type": "ss-faq-17",
       "blocks": {
-        "ss-tab-3": { "type": "tab", "settings": { "tab": "Teklif ve fiyat" } },
-        "ss-faq_item-4": { "type": "faq_item", "settings": { "question": "Fiyatlar neden sitede görünmüyor?", "answer": "<p>Fiyatlar; sipariş adedi, teslimat yeri ve güncel tedarik koşullarına göre değiştiği için her talebe özel teklif hazırlıyoruz.</p>" } },
-        "ss-faq_item-5": { "type": "faq_item", "settings": { "question": "Nasıl teklif alabilirim?", "answer": "<p>İlgilendiğiniz ürünün sayfasındaki <strong>Teklif İste</strong> butonuna tıklayıp formu doldurun. Katalogda yer almayan ürünler için <a href=\"/pages/contact\">iletişim sayfasındaki</a> formu kullanabilirsiniz.</p>" } },
-        "ss-faq_item-6": { "type": "faq_item", "settings": { "question": "Teklife ne kadar sürede dönüş yapıyorsunuz?", "answer": "<p>Talepleri hafta içi 09:00–18:00 arasında yanıtlıyoruz; genellikle 24 saat içinde dönüş yapıyoruz.</p>" } },
-        "ss-faq_item-7": { "type": "faq_item", "settings": { "question": "Teklif fiyatlarına KDV dahil mi?", "answer": "<p>KDV ve diğer vergilerin fiyata dahil olup olmadığı teklifte açıkça belirtilir.</p>" } },
-        "ss-tab-8": { "type": "tab", "settings": { "tab": "Sipariş ve ödeme" } },
-        "ss-faq_item-9": { "type": "faq_item", "settings": { "question": "Bireysel olarak satın alabilir miyim?", "answer": "<p>Sitemiz, ticari faaliyeti kapsamında alım yapan firmalara yönelik satış yapmaktadır.</p>" } },
-        "ss-faq_item-10": { "type": "faq_item", "settings": { "question": "Ödeme nasıl yapılır?", "answer": "<p>Ödeme yöntemi ve vadesi teklifte belirtilir. Sipariş, teklifin yazılı olarak onaylanmasıyla kesinleşir.</p>" } },
-        "ss-tab-11": { "type": "tab", "settings": { "tab": "Teslimat ve garanti" } },
-        "ss-faq_item-12": { "type": "faq_item", "settings": { "question": "Teslimat süresi ne kadar?", "answer": "<p>Teslimat süresi ürünün stok durumuna ve teslimat yerine göre değişir; her teklifte ayrıca belirtilir.</p>" } },
-        "ss-faq_item-13": { "type": "faq_item", "settings": { "question": "Ürünler garantili mi?", "answer": "<p>Garanti kapsamı ve süresi ürüne göre değişir ve teklifte belirtilir.</p>" } },
-        "ss-faq_item-14": { "type": "faq_item", "settings": { "question": "Ürün hasarlı ulaşırsa ne yapmalıyım?", "answer": "<p>Teslimatta ambalajı kontrol edin; hasar varsa taşıyıcıya hasar tespit tutanağı düzenletin ve aynı gün bize bildirin. Ayrıntılar için <a href=\"/policies/refund-policy\">İade ve Garanti Koşulları</a> sayfasına bakın.</p>" } }
+        "ss-tab-3": {
+          "type": "tab",
+          "settings": {
+            "tab": "Fiyat ve sipariş"
+          }
+        },
+        "ss-faq_item-4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Neden bazı ürünlerde fiyat görünmüyor?",
+            "answer": "<p>Stoktan satılan ürünlerin fiyatı kendi sayfasında yazar; sepete ekleyip kartla ödeyebilirsiniz. Modele, adede ve teslimat yerine göre fiyatlanan makinelerde ise fiyat yerine <strong>Teklif İste</strong> butonu bulunur.</p>"
+          }
+        },
+        "ss-faq_item-5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Nasıl teklif alabilirim?",
+            "answer": "<p>İlgilendiğiniz ürünün sayfasındaki <strong>Teklif İste</strong> butonuna tıklayıp formu doldurun. Katalogda yer almayan ürünler için <a href=\"/pages/contact\">iletişim sayfasındaki</a> formu kullanabilirsiniz.</p>"
+          }
+        },
+        "ss-faq_item-6": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Teklife ne kadar sürede dönüş yapıyorsunuz?",
+            "answer": "<p>Talepleri hafta içi 09:00–18:00 arasında yanıtlıyoruz; genellikle 24 saat içinde dönüş yapıyoruz.</p>"
+          }
+        },
+        "ss-faq_item-7": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Fiyatlara KDV dahil mi?",
+            "answer": "<p>Sitede yazan fiyatlar KDV hariçtir; KDV ödeme adımında eklenir ve toplam tutarda görünür. Tekliflerde KDV durumu ayrıca belirtilir.</p>"
+          }
+        },
+        "ss-tab-8": {
+          "type": "tab",
+          "settings": {
+            "tab": "Sipariş ve ödeme"
+          }
+        },
+        "ss-faq_item-9": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Bireysel olarak satın alabilir miyim?",
+            "answer": "<p>Evet. Hem firmalar hem bireysel müşteriler sipariş verebilir. Fatura bilgilerinizi ödeme adımında girersiniz; kurumsal fatura için firma ve vergi bilgilerinizi eklemeniz yeterlidir.</p>"
+          }
+        },
+        "ss-faq_item-10": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Ödeme nasıl yapılır?",
+            "answer": "<p>Fiyatı yazan ürünlerde kredi veya banka kartıyla ödeme yaparsınız. Teklifle satılan ürünlerde ödeme yöntemi ve vadesi teklifte belirtilir.</p>"
+          }
+        },
+        "ss-tab-11": {
+          "type": "tab",
+          "settings": {
+            "tab": "Teslimat ve garanti"
+          }
+        },
+        "ss-faq_item-12": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Teslimat süresi ne kadar?",
+            "answer": "<p>Teslimat süresi ürünün stok durumuna ve teslimat yerine göre değişir; her teklifte ayrıca belirtilir.</p>"
+          }
+        },
+        "ss-faq_item-13": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Ürünler garantili mi?",
+            "answer": "<p>Garanti kapsamı ve süresi ürüne göre değişir ve teklifte belirtilir.</p>"
+          }
+        },
+        "ss-faq_item-14": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Ürün hasarlı ulaşırsa ne yapmalıyım?",
+            "answer": "<p>Teslimatta ambalajı kontrol edin; hasar varsa taşıyıcıya hasar tespit tutanağı düzenletin ve aynı gün bize bildirin. Ayrıntılar için <a href=\"/policies/refund-policy\">İade ve Garanti Koşulları</a> sayfasına bakın.</p>"
+          }
+        },
+        "ss-faq_item-cayma": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Siparişimi iade edebilir miyim?",
+            "answer": "<p>Siteden doğrudan satın aldığınız ürünlerde, tüketici iseniz teslim tarihinden itibaren <strong>14 gün içinde</strong> gerekçe göstermeden cayma hakkınız vardır. Ayrıntılar ve istisnalar için <a href=\"/policies/refund-policy\">İade ve Cayma Hakkı</a> sayfasına bakın.</p>"
+          }
+        }
       },
-      "block_order": ["ss-tab-3", "ss-faq_item-4", "ss-faq_item-5", "ss-faq_item-6", "ss-faq_item-7", "ss-tab-8", "ss-faq_item-9", "ss-faq_item-10", "ss-tab-11", "ss-faq_item-12", "ss-faq_item-13", "ss-faq_item-14"],
+      "block_order": [
+        "ss-tab-3",
+        "ss-faq_item-4",
+        "ss-faq_item-5",
+        "ss-faq_item-6",
+        "ss-faq_item-7",
+        "ss-tab-8",
+        "ss-faq_item-9",
+        "ss-faq_item-10",
+        "ss-faq_item-cayma",
+        "ss-tab-11",
+        "ss-faq_item-12",
+        "ss-faq_item-13",
+        "ss-faq_item-14"
+      ],
       "settings": {
         "content_max_width": 80,
         "content_align": "center",
@@ -107,5 +203,9 @@
       }
     }
   },
-  "order": ["ust", "faq", "cta"]
+  "order": [
+    "ust",
+    "faq",
+    "cta"
+  ]
 }
