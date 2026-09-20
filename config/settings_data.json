@@ -128,8 +128,9 @@
     "show_cart_note": true,
     "cart_drawer_collection": "",
     "cart_color_scheme": "scheme-1",
-    "quote_mode": true,
+    "quote_mode": false,
     "customer_account_menu": "customer-account-main-menu",
+    "dg_og_gorsel": "shopify://shop_images/degirmen-plaza-bina.jpg",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
@@ -148,7 +149,7 @@
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#F5F9FC",
+          "background": "#f5f9fc",
           "background_gradient": "",
           "text": "#14202b",
           "button": "#006fa1",
@@ -201,7 +202,6 @@
           "shadow": "#000000"
         }
       }
-    },
-    "dg_og_gorsel": "shopify://shop_images/degirmen-plaza-bina.jpg"
+    }
   }
 }

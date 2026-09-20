@@ -9,50 +9,39 @@
  */
 {
   "sections": {
-    "quote_notice": {
-      "type": "rich-text",
+    "cart-items": {
+      "type": "main-cart-items",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "cart-footer": {
+      "type": "main-cart-footer",
       "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Teklif usulü çalışıyoruz",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Sitemizde online sipariş ve sepet yerine firmanıza özel teklif hazırlıyoruz. İlgilendiğiniz ürünün sayfasındaki formu doldurun ya da bize doğrudan yazın; fiyat, teslimat süresi ve ödeme koşullarını e-posta ile iletelim.</p>"
-          }
+        "subtotal": {
+          "type": "subtotal",
+          "settings": {}
         },
         "buttons": {
-          "type": "button",
-          "settings": {
-            "button_label": "Ürünleri incele",
-            "button_link": "shopify://collections/all",
-            "button_style_secondary": false,
-            "button_label_2": "Teklif iste",
-            "button_link_2": "shopify://pages/contact",
-            "button_style_secondary_2": true
-          }
+          "type": "buttons",
+          "settings": {}
         }
       },
       "block_order": [
-        "heading",
-        "text",
+        "subtotal",
         "buttons"
       ],
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
         "color_scheme": "scheme-1",
-        "full_width": false,
-        "padding_top": 80,
-        "padding_bottom": 80
+        "padding_top": 20,
+        "padding_bottom": 40
       }
     }
   },
   "order": [
-    "quote_notice"
+    "cart-items",
+    "cart-footer"
   ]
 }
