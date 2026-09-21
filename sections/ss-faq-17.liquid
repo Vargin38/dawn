@@ -1546,6 +1546,38 @@
   </div>
 </div>
 
+{%- assign dg_faq_count = 0 -%}
+{%- for block in section.blocks -%}
+  {%- if block.type == 'faq_item' and block.settings.question != blank and block.settings.answer != blank -%}
+    {%- assign dg_faq_count = dg_faq_count | plus: 1 -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if dg_faq_count > 0 -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {%- assign dg_faq_index = 0 -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'faq_item' and block.settings.question != blank and block.settings.answer != blank -%}
+            {%- if dg_faq_index > 0 -%},{%- endif -%}
+            {
+              "@type": "Question",
+              "name": {{ block.settings.question | strip_html | json }},
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": {{ block.settings.answer | strip_html | strip_newlines | json }}
+              }
+            }
+            {%- assign dg_faq_index = dg_faq_index | plus: 1 -%}
+          {%- endif -%}
+        {%- endfor -%}
+      ]
+    }
+  </script>
+{%- endif -%}
+
 <script>
   function initFaq17() {
     const toggles = document.querySelectorAll('.faq-toggle-{{ section.id }}');

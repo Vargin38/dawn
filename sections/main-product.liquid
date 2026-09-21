@@ -9,6 +9,7 @@
     data-zoom-on-hover
   {% endif %}
 >
+  {%- capture dg_satis_izin -%}{%- render 'dg-satis', product: product -%}{%- endcapture -%}
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
@@ -120,18 +121,9 @@
                       <span>{{ 'products.product.volume_pricing.note' | t }}</span>
                     </div>
                   {%- endif -%}
-                  {%- if cart.taxes_included or cart.duties_included or shop.shipping_policy.body != blank -%}
+                  {%- if dg_satis_izin contains 'evet' -%}
                     <div class="product__tax caption rte">
-                      {%- if cart.duties_included and cart.taxes_included -%}
-                        {{ 'products.product.duties_and_taxes_included' | t }}
-                      {%- elsif cart.taxes_included -%}
-                        {{ 'products.product.taxes_included' | t }}
-                      {%- elsif cart.duties_included -%}
-                        {{ 'products.product.duties_included' | t }}
-                      {%- endif -%}
-                      {%- if shop.shipping_policy.body != blank -%}
-                        {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
-                      {%- endif -%}
+                      Fiyat KDV dahildir. Kargo alıcı ödemelidir; ücreti teslimatta taşıyıcıya ödenir.
                     </div>
                   {%- endif -%}
                   <div {{ block.shopify_attributes }}>
@@ -320,22 +312,20 @@
                                   </dt>
                                   <dd>
                                     <s class="variant-item__old-price">
-                                      {{ variant_price_compare | money_with_currency }}
+                                      {% render 'dg-money', amount: variant_price_compare %}
                                     </s>
                                   </dd>
                                 </dl>
                               {%- endif -%}
                               {%- if current_qty_for_volume_pricing < volume_pricing_array.last.minimum_quantity -%}
-                                {%- assign variant_price = product.selected_or_first_available_variant.price
-                                  | money_with_currency
-                                -%}
+                                {%- capture variant_price -%}{%- render 'dg-money', amount: product.selected_or_first_available_variant.price -%}{%- endcapture -%}
                                 <span class="price-per-item--current">
                                   {{- 'products.product.volume_pricing.price_at_each_html' | t: price: variant_price -}}
                                 </span>
                               {%- else -%}
                                 {%- for price_break in volume_pricing_array -%}
                                   {%- if current_qty_for_volume_pricing >= price_break.minimum_quantity -%}
-                                    {%- assign price_break_price = price_break.price | money_with_currency -%}
+                                    {%- capture price_break_price -%}{%- render 'dg-money', amount: price_break.price -%}{%- endcapture -%}
                                     <span class="price-per-item--current">
                                       {{-
                                         'products.product.volume_pricing.price_at_each_html'
@@ -348,9 +338,7 @@
                               {%- endif -%}
                             </div>
                           {%- else -%}
-                            {%- assign variant_price = product.selected_or_first_available_variant.price
-                              | money_with_currency
-                            -%}
+                            {%- capture variant_price -%}{%- render 'dg-money', amount: product.selected_or_first_available_variant.price -%}{%- endcapture -%}
                             {%- assign variant_price_compare = product.selected_or_first_available_variant.compare_at_price -%}
                             <div class="price-per-item">
                               {%- if variant_price_compare -%}
@@ -360,7 +348,7 @@
                                   </dt>
                                   <dd>
                                     <s class="variant-item__old-price">
-                                      {{ variant_price_compare | money_with_currency }}
+                                      {% render 'dg-money', amount: variant_price_compare %}
                                     </s>
                                   </dd>
                                   <dt class="visually-hidden">
@@ -418,15 +406,13 @@
                           <ul class="list-unstyled">
                             <li>
                               <span>{{ product.selected_or_first_available_variant.quantity_rule.min }}+</span>
-                              {%- assign price = product.selected_or_first_available_variant.price
-                                | money_with_currency
-                              -%}
+                              {%- capture price -%}{%- render 'dg-money', amount: product.selected_or_first_available_variant.price -%}{%- endcapture -%}
                               <span data-text="{{ 'products.product.volume_pricing.price_at_each_html' | t: price: variant_price }}">
                                 {{- 'sections.quick_order_list.each' | t: money: price -}}
                               </span>
                             </li>
                             {%- for price_break in product.selected_or_first_available_variant.quantity_price_breaks -%}
-                              {%- assign price_break_price = price_break.price | money_with_currency -%}
+                              {%- capture price_break_price -%}{%- render 'dg-money', amount: price_break.price -%}{%- endcapture -%}
                               <li class="{%- if forloop.index >= 3 -%}show-more-item hidden{%- endif -%}">
                                 <span>
                                   {{- price_break.minimum_quantity -}}
@@ -746,9 +732,29 @@
         endif
       -%}
 
-      <script type="application/ld+json">
-        {{ product | structured_data }}
-      </script>
+      {%- if dg_satis_izin contains 'evet' -%}
+        <script type="application/ld+json">
+          {{ product | structured_data }}
+        </script>
+      {%- else -%}
+        <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "@id": {{ canonical_url | append: '#product' | json }},
+            "name": {{ product.title | json }},
+            "description": {{ product.description | strip_html | strip_newlines | truncate: 500 | json }},
+            "url": {{ canonical_url | json }},
+            "sku": {{ product.selected_or_first_available_variant.sku | json }},
+            "brand": {
+              "@type": "Brand",
+              "name": {{ product.vendor | json }}
+            }{% if seo_media %},
+            "image": [{{ seo_media | image_url: width: 1200 | prepend: 'https:' | json }}]
+            {% endif %}
+          }
+        </script>
+      {%- endif -%}
     </div>
   </product-component>
 </product-info>

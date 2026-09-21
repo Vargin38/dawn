@@ -458,24 +458,44 @@
 
 <script type="application/ld+json">
   {
-    "@context": "http://schema.org",
+    "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": {{ request.origin | append: '#organization' | json }},
     "name": {{ shop.name | json }},
+    "legalName": "DEĞİRMEN SANAYİ VE TİCARET A.Ş.",
     {% if settings.logo %}
       "logo": {{ settings.logo | image_url: width: 500 | prepend: "https:" | json }},
     {% endif %}
-    "sameAs": [
-      {{ settings.social_twitter_link | json }},
-      {{ settings.social_facebook_link | json }},
-      {{ settings.social_pinterest_link | json }},
-      {{ settings.social_instagram_link | json }},
-      {{ settings.social_tiktok_link | json }},
-      {{ settings.social_tumblr_link | json }},
-      {{ settings.social_snapchat_link | json }},
-      {{ settings.social_youtube_link | json }},
-      {{ settings.social_vimeo_link | json }}
+    "url": {{ request.origin | json }},
+    "foundingDate": "1984",
+    "taxID": "2730007377",
+    "telephone": "+90 212 494 33 33",
+    "email": "info@degirmen.com.tr",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Değirmen Plaza, Mehmet Akif Mah. Bahariye Cad. Akarsu Sk. No:4",
+      "addressLocality": "İkitelli",
+      "addressRegion": "İstanbul",
+      "postalCode": "34307",
+      "addressCountry": "TR"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+90 212 494 33 33",
+        "contactType": "sales",
+        "areaServed": "TR",
+        "availableLanguage": "Turkish"
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+90 543 244 73 08",
+        "contactType": "technical support",
+        "areaServed": "TR",
+        "availableLanguage": "Turkish"
+      }
     ],
-    "url": {{ request.origin | append: page.url | json }}
+    "areaServed": "TR"
   }
 </script>
 
@@ -483,7 +503,7 @@
   {% assign potential_action_target = request.origin | append: routes.search_url | append: '?q={search_term_string}' %}
   <script type="application/ld+json">
     {
-      "@context": "http://schema.org",
+      "@context": "https://schema.org",
       "@type": "WebSite",
       "name": {{ shop.name | json }},
       "potentialAction": {

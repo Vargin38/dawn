@@ -498,9 +498,24 @@
     <script src="{{ 'product-model.js' | asset_url }}" defer></script>
   {%- endif -%}
 
-  <script type="application/ld+json">
-    {{ product | structured_data }}
-  </script>
+  {%- capture dg_featured_satis -%}{%- render 'dg-satis', product: product -%}{%- endcapture -%}
+  {%- if dg_featured_satis contains 'evet' -%}
+    <script type="application/ld+json">
+      {{ product | structured_data }}
+    </script>
+  {%- elsif product != blank -%}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": {{ product.title | json }},
+        "description": {{ product.description | strip_html | strip_newlines | truncate: 500 | json }},
+        "url": {{ product.url | prepend: request.origin | json }},
+        "sku": {{ product.selected_or_first_available_variant.sku | json }},
+        "brand": {"@type": "Brand", "name": {{ product.vendor | json }}}
+      }
+    </script>
+  {%- endif -%}
 
   {% if product.media.size > 0 %}
     <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
