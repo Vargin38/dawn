@@ -593,3 +593,38 @@
     clip-path: polygon(var(--shape--blob-5));
   }
 }
+
+.dg-card-quote {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 0.1rem solid rgba(var(--color-foreground), 0.14);
+  color: rgb(var(--color-foreground));
+  font-size: 1.2rem;
+  line-height: 1.35;
+}
+
+.dg-card-quote strong {
+  color: #0b6b47;
+  font-size: 1.25rem;
+}
+
+.dg-card-quote span {
+  color: rgba(var(--color-foreground), 0.7);
+  text-align: right;
+}
+
+@media screen and (max-width: 749px) {
+  .dg-card-quote {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .dg-card-quote span {
+    text-align: left;
+  }
+}
