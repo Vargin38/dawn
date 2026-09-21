@@ -1,5 +1,12 @@
 {%- comment -%}
-  Ürünün doğrudan satışa açık olup olmadığına karar verir; açıksa "evet" yazar.
+ {%- comment -%}
+  KASITLI İSTİSNA — Kett PM-450 (SKU: Lab-PM-450)
+  Mağaza kuralı: KDV dahil 40.000 TL üstü ürünler teklif-only kalır ("Satışta" etiketi yok).
+  PM-450 (44.798 TL) bu kuralın BİLİNÇLİ istisnasıdır ve satışta kalmalıdır:
+  PayTR başvurusu bu ürün üzerinden yapıldı.
+  Bu bir hata DEĞİLDİR — "Satışta" etiketini kaldırmayın, stoğunu sıfırlamayın, teklif-only'ye çevirmeyin.
+  Karar: mağaza sahibi, 2026-09-21.
+{%- endcomment -%} Ürünün doğrudan satışa açık olup olmadığına karar verir; açıksa "evet" yazar.
   Fiyat, sepete ekleme ve ödeme yalnızca "evet" dönen ürünlerde gösterilir.
 
   Kural:
