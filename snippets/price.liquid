@@ -26,14 +26,15 @@
   assign price_min = product.price_min
   assign price_max = product.price_max
   assign available = target.available | default: false
-  assign money_price = price | money
-  assign money_price_min = price_min | money
-  assign money_price_max = price_max | money
-  if settings.currency_code_enabled
-    assign money_price = price | money_with_currency
-    assign money_price_min = price_min | money_with_currency
-    assign money_price_max = price_max | money_with_currency
-  endif
+  capture money_price
+    render 'dg-money', amount: price
+  endcapture
+  capture money_price_min
+    render 'dg-money', amount: price_min
+  endcapture
+  capture money_price_max
+    render 'dg-money', amount: price_max
+  endcapture
 
   if target == product and product.price_varies
     assign money_price = 'products.product.price.from_price_html' | t: price: money_price
@@ -65,11 +66,7 @@
               </span>
               <span>
                 <s class="price-item price-item--regular variant-item__old-price">
-                  {% if settings.currency_code_enabled %}
-                    {{ compare_at_price | money_with_currency }}
-                  {% else %}
-                    {{ compare_at_price | money }}
-                  {% endif %}
+                  {% render 'dg-money', amount: compare_at_price %}
                 </s>
               </span>
             {%- endunless -%}
@@ -93,11 +90,7 @@
           <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
           <span>
             <s class="price-item price-item--regular">
-              {% if settings.currency_code_enabled %}
-                {{ compare_at_price | money_with_currency }}
-              {% else %}
-                {{ compare_at_price | money }}
-              {% endif %}
+              {% render 'dg-money', amount: compare_at_price %}
             </s>
           </span>
         {%- endunless -%}

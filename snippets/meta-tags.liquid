@@ -1,8 +1,8 @@
 {%- liquid
-  assign og_title = page_title | default: shop.name
+  assign og_title = seo_title | default: page_title | default: shop.name
   assign og_url = canonical_url | default: request.origin
   assign og_type = 'website'
-  assign og_description = page_description | default: shop.description
+  assign og_description = seo_description | default: page_description | default: shop.description
   if og_description == blank
     assign og_description = settings.dg_meta_aciklama | default: shop.name
   endif
@@ -23,7 +23,7 @@
 <meta property="og:url" content="{{ og_url }}">
 <meta property="og:title" content="{{ og_title | escape }}">
 <meta property="og:type" content="{{ og_type }}">
-<meta property="og:description" content="{{ og_description | escape }}">
+<meta property="og:description" content="{{ og_description | strip_html | strip_newlines | truncate: 200 | escape }}">
 
 {%- if dg_paylasim_gorsel != blank -%}
   {%- assign dg_og_url = dg_paylasim_gorsel | image_url: width: 1200 -%}
@@ -40,7 +40,7 @@
 {%- endif -%}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ og_title | escape }}">
-<meta name="twitter:description" content="{{ og_description | escape }}">
+<meta name="twitter:description" content="{{ og_description | strip_html | strip_newlines | truncate: 200 | escape }}">
 
 <meta name="theme-color" content="#0B2239">
 <link rel="preconnect" href="https://fonts.googleapis.com">

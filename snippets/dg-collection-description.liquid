@@ -1,0 +1,33 @@
+{%- comment -%}
+  Kategori sayfaları için kısa, benzersiz ve arama niyetine uygun açıklama.
+  Shopify yöneticisinde koleksiyon açıklaması girilmişse tema onu kullanır;
+  bu metin yalnızca boş koleksiyonlarda yedek olarak gösterilir.
+{%- endcomment -%}
+{%- case collection.handle -%}
+  {%- when 'all' -%}
+    Kett, HAWO, EUROMESH ve Newlong ürünlerini teknik özellikleri, üretici katalogları ve satış sonrası destek bilgileriyle inceleyin. Fiyatlı ürünleri KDV dahil fiyatla satın alın; diğer ürünler için teklif isteyin.
+  {%- when 'kalite-kontrol-ve-laboratuvar-cihazlari' -%}
+    Tahıl nemi, pamuk rutubeti ve pirinç beyazlığı ölçümü için Kett kalite kontrol cihazlarını karşılaştırın. Teknik katalog, model seçimi, kurulum ve servis desteği Değirmen A.Ş. tarafından sağlanır.
+  {%- when 'tahil-rutubet-olcme-cihazlari' -%}
+    Buğday, arpa, mısır, tohum ve diğer tahıllarda hızlı nem ölçümü için Kett PM serisi cihazları karşılaştırın. Ölçüm aralığı, numune hacmi ve hacim ağırlığı özelliklerine göre doğru modeli seçin.
+  {%- when 'genel-rutubet-olcme-cihazlari' -%}
+    Pamuk ve farklı endüstriyel numunelerde rutubet tayini için taşınabilir Kett ölçüm cihazlarını teknik özellikleri ve üretici dokümanlarıyla inceleyin.
+  {%- when 'beyazlik-olcerler' -%}
+    Pirinç, un ve toz numunelerde beyazlık derecesini sayısal olarak ölçen Kett cihazlarını karşılaştırın. Uygulamanıza uygun model için teknik destek ve teklif alın.
+  {%- when 'numune-hazirlama-cihazlari' -%}
+    Laboratuvar ve kalite kontrol süreçlerinde tekrarlanabilir sonuçlar için numune hazırlama cihazlarını teknik özellikleri, katalogları ve servis desteğiyle inceleyin.
+  {%- when 'ambalaj-makineleri' -%}
+    Gıda, medikal ve endüstriyel ambalajlarda güvenilir kapatma için HAWO poşet yapıştırma ve Newlong çuval dikiş makinelerini kullanım tipine göre karşılaştırın.
+  {%- when 'hawo-yapistirma-makineleri' -%}
+    Folyo ve plastik poşetleri sızdırmaz biçimde kapatmak için HAWO el tipi ve impuls yapıştırma makinelerini inceleyin. Model seçimi, yedek parça ve servis desteği alın.
+  {%- when 'gida-isleme' -%}
+    Un, tahıl ve gıda üretim hatlarında eleme, filtrasyon ve numune işleme için kullanılan ekipman ve teknik tekstilleri katalog değerleriyle inceleyin.
+  {%- when 'euromesh-elek-ve-filtre-bezleri' -%}
+    Un eleme ve endüstriyel filtrasyon için EUROMESH naylon elek ve polyester filtre bezlerini mesh açıklığı, ip kalınlığı ve açık alan oranına göre seçin.
+  {%- when 'euromesh-baski-bezleri' -%}
+    Serigrafi ve tekstil baskısı için EUROMESH polyester baskı bezlerini iplik numarası, mesh açıklığı ve kumaş rengine göre inceleyin; doğru kod için teklif alın.
+  {%- when 'tekstil' -%}
+    Serigrafi, tekstil baskısı ve endüstriyel eleme uygulamalarına yönelik teknik bezleri üretici katalogları ve kod bazlı teknik değerleriyle inceleyin.
+  {%- else -%}
+    {{ collection.title }} ürünlerini teknik özellikleri, üretici katalogları ve Değirmen A.Ş. satış sonrası desteğiyle inceleyin. Model seçimi ve teslimat bilgisi için uzman ekibimizden destek alın.
+{%- endcase -%}

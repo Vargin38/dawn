@@ -1,0 +1,4 @@
+{%- comment -%}Türkçe sayı düzeninde para: 44.798,02 TL{%- endcomment -%}
+{%- assign dg_money_value = amount | money_without_currency -%}
+{%- assign dg_money_value = dg_money_value | replace: ',', 'DGSEP' | replace: '.', ',' | replace: 'DGSEP', '.' -%}
+{{- dg_money_value -}}{% unless hide_currency %} TL{% endunless %}

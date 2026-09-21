@@ -1,0 +1,26 @@
+{%- if request.page_type == 'product' or request.page_type == 'collection' or request.page_type == 'page' -%}
+  {%- liquid
+    assign dg_crumb_name = page_title
+    assign dg_crumb_url = canonical_url
+  -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Ana sayfa",
+          "item": {{ request.origin | append: routes.root_url | json }}
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ dg_crumb_name | json }},
+          "item": {{ dg_crumb_url | json }}
+        }
+      ]
+    }
+  </script>
+{%- endif -%}
