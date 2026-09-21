@@ -15,25 +15,49 @@
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
 
-    <title>
-      {{ page_title }}
-      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
-      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
-    </title>
-
     {%- liquid
-      # SEO: açıklama sırası — sayfanın kendi açıklaması, mağaza açıklaması, tema ayarındaki yedek metin.
-      assign dg_aciklama = page_description | default: shop.description
+      assign dg_baslik = page_title
+      if request.page_type == 'index'
+        assign dg_baslik = 'Kett ve HAWO Türkiye Distribütörü | Değirmen A.Ş.'
+      endif
+
+      # SEO: her önemli sayfa türüne özgü, arama sonucunda kesilmeyen açıklama.
+      assign dg_aciklama = page_description
+      if request.page_type == 'index'
+        assign dg_aciklama = 'Kett ve HAWO Türkiye distribütörü Değirmen A.Ş.; tahıl nem ölçer, beyazlık ölçer, poşet yapıştırma, elek ve filtre bezleri. Satış, servis ve yedek parça.'
+      elsif request.page_type == 'collection' and collection.description == blank
+        capture dg_koleksiyon_aciklama
+          render 'dg-collection-description', collection: collection
+        endcapture
+        assign dg_aciklama = dg_koleksiyon_aciklama | strip
+      endif
+      if dg_aciklama == blank
+        assign dg_aciklama = shop.description
+      endif
       if dg_aciklama == blank
         assign dg_aciklama = settings.dg_meta_aciklama
       endif
     -%}
+
+    <title>
+      {{ dg_baslik }}
+      {%- if request.page_type != 'index' -%}
+        {%- if current_tags %} &ndash; etiket: {{ current_tags | join: ', ' }}{% endif -%}
+        {%- if current_page != 1 %} &ndash; Sayfa {{ current_page }}{% endif -%}
+        {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+      {%- endif -%}
+    </title>
+
     {% if dg_aciklama != blank %}
-      <meta name="description" content="{{ dg_aciklama | strip_html | strip_newlines | truncate: 320 | escape }}">
+      <meta name="description" content="{{ dg_aciklama | strip_html | strip_newlines | truncate: 160 | escape }}">
     {% endif %}
 
-    {% render 'meta-tags' %}
+    {%- if request.page_type == 'search' or request.page_type == 'cart' or request.page_type == '404' -%}
+      <meta name="robots" content="noindex,follow">
+    {%- endif -%}
+
+    {% render 'meta-tags', seo_title: dg_baslik, seo_description: dg_aciklama %}
+    {% render 'dg-seo-breadcrumbs' %}
 
     <script type="module">
       import * as StandardEvents from 'https://cdn.shopify.com/storefront/standard-events.js';
