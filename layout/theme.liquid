@@ -44,7 +44,7 @@
       {%- if request.page_type != 'index' -%}
         {%- if current_tags %} &ndash; etiket: {{ current_tags | join: ', ' }}{% endif -%}
         {%- if current_page != 1 %} &ndash; Sayfa {{ current_page }}{% endif -%}
-        {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+        {%- unless dg_baslik contains 'Değirmen' or page_title contains shop.name %} &ndash; Değirmen A.Ş.{% endunless -%}
       {%- endif -%}
     </title>
 
