@@ -66,3 +66,13 @@ html body .cart__note label { font-size: 1.4rem; color: var(--dg-metin); }
 .dg-onay input { width: 1.9rem; height: 1.9rem; margin-top: .1rem; flex: none; accent-color: var(--dg-etkin); }
 .dg-onay a { color: var(--dg-etkin); font-weight: 600; text-underline-offset: .3rem; }
 .dg-onay--uyari { border-color: #C0392B; box-shadow: 0 0 0 3px rgba(192,57,43,.12); }
+
+/* Stoksuz varyant: "Tükendi" yerine "Teklif al" */
+.dg-teklif-al { display: none; }
+html body .product-form__submit[disabled] { display: none; }
+html body .product-form__submit[disabled] + .dg-teklif-al { display: flex; align-items: center; justify-content: center; min-height: 5.6rem; border-radius: 2px; font: 600 1.6rem/1 var(--dg-body); letter-spacing: .01em; background: var(--dg-etkin); color: #fff; text-decoration: none; }
+html body .product-form__submit[disabled] + .dg-teklif-al:hover { background: #005A83; }
+html body .product-form__submit[disabled] + .dg-teklif-al:after { box-shadow: none; }
+html body .price__badge-sold-out { display: none !important; }
+html body .product-form__input input[type='radio'].disabled + label,
+html body .product-form__input input[type='radio']:disabled + label { text-decoration: none; border-style: dashed; }
