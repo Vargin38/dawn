@@ -76,3 +76,7 @@ html body .product-form__submit[disabled] + .dg-teklif-al:after { box-shadow: no
 html body .price__badge-sold-out { display: none !important; }
 html body .product-form__input input[type='radio'].disabled + label,
 html body .product-form__input input[type='radio']:disabled + label { text-decoration: none; border-style: dashed; }
+
+/* Metre fiyatı eki: "/ m" */
+html body .price .unit-price.dg-birim { display: inline; margin: 0; font-family: var(--dg-display); font-size: 1.8rem; font-weight: 600; line-height: 1; letter-spacing: 0; text-transform: none; color: var(--dg-soluk); }
+html body .card-wrapper .price .unit-price.dg-birim { font-size: 1.3rem; }
