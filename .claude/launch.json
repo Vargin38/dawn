@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "demo-sites",
+      "runtimeExecutable": "C:\\Users\\vargi\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "runtimeArgs": ["-m", "http.server", "8765", "--bind", "127.0.0.1", "--directory", "C:\\Users\\vargi\\google-maps-scraper-kit\\pipeline\\demos"],
+      "port": 8765
+    }
+  ]
+}
