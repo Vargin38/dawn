@@ -20,7 +20,31 @@
   assign product_form_id = 'product-form-' | append: section.id
 -%}
 
-{%- for value in option.values -%}
+{%- comment -%}
+  "En" seçeneğini sayısal sıraya koy (115 cm, 130 cm, 165 cm ...).
+  Shopify ikinci seçeneğin değerlerini varyantlarda ilk görünme sırasına göre dizer ve bu API ile değiştirilemez:
+  baskı bezinde ilk numara (8) yalnızca 165 cm olduğu için liste 165 ile başlıyordu.
+  Anahtar "100115-3" biçiminde (100000 + sayı, orijinal sıra); metin sıralaması böylece sayısal sıralamayla aynı olur.
+{%- endcomment -%}
+{%- liquid
+  assign dg_values = option.values
+  if option.name == 'En'
+    assign dg_keys = ''
+    for v in option.values
+      assign dg_n = v.name | split: ' ' | first | plus: 0 | plus: 100000
+      assign dg_keys = dg_keys | append: dg_n | append: '-' | append: forloop.index0 | append: ','
+    endfor
+    assign dg_keys = dg_keys | split: ',' | sort
+    assign dg_values = '' | split: ''
+    for k in dg_keys
+      assign dg_i = k | split: '-' | last | plus: 0
+      assign dg_one = option.values | slice: dg_i
+      assign dg_values = dg_values | concat: dg_one
+    endfor
+  endif
+-%}
+
+{%- for value in dg_values -%}
   {%- liquid
     assign swatch_focal_point = null
     if value.swatch.image

@@ -1,0 +1,12 @@
+{%- comment -%}
+  Fiyatı yalnızca ürün sayfasında gösterilecek ürünlere karar verir; öyleyse "evet" yazar.
+  Ürün kartlarında (ana sayfa, koleksiyon, arama, benzer ürünler) bu ürünlerin fiyatı yerine
+  seçeneklere yönlendiren bir satır çıkar; fiyat, ürün sayfasında numara/en seçilince görünür.
+
+  Kural: metre fiyatıyla satılan EUROMESH bezleri (ürün türü "Baskı Bezi" veya "Elek ve Filtre Bezi").
+  Onlarca numara ve en seçeneği arasında karttaki tek bir "Başlangıç fiyatı" yanıltıcı olduğu için.
+  PW Serisi Filtre Bezi fiyatlandırıldığında bu kurala kendiliğinden girer.
+
+  Kullanım: {% capture x %}{% render 'dg-fiyat-sayfada', product: product %}{% endcapture %}
+{%- endcomment -%}
+{%- if product.type == 'Baskı Bezi' or product.type == 'Elek ve Filtre Bezi' -%}evet{%- endif -%}
