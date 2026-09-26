@@ -80,3 +80,7 @@ html body .product-form__input input[type='radio']:disabled + label { text-decor
 /* Metre fiyatı eki: "/ m" */
 html body .price .unit-price.dg-birim { display: inline; margin: 0; font-family: var(--dg-display); font-size: 1.8rem; font-weight: 600; line-height: 1; letter-spacing: 0; text-transform: none; color: var(--dg-soluk); }
 html body .card-wrapper .price .unit-price.dg-birim { font-size: 1.3rem; }
+
+/* Stok durumu: stoktaysa yesil Stokta yazisi; stok yoksa gizli (orada Teklif al var) */
+html body .product__inventory { margin: 1.2rem 0 0; font-size: 1.45rem; font-weight: 600; color: #1F7A3E; }
+html body .product__inventory:has(.svg-wrapper[style*="200, 200, 200"]) { display: none; }
