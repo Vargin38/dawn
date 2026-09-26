@@ -19,10 +19,11 @@
         "dg_ozet": { "type": "custom_liquid", "settings": { "custom_liquid": "{% render 'dg-urun-ozet', product: product, limit: 4 %}" } },
         "variant_picker": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "circle" } },
         "price": { "type": "price", "settings": {} },
+        "inventory": { "type": "inventory", "settings": { "text_style": "body", "inventory_threshold": 5, "show_inventory_quantity": false } },
         "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": false, "show_gift_card_recipient": false } },
         "quote_button": { "type": "custom_liquid", "settings": { "custom_liquid": "{% render 'dg-urun-cta', product: product %}" } }
       },
-      "block_order": ["vendor", "title", "sku", "dg_giris", "dg_ozet", "variant_picker", "price", "buy_buttons", "quote_button"],
+      "block_order": ["vendor", "title", "sku", "dg_giris", "dg_ozet", "variant_picker", "price", "inventory", "buy_buttons", "quote_button"],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
