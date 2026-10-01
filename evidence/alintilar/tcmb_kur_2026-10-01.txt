@@ -1,0 +1,5 @@
+Kaynak: TCMB gösterge niteliğindeki kurlar, https://www.tcmb.gov.tr/kurlar/today.xml
+Tarih: 01.10.2026
+USD döviz alış 48.9466 döviz satış 49.0348
+EUR döviz alış 55.2967 döviz satış 55.3963
+GBP döviz alış 64.6442 döviz satış 64.9812

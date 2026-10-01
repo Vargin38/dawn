@@ -1,0 +1,31 @@
+id	zaman_TSI_2026-10-01	url	kanit_turu	aday	not
+K01	19:48	https://www.marginedge.com/pricing	Şirket fiyat sayfası (WebFetch)	Restoran	$350/lokasyon/ay
+K02	19:55	https://adlisicil.adalet.gov.tr/Resimler/SayfaDokuman/7042025092455Adalet_%C4%B0statistikleri_2024%20T%C3%BCrk%C3%A7e_Ingilizce.pdf	Resmî veri (PDF indirildi)	İşveren	Tablo 46: 2024 iş uyuşmazlığı arabuluculuk dosyası 1.041.842
+K03	20:00	https://d.barobirlik.org.tr/2025/20251103_tbbtablo_karsilastirmacetveli.pdf	Resmî tarife (PDF indirildi)	İşveren	AAÜT 2026: sözleşmeli avukat aylık 33.000 TL; sözlü danışma 4.000 TL
+K04	20:04	https://www.datocms-assets.com/75137/1767620419-peninsula-business-services-group-limited-fy25-final-accounts-wesite-typeset-27-october-2025.pdf	Denetlenmiş yıllık hesap (PDF indirildi)	İşveren	FY25 gelir £463,2m; 150.000+ müşteri
+K05	20:12	https://www.tisk.org.tr/dokuman/sgk-sigortali-istatistikleri-ocak-2025-bulteni.pdf	Resmî veri ikincil yayın (PDF indirildi)	İşveren	2.217.369 işyeri; 0-50 çalışanlı 2.176.121
+K06	20:15	https://www.hurriyet.com.tr/yazarlar/yasin-girgin/isveren-davalari-neden-hep-kaybeder-29369429	Uzman köşe yazısı (WebFetch)	İşveren	25.06.2015; işveren belgeyle korunur
+K07	20:30	https://www.accc.gov.au/media-release/employsure-to-pay-3m-penalty-for-misleading-google-ads-after-accc-appeal	Resmî kurum açıklaması (WebFetch)	İşveren	Employsure 2021'de 23.500+ müşteri; 3m AUD ceza
+K08	20:30	https://www.trustpilot.com/review/brighthr.com	Bağımsız kullanıcı yorumu (WebFetch)	İşveren	4,7/5, 6.612 yorum; sözleşme/iptal şikâyetleri
+K09	20:31	https://www.trustpilot.com/review/peninsulagrouplimited.com	Bağımsız kullanıcı yorumu (WebFetch)	İşveren	4,9/5, 23.739 yorum
+K10	20:30	https://www.bbb.org/ca/on/toronto/profile/professional-services/peninsula-employment-services-limited-0107-1357971/complaints	Bağımsız şikâyet kaydı (WebFetch)	İşveren	21 kapanmış şikâyet; metinler görünmedi
+K11	20:40	https://www.alomaliye.com/2026/01/29/smmm-ve-ymm-sayilari-ve-sorunlari/	Meslek mensubu yazısı (WebFetch)	İşveren	136.685 kayıtlı; aktif serbest SM/SMMM 59.958
+K12	20:45	https://www.sikayetvar.com/kolay-ik	Bağımsız şikâyet (arama özeti)	İşveren	3 şikâyet
+K13	21:08	https://files.tepav.org.tr/upload/files/1787904391748-0.Cafe_latte_ekonomisiBir_fincanda_iki_Turkiye.pdf	Araştırma kurumu raporu (PDF indirildi)	Restoran	158.725 kayıtlı yeme-içme işyeri; 913.782 çalışan (2025)
+K14	21:12	https://gidamo.org.tr/uploads/editor/2026-03-16-12-34-08-429462.pdf	Resmî kılavuz (PDF indirildi)	Restoran	Md. 41, 43.5, 47: bileşen/enerji bildirimi ve tarihler
+K15	21:15	https://www.gidabulteni.com/gida/restoran-ve-kafelerde-yeni-donem-menude-kalori-zorunlulugu/2983	Sektör haberi (WebFetch)	Restoran	22.03.2026; kılavuzla tutarlı takvim
+K16	21:30	https://qrmenu.irensoft.com/	Şirket iddiası (WebFetch)	Restoran	YZ ile kalori/alerjen tahmini; ₺5.000+KDV/yıl
+K17	21:35	https://turkomp.tarimorman.gov.tr/useofdata	Resmî kullanım koşulları (curl)	Restoran/Gıda	Ticari kullanım lisansı 3.052–176.065 TL/yıl (2026)
+K18	21:40	https://www.capterra.co.uk/software/173920/nutritics-labelling	Bağımsız kullanıcı yorumu (WebFetch)	Restoran	3,8/5, 25 yorum; çökme şikâyetleri
+K19	21:40	https://www.gov.uk/government/publications/menucal-calorie-and-allergen-tool	Resmî kurum (WebFetch)	Restoran	FSA MenuCal ücretsiz araç
+K20	21:20	https://www.recipal.com/pricing	Şirket fiyat sayfası (WebFetch)	Gıda etiketi	$29/tarif; $59 ve $129/ay
+K21	21:45	https://www.trustpilot.com/review/koinly.io	Bağımsız kullanıcı yorumu (WebFetch)	Hisse vergi	4,5/5, 2.362 yorum
+K22	21:00	https://kolay-beyan.vercel.app/	Şirket iddiası (WebFetch)	Hisse vergi	$10/ay, $60/yıl
+K23	20:55	https://www.getmidas.com/destek/amerikan-borsalari/vergilendirme/beyanname-nasil-verilir	Şirket destek sayfası (WebFetch)	Hisse vergi	Midas kazanç hesabını yapmıyor; sayfa 29.09.2026
+K24	21:00	https://www.aa.com.tr/tr/ekonomi/gelir-vergisinde-5-5-milyon-beyannameyle-rekor-kirildi/3902647	Haber/resmî veri aktarımı (WebFetch)	Hisse vergi	12.04.2026; Hazır Beyan 2,558 milyon
+K25	21:50	https://www.tcmb.gov.tr/kurlar/today.xml	Resmî kur (curl)	Genel	01.10.2026 USD satış 49,0348; EUR 55,3963; GBP 64,9812
+K26	20:20	https://www.aa.com.tr/tr/gundem/arabuluculuk-uygulamasiyla-gecen-yil-826-binden-fazla-dosyada-anlasma-saglandi/3442697	Haber (WebFetch)	İşveren	2024 toplam anlaşma 826.548 (Adalet İst. ile farklı tanım olabilir)
+K27	20:18	https://arabuluculukvakfi.org/2025in-anahtar-arabuluculuk-istatistikleri/	Vakıf yazısı (WebFetch)	İşveren	2025 ~1,8 milyon başvuru (resmî istatistik henüz yok)
+K28	21:25	https://www.karmalt.com/gida-ve-yem-sektorunde-idari-yaptirimlar/	Danışmanlık firması yazısı (WebFetch)	Gıda	5996 md.40 baz ceza tutarları
+K29	21:55	https://www.atonet.org.tr/Uploads/Birimler/Internet/Duyurular/ATO%20DUYURULARI/____2026/2026-04-15-gida_etiket/mevzuat_duzenlemeleri.pdf	Oda duyurusu (PDF indirildi)	Restoran	6.4.2024 değişikliğiyle kılavuzlara uyma zorunluluğu; toplu tüketim tarihleri
+K30	21:55	https://www.tarimorman.gov.tr/GKGM/Haber/789/Turk-Gida-Kodeksi-Gida-Etiketleme-Ve-Tuketicileri-Bilgilendirme-Yonetmeliginde-Degisiklik-Yapilmistir	Resmî duyuru (WebFetch)	Gıda	6.04.2024 değişikliği; 31.12.2026 geçiş süresi

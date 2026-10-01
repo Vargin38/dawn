@@ -1,0 +1,145 @@
+Kaynak: Tarım ve Orman Bakanlığı GKGM, TGK Gıda Etiketleme ve Tüketicileri Bilgilendirme Yönetmeliği Kılavuzu, Rev.002 (10/03/2026)
+URL: https://gidamo.org.tr/uploads/editor/2026-03-16-12-34-08-429462.pdf ; indirme 2026-10-01 21:12 TSİ
+----- Madde 20 (alerjen) -----
+20.1. Son tüketiciye veya toplu tüketim yerlerine;
+
+     • Hazır ambalajlı hale getirilmeksizin satılan gıdalar,
+
+     • Satış yapılan işletmede tüketicinin talebi doğrultusunda paketlenerek satılan gıdalar,
+
+     • Doğrudan satış için hazır ambalajlı hale getirilmiş olan gıdalar ile
+
+     • Toplu tüketim yerlerinde son tüketiciye sunulan hazır ambalajlı olmayan gıdalar,
+         için de alerjiye ya da intoleransa neden olan bileşenlerin bildirimi zorunludur.
+20.2. Toplu tüketim yerlerinde sunulan gıdalar için de alerjen bilgisinin son tüketiciye sunulması
+    zorunludur.
+  Yönetmelikte toplu tüketim yeri: “gıdanın tüketime hazır hale getirildiği ve tüketilmek üzere
+  son tüketiciye sunulduğu; mobil araçlar veya sabit veya hareketli tezgahlar da dahil olmak üzere
+  hazır yemek hizmeti veren restoranlar, kantinler, okullar ve hastaneler gibi işletmeler” olarak
+  tanımlanmıştır.
+
+
+----- Madde 41-43.5 ve enerji örneği -----
+41. Toplu Tüketim Yerlerinde Verilmesi Zorunlu Bilgiler
+41.1. Toplu tüketim yerlerinde tüketiciye servis edilen gıdaların içeriğinde yer alan bileşenlerle
+    ilgili tüketicinin talebi halinde işletmeci tarafından bilgilendirme yapılır.
+41.2. Toplu tüketim yerlerinde herhangi bir gıda ile ilgili gıdanın adı ile birlikte gıdanın
+    bileşiminde bulunması halinde alerjen, alkol ve domuz kaynaklı bileşene ilişkin bilgilerin
+    de verilmesi zorunludur.
+41.3. (Revizyon:002) Gıda işletmecisi tarafından, toplu tüketim yerlerinde tüketiciye sunulan
+    gıdaların içeriğinde yer alan bileşenlere ve enerji değerine ilişkin tüketiciye bilgilendirme
+    yapılması zorunludur.
+41.4. (Revizyon:002) Toplu tüketim yerlerinde gıdanın bileşenleri ve enerji değerine ilişkin
+    yapılacak bilgilendirme, tüketici tarafından kolayca görülebilecek, açıkça okunabilecek
+    şekilde; menüler, yazı tahtaları, broşür, karekod, dijital ekran ve benzeri araçlar vasıtasıyla
+    yapılabilir. Bu bilginin karekod ile sunulması durumunda; “bu bilgiye karekodla
+    ulaşabileceğine ve karekod okutacak cihazı olmayan tüketiciler için talep edilmesi halinde bu
+    bilginin sunulacağına” dair, tüketicinin kolayca görebileceği bir yerde yazılı bilgilendirme
+    yapılmalıdır.
+41.5. (Revizyon:002) Toplu tüketim yerlerinde herhangi bir gıda ile ilgili gıdanın adı ile birlikte
+    gıdanın bileşiminde bulunması halinde alerjen, alkol ve domuz kaynaklı bileşene ilişkin
+    bilgilerin kolayca görülebilecek, açıkça okunabilecek şekilde içindekiler listesinin geri kalan
+    bölümünden açıkça ayıran bir yazı dizgisi vasıtasıyla (örneğin, punto, stil veya arka plan rengi
+    aracılığıyla) vurgulanarak menüler, yazı tahtaları, broşür, karekod, dijital ekran ve benzeri
+    araçlar vasıtasıyla son tüketiciye sunulması zorunludur.
+
+                                                72
+İlk Yayım Tarihi: 26/11/2024                    Gıda Kodeks ve Yem Mevzuatı Daire Başkanlığı
+Revizyon Tarihi:10/03/2026                                                       Revizyon: 002
+                                               T.C.
+                               TARIM VE ORMAN BAKANLIĞI
+                        GIDA VE KONTROL GENEL MÜDÜRLÜĞÜ
+
+
+
+
+      Toplu Tüketim Yerlerinde Enerji Hesaplamasına İlişkin Örnek
+                                  (Revizyon:002)
+1 porsiyon et yemeği; Et, soğan, domates, sivri biber, tereyağ, sarımsak, pul kırmızıbiber,
+karabiber, kekik ve tuz.
+
+                                                         100 g’daki           1 Porsiyondaki
+                                  1 Porsiyondaki
+              İçerik                                       Enerji              Enerji Değeri
+                                    Miktar (g)
+                                                        Değeri (kcal)*            (kcal)
+Dana eti (Kemiksiz)                     120                   136                  163,2
+Kuru soğan                              100                    40                    40
+Domates                                 100                    19                    19
+Sivri biber                             20                     28                    5,6
+Tereyağ                                 10                    753                   75,3
+Pul kırmızıbiber                         1                    286                   2,86
+Karabiber                                1                    297                   2,97
+Kekik                                    1                    288                   2,88
+Tuz                                     0,5                    0                     0
+TOPLAM                                 353,5                                        312
+Bu tablodaki hesaplama örnek olarak yazılmıştır.
+* Tablodaki enerji değerleri, Tarım ve Orman Bakanlığı TURKOMP Ulusal Gıda Kompozisyon
+Veri Tabanı’ndan alınan ortalama değerlerdir. Gıda işletmecileri kullandıkları bileşenlerin
+ortalama enerji değerine göre tüketiciye sunacakları bir porsiyon yemekteki toplam enerji
+değerini hesaplamalıdır. Tüketiciye toplam enerji değeri verilmelidir, yukarıdaki tablodaki gibi
+her bir bileşen için ayrı ayrı enerji değerinin tüketiciye verilmesine gerek yoktur.
+(https://turkomp.tarimorman.gov.tr/database?type=foodstype=foods)
+
+----- Madde 43.5 / 46 / 47 -----
+43.1. Mesafeli satış kapsamında bir gıda işletmecisi gıdayı kendisi üretip kendisi pazarlıyor ise
+    satış işlemi gerçekleşmeden önce ve teslimat sırasında gıda hakkında bilgilendirmenin son
+    tüketiciye ulaştırılmasından kendisi sorumludur.
+43.2. Mesafeli satış kapsamında başka bir gıda işletmecisi tarafından üretilen bir gıda ile ilgili
+    zorunlu bilgilendirmenin satış öncesinde tüketiciye sunulmasından mesafeli satış kapsamında
+    gıdayı son tüketiciye arz eden gıda işletmecisi sorumludur.
+
+     • A işletmesi tarafından üretilen (A markalı) bir gıdayı e-ticaret üzerinden satışını yapan B
+       işletmesi son tüketiciye ulaştırıyor ise B işletmesi tüm zorunlu etiket bilgilerini son
+       tüketiciye sunmakla yükümlüdür.
+43.3. Elektronik ticarete ilişkin esas ve usuller 6563 sayılı Elektronik Ticaretin Düzenlenmesi
+    Hakkında Kanun ile düzenlendiğinden mesafeli satışlar ile ilgili değerlendirmenin başta bu
+    Kanun olmak üzere ilgili diğer mevzuat hükümleri kapmasında yapılması gerekmektedir.
+43.4. Otomatik satış makinelerinde veya otomasyon sistemi ile çalışan ticari tesislerde satışı
+    yapılan hazır ambalajlı olmayan gıdalar için (örneğin otomatik çay-kahve makineleri) gıdanın
+    adı ve alerjen bilgileri, satın alma işlemi sonuçlanmadan önce tüketicinin
+    görebileceği/bulabileceği şekilde hazır bulundurulur. Bu durumda sorumluluk, gıdaların
+    makineye satışı yapan tesis tarafından yüklenmesi halinde tesisin işletmecisine, makinenin
+    kurulumunu yapan firma tarafından yüklenmesi halinde ise makinenin işletmecisine aittir.
+43.5. (Revizyon:002) Toplu tüketim yerleri tarafından, mesafeli satış yoluyla tüketiciye sunulan
+    gıdaların içeriğinde yer alan bileşenlere ve enerji değerine ilişkin satın alma aşamasında
+    tüketiciye bilgilendirme yapılması zorunludur.
+
+44. Fason Üretimlerde Gıda Hakkında Bilgilendirme Sorumluluğu
+44.1. Gıda işletmecisi kendi markası altında başka bir işletmeye fason olarak üretim yaptırıyor
+    ise ilgili mevzuat hükümleri saklı kalmak kaydıyla gıda hakkında bilgilendirmeden fason
+    üretim yaptıran gıda işletmecisi sorumludur. “İşletme kayıt numarası” veya “tanımlama
+    işareti” bilgisi ise üretimi yapan işletmeciye ait olmalıdır.
+44.2. Fason üretim yapan işletmenin adı ve adresi etiket üzerinde isteğe bağlı olarak ayrıca
+    verilebilir.
+
+
+
+
+                                               74
+İlk Yayım Tarihi: 26/11/2024                   Gıda Kodeks ve Yem Mevzuatı Daire Başkanlığı
+Revizyon Tarihi:10/03/2026                                                      Revizyon: 002
+                                                T.C.
+                               TARIM VE ORMAN BAKANLIĞI
+                        GIDA VE KONTROL GENEL MÜDÜRLÜĞÜ
+
+
+
+
+                                            BÖLÜM 7
+                               ÇEŞİTLİ VE SON HÜKÜMLER
+45. 20/04/2021 tarihli Türk Gıda Kodeksi Gıda Etiketleme ve Tüketicileri Bilgilendirme
+    Yönetmeliği Hakkında Kılavuz yürürlükten kaldırılmıştır.
+46. Gıda işletmecileri, bu Kılavuz ile yeni getirilen hükümlere, Türk Gıda Kodeksi Gıda
+    Etiketleme ve Tüketicileri Bilgilendirme Yönetmeliğinin geçiş hükümlerine bağlı olarak
+    31/12/2026 tarihine kadar uyum sağlarlar. 31/12/2026 tarihinden sonra bu Kılavuz ile
+    getirilen hükümlere uygun olmayan ürünler piyasada bulunamaz.
+47. (Revizyon:002) Toplu tüketim yerleri, bu Kılavuzun 41 inci maddesi ile getirilen hükümlere
+    aşağıda belirtilen süreler içinde;
+47.1. Ulusal çapta zincir şeklinde faaliyet gösteren toplu tüketim yerleri için 01/07/2026 tarihine
+    kadar,
+47.2. Sadece bulunduğu il sınırları içerisinde üç ve üzeri şubesi bulunan toplu tüketim yerleri için
+    31/12/2026 tarihine kadar,
+47.3. Bunlar dışında kalan diğer tüm toplu tüketim yerleri için bileşen bildirimi yönünden
+    31/12/2026 tarihine kadar, enerji bildirimi yönünden ise 31/12/2027 tarihine kadar,
+uyum sağlarlar.
