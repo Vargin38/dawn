@@ -1,0 +1,26 @@
+Kaynak: freelancer.com proje sayfaları, okuma 2026-10-04 01:51–02:10 TSİ (curl). 'Posted X ago' ifadeleri okuma anına göredir.
+----- freelancer
+Freelancer Jobs Automation Supplier Price List Workflow Automation Supplier Price List Workflow Automation $30-250 USD Closed Posted 2 months ago $30-250 USD Paid on delivery Automation Specialist Needed for Supplier
+87 freelancers are bidding on average $157 USD
+87 proposals
+Active 30 days ago
+Project ID: 40612333
+----- fl2
+Freelancer Jobs Data Analysis Excel E-Commerce Pricing Reports Excel E-Commerce Pricing Reports ₹750-1250 INR / hour Closed Posted 10 months ago ₹750-1250 INR / hour I need a clean, automated Excel workbook that 
+49 freelancers are bidding on average ₹1,045 INR
+49 proposals
+Project ID: 40032378
+----- fl3
+Freelancer Jobs Data Entry Vendor Price List Excel Macros Vendor Price List Excel Macros $30-250 USD Closed Posted over 15 years ago $30-250 USD Paid on delivery We have a series of vendors that provide us with their
+15 freelancers are bidding on average $99 USD
+15 proposals
+Project ID: 1042346
+----- fl4
+Freelancer Jobs Shopify Price List Updated Shopify Store Price List Updated Shopify Store $30-250 CAD Completed Posted over 6 years ago $30-250 CAD Paid on delivery Looking to have 250 item prices on my shopify store
+18 freelancers are bidding on average $109 CAD
+18 proposals
+Project ID: 24019422
+----- 40612333 açıklama
+Automation Specialist Needed for Supplier Price List Processing & Upload Workflow We are looking for an experienced automation specialist to automate the processing and uploading of supplier price lists. Current Workflow Every day, we receive supplier price lists from different sources, including: Supplier websites Telegram Website scraping/parsing The received files are then processed in Excel. For each supplier/file type, we already have a detailed step-by-step instruction describing exactly how the file should be processed, including: Renaming columns Removing unnecessary columns Adding new columns Filtering specific data Changing data formats Applying required transformations Preparing the final file structure for upload After the file is processed: The final file is uploaded to our admin panel. Information about the completed upload is recorded in Google Sheets for statistics and tracking. What We Need We would like to automate the entire workflow as much as possible: Receive/download file → Process file according to predefined rules → Upload it to our admin panel → Record the result in Google Sheets Ideally, the process should run automatically or require minimal human involvement. We will provide: Detailed processing instructions for each supplier Example source files Access/details required for the workflow A video showing one complete process from beginning to end First Stage Initially, we want to automate the workflow for one supplier only. After the first automation is successfully impl
+----- 40032378 açıklama
+I need a clean, automated Excel workbook that turns raw supplier price lists into clear, detailed pricing reports for my online store. The file should let me drop in the latest supplier spreadsheet (CSV or XLSX), map the fields once, and then refresh to show: • every product with its current supplier cost • my pre-set markup or margin formula applied • a ready-to-print/report tab that highlights price shifts since the previous update Please keep everything inside Excel—no external macros that require additional installs—using Power Query, pivot tables, or VBA only if it makes the refresh seamless. I maintain the worksheets weekly, so the process must be straightforward: import, click refresh, and export the finished report as PDF when needed. Deliverable: the working Excel file, clearly commented so I can adjust formulas or add new supplier columns later, plus a short walkthrough video or wr

@@ -1,0 +1,41 @@
+id	erisim_araligi_TSI_2026-10-04	url	yontem	kanit_turu	neyi_destekler
+F01	01:51–02:10	https://www.pricelistiq.com/	curl+WebFetch	Şirket iddiası	PDF/OCR ile fark raporu; 39 $/ay; 7 gün deneme; müşteri kanıtı yok
+F02	01:51–02:10	https://arovon.com/price-list-automation	curl+WebFetch	Şirket iddiası	Excel/CSV/PDF, eşleştirme güveni, UOM/koli, döviz, geçerlilik tarihi, marj etkisi; 229 $/ay'dan; müşteri kanıtı yok
+F03	01:51–02:10	https://apps.shopify.com/stock-sync	curl+WebFetch	Şirket sayfası + bağımsız yorum	924 yorum; 2014; ücretsiz/7/10/300 $ aylık; fiyat kuralları
+F04	01:51–02:10	https://apps.shopify.com/stock-sync/reviews?ratings%5B%5D=1&ratings%5B%5D=2&sort_by=newest	curl	Bağımsız yorum	Kurulum/destek şikâyetleri (Mart–Ağustos 2026)
+F05	01:51–02:10	https://tablola.com/	curl+WebFetch	Şirket iddiası	PDF/görselden tabloya dönüştürme; Türk; ilk 5 işlem ücretsiz
+F06	01:51–02:10	https://parmix.com.tr/	curl	Şirket sayfası (uygulama arayüzü metni)	ARMİX v1.0 ERP: Excel'den fiyat güncelle, PDF fiyat listesi YZ okuma, fiyat değişim analizi; fiyat ve müşteri bilgisi yok
+F07	01:51–02:10	https://apps.ikas.com/	curl	Platform sayfası	ikas uygulama mağazası; Flowventory "Free Trial, Then $30"; FeedEx "from $50"
+F08	01:51–02:10	https://www.freelancer.com/projects/automation/Supplier-Price-List-Workflow-Automation	curl	İş ilanı (alıcı)	ID 40612333; 30–250 USD; Closed; okuma anında "Posted 2 months ago"; 87 teklif, ort. 157 USD
+F09	01:51–02:10	https://www.freelancer.com/projects/data-analysis/excel-commerce-pricing-reports.html	curl	İş ilanı (alıcı)	ID 40032378; ₹750–1250/saat; Closed; "Posted 10 months ago"; 49 teklif; Excel içinde fark+marj raporu isteği
+F10	01:51–02:10	https://www.freelancer.com/projects/data-processing-data-entry/vendor-price-list-excel-macros.1042346	curl	İş ilanı (alıcı, eski)	15+ yıl önce; 30–250 USD
+F11	01:51–02:10	https://www.freelancer.com/projects/shopify-site/price-list-updated-shopify-store/	curl	İş ilanı (alıcı, eski)	6+ yıl önce; 30–250 CAD; Completed
+F12	01:51–02:10	https://community.shopify.com/t/676989	Discourse JSON	Kullanıcı yorumları (satıcı + geliştirici)	30 gönderi, 531 görüntülenme; satıcılar liste başı ~1 saat; "I use Claude"
+F13	01:51–02:10	https://community.shopify.com/t/295931	Discourse JSON	Kullanıcı yorumu (satıcı, 2024)	150 marka, ~3.000 ürün; Matrixify/Ablestar önerisi
+F14	01:51–02:10	https://community.shopify.com/t/684485 · /t/688982 · /t/690164 · /t/687149 · /t/679730	Discourse JSON	Geliştirici/hizmet ilanları	Eylül–Ekim 2026'da aynı ürün için müşteri arayışı; 0 yanıt
+F15	01:51–02:10	https://community.shopify.com/t/653358	Discourse JSON	Kullanıcı yorumları	PDF katalog + Claude; görsel ve eşleştirme sorunları
+F16	01:51–02:10	https://extensionsmarket.com/free-supplier-price-reconciler	curl	Şirket iddiası	Ücretsiz tedarikçi fiyat listesi mutabakat aracı
+F17	01:51–02:10	https://apps.shopify.com/fyretrail	curl	Şirket sayfası	30.01.2026; 2 yorum; 59/99/159 $ aylık
+F18	01:51–02:10	https://apps.shopify.com/excel-export-import	curl	Şirket sayfası	Matrixify; 1.717 yorum; ücretsiz/20/50/200 $ aylık
+F19	01:51–02:10	https://excelcozum.com/konu/iki-farkli-tabloyu-karsilastirip-eslesmeyen-kodlara-urun-bulunamadi-yazdirma.10056/	curl	Kullanıcı sorusu (Türkiye)	29.08.2026; mağaza raporu + tedarikçi fiyat listesi kod eşleştirme; ÇAPRAZARA ile çözüldü
+F20	01:51–02:10	https://www.r10.net/ofis-uygulama/2608920-satis-ve-alis-fiyat-listesi-excel.html	WebFetch	Kullanıcı talebi (Türkiye, eski)	15.12.2020; demir-çelik bayisi, 4+ tedarikçi, günlük iskonto; freelancer tuttu
+F21	01:51–02:10	https://standartcivata.com.tr/wp-content/uploads/documents/tr/fiyat-listeleri/hirdavat-fiyat-listesi.pdf	curl (PDF)	Kamuya açık örnek dosya	Ekim 2026; barkod yok; USD/TL/TRY/EUR karışık; %84 basit ayrıştırma
+F22	01:51–02:10	https://cdn.prod.website-files.com/6974c5dd94243ffc3632334c/69aec3ffef126b8f99162c45_Dekor%202026%20U%CC%88ru%CC%88n%20ve%20Koli%20Barkod%20Listesi.pdf	curl (PDF)	Kamuya açık örnek dosya	30.01.2026; Excel'den PDF; ürün+koli barkodu
+F23	01:51–02:10	https://www.bayberkelektrik.com/fiyat-listeleri/schneider-fiyat-listesi.xlsx	curl (xlsx)	Kamuya açık örnek dosya	EUR; referans kod; barkod yok; geçerlilik tarihi satırı
+F24	01:51–02:10	https://baytekotomasyon.com/fiyatlar · https://www.bayberkelektrik.com/fiyat-listesi · https://www.elektrikmarket.com.tr/sayfa/elektrik-malzemesi-markalari-fiyat-listesi	curl	Kamuya açık sayfa	Elektrikte liste bağlantıları: 52+26+42 PDF, 1 Excel
+F25	01:51–02:10	https://bayi.pelagos.com.tr/fiyat-listeleri	curl	Şirket sayfası	Fiyat listesi bayi girişi arkasında
+F26	01:51–02:10	https://patiyapetshop.com/	curl	Şirket açıklaması	Özel fiyat listesi WhatsApp/iletişim ile
+F27	01:51–02:10	https://www.toptantr.com/kozmetik-ve-kisisel-bakim	curl	Şirket sayfası	B2B pazaryeri; "Excelle Sepet Doldur"
+F28	01:51–02:10	https://www.jetstok.com/xml-entegrasyonu	WebFetch	Şirket iddiası	XML; oran/sabit tutar kuralı; döviz; Premium 3.742 TL/ay
+F29	01:51–02:10	https://www.sopyo.com/entegrasyonlar/xml-bankasi-xml-entegrasyonu	WebFetch	Şirket iddiası	XML; fiyat kuralı; yıllık abonelik
+F30	01:51–02:10	https://prapazar.com/tr/program-ozelligi/xml-excel-entegrasyonu	WebFetch	Şirket iddiası	Kendi formatında Excel ve XML ile toplu yükleme (manuel)
+F31	01:51–02:10	https://support.ikas.com/tr/ikasa-urunlerinizi-topluca-nasil-yukler-ve-guncellersiniz	WebFetch	Platform belgesi	Excel/CSV; Alış Fiyatı, Barkod sütunları; Ürün Grup ID/Varyant ID
+F32	01:51–02:10	https://bilgibankasi.akinsoft.net/tr/home/makale/1276-akinsoft-wolvox-erp-programimizda-alis-ve-satis-fiyatlarini-otomatik-olusturma-islemi	curl	Şirket belgesi	Güncelleme 03.09.2026; son alış fiyatı otomatik; satış fiyatını kâr marjıyla yeniden oluşturma
+F33	01:51–02:10	https://www.mertbilisimhizmetleri.com.tr/akinsoft-wolvox-fiyat-matik-bursa	curl	Bayi sayfası	Fiyat Matik: kural/simülasyon ile toplu fiyat; "Peşin 3.864,00"
+F34	01:51–02:10	https://cdn.logo.com.tr/files/logocomtr/Uploads/Documents/logo-tiger-3-fiyat-listesi.pdf	curl (PDF)	Şirket fiyat listesi	7 Ocak 2026'dan geçerli; ExcelTrans 123.700 TL (LEM'li) / 136.100 TL; KDV hariç
+F35	01:51–02:10	https://blog.kursoft.com.tr/satis-fiyatlarini-otomatik-guncelleme/	curl	Şirket belgesi	Satış fiyatı eşitleme ayarı
+F36	01:51–02:10	https://asmmmo.org.tr/userfiles/others/files/Mvzt/Prtk/uc/AUT-2026.pdf	curl (PDF)	Meslek odası tarifesi	2026 Ankara işletme defteri işçisiz 3.593 TL/ay (KDV dahil, asgari)
+F37	01:51–02:10	https://musavirlerkulubu.com.tr/araclar/bagkur-prim-hesaplama	WebFetch	İkincil hesaplama sayfası	2026 Bağ-Kur 11.808,23 / 10.156,73 TL (5 puan indirimli); %35,75 oran
+F38	01:51–02:10	https://www.ifasturk.com.tr/sahis-sirketi-aylik-giderleri-2026	WebFetch	İkincil kaynak (03.01.2026)	Bağ-Kur 9.743,85 TL (F37 ile çelişiyor); KDV beyannamesi damga vergisi 834,50 TL/ay
+F39	01:51–02:10	https://www.tcmb.gov.tr/kurlar/today.xml	curl	Resmî	02.10.2026 döviz satış: USD 49,0582; EUR 55,1819; GBP 64,9163
+F40	01:51–02:10	https://petpal.com.tr/ … (10 aday mağaza; bkz. rapor §7.1)	curl	Kamuya açık sayfa	Ana sayfa ve iletişim sayfası 200; platform izi

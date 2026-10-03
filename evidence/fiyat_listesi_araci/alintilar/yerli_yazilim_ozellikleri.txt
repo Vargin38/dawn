@@ -1,0 +1,20 @@
+== Akınsoft bilgi bankası (okuma 01:51–02:10 TSİ)
+atlarını Otomatik Oluşturma İşlemi Oluşturulma 01.06.2018 Güncellenme 03.09.2026 Kategori Genel Bilgiler Alış Fiyatını Otomatik Oluşturma Stok kartında bulunan alış fiyatınızın, stoğun son alış fiyatına otomatik güncellenmesi iç
+en 'Kaydet' butonuna tıkladığınızda karşınıza gelen Satış fiyatları yeniden oluşturulsun mu? sorusuna 'Evet' demeniz durumunda Satış Fiyatı Oluşturma penceresi açılacaktır. Kar Marjı alanından alış fiyatı ile satış fiyatı arasında olması gereken kar marjını belirleyerek yeni satış fiyatınızı oluşturabilirsiniz. 
+== Wolvox Fiyat Matik bayi sayfası
+iyat Matik; Wolvox ERP ürün/stok kartlarındaki fiyat alanlarını belirlediğiniz kurallara göre toplu ve kontrollü biçimde günceller. KDV dahil/dahil değil, yuvarlama, kâr marjı, indirim oranı, tedarikçi alış fiyatı veya döviz kuruna bağlı formüllerle çalışır. Çalıştırmadan önce simülasyon önizlemesi sunar; böylece risk almadan sonucu görür, tek tıkla uygulayabilirsiniz. Perakende, toptan, e-ticaret, bayi ve mağaza zincirleri için idealdir. ÖNE ÇIKAN YETENEKLER Toplu fiyat g
+Peşin 3.864,00
+== Logo Tiger 3 fiyat listesi (7 Ocak 2026'dan itibaren; TL, KDV hariç)
+         Logo Tiger 3 tavsiye edilen fiyat listesi
+        7 Ocak 2026 tarihinden itibaren geçerlidir.
+
+        Genel açıklamalar
+     1. Bu fiyat listesinde bulunan tüm fiyat ve fiyata bağlı koşullar yalnızca tavsiye niteliğinde olup, bağlayıcı değildir.
+     2. Tüm fiyatlar Türk Lirası (TL) cinsindendir, fiyatlara KDV dahil değildir.
+     3. Fiyatlar, ana paket ve geçiş fiyatları haricinde, geçerli LEM sözleşmesi olup olmama durumuna göre farklılaşmaktadır.
+        Logo Tiger 3 dış ticaret                                                                                                                    235,600                                   259,200
+
+        Logo Tiger 3 exceltrans                                                                                                                     123,700                                   136,100
+                        (10)
+== Kursoft
+Kursoft ön muhasebe programlarında satış fiyatları manuel olarak değiştirilmektedir, ancak ekteki yönergeleri takip ederek satış işlemleri sonunda fiyatların otomatik güncellenmesini sağlayabilirsiniz Yönetici Menüsü > Yazılım Ayarları > Stok Ayarları alanına erişin. Öz

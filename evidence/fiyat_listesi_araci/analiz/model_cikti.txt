@@ -1,0 +1,21 @@
+== Kötümser: fiyat 690 TL/ay + kurulum 1500 | toplam yeni müşteri 5 | 12. ay aktif 3.4 | 12. ay MRR 2346 TL
+   12 ay ciro 23743 | değişken 1889 | nakit katkı 21854 | çalışma saati (geliştirme hariç) 370 | ortalama saat/ay 31
+   [A_yan_is] sabit/ay 5928 | 12 ay net nakit -49276 | saat başı net -133 TL | başabaş aktif müşteri 9.6
+   [B_tam_zamanli] sabit/ay 16084 | 12 ay net nakit -171157 | saat başı net -462 TL | başabaş aktif müşteri 26.0
+   müşteri başı aylık katkı 619 TL | ort. ömür 12.5 ay | müşteri başı edinme+kurulum saati 31
+== Orta: fiyat 990 TL/ay + kurulum 2500 | toplam yeni müşteri 21 | 12. ay aktif 17.4 | 12. ay MRR 17226 TL
+   12 ay ciro 159565 | değişken 10194 | nakit katkı 149371 | çalışma saati (geliştirme hariç) 651 | ortalama saat/ay 54
+   [A_yan_is] sabit/ay 5928 | 12 ay net nakit 78241 | saat başı net 120 TL | başabaş aktif müşteri 6.5
+   [B_tam_zamanli] sabit/ay 16084 | 12 ay net nakit -43640 | saat başı net -67 TL | başabaş aktif müşteri 17.7
+   müşteri başı aylık katkı 910 TL | ort. ömür 25.0 ay | müşteri başı edinme+kurulum saati 19
+== İyimser: fiyat 1490 TL/ay + kurulum 3500 | toplam yeni müşteri 51 | 12. ay aktif 45.4 | 12. ay MRR 67646 TL
+   12 ay ciro 579216 | değişken 30823 | nakit katkı 548393 | çalışma saati (geliştirme hariç) 934 | ortalama saat/ay 78
+   [A_yan_is] sabit/ay 5928 | 12 ay net nakit 477263 | saat başı net 511 TL | başabaş aktif müşteri 4.2
+   [B_tam_zamanli] sabit/ay 16084 | 12 ay net nakit 355382 | saat başı net 381 TL | başabaş aktif müşteri 11.5
+   müşteri başı aylık katkı 1395 TL | ort. ömür 40.0 ay | müşteri başı edinme+kurulum saati 12
+Kurucuya ayda net asgari ücret (28075.5) bırakmak için gereken aktif müşteri [Kötümser fiyatı, A_yan_is]: 55
+Kurucuya ayda net asgari ücret (28075.5) bırakmak için gereken aktif müşteri [Kötümser fiyatı, B_tam_zamanli]: 71
+Kurucuya ayda net asgari ücret (28075.5) bırakmak için gereken aktif müşteri [Orta fiyatı, A_yan_is]: 37
+Kurucuya ayda net asgari ücret (28075.5) bırakmak için gereken aktif müşteri [Orta fiyatı, B_tam_zamanli]: 49
+Kurucuya ayda net asgari ücret (28075.5) bırakmak için gereken aktif müşteri [İyimser fiyatı, A_yan_is]: 24
+Kurucuya ayda net asgari ücret (28075.5) bırakmak için gereken aktif müşteri [İyimser fiyatı, B_tam_zamanli]: 32
