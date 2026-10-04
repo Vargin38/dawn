@@ -7,8 +7,9 @@ Kaynak: tema dosyaları ve mağaza sahibinin teyitleri. Yeni bilgi teyit edildik
 | :- | :- | :- |
 | Kett | Tahıl nem ölçerler, pamuk rutubet, pirinç/un beyazlık ölçerler | "Kett ve HAWO Türkiye distribütörü" |
 | HAWO | Poşet yapıştırma (el tipi, impuls) | Aynı |
-| EUROMESH | Naylon elek, polyester filtre ve serigrafi baskı bezleri | Sitede distribütör ifadesi yok — **teyit gerekli** |
-| Newlong | Çuval dikiş makineleri | Sitede distribütör ifadesi yok — **teyit gerekli** |
+| EUROMESH | Naylon elek, polyester filtre ve serigrafi baskı bezleri | Değirmen'in kendi markası (mağaza sahibi, 2026-10-04); "distribütör" deme |
+| Newlong | Çuval dikiş makineleri | Türkiye distribütörü (mağaza sahibi, 2026-10-04) |
+| Newport, Böttcher | Mağazada bu vendor adlarıyla ürün var | **Teyit gerekli**: ne ürünü, distribütörlük durumu |
 
 ## Koleksiyonlar (handle)
 - `kalite-kontrol-ve-laboratuvar-cihazlari` — Kett ürünleri (6 ürün, hepsi vendor "Kett"; 2026-10-04)
@@ -26,14 +27,18 @@ Kaynak: tema dosyaları ve mağaza sahibinin teyitleri. Yeni bilgi teyit edildik
 - Kett **yedek parçaları mevcut**.
 - PM-450 dışında da **fiyatlı Kett modelleri var**.
 - HX-500 için "pamuk ve farklı endüstriyel numunelerde rutubet tayini" ifadesi doğru.
+- EUROMESH Değirmen'in kendi markası; Newlong'un Türkiye distribütörüyüz.
 
 ## Satış modeli
 - Fiyatlı ürün → sepete ekle, kartla öde (KDV dahil). Kargo ücreti alıcıya ait.
 - Fiyatsız ürün → "Teklif İste" formu; dönüş genellikle 24 saat içinde.
 
-## Bilinen tutarsızlıklar (düzeltilmeli)
-- `snippets/dg-urun-cta.liquid`: tüm ürün sayfalarında "{marka} Türkiye distribütöründen; **kurulum**, servis ve yedek parça desteğiyle." yazıyor. Kett için kurulum yok; EUROMESH/Newlong distribütörlüğü teyitsiz.
-- `snippets/dg-collection-description.liquid` (`kalite-kontrol-ve-laboratuvar-cihazlari`): "kurulum ve servis desteği" — Kett için kurulum yok.
+## Bilinen tutarsızlıklar
+- ~~`snippets/dg-urun-cta.liquid`: Kett ürün sayfalarında "kurulum" vaadi~~ Repoda düzeltildi (2026-10-04): Kett ve Newlong için "servis ve yedek parça desteğiyle"; HAWO metni değişmedi. Canlı temaya elle uygulanmalı.
+- `sections/dg-urun-guven.liquid`: Newlong ürünleri artık "Türkiye distribütörü" kartını gösteriyor (repoda; canlıya elle).
+- `snippets/dg-collection-description.liquid` (`kalite-kontrol-ve-laboratuvar-cihazlari`): yedek açıklamada "kurulum" var; Shopify'da koleksiyon açıklaması dolu olduğu için görünmüyor.
+- `templates/index.json` ana sayfa: "cihaz seçiyor, kuruyor ve servis veriyoruz" — tüm markalar için genel ifade; Kett için kurulum yok.
+- HAWO için kurulum hizmeti teyit edilmedi (ürün sayfasında "kurulum" yazıyor).
 
 ## Teyit bekleyenler
 - Kett teknik değerleri (50 MHz, %1–40, 240 mL; C-600 5,0–69,9) hangi modellere ait?
