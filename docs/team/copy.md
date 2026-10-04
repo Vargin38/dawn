@@ -16,7 +16,7 @@ Ton: ana sayfadaki gibi sade ve somut. Kısa cümleler, "biz" dili, abartı yok.
 | :- | :- | :- |
 | Sayfa başlığı (Shopify sayfa adı, `dg-sayfa-ust` bunu h1 olarak basar) | `Kett nem ve beyazlık ölçüm cihazları` | — |
 | SEO başlığı (title) | `Kett Nem Ölçer ve Beyazlık Ölçer \| Türkiye Distribütörü` | 55 karakter |
-| Meta açıklama | `Kett tahıl nem ölçer ve pirinç beyazlık ölçerleri Türkiye distribütörü Değirmen A.Ş.'den: teknik katalog, teklif, kurulum, servis ve yedek parça.` | 145 karakter |
+| Meta açıklama | `Kett tahıl nem ölçer ve pirinç beyazlık ölçerleri Türkiye distribütörü Değirmen A.Ş.'den: teknik katalog, teklif, servis ve yedek parça.` | 136 karakter |
 | Önerilen URL handle | `kett` (sayfa: `/pages/kett`) | — |
 
 Not: Sayfa başlığı ve SEO alanları Shopify yöneticisinde sayfa oluşturulurken girilir; tema dosyasında değil.
@@ -43,7 +43,7 @@ Not: Sayfa başlığı ve SEO alanları Shopify yöneticisinde sayfa oluşturulu
 | id | Metin |
 | :- | :- |
 | `kas` | `Kett · Türkiye distribütörü` |
-| `metin` | `Kett'in tahıl nem ölçerlerini ve pirinç beyazlık cihazlarını Türkiye'de Değirmen A.Ş. olarak sunuyoruz. Model seçimi, teklif, kurulum, servis ve yedek parça için tek muhatabınız biziz.` |
+| `metin` | `Kett'in tahıl nem ölçerlerini ve pirinç beyazlık cihazlarını Türkiye'de Değirmen A.Ş. olarak sunuyoruz. Model seçimi, teklif, servis ve yedek parça için tek muhatabınız biziz.` |
 
 h1 = sayfa adı (`Kett nem ve beyazlık ölçüm cihazları`). Bu bölüm h1 bastığı için sayfaya ikinci h1 eklenmemeli.
 
@@ -89,7 +89,7 @@ Sekmeler (`type: sekme`):
 | id | Metin |
 | :- | :- |
 | `kas` | `Satış sonrası` |
-| `baslik` | `Kett cihazınız kurulduktan sonra da buradayız` |
+| `baslik` | `Kett cihazınızı aldıktan sonra da buradayız` |
 | `metin` | `Kett ürünlerini doğrudan distribütöründen, teknik dokümanıyla birlikte alırsınız. Servis ya da yedek parça için cihazın modelini ve seri numarasını iletmeniz yeterli.` |
 | `adres_baslik` | `Servis şubesi` |
 | `adres` | `İMÇ 5. Blok No:5413, Unkapanı / İstanbul` |
@@ -101,8 +101,7 @@ Bloklar (`type: hizmet`):
 
 | Blok | `ikon` | `baslik` | `metin` |
 | :- | :- | :- | :- |
-| `distributor` | `kalkan` | `Türkiye distribütörü` | `Kett cihazlarını 1984'ten beri İstanbul'da faaliyet gösteren Değirmen A.Ş.'den, kurulum ve servis desteğiyle alırsınız.` |
-| `kurulum` | `kurulum` | `Kurulum ve kullanım eğitimi` | `Cihazın ayarlarının yapılması ve operatörün kullanmaya başlayacak kadar eğitilmesi.` |
+| `distributor` | `kalkan` | `Türkiye distribütörü` | `Kett cihazlarını 1984'ten beri İstanbul'da faaliyet gösteren Değirmen A.Ş.'den, servis ve yedek parça desteğiyle alırsınız.` |
 | `bakim` | `bakim` | `Bakım ve onarım` | `Kendi atölyemizde onarım; yerinde müdahale gereken durumlarda servis ekibimizle destek.` |
 | `parca` | `parca` | `Yedek parça` | `Sattığımız cihazların parçaları için stok tutuyoruz; stokta olmayanı üreticiden temin ediyoruz.` |
 
@@ -176,11 +175,11 @@ Garanti sorusu bilinçli olarak yazılmadı (bkz. teyit listesi #5).
 
 1. **Teknik değerler:** PM serisi için 50 MHz dielektrik yöntemi, %1–40 ölçüm aralığı ve 240 mL numune hacmi; C-600 için 5,0–69,9 beyazlık aralığı ve 0,1 çözünürlük. Hangi modellere ait ve güncel mi? (Kaynak yalnızca ortak ürün şablonu.)
 2. **Kett ile ilişkinin başlangıcı:** Değirmen 1984'ten beri faaliyette; Kett distribütörlüğünün hangi yıldan beri sürdüğü repoda yok. Sayfada "1984'ten beri Kett distribütörü" yazılmadı, yalnızca şirketin 1984'ten beri faaliyette olduğu yazıldı.
-3. **Koleksiyonlar:** ~~`genel-rutubet-olcme-cihazlari` mağazada var mı?~~ Kısmen teyit edildi: frontend-dev Admin API'den kontrol etti; koleksiyon var ve tek ürün içeriyor (Kett HX-500 Pamuk Rutubet Tayin Cihazı), blok ve sekme sayfada kaldı. Açık kalan: "Pamuk ve farklı endüstriyel numunelerde" ifadesi tek ürünle doğru mu, ürün satışta kalacak mı?
+3. **Koleksiyonlar:** ~~`genel-rutubet-olcme-cihazlari` mağazada var mı?~~ Kısmen teyit edildi: frontend-dev Admin API'den kontrol etti; koleksiyon var ve tek ürün içeriyor (Kett HX-500 Pamuk Rutubet Tayin Cihazı), blok ve sekme sayfada kaldı. ✅ "Pamuk ve farklı endüstriyel numunelerde" ifadesi mağaza sahibince doğrulandı.
 4. **Numune hazırlama:** `numune-hazirlama-cihazlari` koleksiyonunda Kett ürünü var mı? Varsa sayfaya ayrı blok eklenebilir.
 5. **Garanti:** Kett cihazlarında garanti süresi ve kapsamı. SSS'de sitenin genel ifadesi ("ürüne göre değişir, teklifte belirtilir") bile tekrarlanmadı; teyitle soru eklenebilir.
 6. **Kalibrasyon:** Kett cihazları için kalibrasyon veya kalibrasyon kontrolü hizmeti veriliyor mu? Repoda bilgi yok, yazılmadı.
-7. **Kurulum/eğitim:** Taşınabilir Kett cihazlarında yerinde kurulum veya kullanım eğitimi gerçekten veriliyor mu? (Ana sayfadaki genel hizmet ifadesinden uyarlandı.)
-8. **Yedek parça stoğu:** "Parça stoğu tutuyoruz" ifadesi Kett cihazları için de geçerli mi?
+7. **Kurulum/eğitim:** ✅ Teyit edildi: Kett cihazlarında kurulum ve eğitim verilmiyor; kurulum bloğu ve ilgili ifadeler sayfadan çıkarıldı.
+8. **Yedek parça stoğu:** ✅ Teyit edildi: Kett yedek parçaları mevcut.
 9. **Kett üretici bilgisi:** Üreticinin ülkesi, kuruluş yılı, sertifikaları (ISO vb.). Repoda hiç yok; sayfada yazılmadı.
-10. **Fiyatlı Kett ürünleri:** Kett PM-450 satışta (`snippets/dg-satis.liquid`). Başka fiyatlı Kett modeli var mı? Süreç bölümü iki yolu da anlatıyor; hepsi teklifle satılıyorsa "sepete ekleyin" adımı çıkarılmalı.
+10. **Fiyatlı Kett ürünleri:** ✅ Teyit edildi: PM-450 dışında da fiyatlı Kett modelleri var; "sepete ekleyin" adımı kalıyor. Önceki not: Kett PM-450 satışta (`snippets/dg-satis.liquid`). Başka fiyatlı Kett modeli var mı? Süreç bölümü iki yolu da anlatıyor; hepsi teklifle satılıyorsa "sepete ekleyin" adımı çıkarılmalı.

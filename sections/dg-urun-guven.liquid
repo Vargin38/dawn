@@ -1,7 +1,7 @@
 {%- liquid
   assign marka = product.vendor | downcase
   assign tur = 'makine'
-  if marka == 'kett' or marka == 'hawo'
+  if marka == 'kett' or marka == 'hawo' or marka == 'newlong'
     assign tur = 'distributor'
   elsif marka == 'euromesh'
     assign tur = 'bez'

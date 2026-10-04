@@ -39,7 +39,9 @@
   {%- if pdf != '' -%}
     <li>{% render 'dg-ikon', ad: 'indir' %}<span><a href="{{ pdf }}" target="_blank" rel="noopener">Ürün kataloğunu indirin</a> <span class="dg-urun-notlar__boyut">PDF · {{ boyut }}</span></span></li>
   {%- endif -%}
-  {%- if marka == 'kett' or marka == 'hawo' -%}
+  {%- if marka == 'kett' or marka == 'newlong' -%}
+    <li>{% render 'dg-ikon', ad: 'kalkan' %}<span>{{ product.vendor }} Türkiye distribütöründen; servis ve yedek parça desteğiyle.</span></li>
+  {%- elsif marka == 'hawo' -%}
     <li>{% render 'dg-ikon', ad: 'kalkan' %}<span>{{ product.vendor }} Türkiye distribütöründen; kurulum, servis ve yedek parça desteğiyle.</span></li>
   {%- elsif marka == 'euromesh' -%}
     <li>{% render 'dg-ikon', ad: 'belge' %}<span>Uygulamanızı yazın, doğru kodu katalog değerleriyle birlikte seçelim.</span></li>
