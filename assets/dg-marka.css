@@ -1,0 +1,29 @@
+/* Değirmen A.Ş. — marka açılış sayfası bölümleri (dg-marka-*). Yalnızca dg-marka-* bölümlerinden yüklenir. */
+
+/* Marka SSS */
+.dg-marka-sss { padding: 9.6rem 0; background: #fff; }
+.dg-marka-sss__izgara { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 6.4rem; align-items: start; }
+.dg-marka-sss__izgara .dg-baslik-blok { margin-bottom: 0; }
+.dg-marka-sss__liste { border-top: 2px solid var(--dg-lac); }
+.dg-marka-sss__oge { border-bottom: 1px solid var(--dg-cizgi); }
+.dg-marka-sss__oge summary { display: flex; align-items: center; justify-content: space-between; gap: 2.4rem; padding: 2.4rem 0; cursor: pointer; list-style: none; }
+.dg-marka-sss__oge summary::-webkit-details-marker { display: none; }
+html body .dg-marka-sss__soru { margin: 0; font-size: 1.9rem; line-height: 1.35; color: var(--dg-lac); }
+.dg-marka-sss__oge summary:hover .dg-marka-sss__soru { color: var(--dg-etkin); }
+.dg-marka-sss__isaret { position: relative; flex: none; width: 3.2rem; height: 3.2rem; border: 1px solid var(--dg-cizgi); color: var(--dg-etkin); }
+.dg-marka-sss__isaret:before, .dg-marka-sss__isaret:after { content: ''; position: absolute; left: 50%; top: 50%; width: 1.2rem; height: 2px; background: currentColor; transform: translate(-50%, -50%); transition: transform .2s; }
+.dg-marka-sss__isaret:after { transform: translate(-50%, -50%) rotate(90deg); }
+.dg-marka-sss__oge[open] .dg-marka-sss__isaret:after { transform: translate(-50%, -50%) rotate(0deg); }
+.dg-marka-sss__cevap { padding: 0 5.6rem 2.8rem 0; font-size: 1.6rem; line-height: 1.65; color: var(--dg-soluk); }
+.dg-marka-sss__cevap p { margin: 0 0 1.2rem; }
+.dg-marka-sss__cevap p:last-child { margin-bottom: 0; }
+.dg-marka-sss__cevap a { color: var(--dg-etkin); }
+.dg-marka-sss__cevap strong { color: var(--dg-metin); }
+@media (max-width: 989px) { .dg-marka-sss__izgara { grid-template-columns: 1fr; gap: 3.2rem; } }
+@media (max-width: 600px) {
+  .dg-marka-sss { padding: 6.4rem 0; }
+  .dg-marka-sss__oge summary { gap: 1.6rem; padding: 2rem 0; }
+  html body .dg-marka-sss__soru { font-size: 1.7rem; }
+  .dg-marka-sss__cevap { padding-right: 0; font-size: 1.5rem; }
+}
+@media (prefers-reduced-motion: reduce) { .dg-marka-sss__isaret:before, .dg-marka-sss__isaret:after { transition: none; } }
