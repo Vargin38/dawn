@@ -1,0 +1,69 @@
+{%- assign sss_sayi = 0 -%}
+{%- for block in section.blocks -%}
+  {%- if block.settings.soru != blank and block.settings.cevap != blank -%}{%- assign sss_sayi = sss_sayi | plus: 1 -%}{%- endif -%}
+{%- endfor -%}
+{%- if sss_sayi > 0 -%}
+{{ 'dg-marka.css' | asset_url | stylesheet_tag }}
+<section class="dg-marka-sss"{% if section.settings.baslik != blank %} aria-labelledby="dg-marka-sss-{{ section.id }}"{% endif %}>
+  <div class="dg-sayfa dg-marka-sss__izgara">
+    <div class="dg-baslik-blok">
+      {%- if section.settings.kas != blank -%}<p class="dg-kas dg-kas--mavi">{{ section.settings.kas }}</p>{%- endif -%}
+      {%- if section.settings.baslik != blank -%}<h2 id="dg-marka-sss-{{ section.id }}">{{ section.settings.baslik }}</h2>{%- endif -%}
+      {%- if section.settings.metin != blank -%}<p>{{ section.settings.metin }}</p>{%- endif -%}
+    </div>
+    <div class="dg-marka-sss__liste">
+      {%- for block in section.blocks -%}
+        {%- if block.settings.soru != blank and block.settings.cevap != blank -%}
+          <details class="dg-marka-sss__oge" {{ block.shopify_attributes }}{% if forloop.first %} open{% endif %}>
+            <summary>
+              <h3 class="dg-marka-sss__soru">{{ block.settings.soru | escape }}</h3>
+              <span class="dg-marka-sss__isaret" aria-hidden="true"></span>
+            </summary>
+            <div class="dg-marka-sss__cevap">{{ block.settings.cevap }}</div>
+          </details>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {%- assign sira = 0 -%}
+      {%- for block in section.blocks -%}
+        {%- if block.settings.soru != blank and block.settings.cevap != blank -%}
+          {%- if sira > 0 -%},{%- endif -%}
+          {
+            "@type": "Question",
+            "name": {{ block.settings.soru | strip_html | json }},
+            "acceptedAnswer": { "@type": "Answer", "text": {{ block.settings.cevap | strip_html | strip_newlines | json }} }
+          }
+          {%- assign sira = sira | plus: 1 -%}
+        {%- endif -%}
+      {%- endfor -%}
+    ]
+  }
+</script>
+{%- endif -%}
+{% schema %}
+{
+  "name": "Marka SSS",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "kas", "label": "Üst etiket", "default": "Sık sorulanlar" },
+    { "type": "text", "id": "baslik", "label": "Başlık" },
+    { "type": "textarea", "id": "metin", "label": "Açıklama" }
+  ],
+  "blocks": [
+    { "type": "soru", "name": "Soru", "settings": [
+      { "type": "text", "id": "soru", "label": "Soru" },
+      { "type": "richtext", "id": "cevap", "label": "Cevap" }
+    ]}
+  ],
+  "max_blocks": 12,
+  "presets": [{ "name": "Marka SSS" }]
+}
+{% endschema %}

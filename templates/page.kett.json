@@ -1,0 +1,284 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "ust": {
+      "type": "dg-sayfa-ust",
+      "settings": {
+        "kas": "Kett · Türkiye distribütörü",
+        "metin": "Kett'in tahıl nem ölçerlerini ve pirinç beyazlık cihazlarını Türkiye'de Değirmen A.Ş. olarak sunuyoruz. Model seçimi, teklif, kurulum, servis ve yedek parça için tek muhatabınız biziz."
+      }
+    },
+    "uygulamalar": {
+      "type": "dg-sektorler",
+      "blocks": {
+        "tahil": {
+          "type": "sektor",
+          "settings": {
+            "ikon": "tane",
+            "baslik": "Tahıl ve tohum nemi",
+            "metin": "Buğday, arpa, mısır ve tohumlarda alım ve depolama sırasında nem ölçümü. Kett PM serisi cihazları ölçüm aralığı, numune hacmi ve hacim ağırlığı özelliğine göre karşılaştırın.",
+            "koleksiyon": "tahil-rutubet-olcme-cihazlari"
+          }
+        },
+        "pirinc": {
+          "type": "sektor",
+          "settings": {
+            "ikon": "pirinc",
+            "baslik": "Pirinç beyazlığı",
+            "metin": "Öğütülmüş ve parlatılmış pirinçte beyazlık derecesinin sayısal olarak ölçülmesi. Un ve toz numuneler için de kullanılabilen modeller var.",
+            "koleksiyon": "beyazlik-olcerler"
+          }
+        },
+        "rutubet": {
+          "type": "sektor",
+          "settings": {
+            "ikon": "lab",
+            "baslik": "Pamuk ve diğer numunelerde rutubet",
+            "metin": "Pamuk ve farklı endüstriyel numunelerde rutubet tayini için taşınabilir Kett ölçüm cihazları.",
+            "koleksiyon": "genel-rutubet-olcme-cihazlari"
+          }
+        },
+        "tum": {
+          "type": "sektor",
+          "settings": {
+            "ikon": "lab",
+            "baslik": "Tüm Kett kalite kontrol cihazları",
+            "metin": "Nem ve beyazlık ölçen Kett cihazlarının tamamını teknik özellikleri ve kataloglarıyla bir arada görün.",
+            "koleksiyon": "kalite-kontrol-ve-laboratuvar-cihazlari"
+          }
+        }
+      },
+      "block_order": [
+        "tahil",
+        "pirinc",
+        "rutubet",
+        "tum"
+      ],
+      "settings": {
+        "kas": "Ne ölçüyor",
+        "baslik": "Kett cihazları iki şeye odaklanır: nem ve beyazlık",
+        "metin": "Silo, değirmen ve gıda laboratuvarında tahıl, tohum ve pirinç numunelerini kontrol etmek için kullanılır. Ölçmek istediğiniz parametreden başlayın."
+      }
+    },
+    "urunler": {
+      "type": "dg-urunler",
+      "blocks": {
+        "s_tahil": {
+          "type": "sekme",
+          "settings": {
+            "koleksiyon": "tahil-rutubet-olcme-cihazlari",
+            "etiket": "Tahıl nemi"
+          }
+        },
+        "s_beyazlik": {
+          "type": "sekme",
+          "settings": {
+            "koleksiyon": "beyazlik-olcerler",
+            "etiket": "Beyazlık"
+          }
+        },
+        "s_rutubet": {
+          "type": "sekme",
+          "settings": {
+            "koleksiyon": "genel-rutubet-olcme-cihazlari",
+            "etiket": "Pamuk ve diğer"
+          }
+        }
+      },
+      "block_order": [
+        "s_tahil",
+        "s_beyazlik",
+        "s_rutubet"
+      ],
+      "settings": {
+        "koleksiyon": "kalite-kontrol-ve-laboratuvar-cihazlari",
+        "kas": "Ürünler",
+        "baslik": "Katalogdaki Kett cihazları",
+        "link_etiket": "Tüm Kett cihazları",
+        "adet": 12
+      }
+    },
+    "hizmet": {
+      "type": "dg-hizmet",
+      "blocks": {
+        "distributor": {
+          "type": "hizmet",
+          "settings": {
+            "ikon": "kalkan",
+            "baslik": "Türkiye distribütörü",
+            "metin": "Kett cihazlarını 1984'ten beri İstanbul'da faaliyet gösteren Değirmen A.Ş.'den, kurulum ve servis desteğiyle alırsınız."
+          }
+        },
+        "kurulum": {
+          "type": "hizmet",
+          "settings": {
+            "ikon": "kurulum",
+            "baslik": "Kurulum ve kullanım eğitimi",
+            "metin": "Cihazın ayarlarının yapılması ve operatörün kullanmaya başlayacak kadar eğitilmesi."
+          }
+        },
+        "bakim": {
+          "type": "hizmet",
+          "settings": {
+            "ikon": "bakim",
+            "baslik": "Bakım ve onarım",
+            "metin": "Kendi atölyemizde onarım; yerinde müdahale gereken durumlarda servis ekibimizle destek."
+          }
+        },
+        "parca": {
+          "type": "hizmet",
+          "settings": {
+            "ikon": "parca",
+            "baslik": "Yedek parça",
+            "metin": "Sattığımız cihazların parçaları için stok tutuyoruz; stokta olmayanı üreticiden temin ediyoruz."
+          }
+        }
+      },
+      "block_order": [
+        "distributor",
+        "kurulum",
+        "bakim",
+        "parca"
+      ],
+      "settings": {
+        "kas": "Satış sonrası",
+        "baslik": "Kett cihazınız kurulduktan sonra da buradayız",
+        "metin": "Kett ürünlerini doğrudan distribütöründen, teknik dokümanıyla birlikte alırsınız. Servis ya da yedek parça için cihazın modelini ve seri numarasını iletmeniz yeterli.",
+        "adres_baslik": "Servis şubesi",
+        "adres": "İMÇ 5. Blok No:5413, Unkapanı / İstanbul",
+        "telefon": "+90 543 244 73 08",
+        "buton_etiket": "Servis ve yedek parça",
+        "buton_link": "shopify://pages/servis-ve-yedek-parca"
+      }
+    },
+    "katalog": {
+      "type": "dg-marka-katalog",
+      "settings": {
+        "koleksiyon": "kalite-kontrol-ve-laboratuvar-cihazlari",
+        "marka": "Kett",
+        "kas": "Teknik dokümanlar",
+        "baslik": "Kett katalogları ve veri sayfaları",
+        "metin": "Üretici kataloglarını kayıt olmadan indirin. Kullanım kılavuzu gerekirse cihazın model kodunu yazmanız yeterli.",
+        "adet": 12
+      }
+    },
+    "surec": {
+      "type": "dg-surec",
+      "blocks": {
+        "sec": {
+          "type": "adim",
+          "settings": {
+            "baslik": "Modeli seçin",
+            "metin": "Cihazın sayfasında teknik özellikleri ve üretici kataloğunu inceleyin. Hangi modelin uygun olduğundan emin değilseniz ölçeceğiniz ürünü yazın, birlikte seçelim."
+          }
+        },
+        "sepet": {
+          "type": "adim",
+          "settings": {
+            "baslik": "Fiyatlıysa sepete ekleyin",
+            "metin": "Fiyatı yazan ürünlerde sepete ekleyip kartla ödeyin. Sitede yazan fiyatlar KDV dahildir."
+          }
+        },
+        "teklif": {
+          "type": "adim",
+          "settings": {
+            "baslik": "Fiyat yoksa teklif isteyin",
+            "metin": "Ürün sayfasındaki Teklif İste butonuyla formu doldurun; genellikle 24 saat içinde dönüş yapıyoruz."
+          }
+        }
+      },
+      "block_order": [
+        "sec",
+        "sepet",
+        "teklif"
+      ],
+      "settings": {
+        "kas": "Nasıl satın alırsınız",
+        "baslik": "Kett cihazı almanın iki yolu",
+        "metin": "Fiyatı yazan cihazları sepete ekleyip kartla ödeyebilirsiniz. Fiyatı görünmeyen modellerde fiyat, teslim süresi ve ödeme koşulları teklifle iletilir."
+      }
+    },
+    "sss": {
+      "type": "dg-marka-sss",
+      "blocks": {
+        "soru_1": {
+          "type": "soru",
+          "settings": {
+            "soru": "Kett cihazlarının Türkiye distribütörü kim?",
+            "cevap": "<p>Değirmen Sanayi ve Ticaret A.Ş., Kett'in Türkiye distribütörüdür. 1984'ten bu yana İstanbul'da kalite kontrol, ambalaj, gıda işleme ve tekstil ekipmanı tedarik ediyoruz.</p>"
+          }
+        },
+        "soru_2": {
+          "type": "soru",
+          "settings": {
+            "soru": "Kett cihazları neyi ölçer?",
+            "cevap": "<p>Katalogdaki Kett cihazları tahıl, tohum ve pirinç başta olmak üzere numunelerde nem veya beyazlık ölçer. Tahıl nemi, pirinç beyazlığı ve pamuk gibi diğer numunelerde rutubet için ayrı model grupları var.</p>"
+          }
+        },
+        "soru_3": {
+          "type": "soru",
+          "settings": {
+            "soru": "Fiyatı görünmeyen Kett cihazı için ne yapmalıyım?",
+            "cevap": "<p>Ürün sayfasındaki <strong>Teklif İste</strong> butonuyla formu doldurun ya da WhatsApp'tan yazın. Fiyat, teslim süresi ve ödeme koşullarını genellikle 24 saat içinde iletiyoruz.</p>"
+          }
+        },
+        "soru_4": {
+          "type": "soru",
+          "settings": {
+            "soru": "Kett cihazım için servis ve yedek parça alabilir miyim?",
+            "cevap": "<p>Evet. Kendi atölyemizde onarım yapıyor, sattığımız cihazların parçaları için stok tutuyoruz. Cihazın modelini ve seri numarasını iletmeniz yeterli. Ayrıntılar için <a href=\"/pages/servis-ve-yedek-parca\">Servis ve yedek parça</a> sayfasına bakın.</p>"
+          }
+        },
+        "soru_5": {
+          "type": "soru",
+          "settings": {
+            "soru": "Kett ürün kataloğuna nasıl ulaşırım?",
+            "cevap": "<p>Kataloğu olan her ürünün PDF'i kendi sayfasında; kayıt olmadan indirebilirsiniz. Kullanım kılavuzu gerekirse model kodunu yazmanız yeterli.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "soru_1",
+        "soru_2",
+        "soru_3",
+        "soru_4",
+        "soru_5"
+      ],
+      "settings": {
+        "kas": "Sık sorulanlar",
+        "baslik": "Kett cihazları hakkında sorular"
+      }
+    },
+    "cta": {
+      "type": "dg-cta",
+      "settings": {
+        "kas": "Doğrudan ulaşın",
+        "baslik": "Hangi Kett modeli size uygun?",
+        "metin": "Ölçeceğiniz ürünü ve günlük kullanım miktarınızı yazın; uygun modeli ve fiyatını birlikte belirleyelim. Hafta içi 09:00–18:00 arasında dönüş yapıyoruz.",
+        "whatsapp": "905418890092",
+        "whatsapp_etiket": "0541 889 00 92",
+        "wa_mesaj": "Merhaba, Kett cihazları hakkında bilgi almak istiyorum.",
+        "telefon": "+90 212 494 33 33",
+        "eposta": "info@degirmen.com.tr"
+      }
+    }
+  },
+  "order": [
+    "ust",
+    "uygulamalar",
+    "urunler",
+    "hizmet",
+    "katalog",
+    "surec",
+    "sss",
+    "cta"
+  ]
+}
