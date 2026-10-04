@@ -13,7 +13,7 @@
       "type": "dg-sayfa-ust",
       "settings": {
         "kas": "Kett · Türkiye distribütörü",
-        "metin": "Kett'in tahıl nem ölçerlerini ve pirinç beyazlık cihazlarını Türkiye'de Değirmen A.Ş. olarak sunuyoruz. Model seçimi, teklif, kurulum, servis ve yedek parça için tek muhatabınız biziz."
+        "metin": "Kett'in tahıl nem ölçerlerini ve pirinç beyazlık cihazlarını Türkiye'de Değirmen A.Ş. olarak sunuyoruz. Model seçimi, teklif, servis ve yedek parça için tek muhatabınız biziz."
       }
     },
     "uygulamalar": {
@@ -114,15 +114,7 @@
           "settings": {
             "ikon": "kalkan",
             "baslik": "Türkiye distribütörü",
-            "metin": "Kett cihazlarını 1984'ten beri İstanbul'da faaliyet gösteren Değirmen A.Ş.'den, kurulum ve servis desteğiyle alırsınız."
-          }
-        },
-        "kurulum": {
-          "type": "hizmet",
-          "settings": {
-            "ikon": "kurulum",
-            "baslik": "Kurulum ve kullanım eğitimi",
-            "metin": "Cihazın ayarlarının yapılması ve operatörün kullanmaya başlayacak kadar eğitilmesi."
+            "metin": "Kett cihazlarını 1984'ten beri İstanbul'da faaliyet gösteren Değirmen A.Ş.'den, servis ve yedek parça desteğiyle alırsınız."
           }
         },
         "bakim": {
@@ -144,13 +136,12 @@
       },
       "block_order": [
         "distributor",
-        "kurulum",
         "bakim",
         "parca"
       ],
       "settings": {
         "kas": "Satış sonrası",
-        "baslik": "Kett cihazınız kurulduktan sonra da buradayız",
+        "baslik": "Kett cihazınızı aldıktan sonra da buradayız",
         "metin": "Kett ürünlerini doğrudan distribütöründen, teknik dokümanıyla birlikte alırsınız. Servis ya da yedek parça için cihazın modelini ve seri numarasını iletmeniz yeterli.",
         "adres_baslik": "Servis şubesi",
         "adres": "İMÇ 5. Blok No:5413, Unkapanı / İstanbul",
