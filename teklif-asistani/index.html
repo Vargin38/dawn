@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- Satır içi betik yok; kullanıcı metni HTML olarak çalışamaz. Uygulama dış sunucuya bağlanmaz. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Teklif Asistanı · Değirmen</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <a class="atla" href="#sayfa">İçeriğe geç</a>
+  <header class="ust">
+    <div class="ust-ic">
+      <a class="marka" href="#/liste">
+        <span class="marka-ad">Teklif Asistanı</span>
+        <span class="marka-alt">Değirmen · ilk sürüm</span>
+      </a>
+      <nav id="ust-menu" class="menu-ust" aria-label="Ana menü"></nav>
+    </div>
+  </header>
+  <div id="bildirim" class="bildirim-alani" aria-live="polite"></div>
+  <main id="sayfa" tabindex="-1"></main>
+  <footer class="alt-bilgi">
+    Veriler yalnız bu cihazdaki tarayıcıda saklanır (eşitleme yok). Bu uygulama müşteriye mesaj göndermez.
+  </footer>
+  <nav id="alt-menu" class="menu-alt" aria-label="Alt menü"></nav>
+
+  <noscript>Bu uygulama JavaScript gerektirir.</noscript>
+  <script src="vendor/pdfmake.min.js"></script>
+  <script src="vendor/vfs_fonts.js"></script>
+  <script src="data/catalog.js"></script>
+  <script src="data/assets.js"></script>
+  <script src="data/samples.js"></script>
+  <script src="js/money.js"></script>
+  <script src="js/parser.js"></script>
+  <script src="js/quote.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/pdf.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+node_modules/
+test-results/
+# Üçüncü taraf paket: npm'deki sabit sürümden üretilir (npm install && npm run vendor)
+vendor/pdfmake.min.js
+vendor/vfs_fonts.js
+# Görsel kaynak dosyaları (ikili). İşlenmiş hâlleri data/assets.js içinde gömülü.
+assets/

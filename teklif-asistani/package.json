@@ -1,0 +1,20 @@
+{
+  "name": "teklif-asistani",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Değirmen Sanayi ve Ticaret A.Ş. — teklif hazırlama asistanı (ilk sürüm, PM-450)",
+  "scripts": {
+    "start": "node scripts/serve.js",
+    "start:lan": "node scripts/serve.js --lan",
+    "test": "node --test tests/unit.test.js",
+    "test:e2e": "node --test --test-concurrency=1 tests/e2e.test.js",
+    "test:all": "node --test --test-concurrency=1 tests/",
+    "build:assets": "node scripts/build-assets.js",
+    "vendor": "cp node_modules/pdfmake/build/pdfmake.min.js node_modules/pdfmake/build/vfs_fonts.js vendor/ && cp node_modules/pdfmake/LICENSE vendor/LICENSE-pdfmake.txt"
+  },
+  "devDependencies": {
+    "pdfmake": "0.3.11",
+    "playwright": "1.56.1"
+  },
+  "license": "UNLICENSED"
+}
