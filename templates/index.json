@@ -49,6 +49,8 @@
       ],
       "settings": {
         "resim": "shopify://shop_images/degirmen-plaza-bina.jpg",
+        "resim_2": "shopify://shop_images/degirmen-plaza-cephe.jpg",
+        "gecis": 6,
         "kas": "Değirmen Sanayi ve Ticaret A.Ş. · İstanbul, 1984",
         "baslik": "Tahılın nemini ölçen, poşeti kapatan, unu eleyen ekipman",
         "metin": "Kett ve HAWO'nun Türkiye distribütörüyüz. 1984'ten bu yana kalite kontrol, ambalaj, gıda işleme ve tekstil tesislerine cihaz seçiyor, kuruyor ve servis veriyoruz.",
@@ -56,9 +58,7 @@
         "buton_link": "shopify://collections/all",
         "wa_etiket": "WhatsApp'tan teklif isteyin",
         "whatsapp": "905418890092",
-        "wa_mesaj": "Merhaba, teklif almak istiyorum.",
-        "resim_2": "shopify://shop_images/degirmen-plaza-cephe.jpg",
-        "gecis": 6
+        "wa_mesaj": "Merhaba, teklif almak istiyorum."
       }
     },
     "markalar": {
@@ -212,6 +212,7 @@
         "s_tekstil"
       ],
       "settings": {
+        "koleksiyon": "",
         "kas": "Ürünler",
         "baslik": "Katalogdaki cihazlar ve bezler",
         "link_etiket": "Tüm ürünler",
@@ -293,15 +294,15 @@
         "form": {
           "type": "adim",
           "settings": {
-            "baslik": "Fiyatlıysa sepete ekleyin",
-            "metin": "Fiyatı yazan ürünlerde sepete ekleyip kartla ödeyin. Sitede yazan fiyatlar KDV dahildir."
+            "baslik": "Teklif isteyin",
+            "metin": "Ürün sayfasındaki teklif formunu doldurun veya WhatsApp üzerinden kullanım amacınızı ve ihtiyacınız olan modeli yazın."
           }
         },
         "teklif": {
           "type": "adim",
           "settings": {
-            "baslik": "Fiyat yoksa teklif isteyin",
-            "metin": "Fiyatı görünmeyen ürünlerde formu doldurun; fiyat, teslim süresi ve ödeme koşullarını genellikle 24 saat içinde iletiyoruz."
+            "baslik": "Teklifinizi alın",
+            "metin": "Fiyat, teslim süresi ve ödeme koşullarını ihtiyacınıza göre hazırlayıp genellikle 24 saat içinde iletiyoruz."
           }
         }
       },
@@ -311,9 +312,9 @@
         "teklif"
       ],
       "settings": {
-        "kas": "Nasıl satın alırsınız",
-        "baslik": "İki şekilde sipariş verebilirsiniz",
-        "metin": "Fiyatı yazan ürünleri doğrudan sepete ekleyip kartla ödeyebilirsiniz. Fiyatı görünmeyen makineler modele, adede ve teslimat yerine göre fiyatlandığı için teklifle satılır."
+        "kas": "TEKLİF SÜRECİ",
+        "baslik": "Teklifinizi nasıl alırsınız?",
+        "metin": "Ürünlerinizi inceleyin, ardından teklif formundan veya WhatsApp üzerinden ihtiyacınızı iletin. Model, adet ve teslimat noktasına göre fiyat ve teslim süresini hazırlayalım."
       }
     },
     "cta": {
@@ -325,7 +326,7 @@
         "whatsapp": "905418890092",
         "whatsapp_etiket": "0541 889 00 92",
         "wa_mesaj": "Merhaba, bir cihaz için bilgi almak istiyorum.",
-        "telefon": "+90 212 494 33 33",
+        "telefon": "+90 541 889 00 92",
         "eposta": "info@degirmen.com.tr"
       }
     }

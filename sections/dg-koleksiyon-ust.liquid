@@ -1,4 +1,10 @@
 {%- liquid
+  assign dg_en = false
+  if request.locale.iso_code == 'en'
+    assign dg_en = true
+  endif
+-%}
+{%- liquid
   assign ust = nil
   assign cipler = nil
   for l1 in linklists['main-menu'].links
@@ -16,12 +22,15 @@
     endfor
   endfor
   assign wa_mesaj = 'Merhaba, ' | append: collection.title | append: ' için hangi modelin uygun olduğunu sormak istiyorum.'
+  if dg_en
+    assign wa_mesaj = 'Hello, I would like advice on which ' | append: collection.title | append: ' model is right for me.'
+  endif
   assign wa_mesaj = wa_mesaj | url_encode | replace: '+', '%20'
 -%}
 <section class="dg-kol-ust">
   <div class="dg-sayfa">
-    <nav class="dg-yol" aria-label="Sayfa yolu">
-      <a href="{{ routes.root_url }}">Ana sayfa</a><span aria-hidden="true">/</span>
+    <nav class="dg-yol" aria-label="{% if dg_en %}Breadcrumb{% else %}Sayfa yolu{% endif %}">
+      <a href="{{ routes.root_url }}">{% if dg_en %}Home{% else %}Ana sayfa{% endif %}</a><span aria-hidden="true">/</span>
       {%- if ust and ust.url != collection.url -%}
         <a href="{{ ust.url }}">{{ ust.title }}</a><span aria-hidden="true">/</span>
       {%- endif -%}
@@ -29,7 +38,7 @@
     </nav>
     <div class="dg-kol-ust__izgara">
       <div>
-        <p class="dg-kas">{{ collection.products_count }} ürün</p>
+        <p class="dg-kas">{{ collection.products_count }} {% if dg_en %}{% if collection.products_count == 1 %}product{% else %}products{% endif %}{% else %}ürün{% endif %}</p>
         <h1 class="dg-kol-ust__baslik">{{ collection.title }}</h1>
         <div class="dg-kol-ust__metin">
           {%- if collection.description != blank -%}
@@ -41,12 +50,12 @@
       </div>
       <a class="dg-kol-ust__yardim" href="https://wa.me/905418890092?text={{ wa_mesaj }}" target="_blank" rel="noopener">
         {% render 'dg-ikon', ad: 'wa' %}
-        <span><span class="dg-kas">Seçimde yardım</span><strong>Hangi model uygun? WhatsApp'tan sorun</strong></span>
+        <span><span class="dg-kas">{% if dg_en %}Help choosing{% else %}Seçimde yardım{% endif %}</span><strong>{% if dg_en %}Which model is right? Ask on WhatsApp{% else %}Hangi model uygun? WhatsApp'tan sorun{% endif %}</strong></span>
       </a>
     </div>
     {%- if cipler and cipler.size > 0 -%}
       <ul class="dg-kol-ust__cipler">
-        <li><a href="{{ ust.url }}"{% if ust.url == collection.url %} aria-current="page"{% endif %}>Tümü<span>{{ ust.object.products_count }}</span></a></li>
+        <li><a href="{{ ust.url }}"{% if ust.url == collection.url %} aria-current="page"{% endif %}>{% if dg_en %}All{% else %}Tümü{% endif %}<span>{{ ust.object.products_count }}</span></a></li>
         {%- for l in cipler -%}
           {%- if l.type == 'collection_link' and l.object.products_count > 0 -%}
             <li><a href="{{ l.url }}"{% if l.url == collection.url %} aria-current="page"{% endif %}>{{ l.title }}<span>{{ l.object.products_count }}</span></a></li>

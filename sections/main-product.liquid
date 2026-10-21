@@ -1,3 +1,9 @@
+{%- liquid
+  assign dg_en = false
+  if request.locale.iso_code == 'en'
+    assign dg_en = true
+  endif
+-%}
 <product-info
   id="MainProduct-{{ section.id }}"
   class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
@@ -123,7 +129,7 @@
                   {%- endif -%}
                   {%- if dg_satis_izin contains 'evet' -%}
                     <div class="product__tax caption rte">
-                      Fiyat KDV dahildir. Kargo alıcı ödemelidir; ücreti teslimatta taşıyıcıya ödenir.
+                      {% if dg_en %}Price includes VAT. Shipping is paid by the recipient to the carrier on delivery.{% else %}Fiyat KDV dahildir. Kargo alıcı ödemelidir; ücreti teslimatta taşıyıcıya ödenir.{% endif %}
                     </div>
                   {%- endif -%}
                   <div {{ block.shopify_attributes }}>

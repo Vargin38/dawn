@@ -19,12 +19,18 @@
       assign dg_baslik = page_title
       if request.page_type == 'index'
         assign dg_baslik = 'Kett ve HAWO Türkiye Distribütörü | Değirmen A.Ş.'
+        if request.locale.iso_code == 'en'
+          assign dg_baslik = 'Kett and HAWO Distributor in Türkiye | Değirmen A.Ş.'
+        endif
       endif
 
       # SEO: her önemli sayfa türüne özgü, arama sonucunda kesilmeyen açıklama.
       assign dg_aciklama = page_description
       if request.page_type == 'index'
         assign dg_aciklama = 'Kett ve HAWO Türkiye distribütörü Değirmen A.Ş.; tahıl nem ölçer, beyazlık ölçer, poşet yapıştırma, elek ve filtre bezleri. Satış, servis ve yedek parça.'
+        if request.locale.iso_code == 'en'
+          assign dg_aciklama = 'Değirmen A.Ş., Kett and HAWO distributor in Türkiye: grain moisture meters, whiteness meters, bag sealers, sieve and filter cloths. Sales, service and spare parts.'
+        endif
       elsif request.page_type == 'collection' and collection.description == blank
         capture dg_koleksiyon_aciklama
           render 'dg-collection-description', collection: collection
@@ -42,8 +48,8 @@
     <title>
       {{ dg_baslik }}
       {%- if request.page_type != 'index' -%}
-        {%- if current_tags %} &ndash; etiket: {{ current_tags | join: ', ' }}{% endif -%}
-        {%- if current_page != 1 %} &ndash; Sayfa {{ current_page }}{% endif -%}
+        {%- if current_tags %} &ndash; {% if request.locale.iso_code == 'en' %}tag{% else %}etiket{% endif %}: {{ current_tags | join: ', ' }}{% endif -%}
+        {%- if current_page != 1 %} &ndash; {% if request.locale.iso_code == 'en' %}Page{% else %}Sayfa{% endif %} {{ current_page }}{% endif -%}
         {%- unless dg_baslik contains 'Değirmen' or page_title contains shop.name %} &ndash; Değirmen A.Ş.{% endunless -%}
       {%- endif -%}
     </title>

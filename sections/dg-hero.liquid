@@ -1,4 +1,10 @@
 {%- liquid
+  assign dg_en = false
+  if request.locale.iso_code == 'en'
+    assign dg_en = true
+  endif
+-%}
+{%- liquid
   assign wa_mesaj = section.settings.wa_mesaj | url_encode | replace: '+', '%20'
   assign resim_anahtarlari = 'resim,resim_2,resim_3' | split: ','
   assign resim_sayisi = 0
@@ -74,7 +80,7 @@
                 {%- if c.featured_image -%}{{ c.featured_image | image_url: width: 180 | image_tag: loading: 'eager', alt: '' }}{%- endif -%}
               </span>
               <span class="dg-hero__grup-metin">
-                <span class="dg-kas">{{ c.products_count }} ürün</span>
+                <span class="dg-kas">{{ c.products_count }} {% if dg_en %}{% if c.products_count == 1 %}product{% else %}products{% endif %}{% else %}ürün{% endif %}</span>
                 <strong>{{ block.settings.etiket | default: c.title }}</strong>
               </span>
               {% render 'dg-ikon', ad: 'ok' %}

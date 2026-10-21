@@ -111,7 +111,7 @@
     "brand_description": "<p></p>",
     "brand_image_width": 100,
     "social_facebook_link": "https://www.facebook.com/vbaydede",
-    "social_instagram_link": "https://www.instagram.com/degirmensanayi",
+    "social_instagram_link": "https://www.instagram.com/degirmen.sanayi",
     "social_youtube_link": "",
     "social_tiktok_link": "",
     "social_twitter_link": "",
@@ -128,7 +128,7 @@
     "show_cart_note": true,
     "cart_drawer_collection": "",
     "cart_color_scheme": "scheme-1",
-    "quote_mode": false,
+    "quote_mode": true,
     "customer_account_menu": "customer-account-main-menu",
     "dg_og_gorsel": "shopify://shop_images/degirmen-plaza-bina.jpg",
     "sections": {

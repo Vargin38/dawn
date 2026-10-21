@@ -1,3 +1,9 @@
+{%- liquid
+  assign dg_en = false
+  if request.locale.iso_code == 'en'
+    assign dg_en = true
+  endif
+-%}
 {{ 'component-cart.css' | asset_url | stylesheet_tag }}
 {{ 'component-cart-items.css' | asset_url | stylesheet_tag }}
 {{ 'component-totals.css' | asset_url | stylesheet_tag }}
@@ -32,9 +38,9 @@
   <div class="page-width">
     <div class="title-wrapper-with-link">
       <div>
-        <p class="dg-cart-eyebrow">SİPARİŞİNİZİ GÖZDEN GEÇİRİN</p>
+        <p class="dg-cart-eyebrow">{% if dg_en %}REVIEW YOUR ORDER{% else %}SİPARİŞİNİZİ GÖZDEN GEÇİRİN{% endif %}</p>
         <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
-        <p class="dg-cart-intro">Fiyatlar KDV dahildir. Ürün ve adet bilgilerini kontrol ettikten sonra güvenli ödeme adımına geçebilirsiniz.</p>
+        <p class="dg-cart-intro">{% if dg_en %}Prices include VAT. Check the products and quantities, then proceed to secure checkout.{% else %}Fiyatlar KDV dahildir. Ürün ve adet bilgilerini kontrol ettikten sonra güvenli ödeme adımına geçebilirsiniz.{% endif %}</p>
       </div>
       <a href="{{ routes.all_products_collection_url }}" class="underlined-link">
         {{- 'general.continue_shopping' | t -}}

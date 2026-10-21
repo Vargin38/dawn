@@ -1,3 +1,9 @@
+{%- liquid
+  assign dg_en = false
+  if request.locale.iso_code == 'en'
+    assign dg_en = true
+  endif
+-%}
 {% comment %}
   Degirmen product card rendering v2026-09-21.
   Renders a product card
@@ -218,16 +224,16 @@
               {%- if dg_kart_satis contains 'evet' and dg_kart_fiyat_sayfada contains 'evet' -%}
                 {%- comment -%} Metre fiyatlı bezler: fiyat ürün sayfasında seçime göre görünür. {%- endcomment -%}
                 <span class="dg-card-quote">
-                  <strong>Metre fiyatı</strong>
-                  <span>Seçenekleri görün →</span>
+                  <strong>{% if dg_en %}Price per metre{% else %}Metre fiyatı{% endif %}</strong>
+                  <span>{% if dg_en %}See options{% else %}Seçenekleri görün{% endif %} →</span>
                 </span>
               {%- else -%}
                 {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
               {%- endif -%}
               {%- unless dg_kart_satis contains 'evet' -%}
                 <span class="dg-card-quote">
-                  <strong>Teklif alın</strong>
-                  <span>Fiyat ve teslimat bilgisi →</span>
+                  <strong>{% if dg_en %}Get a quote{% else %}Teklif alın{% endif %}</strong>
+                  <span>{% if dg_en %}Price and delivery info{% else %}Fiyat ve teslimat bilgisi{% endif %} →</span>
                 </span>
               {%- endunless -%}
               {%- if card_product.quantity_price_breaks_configured? -%}

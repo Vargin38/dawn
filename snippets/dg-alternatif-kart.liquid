@@ -1,0 +1,23 @@
+{%- liquid
+  assign dg_en = false
+  if request.locale.iso_code == 'en'
+    assign dg_en = true
+  endif
+-%}
+{%- comment -%} Alternatif ürün kartı: mağazanın standart ürün kartı + stok durumu etiketi. Kullanım: {% render 'dg-alternatif-kart', p: p, section_id: section.id %} {%- endcomment -%}
+<li class="grid__item">
+  {% render 'card-product',
+    card_product: p,
+    media_aspect_ratio: 'square',
+    image_shape: 'default',
+    show_secondary_image: true,
+    show_vendor: true,
+    show_rating: false,
+    section_id: section_id
+  %}
+  {%- if p.available -%}
+    <p class="dg-stok dg-stok--var">{% if dg_en %}In stock{% else %}Stokta{% endif %}</p>
+  {%- else -%}
+    <p class="dg-stok dg-stok--teklif">{% if dg_en %}By quotation{% else %}Teklif ile{% endif %}</p>
+  {%- endif -%}
+</li>

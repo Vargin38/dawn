@@ -1,0 +1,78 @@
+{%- liquid
+  assign dg_en = false
+  if request.locale.iso_code == 'en'
+    assign dg_en = true
+  endif
+-%}
+{%- comment -%}
+  Ürün sayfası yolu: Ana sayfa › üst kategori › alt kategori › ürün.
+  Ürünün koleksiyonlarından en çok ürünlü olanı üst, en az ürünlü olanı alt kategori sayılır.
+{%- endcomment -%}
+{%- liquid
+  assign alt = nil
+  assign alt_sayi = 100000
+  assign ust = nil
+  assign ust_sayi = 0
+  for c in product.collections
+    if c.handle == 'frontpage'
+      continue
+    endif
+    if c.all_products_count < alt_sayi
+      assign alt = c
+      assign alt_sayi = c.all_products_count
+    endif
+    if c.all_products_count > ust_sayi
+      assign ust = c
+      assign ust_sayi = c.all_products_count
+    endif
+  endfor
+  if ust and alt and ust.handle == alt.handle
+    assign ust = nil
+  endif
+  assign sira = 1
+-%}
+<nav class="dg-sayfayolu" aria-label="{% if dg_en %}Breadcrumb{% else %}Sayfa yolu{% endif %}">
+  <div class="dg-sayfa">
+  <ol class="dg-sayfayolu__liste">
+    <li><a href="{{ routes.root_url }}">{% if dg_en %}Home{% else %}Ana sayfa{% endif %}</a></li>
+    {%- if ust -%}<li><a href="{{ ust.url }}">{{ ust.title }}</a></li>{%- endif -%}
+    {%- if alt -%}<li><a href="{{ alt.url }}">{{ alt.title }}</a></li>{%- endif -%}
+    <li aria-current="page">{{ product.title }}</li>
+  </ol>
+  </div>
+</nav>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Ana sayfa", "item": {{ shop.url | append: routes.root_url | json }} }
+      {%- if ust -%}{%- assign sira = sira | plus: 1 -%},
+      { "@type": "ListItem", "position": {{ sira }}, "name": {{ ust.title | json }}, "item": {{ shop.url | append: ust.url | json }} }
+      {%- endif -%}
+      {%- if alt -%}{%- assign sira = sira | plus: 1 -%},
+      { "@type": "ListItem", "position": {{ sira }}, "name": {{ alt.title | json }}, "item": {{ shop.url | append: alt.url | json }} }
+      {%- endif -%}
+      {%- assign sira = sira | plus: 1 -%},
+      { "@type": "ListItem", "position": {{ sira }}, "name": {{ product.title | json }}, "item": {{ shop.url | append: product.url | json }} }
+    ]
+  }
+</script>
+<style>
+  .dg-sayfayolu { display: block; padding-top: 2rem; }
+  .dg-sayfayolu__liste { list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: .4rem 0; margin: 0; padding: 0; font-family: var(--dg-mono); font-size: 1.2rem; letter-spacing: .03em; color: var(--dg-soluk); }
+  .dg-sayfayolu__liste li { display: inline-flex; align-items: center; min-width: 0; }
+  .dg-sayfayolu__liste li + li::before { content: '›'; margin: 0 .9rem; color: var(--dg-cizgi); font-size: 1.5rem; line-height: 1; }
+  .dg-sayfayolu__liste a { color: var(--dg-soluk); text-decoration: none; }
+  .dg-sayfayolu__liste a:hover { color: var(--dg-etkin); text-decoration: underline; text-underline-offset: .3rem; }
+  .dg-sayfayolu__liste [aria-current] { color: var(--dg-lac); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 60ch; }
+  @media (max-width: 749px) { .dg-sayfayolu { padding-top: 1.4rem; } .dg-sayfayolu__liste [aria-current] { max-width: 100%; white-space: normal; } }
+</style>
+{% schema %}
+{
+  "name": "Ürün sayfa yolu",
+  "tag": "div",
+  "class": "section dg-yol-bolum",
+  "settings": []
+}
+{% endschema %}

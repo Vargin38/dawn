@@ -1,3 +1,9 @@
+{%- liquid
+  assign dg_en = false
+  if request.locale.iso_code == 'en'
+    assign dg_en = true
+  endif
+-%}
 {{ 'dg-tema.css' | asset_url | stylesheet_tag }}
 {{ 'dg-bolumler.css' | asset_url | stylesheet_tag }}
 {{ 'dg-sayfalar.css' | asset_url | stylesheet_tag }}
@@ -18,17 +24,60 @@
 <div class="dg-ust">
   <div class="dg-ust__ic dg-sayfa">
     <p class="dg-ust__sol">{{ section.settings.metin }}</p>
-    <nav class="dg-ust__sag" aria-label="Hızlı iletişim">
-      <a href="{{ tel_link }}">{% render 'dg-ikon', ad: 'tel' %}<span>{{ section.settings.telefon }}</span></a>
+    <nav class="dg-ust__sag" aria-label="{% if dg_en %}Quick contact{% else %}Hızlı iletişim{% endif %}">
+      <a href="{{ tel_link }}" class="dg-ust__tel" aria-label="{{ section.settings.telefon }}">{% render 'dg-ikon', ad: 'tel' %}<span>{{ section.settings.telefon }}</span></a>
       <a href="https://wa.me/{{ section.settings.whatsapp }}" target="_blank" rel="noopener">{% render 'dg-ikon', ad: 'wa' %}<span>WhatsApp</span></a>
       <a href="{{ section.settings.eposta | prepend: 'mailto:' }}" class="dg-ust__gizle">{% render 'dg-ikon', ad: 'eposta' %}<span>{{ section.settings.eposta }}</span></a>
-      <a href="{{ section.settings.yedek_link }}">{% render 'dg-ikon', ad: 'parca' %}<span>Yedek parça</span></a>
+      <a href="{{ section.settings.yedek_link }}">{% render 'dg-ikon', ad: 'parca' %}<span>{% if dg_en %}Spare parts{% else %}Yedek parça{% endif %}</span></a>
+      {%- if localization.available_languages.size > 1 -%}
+        {%- liquid
+          if dg_en
+            assign dg_dil_yol = request.path | remove_first: '/en'
+            if dg_dil_yol == blank
+              assign dg_dil_yol = '/'
+            endif
+          elsif request.path == '/'
+            assign dg_dil_yol = '/en'
+          else
+            assign dg_dil_yol = '/en' | append: request.path
+          endif
+        -%}
+        <a href="{{ dg_dil_yol }}" class="dg-ust__dil" hreflang="{% if dg_en %}tr{% else %}en{% endif %}" lang="{% if dg_en %}tr{% else %}en{% endif %}" aria-label="{% if dg_en %}Türkçe{% else %}English{% endif %}"><span>{% if dg_en %}TR{% else %}EN{% endif %}</span></a>
+      {%- endif -%}
       {%- if sepet_goster -%}
-        <a href="{{ routes.cart_url }}" class="dg-ust__sepet">{% render 'dg-ikon', ad: 'poset' %}<span>Sepet{% if cart.item_count > 0 %} · {{ cart.item_count }}{% endif %}</span></a>
+        <a href="{{ routes.cart_url }}" class="dg-ust__sepet">{% render 'dg-ikon', ad: 'poset' %}<span>{% if dg_en %}Cart{% else %}Sepet{% endif %}{% if cart.item_count > 0 %} · {{ cart.item_count }}{% endif %}</span></a>
       {%- endif -%}
     </nav>
   </div>
 </div>
+{%- comment -%} Dawn sepet sayfası adet güncellerken #cart-icon-bubble öğesini arar; başlıkta yoksa güncelleme hata verir. {%- endcomment -%}
+<div id="cart-icon-bubble" hidden></div>
+<style>
+  .dg-ust__sag a span { white-space: nowrap; }
+  @media (max-width: 749px) {
+    .dg-ust__tel span { display: none; }
+    .dg-ust__sag { gap: .4rem; flex-wrap: wrap; justify-content: center; }
+  }
+  @media (min-width: 990px) and (max-width: 1399px) {
+    html body .header__inline-menu .header__menu-item { padding-left: .8rem; padding-right: .8rem; font-size: 1.45rem; }
+  }
+</style>
+<script>
+  /* Sepet sayfasında adet değişince özet sayacı ve üst bardaki "Sepet · N" sayfa yenilenmeden güncellensin. */
+  document.addEventListener('DOMContentLoaded', function () {
+    if (typeof subscribe !== 'function' || typeof PUB_SUB_EVENTS === 'undefined') return;
+    subscribe(PUB_SUB_EVENTS.cartUpdate, function (olay) {
+      var n = olay && olay.cartData && olay.cartData.item_count;
+      if (typeof n !== 'number') return;
+      document.querySelectorAll('.dg-cart-item-count').forEach(function (el) {
+        el.textContent = /item/.test(el.textContent) ? n + ' ' + (n === 1 ? 'item' : 'items') : n + ' ürün';
+      });
+      document.querySelectorAll('.dg-ust__sepet span').forEach(function (el) {
+        el.textContent = el.textContent.replace(/\s·\s\d+$/, '') + (n > 0 ? ' · ' + n : '');
+      });
+    });
+  });
+</script>
 {% schema %}
 {
   "name": "Üst iletişim şeridi",
@@ -36,7 +85,7 @@
   "class": "section dg-ust-bolum",
   "settings": [
     { "type": "text", "id": "metin", "label": "Sol metin", "default": "Kett ve HAWO Türkiye distribütörü · 1984'ten bu yana" },
-    { "type": "text", "id": "telefon", "label": "Telefon", "default": "+90 212 494 33 33" },
+    { "type": "text", "id": "telefon", "label": "Telefon", "default": "+90 541 889 00 92" },
     { "type": "text", "id": "whatsapp", "label": "WhatsApp numarası (905xxxxxxxxx)", "default": "905418890092" },
     { "type": "text", "id": "eposta", "label": "E-posta", "default": "info@degirmen.com.tr" },
     { "type": "url", "id": "yedek_link", "label": "Yedek parça bağlantısı" }

@@ -1,4 +1,10 @@
 {%- liquid
+  assign dg_en = false
+  if request.locale.iso_code == 'en'
+    assign dg_en = true
+  endif
+-%}
+{%- liquid
   assign marka = product.vendor | downcase
   assign tur = 'makine'
   if marka == 'kett' or marka == 'hawo'
@@ -13,66 +19,66 @@
   <div class="dg-sayfa">
     <div class="dg-guven__ust">
       <div>
-        <p class="dg-kas">Teklif ve destek</p>
-        <h2 id="dg-guven-{{ section.id }}">Teklif talebinize genellikle 24 saat içinde dönüyoruz</h2>
-        <p class="dg-guven__metin">{{ product.title }} için fiyat, teslim süresi ve ödeme koşullarını firmanıza özel olarak hazırlıyoruz.</p>
+        <p class="dg-kas">{% if dg_en %}Quotes and support{% else %}Teklif ve destek{% endif %}</p>
+        <h2 id="dg-guven-{{ section.id }}">{% if dg_en %}We usually reply to quote requests within 24 hours{% else %}Teklif talebinize genellikle 24 saat içinde dönüyoruz{% endif %}</h2>
+        <p class="dg-guven__metin">{% if dg_en %}We prepare the price, delivery time and payment terms for {{ product.title }} specifically for your company.{% else %}{{ product.title }} için fiyat, teslim süresi ve ödeme koşullarını firmanıza özel olarak hazırlıyoruz.{% endif %}</p>
       </div>
       <div class="dg-guven__butonlar">
-        <a class="dg-btn dg-btn--wa dg-guven__wa" href="{% render 'dg-urun-wa', product: product %}" target="_blank" rel="noopener">{% render 'dg-ikon', ad: 'wa' %}WhatsApp'tan sorun</a>
-        <a class="dg-btn dg-btn--cizgi" href="tel:+905418890092">{% render 'dg-ikon', ad: 'tel' %}0541 889 00 92</a>
+        <a class="dg-btn dg-btn--wa dg-guven__wa" href="{% render 'dg-urun-wa', product: product %}" target="_blank" rel="noopener">{% render 'dg-ikon', ad: 'wa' %}{% if dg_en %}Ask on WhatsApp{% else %}WhatsApp'tan sorun{% endif %}</a>
+        <a class="dg-btn dg-btn--cizgi" href="tel:+905418890092">{% render 'dg-ikon', ad: 'tel' %}+90 541 889 00 92</a>
       </div>
     </div>
     <ul class="dg-guven__liste">
       <li class="dg-guven__oge">
         {% render 'dg-ikon', ad: 'saat' %}
-        <strong>24 saat içinde dönüş</strong>
-        <p>Hafta içi 09:00–18:00 arasında gelen taleplere genellikle 24 saat içinde yanıt veriyoruz.</p>
+        <strong>{% if dg_en %}Reply within 24 hours{% else %}24 saat içinde dönüş{% endif %}</strong>
+        <p>{% if dg_en %}We usually answer requests received on weekdays 09:00–18:00 (Turkey time) within 24 hours.{% else %}Hafta içi 09:00–18:00 arasında gelen taleplere genellikle 24 saat içinde yanıt veriyoruz.{% endif %}</p>
       </li>
       <li class="dg-guven__oge">
         {% render 'dg-ikon', ad: 'konum' %}
-        <strong>1984'ten bu yana</strong>
-        <p>İstanbul merkezli; ambalaj, kalite kontrol, gıda işleme ve tekstil ekipmanı tedarik ediyoruz.</p>
+        <strong>{% if dg_en %}Since 1984{% else %}1984'ten bu yana{% endif %}</strong>
+        <p>{% if dg_en %}Based in Istanbul, we supply packaging, quality control, food processing and textile equipment.{% else %}İstanbul merkezli; ambalaj, kalite kontrol, gıda işleme ve tekstil ekipmanı tedarik ediyoruz.{% endif %}</p>
       </li>
       {%- case tur -%}
         {%- when 'distributor' -%}
           <li class="dg-guven__oge">
             {% render 'dg-ikon', ad: 'kalkan' %}
-            <strong>{{ product.vendor }} Türkiye distribütörü</strong>
-            <p>{{ product.vendor }} ürünlerini doğrudan distribütöründen, teknik dokümanıyla birlikte alırsınız.</p>
+            <strong>{% if dg_en %}{{ product.vendor }} distributor in Türkiye{% else %}{{ product.vendor }} Türkiye distribütörü{% endif %}</strong>
+            <p>{% if dg_en %}You buy {{ product.vendor }} products directly from the distributor, with full technical documentation.{% else %}{{ product.vendor }} ürünlerini doğrudan distribütöründen, teknik dokümanıyla birlikte alırsınız.{% endif %}</p>
           </li>
           <li class="dg-guven__oge">
             {% render 'dg-ikon', ad: 'kurulum' %}
-            <strong>Satış sonrası destek</strong>
-            <p>Yedek parça ve servis için makinenin marka, model ve seri numarasını iletmeniz yeterli.</p>
+            <strong>{% if dg_en %}After-sales support{% else %}Satış sonrası destek{% endif %}</strong>
+            <p>{% if dg_en %}For spare parts and service, just send us the machine's brand, model and serial number.{% else %}Yedek parça ve servis için makinenin marka, model ve seri numarasını iletmeniz yeterli.{% endif %}</p>
           </li>
         {%- when 'bez' -%}
           <li class="dg-guven__oge">
             {% render 'dg-ikon', ad: 'filtre' %}
-            <strong>Doğru kodu birlikte seçelim</strong>
-            <p>Uygulamanızı yazın; ihtiyacınıza uygun kodu birlikte belirleyelim.</p>
+            <strong>{% if dg_en %}Let's choose the right code together{% else %}Doğru kodu birlikte seçelim{% endif %}</strong>
+            <p>{% if dg_en %}Tell us your application and we will find the code that fits your needs.{% else %}Uygulamanızı yazın; ihtiyacınıza uygun kodu birlikte belirleyelim.{% endif %}</p>
           </li>
           <li class="dg-guven__oge">
             {% render 'dg-ikon', ad: 'belge' %}
-            <strong>Katalog değerleriyle teklif</strong>
-            <p>Önerilen kod, katalogdaki teknik değerleriyle birlikte teklifte yer alır.</p>
+            <strong>{% if dg_en %}Quotes with catalogue values{% else %}Katalog değerleriyle teklif{% endif %}</strong>
+            <p>{% if dg_en %}The recommended code is included in the quote with its catalogue specifications.{% else %}Önerilen kod, katalogdaki teknik değerleriyle birlikte teklifte yer alır.{% endif %}</p>
           </li>
         {%- else -%}
           <li class="dg-guven__oge">
             {% render 'dg-ikon', ad: 'belge' %}
-            <strong>Doğru modeli birlikte seçelim</strong>
-            <p>Uygulamanızı ve günlük kullanım miktarınızı yazın; ihtiyacınıza uygun modeli birlikte belirleyelim.</p>
+            <strong>{% if dg_en %}Let's choose the right model together{% else %}Doğru modeli birlikte seçelim{% endif %}</strong>
+            <p>{% if dg_en %}Tell us your application and daily volume and we will find the model that fits your needs.{% else %}Uygulamanızı ve günlük kullanım miktarınızı yazın; ihtiyacınıza uygun modeli birlikte belirleyelim.{% endif %}</p>
           </li>
           <li class="dg-guven__oge">
             {% render 'dg-ikon', ad: 'kurulum' %}
-            <strong>Satış sonrası destek</strong>
-            <p>Yedek parça ve servis için makinenin marka, model ve seri numarasını iletmeniz yeterli.</p>
+            <strong>{% if dg_en %}After-sales support{% else %}Satış sonrası destek{% endif %}</strong>
+            <p>{% if dg_en %}For spare parts and service, just send us the machine's brand, model and serial number.{% else %}Yedek parça ve servis için makinenin marka, model ve seri numarasını iletmeniz yeterli.{% endif %}</p>
           </li>
       {%- endcase -%}
     </ul>
   </div>
 </section>
 <div class="dg-mobil-bar" data-dg-mobil-bar>
-  <a class="dg-btn dg-btn--mavi" href="#teklif-formu">Teklif İste</a>
+  <a class="dg-btn dg-btn--mavi" href="#teklif-formu">{% if dg_en %}Request a quote{% else %}Teklif İste{% endif %}</a>
   <a class="dg-btn dg-btn--wa dg-guven__wa" href="{% render 'dg-urun-wa', product: product %}" target="_blank" rel="noopener">{% render 'dg-ikon', ad: 'wa' %}WhatsApp</a>
 </div>
 <script>
@@ -106,7 +112,7 @@
         var kutu = form.querySelector('.quote-request__product');
         if (kutu) {
           kutu.textContent = '';
-          [['Ürün', urun], ['Model', v.title], ['Stok kodu', v.sku]].forEach(function (satir, i) {
+          [['{% if dg_en %}Product{% else %}Ürün{% endif %}', urun], ['Model', v.title], ['{% if dg_en %}SKU{% else %}Stok kodu{% endif %}', v.sku]].forEach(function (satir, i) {
             if (!satir[1]) return;
             if (i) kutu.appendChild(document.createElement('br'));
             var etiket = document.createElement('strong');
@@ -116,7 +122,11 @@
           });
         }
       }
+      {%- if dg_en %}
+      var mesaj = 'Hello, I would like a quote for ' + urun + ' – ' + v.title + (v.sku ? ' (SKU: ' + v.sku + ')' : '') + '.';
+      {%- else %}
       var mesaj = 'Merhaba, ' + urun + ' – ' + v.title + (v.sku ? ' (Stok kodu: ' + v.sku + ')' : '') + ' için teklif almak istiyorum.';
+      {%- endif %}
       document.querySelectorAll('.dg-guven__wa').forEach(function (a) {
         a.href = 'https://wa.me/905418890092?text=' + encodeURIComponent(mesaj);
       });

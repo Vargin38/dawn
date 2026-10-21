@@ -1,3 +1,9 @@
+{%- liquid
+  assign dg_en = false
+  if request.locale.iso_code == 'en'
+    assign dg_en = true
+  endif
+-%}
 {{ 'component-cart.css' | asset_url | stylesheet_tag }}
 {{ 'component-totals.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
@@ -26,13 +32,13 @@
     <div class="cart__footer isolate section-{{ section.id }}-padding">
       {%- if settings.show_cart_note -%}
         <cart-note class="cart__note field">
-          <label for="Cart-note">Sipariş notu (fatura unvanı, vergi dairesi ve numarası, teslimat notu)</label>
+          <label for="Cart-note">{% if dg_en %}Order note (invoice name, tax office and number, delivery note){% else %}Sipariş notu (fatura unvanı, vergi dairesi ve numarası, teslimat notu){% endif %}</label>
           <textarea
             class="text-area field__input"
             name="note"
             form="cart"
             id="Cart-note"
-            placeholder="Örn. Fatura: ABC Gıda Ltd. Şti. · Hocapaşa V.D. 1234567890"
+            placeholder="{% if dg_en %}E.g. Invoice: ABC Food Ltd. · Tax office and number{% else %}Örn. Fatura: ABC Gıda Ltd. Şti. · Hocapaşa V.D. 1234567890{% endif %}"
           >{{ cart.note }}</textarea>
         </cart-note>
       {%- endif -%}
@@ -40,10 +46,10 @@
       <div class="cart__blocks dg-cart-summary-card">
         <div class="dg-cart-summary-head">
           <div>
-            <p class="dg-cart-eyebrow">SİPARİŞ ÖZETİ</p>
-            <h2>Güvenli şekilde tamamlayın</h2>
+            <p class="dg-cart-eyebrow">{% if dg_en %}ORDER SUMMARY{% else %}SİPARİŞ ÖZETİ{% endif %}</p>
+            <h2>{% if dg_en %}Complete securely{% else %}Güvenli şekilde tamamlayın{% endif %}</h2>
           </div>
-          <span class="dg-cart-item-count">{{ cart.item_count }} ürün</span>
+          <span class="dg-cart-item-count">{{ cart.item_count }} {% if dg_en %}{% if cart.item_count == 1 %}item{% else %}items{% endif %}{% else %}ürün{% endif %}</span>
         </div>
 
         {% for block in section.blocks %}
@@ -67,12 +73,12 @@
                 </div>
 
                 <div class="totals">
-                  <h2 class="totals__total">Ara toplam (KDV dahil)</h2>
+                  <h2 class="totals__total">{% if dg_en %}Subtotal (incl. VAT){% else %}Ara toplam (KDV dahil){% endif %}</h2>
                   <p class="totals__total-value">{% render 'dg-money', amount: cart.total_price %}</p>
                 </div>
 
                 <small class="tax-note caption-large rte">
-                  Fiyatlara KDV dahildir. Kargo alıcı ödemelidir; ücreti teslimatta taşıyıcıya ödenir.
+                  {% if dg_en %}Prices include VAT. Shipping is paid by the recipient to the carrier on delivery.{% else %}Fiyatlara KDV dahildir. Kargo alıcı ödemelidir; ücreti teslimatta taşıyıcıya ödenir.{% endif %}
                 </small>
               </div>
             {%- else -%}
@@ -80,8 +86,10 @@
                 <label class="dg-onay" for="DgOnay">
                   <input type="checkbox" id="DgOnay" name="attributes[Ön Bilgilendirme ve Mesafeli Satış Sözleşmesi]" value="Onaylandı" form="cart" required>
                   <span>
-                    <a href="{{ pages['on-bilgilendirme-formu'].url | default: '/pages/on-bilgilendirme-formu' }}" target="_blank" rel="noopener">Ön Bilgilendirme Formu</a>'nu ve
-                    <a href="{{ pages['mesafeli-satis-sozlesmesi'].url | default: '/pages/mesafeli-satis-sozlesmesi' }}" target="_blank" rel="noopener">Mesafeli Satış Sözleşmesi</a>'ni okudum, kabul ediyorum.
+                    {% if dg_en %}I have read and accept the{% else %}{% endif %}
+                    <a href="{{ pages['on-bilgilendirme-formu'].url | default: '/pages/on-bilgilendirme-formu' }}" target="_blank" rel="noopener">{% if dg_en %}Pre-Contractual Information Form{% else %}Ön Bilgilendirme Formu{% endif %}</a>{% if dg_en %}{% else %}'nu ve{% endif %}
+                    {% if dg_en %}and the{% else %}{% endif %}
+                    <a href="{{ pages['mesafeli-satis-sozlesmesi'].url | default: '/pages/mesafeli-satis-sozlesmesi' }}" target="_blank" rel="noopener">{% if dg_en %}Distance Sales Agreement{% else %}Mesafeli Satış Sözleşmesi{% endif %}</a>{% if dg_en %}.{% else %}'ni okudum, kabul ediyorum.{% endif %}
                   </span>
                 </label>
                 <button
@@ -94,33 +102,33 @@
                   {% endif %}
                   form="cart"
                 >
-                  Güvenli ödemeye geç
+                  {% if dg_en %}Proceed to secure checkout{% else %}Güvenli ödemeye geç{% endif %}
                 </button>
               </div>
           {%- endcase -%}
         {% endfor %}
 
-        <div class="dg-cart-trust" role="list" aria-label="Sipariş güven bilgileri">
+        <div class="dg-cart-trust" role="list" aria-label="{% if dg_en %}Order assurances{% else %}Sipariş güven bilgileri{% endif %}">
           <div class="dg-cart-trust__item" role="listitem">
             <span class="dg-cart-trust__icon" aria-hidden="true">✓</span>
-            <span><strong>KDV dahil fiyat</strong><small>Ödeme adımında ek KDV yok</small></span>
+            <span><strong>{% if dg_en %}VAT-inclusive prices{% else %}KDV dahil fiyat{% endif %}</strong><small>{% if dg_en %}No extra VAT at checkout{% else %}Ödeme adımında ek KDV yok{% endif %}</small></span>
           </div>
           <div class="dg-cart-trust__item" role="listitem">
             <span class="dg-cart-trust__icon" aria-hidden="true">✓</span>
-            <span><strong>Shopify güvenli ödeme</strong><small>Ödeme bilgileri güvenli checkout'ta alınır</small></span>
+            <span><strong>{% if dg_en %}Secure Shopify checkout{% else %}Shopify güvenli ödeme{% endif %}</strong><small>{% if dg_en %}Payment details are entered at the secure checkout{% else %}Ödeme bilgileri güvenli checkout'ta alınır{% endif %}</small></span>
           </div>
           <div class="dg-cart-trust__item" role="listitem">
             <span class="dg-cart-trust__icon" aria-hidden="true">↻</span>
-            <span><strong>Tüketici siparişlerinde 14 gün</strong><small>Kanuni istisnalar ve ticari alımlar saklıdır</small></span>
+            <span><strong>{% if dg_en %}14-day withdrawal for consumers{% else %}Tüketici siparişlerinde 14 gün{% endif %}</strong><small>{% if dg_en %}Statutory exceptions apply; not for business purchases{% else %}Kanuni istisnalar ve ticari alımlar saklıdır{% endif %}</small></span>
           </div>
         </div>
 
         <div class="dg-cart-help">
           <div>
-            <strong>Sipariş öncesi sorunuz mu var?</strong>
-            <span>Ürün, teslimat veya teklif için bize yazın.</span>
+            <strong>{% if dg_en %}Questions before you order?{% else %}Sipariş öncesi sorunuz mu var?{% endif %}</strong>
+            <span>{% if dg_en %}Message us about products, delivery or quotes.{% else %}Ürün, teslimat veya teklif için bize yazın.{% endif %}</span>
           </div>
-          <a href="https://wa.me/905418890092?text=Merhaba%2C%20sepetimdeki%20%C3%BCr%C3%BCn%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp'tan danışın</a>
+          <a href="{% if dg_en %}https://wa.me/905418890092?text=Hello%2C%20I%20would%20like%20information%20about%20the%20product%20in%20my%20cart.{% else %}https://wa.me/905418890092?text=Merhaba%2C%20sepetimdeki%20%C3%BCr%C3%BCn%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.{% endif %}" target="_blank" rel="noopener">{% if dg_en %}Ask on WhatsApp{% else %}WhatsApp'tan danışın{% endif %}</a>
         </div>
 
         <div id="cart-errors"></div>

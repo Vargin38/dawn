@@ -1,3 +1,9 @@
+{%- liquid
+  assign dg_en = false
+  if request.locale.iso_code == 'en'
+    assign dg_en = true
+  endif
+-%}
 <section class="dg-sektorler" aria-labelledby="dg-sektor-{{ section.id }}">
   <div class="dg-sayfa">
     <div class="dg-baslik-blok">
@@ -12,11 +18,11 @@
           <a href="{% if c != blank %}{{ c.url }}{% else %}{{ routes.all_products_collection_url }}{% endif %}">
             <span class="dg-sektor__ust">
               <span class="dg-sektor__ikon">{% render 'dg-ikon', ad: block.settings.ikon %}</span>
-              {%- if c != blank -%}<span class="dg-kas">{{ c.products_count }} ürün</span>{%- endif -%}
+              {%- if c != blank -%}<span class="dg-kas">{{ c.products_count }} {% if dg_en %}{% if c.products_count == 1 %}product{% else %}products{% endif %}{% else %}ürün{% endif %}</span>{%- endif -%}
             </span>
             <h3>{{ block.settings.baslik }}</h3>
             <p>{{ block.settings.metin }}</p>
-            <span class="dg-ok">Ekipmanları görün{% render 'dg-ikon', ad: 'ok' %}</span>
+            <span class="dg-ok">{% if dg_en %}View equipment{% else %}Ekipmanları görün{% endif %}{% render 'dg-ikon', ad: 'ok' %}</span>
           </a>
         </li>
       {%- endfor -%}

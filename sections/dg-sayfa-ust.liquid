@@ -1,7 +1,13 @@
+{%- liquid
+  assign dg_en = false
+  if request.locale.iso_code == 'en'
+    assign dg_en = true
+  endif
+-%}
 <section class="dg-kol-ust dg-sayfa-ust">
   <div class="dg-sayfa">
-    <nav class="dg-yol" aria-label="Sayfa yolu">
-      <a href="{{ routes.root_url }}">Ana sayfa</a><span aria-hidden="true">/</span>
+    <nav class="dg-yol" aria-label="{% if dg_en %}Breadcrumb{% else %}Sayfa yolu{% endif %}">
+      <a href="{{ routes.root_url }}">{% if dg_en %}Home{% else %}Ana sayfa{% endif %}</a><span aria-hidden="true">/</span>
       <span aria-current="page">{{ page.title }}</span>
     </nav>
     <p class="dg-kas">{{ section.settings.kas }}</p>

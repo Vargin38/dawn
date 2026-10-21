@@ -1,11 +1,47 @@
+{%- liquid
+  assign dg_en = false
+  if request.locale.iso_code == 'en'
+    assign dg_en = true
+  endif
+-%}
 {%- comment -%}
   Kategori sayfaları için kısa, benzersiz ve arama niyetine uygun açıklama.
   Shopify yöneticisinde koleksiyon açıklaması girilmişse tema onu kullanır;
   bu metin yalnızca boş koleksiyonlarda yedek olarak gösterilir.
 {%- endcomment -%}
+{%- if dg_en -%}
 {%- case collection.handle -%}
   {%- when 'all' -%}
-    Kett, HAWO, EUROMESH ve Newlong ürünlerini teknik özellikleri, üretici katalogları ve satış sonrası destek bilgileriyle inceleyin. Fiyatlı ürünleri KDV dahil fiyatla satın alın; diğer ürünler için teklif isteyin.
+    {% if settings.quote_mode %}Browse Kett, HAWO, EUROMESH and Newlong products with technical specifications, manufacturer catalogues and after-sales support. Request a quote for price and delivery time.{% else %}Browse Kett, HAWO, EUROMESH and Newlong products with technical specifications, manufacturer catalogues and after-sales support. Buy priced products at VAT-inclusive prices; request a quote for the others.{% endif %}
+  {%- when 'kalite-kontrol-ve-laboratuvar-cihazlari' -%}
+    Compare Kett quality control instruments for measuring grain moisture, cotton moisture and rice whiteness. Technical catalogues, model selection, installation and service support are provided by Değirmen A.Ş.
+  {%- when 'tahil-rutubet-olcme-cihazlari' -%}
+    Compare Kett PM series meters for fast moisture measurement in wheat, barley, corn, seeds and other grains. Choose the right model by measuring range, sample volume and test weight features.
+  {%- when 'genel-rutubet-olcme-cihazlari' -%}
+    Review portable Kett meters for moisture determination in cotton and other industrial samples, with technical specifications and manufacturer documents.
+  {%- when 'beyazlik-olcerler' -%}
+    Compare Kett instruments that measure the whiteness of rice, flour and powder samples numerically. Get technical support and a quote for the model that suits your application.
+  {%- when 'numune-hazirlama-cihazlari' -%}
+    Review sample preparation instruments for repeatable results in laboratory and quality control work, with technical specifications, catalogues and service support.
+  {%- when 'ambalaj-makineleri' -%}
+    Compare HAWO bag sealers and Newlong bag closing machines by type of use for reliable sealing of food, medical and industrial packaging.
+  {%- when 'hawo-yapistirma-makineleri' -%}
+    Review HAWO hand-held and impulse sealers for leak-tight sealing of foil and plastic bags. Get model selection, spare parts and service support.
+  {%- when 'gida-isleme' -%}
+    Review equipment and technical textiles for sifting, filtration and sample processing in flour, grain and food production lines, with catalogue values.
+  {%- when 'euromesh-elek-ve-filtre-bezleri' -%}
+    Choose EUROMESH nylon sieve and polyester filter cloths for flour sifting and industrial filtration by mesh opening, thread diameter and open area.
+  {%- when 'euromesh-baski-bezleri' -%}
+    Review EUROMESH polyester printing mesh for screen and textile printing by thread count, mesh opening and fabric colour; request a quote for the right code.
+  {%- when 'tekstil' -%}
+    Review technical cloths for screen printing, textile printing and industrial sifting, with manufacturer catalogues and code-based technical values.
+  {%- else -%}
+    Review {{ collection.title }} products with technical specifications, manufacturer catalogues and after-sales support from Değirmen A.Ş. Our team can help with model selection and delivery information.
+{%- endcase -%}
+{%- else -%}
+{%- case collection.handle -%}
+  {%- when 'all' -%}
+    {% if settings.quote_mode %}Kett, HAWO, EUROMESH ve Newlong ürünlerini teknik özellikleri, üretici katalogları ve satış sonrası destek bilgileriyle inceleyin. Fiyat ve teslim süresi için teklif isteyin.{% else %}Kett, HAWO, EUROMESH ve Newlong ürünlerini teknik özellikleri, üretici katalogları ve satış sonrası destek bilgileriyle inceleyin. Fiyatlı ürünleri KDV dahil fiyatla satın alın; diğer ürünler için teklif isteyin.{% endif %}
   {%- when 'kalite-kontrol-ve-laboratuvar-cihazlari' -%}
     Tahıl nemi, pamuk rutubeti ve pirinç beyazlığı ölçümü için Kett kalite kontrol cihazlarını karşılaştırın. Teknik katalog, model seçimi, kurulum ve servis desteği Değirmen A.Ş. tarafından sağlanır.
   {%- when 'tahil-rutubet-olcme-cihazlari' -%}
@@ -31,3 +67,4 @@
   {%- else -%}
     {{ collection.title }} ürünlerini teknik özellikleri, üretici katalogları ve Değirmen A.Ş. satış sonrası desteğiyle inceleyin. Model seçimi ve teslimat bilgisi için uzman ekibimizden destek alın.
 {%- endcase -%}
+{%- endif -%}

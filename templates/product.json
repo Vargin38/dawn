@@ -9,21 +9,94 @@
  */
 {
   "sections": {
+    "dg_yol": {
+      "type": "dg-yol",
+      "settings": {}
+    },
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": { "type": "text", "settings": { "text": "{{ product.vendor }}", "text_style": "uppercase" } },
-        "title": { "type": "title", "settings": {} },
-        "sku": { "type": "sku", "settings": { "text_style": "subtitle" } },
-        "dg_giris": { "type": "custom_liquid", "settings": { "custom_liquid": "{% render 'dg-urun-giris', product: product %}" } },
-        "dg_ozet": { "type": "custom_liquid", "settings": { "custom_liquid": "{% render 'dg-urun-ozet', product: product, limit: 4 %}" } },
-        "variant_picker": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "circle" } },
-        "price": { "type": "price", "settings": {} },
-        "inventory": { "type": "inventory", "settings": { "text_style": "body", "inventory_threshold": 0, "show_inventory_quantity": false } },
-        "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": false, "show_gift_card_recipient": false } },
-        "quote_button": { "type": "custom_liquid", "settings": { "custom_liquid": "{% render 'dg-urun-cta', product: product %}" } }
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "sku": {
+          "type": "sku",
+          "settings": {
+            "text_style": "subtitle"
+          }
+        },
+        "dg_giris": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'dg-urun-giris', product: product %}"
+          }
+        },
+        "dg_ozet": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'dg-urun-ozet', product: product, limit: 4 %}"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "inventory": {
+          "type": "inventory",
+          "settings": {
+            "text_style": "body",
+            "inventory_threshold": 0,
+            "show_inventory_quantity": false
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "quote_button": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'dg-urun-cta', product: product %}\n<style>.dg-uye-kutu{display:none!important}</style>"
+          }
+        },
+        "dg_bilgi": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'dg-urun-bilgi', product: product %}"
+          }
+        }
       },
-      "block_order": ["vendor", "title", "sku", "dg_giris", "dg_ozet", "variant_picker", "price", "inventory", "buy_buttons", "quote_button"],
+      "block_order": [
+        "vendor",
+        "title",
+        "sku",
+        "dg_giris",
+        "dg_ozet",
+        "variant_picker",
+        "price",
+        "inventory",
+        "buy_buttons",
+        "quote_button",
+        "dg_bilgi"
+      ],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
@@ -36,16 +109,37 @@
         "image_zoom": "lightbox",
         "hide_variants": true,
         "enable_video_looping": false,
-        "padding_top": 40,
+        "padding_top": 28,
         "padding_bottom": 40
       }
     },
-    "dg_detay": { "type": "dg-urun-detay", "settings": {} },
+    "dg_detay": {
+      "type": "dg-urun-detay",
+      "settings": {}
+    },
+    "dg_alternatif": {
+      "type": "dg-alternatif",
+      "settings": {
+        "heading": "Aynı kategorideki diğer ürünler",
+        "products_to_show": 4,
+        "color_scheme": "scheme-1"
+      }
+    },
     "disclosures": {
       "type": "disclosures",
-      "settings": { "heading": "Bildirimler", "heading_size": "h2", "open_by_default": false, "color_scheme": "", "padding_top": 36, "padding_bottom": 0 }
+      "settings": {
+        "heading": "Bildirimler",
+        "heading_size": "h2",
+        "open_by_default": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
     },
-    "dg_guven": { "type": "dg-urun-guven", "settings": {} },
+    "dg_guven": {
+      "type": "dg-urun-guven",
+      "settings": {}
+    },
     "quote_request": {
       "type": "quote-request",
       "settings": {
@@ -57,11 +151,15 @@
         "padding_top": 88,
         "padding_bottom": 88
       }
-    },
-    "related-products": {
-      "type": "related-products",
-      "settings": { "heading": "Benzer ürünler", "heading_size": "h2", "products_to_show": 4, "columns_desktop": 4, "columns_mobile": "2", "color_scheme": "scheme-1", "image_ratio": "square", "image_shape": "default", "show_secondary_image": true, "show_vendor": true, "show_rating": false, "padding_top": 80, "padding_bottom": 80 }
     }
   },
-  "order": ["main", "dg_detay", "disclosures", "dg_guven", "quote_request", "related-products"]
+  "order": [
+    "dg_yol",
+    "main",
+    "dg_detay",
+    "dg_alternatif",
+    "disclosures",
+    "dg_guven",
+    "quote_request"
+  ]
 }

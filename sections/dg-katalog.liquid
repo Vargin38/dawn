@@ -1,3 +1,9 @@
+{%- liquid
+  assign dg_en = false
+  if request.locale.iso_code == 'en'
+    assign dg_en = true
+  endif
+-%}
 <section class="dg-katalog" aria-labelledby="dg-katalog-{{ section.id }}">
   <div class="dg-sayfa">
     <div class="dg-katalog__ust">
@@ -9,10 +15,10 @@
     </div>
     <div class="dg-katalog__tablo" role="table" aria-label="{{ section.settings.baslik | escape }}">
       <div class="dg-katalog__satir dg-katalog__satir--baslik" role="row">
-        <span role="columnheader">Marka</span>
-        <span role="columnheader">Ürün</span>
-        <span role="columnheader">Doküman</span>
-        <span role="columnheader"><span class="visually-hidden">İndir</span></span>
+        <span role="columnheader">{% if dg_en %}Brand{% else %}Marka{% endif %}</span>
+        <span role="columnheader">{% if dg_en %}Product{% else %}Ürün{% endif %}</span>
+        <span role="columnheader">{% if dg_en %}Document{% else %}Doküman{% endif %}</span>
+        <span role="columnheader"><span class="visually-hidden">{% if dg_en %}Download{% else %}İndir{% endif %}</span></span>
       </div>
       {%- assign sayac = 0 -%}
       {%- assign urunler = collections.all.products | sort: 'vendor' -%}
@@ -31,7 +37,7 @@
             <span role="cell" class="dg-kas dg-kas--mavi">{{ p.vendor }}</span>
             <span role="cell"><a href="{{ p.url }}">{{ p.title }}</a></span>
             <span role="cell" class="dg-katalog__dokuman">{{ dokuman }}</span>
-            <span role="cell"><a class="dg-katalog__indir" href="{{ pdf }}" target="_blank" rel="noopener" aria-label="{{ dokuman | escape }} — PDF indir">{% render 'dg-ikon', ad: 'indir' %}<span>PDF · {{ boyut }}</span></a></span>
+            <span role="cell"><a class="dg-katalog__indir" href="{{ pdf }}" target="_blank" rel="noopener" aria-label="{{ dokuman | escape }} — {% if dg_en %}download PDF{% else %}PDF indir{% endif %}">{% render 'dg-ikon', ad: 'indir' %}<span>PDF · {{ boyut }}</span></a></span>
           </div>
         {%- endif -%}
       {%- endfor -%}

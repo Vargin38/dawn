@@ -9,4 +9,5 @@
 
   Kullanım: {% capture x %}{% render 'dg-fiyat-sayfada', product: product %}{% endcapture %}
 {%- endcomment -%}
-{%- if product.type == 'Baskı Bezi' or product.type == 'Elek ve Filtre Bezi' -%}evet{%- endif -%}
+{%- comment -%} Ingilizce dilde urun turu cevrilmis gelir; iki dilin adlari da kontrol edilir. {%- endcomment -%}
+{%- if product.type == 'Baskı Bezi' or product.type == 'Elek ve Filtre Bezi' or product.type == 'Screen Printing Mesh' or product.type == 'Sieve and Filter Cloth' -%}evet{%- endif -%}

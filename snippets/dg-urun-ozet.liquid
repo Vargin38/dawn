@@ -1,3 +1,9 @@
+{%- liquid
+  assign dg_en = false
+  if request.locale.iso_code == 'en'
+    assign dg_en = true
+  endif
+-%}
 {%- comment -%} Uzun teknik tablolarda ilk satırları ürün özetinde gösterir; kısa tablolar yalnızca teknik bilgi bölümünde yer alır. {%- endcomment -%}
 {%- if product.description contains 'class="spec"' -%}
   {%- liquid
@@ -20,6 +26,6 @@
         {%- endif -%}
       {%- endfor -%}
     </dl>
-    <a class="dg-ok dg-ozet__tumu" href="#teknik-ozellikler">Tüm teknik özellikler ({{ satir_sayisi }}){% render 'dg-ikon', ad: 'ok' %}</a>
+    <a class="dg-ok dg-ozet__tumu" href="#teknik-ozellikler">{% if dg_en %}All technical specifications{% else %}Tüm teknik özellikler{% endif %} ({{ satir_sayisi }}){% render 'dg-ikon', ad: 'ok' %}</a>
   {%- endif -%}
 {%- endif -%}

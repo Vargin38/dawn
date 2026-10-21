@@ -1,4 +1,10 @@
 {%- liquid
+  assign dg_en = false
+  if request.locale.iso_code == 'en'
+    assign dg_en = true
+  endif
+-%}
+{%- liquid
   assign ayrac = '<h3>Teknik özellikler</h3>'
   if product.description contains ayrac
     assign teknik = product.description | split: ayrac | last
@@ -16,22 +22,25 @@
     assign boyut = paragraflar[1] | split: '(PDF, ' | last | split: ')' | first | strip_html | strip
   endif
   assign wa_mesaj = 'Merhaba, ' | append: product.title | append: ' hakkında teknik bir sorum var.'
+  if dg_en
+    assign wa_mesaj = 'Hello, I have a technical question about ' | append: product.title | append: '.'
+  endif
   assign wa_mesaj = wa_mesaj | url_encode | replace: '+', '%20'
 -%}
 <section class="dg-detay" id="teknik-ozellikler" aria-labelledby="dg-detay-{{ section.id }}">
   <div class="dg-sayfa dg-detay__izgara">
     <div class="dg-detay__yan">
-      <p class="dg-kas dg-kas--mavi">Teknik veri</p>
-      <h2 id="dg-detay-{{ section.id }}">Teknik özellikler</h2>
-      <p class="dg-detay__not">Ayrıntılı ölçüler ve model farkları üretici kataloğunda yer alır.</p>
+      <p class="dg-kas dg-kas--mavi">{% if dg_en %}Technical data{% else %}Teknik veri{% endif %}</p>
+      <h2 id="dg-detay-{{ section.id }}">{% if dg_en %}Technical specifications{% else %}Teknik özellikler{% endif %}</h2>
+      <p class="dg-detay__not">{% if dg_en %}Detailed dimensions and model differences are given in the manufacturer catalogue.{% else %}Ayrıntılı ölçüler ve model farkları üretici kataloğunda yer alır.{% endif %}</p>
       {%- if pdf != '' -%}
         <a class="dg-detay__katalog" href="{{ pdf }}" target="_blank" rel="noopener">
           <span class="dg-detay__pdf" aria-hidden="true">PDF</span>
-          <span class="dg-detay__katalog-metin"><span class="dg-kas">Ürün kataloğu · {{ boyut }}</span><strong>{{ dokuman }}</strong></span>
+          <span class="dg-detay__katalog-metin"><span class="dg-kas">{% if dg_en %}Product catalogue{% else %}Ürün kataloğu{% endif %} · {{ boyut }}</span><strong>{{ dokuman }}</strong></span>
           {% render 'dg-ikon', ad: 'indir' %}
         </a>
       {%- endif -%}
-      <a class="dg-ok dg-detay__soru" href="https://wa.me/905418890092?text={{ wa_mesaj }}" target="_blank" rel="noopener">Teknik bir sorunuz mu var? Yazın{% render 'dg-ikon', ad: 'ok' %}</a>
+      <a class="dg-ok dg-detay__soru" href="https://wa.me/905418890092?text={{ wa_mesaj }}" target="_blank" rel="noopener">{% if dg_en %}Have a technical question? Message us{% else %}Teknik bir sorunuz mu var? Yazın{% endif %}{% render 'dg-ikon', ad: 'ok' %}</a>
     </div>
     <div class="dg-detay__icerik rte">
       {{ teknik }}

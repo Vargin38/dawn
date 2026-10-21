@@ -1,4 +1,5 @@
-{%- if request.page_type == 'product' or request.page_type == 'collection' or request.page_type == 'page' -%}
+{%- comment -%} Ürün sayfalarının sayfa yolu verisi sections/dg-yol.liquid içinde (kategorilerle birlikte) üretilir; burada yalnız koleksiyon ve sayfalar için yazılır. {%- endcomment -%}
+{%- if request.page_type == 'collection' or request.page_type == 'page' -%}
   {%- liquid
     assign dg_crumb_name = page_title
     assign dg_crumb_url = canonical_url

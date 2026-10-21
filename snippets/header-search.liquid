@@ -1,3 +1,9 @@
+{%- liquid
+  assign dg_en = false
+  if request.locale.iso_code == 'en'
+    assign dg_en = true
+  endif
+-%}
 {% comment %}
   Başlıktaki arama: masaüstünde görünür arama kutusu, açılınca lacivert arama paneli.
   Accepts:
@@ -18,7 +24,7 @@
         <span class="svg-wrapper header__icon-close">
           {{- 'icon-close.svg' | inline_asset_content -}}
         </span>
-        <span class="dg-ara-etiket">Ürün, marka veya model ara</span>
+        <span class="dg-ara-etiket">{% if dg_en %}Search products, brands or models{% else %}Ürün, marka veya model ara{% endif %}</span>
         <kbd class="dg-ara-kisayol" aria-hidden="true">/</kbd>
       </span>
     </summary>
@@ -30,7 +36,7 @@
     >
       <div class="modal-overlay"></div>
       <div class="search-modal__content search-modal__content-bottom dg-ara" tabindex="-1">
-        <p class="dg-kas dg-ara__kas">Katalogda ara</p>
+        <p class="dg-kas dg-ara__kas">{% if dg_en %}Search the catalogue{% else %}Katalogda ara{% endif %}</p>
         {%- if settings.predictive_search_enabled -%}
           <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
         {%- else -%}
@@ -44,7 +50,7 @@
               type="search"
               name="q"
               value="{{ search.terms | escape }}"
-              placeholder="Ürün, marka veya model ara"
+              placeholder="{% if dg_en %}Search products, brands or models{% else %}Ürün, marka veya model ara{% endif %}"
               {%- if settings.predictive_search_enabled -%}
                 role="combobox"
                 aria-expanded="false"
@@ -58,7 +64,7 @@
                 spellcheck="false"
               {%- endif -%}
             >
-            <label class="field__label" for="{{ input_id }}">Ürün, marka veya model ara</label>
+            <label class="field__label" for="{{ input_id }}">{% if dg_en %}Search products, brands or models{% else %}Ürün, marka veya model ara{% endif %}</label>
             <input type="hidden" name="options[prefix]" value="last">
             <button
               type="reset"
@@ -90,9 +96,10 @@
           </search-form>
         {%- endif -%}
         <div class="dg-ara__oneri">
-          <span class="dg-kas">Sık arananlar</span>
+          <span class="dg-kas">{% if dg_en %}Popular searches{% else %}Sık arananlar{% endif %}</span>
           <ul>
             {%- assign oneriler = 'Kett PM-450|Tahıl nem ölçer|Beyazlık ölçer|Poşet yapıştırma|Çuval dikiş|Elek bezi|Baskı bezi' | split: '|' -%}
+            {%- if dg_en -%}{%- assign oneriler = 'Kett PM-450|Moisture meter|Whiteness meter|Bag sealer|HAWO|EUROMESH|Newlong' | split: '|' -%}{%- endif -%}
             {%- for o in oneriler -%}
               <li><a href="{{ routes.search_url }}?q={{ o | url_encode }}&options%5Bprefix%5D=last">{{ o }}</a></li>
             {%- endfor -%}

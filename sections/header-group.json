@@ -15,7 +15,7 @@
       "type": "dg-ust-bar",
       "settings": {
         "metin": "Kett ve HAWO Türkiye distribütörü · 1984'ten bu yana",
-        "telefon": "+90 212 494 33 33",
+        "telefon": "+90 541 889 00 92",
         "whatsapp": "905418890092",
         "eposta": "info@degirmen.com.tr",
         "yedek_link": "shopify://pages/servis-ve-yedek-parca"
@@ -40,5 +40,8 @@
       }
     }
   },
-  "order": ["dg_ust", "header"]
+  "order": [
+    "dg_ust",
+    "header"
+  ]
 }

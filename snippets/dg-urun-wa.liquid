@@ -1,13 +1,30 @@
 {%- liquid
+  assign dg_en = false
+  if request.locale.iso_code == 'en'
+    assign dg_en = true
+  endif
+-%}
+{%- liquid
   assign secili = product.selected_or_first_available_variant
   assign mesaj = 'Merhaba, ' | append: product.title
+  if dg_en
+    assign mesaj = 'Hello, I would like a quote for ' | append: product.title
+  endif
   unless product.has_only_default_variant
     assign mesaj = mesaj | append: ' – ' | append: secili.title
   endunless
   if secili.sku != blank
-    assign mesaj = mesaj | append: ' (Stok kodu: ' | append: secili.sku | append: ')'
+    if dg_en
+      assign mesaj = mesaj | append: ' (SKU: ' | append: secili.sku | append: ')'
+    else
+      assign mesaj = mesaj | append: ' (Stok kodu: ' | append: secili.sku | append: ')'
+    endif
   endif
-  assign mesaj = mesaj | append: ' için teklif almak istiyorum.'
+  if dg_en
+    assign mesaj = mesaj | append: '.'
+  else
+    assign mesaj = mesaj | append: ' için teklif almak istiyorum.'
+  endif
   assign kodlu = mesaj | url_encode | replace: '+', '%20'
   echo 'https://wa.me/905418890092?text=' | append: kodlu
 -%}

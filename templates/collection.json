@@ -18,6 +18,7 @@
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
+        "columns_mobile": "2",
         "color_scheme": "scheme-1",
         "image_ratio": "square",
         "image_shape": "default",
@@ -28,7 +29,6 @@
         "enable_filtering": false,
         "filter_type": "horizontal",
         "enable_sorting": false,
-        "columns_mobile": "2",
         "padding_top": 56,
         "padding_bottom": 96
       }
@@ -46,15 +46,15 @@
         "form": {
           "type": "adim",
           "settings": {
-            "baslik": "Fiyatlıysa sepete ekleyin",
-            "metin": "Fiyatı yazan ürünlerde sepete ekleyip kartla ödeyin. Sitede yazan fiyatlar KDV dahildir."
+            "baslik": "Teklif isteyin",
+            "metin": "Ürün sayfasındaki teklif formunu doldurun veya WhatsApp üzerinden kullanım amacınızı ve ihtiyacınız olan modeli yazın."
           }
         },
         "teklif": {
           "type": "adim",
           "settings": {
-            "baslik": "Fiyat yoksa teklif isteyin",
-            "metin": "Fiyatı görünmeyen ürünlerde formu doldurun; fiyat, teslim süresi ve ödeme koşullarını genellikle 24 saat içinde iletiyoruz."
+            "baslik": "Teklifinizi alın",
+            "metin": "Teklifinizi, teslim süresi ve ödeme koşullarıyla birlikte ihtiyacınıza göre hazırlayıp genellikle 24 saat içinde iletiyoruz."
           }
         }
       },
@@ -64,9 +64,9 @@
         "teklif"
       ],
       "settings": {
-        "kas": "Nasıl satın alırsınız",
-        "baslik": "İki şekilde sipariş verebilirsiniz",
-        "metin": "Fiyatı yazan ürünleri doğrudan sepete ekleyip kartla ödeyebilirsiniz. Fiyatı görünmeyen makineler modele, adede ve teslimat yerine göre fiyatlandığı için teklifle satılır."
+        "kas": "TEKLİF SÜRECİ",
+        "baslik": "Teklifinizi nasıl alırsınız?",
+        "metin": "Ürünlerinizi inceleyin, ardından teklif formundan veya WhatsApp üzerinden ihtiyacınızı iletin. Model, adet ve teslimat noktasına göre teklif ve teslim süresini hazırlayalım."
       }
     },
     "cta": {
@@ -78,7 +78,7 @@
         "whatsapp": "905418890092",
         "whatsapp_etiket": "0541 889 00 92",
         "wa_mesaj": "Merhaba, bir cihaz için bilgi almak istiyorum.",
-        "telefon": "+90 212 494 33 33",
+        "telefon": "+90 541 889 00 92",
         "eposta": "info@degirmen.com.tr"
       }
     }

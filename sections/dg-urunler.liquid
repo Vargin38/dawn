@@ -1,3 +1,9 @@
+{%- liquid
+  assign dg_en = false
+  if request.locale.iso_code == 'en'
+    assign dg_en = true
+  endif
+-%}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
@@ -17,8 +23,8 @@
       <a class="dg-ok" href="{{ kaynak.url }}">{{ section.settings.link_etiket }}{% render 'dg-ikon', ad: 'ok' %}</a>
     </div>
     {%- if section.blocks.size > 0 -%}
-      <div class="dg-urunler__sekmeler" role="group" aria-label="Ürün grubuna göre süz">
-        <button type="button" class="dg-sekme is-aktif" data-grup="" aria-pressed="true">Tümü<span>{{ kaynak.products_count }}</span></button>
+      <div class="dg-urunler__sekmeler" role="group" aria-label="{% if dg_en %}Filter by product group{% else %}Ürün grubuna göre süz{% endif %}">
+        <button type="button" class="dg-sekme is-aktif" data-grup="" aria-pressed="true">{% if dg_en %}All{% else %}Tümü{% endif %}<span>{{ kaynak.products_count }}</span></button>
         {%- for block in section.blocks -%}
           {%- assign c = block.settings.koleksiyon -%}
           {%- if c != blank -%}
