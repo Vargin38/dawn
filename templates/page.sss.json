@@ -28,8 +28,8 @@
         "ss-faq_item-4": {
           "type": "faq_item",
           "settings": {
-            "question": "Neden ürünlerde fiyat görünmüyor?",
-            "answer": "<p>Fiyatları modele, adede ve teslimat yerine göre teklifle veriyoruz. Ürün sayfasındaki <strong>Teklif İste</strong> butonundan talebinizi iletin; fiyat, teslim süresi ve ödeme koşullarını içeren teklifimizi gönderelim.</p>"
+            "question": "Neden bazı ürünlerde fiyat görünmüyor?",
+            "answer": "<p>Stoktan satılan ürünlerin fiyatı kendi sayfasında yazar; sepete ekleyip havale/EFT ile ödeyebilirsiniz. Modele, adede ve teslimat yerine göre fiyatlanan makinelerde ise fiyat yerine <strong>Teklif İste</strong> butonu bulunur.</p>"
           }
         },
         "ss-faq_item-5": {
@@ -50,7 +50,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Fiyatlara KDV dahil mi?",
-            "answer": "<p>Tekliflerde KDV, toplam bedel ve varsa teslimat masrafları ayrıca belirtilir. Kargo ücreti alıcı ödemelidir.</p>"
+            "answer": "<p>Sitede yazan fiyatlar Türk lirası cinsinden ve KDV dahildir. Ödeme adımında ek KDV eklenmez; kargo ücreti alıcı ödemelidir. Tekliflerde toplam bedel ve varsa teslimat masrafları ayrıca belirtilir.</p>"
           }
         },
         "ss-tab-8": {
@@ -63,14 +63,14 @@
           "type": "faq_item",
           "settings": {
             "question": "Bireysel olarak satın alabilir miyim?",
-            "answer": "<p>Evet. Hem firmalar hem bireysel müşteriler teklif isteyip sipariş verebilir. Kurumsal fatura için teklif talebinizde firma ve vergi bilgilerinizi belirtmeniz yeterlidir.</p>"
+            "answer": "<p>Evet. Hem firmalar hem bireysel müşteriler sipariş verebilir. Fatura bilgilerinizi ödeme adımında girersiniz; kurumsal fatura için firma ve vergi bilgilerinizi eklemeniz yeterlidir.</p>"
           }
         },
         "ss-faq_item-10": {
           "type": "faq_item",
           "settings": {
             "question": "Ödeme nasıl yapılır?",
-            "answer": "<p>Ödeme yöntemi ve vadesi teklifte belirtilir; havale/EFT ile ödeme yapabilirsiniz.</p>"
+            "answer": "<p>Fiyatı yazan ürünlerde ödeme adımında havale/EFT ile ödeme yaparsınız; IBAN bilgileri sipariş tamamlandığında gösterilir. Teklifle satılan ürünlerde ödeme yöntemi ve vadesi teklifte belirtilir.</p>"
           }
         },
         "ss-tab-11": {
@@ -104,7 +104,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Siparişimi iade edebilir miyim?",
-            "answer": "<p>Tüketici iseniz, ürünü teslim aldığınız tarihten itibaren <strong>14 gün içinde</strong> gerekçe göstermeden cayma hakkınız vardır. Ayrıntılar ve istisnalar için <a href=\"/policies/refund-policy\">İade ve Cayma Hakkı</a> sayfasına bakın.</p>"
+            "answer": "<p>Siteden doğrudan satın aldığınız ürünlerde, tüketici iseniz teslim tarihinden itibaren <strong>14 gün içinde</strong> gerekçe göstermeden cayma hakkınız vardır. Ayrıntılar ve istisnalar için <a href=\"/policies/refund-policy\">İade ve Cayma Hakkı</a> sayfasına bakın.</p>"
           }
         }
       },

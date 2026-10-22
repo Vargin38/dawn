@@ -179,15 +179,15 @@
         "sepet": {
           "type": "adim",
           "settings": {
-            "baslik": "Teklif isteyin",
-            "metin": "Ürün sayfasındaki Teklif İste butonuyla formu doldurun ya da WhatsApp üzerinden yazın."
+            "baslik": "Fiyatlıysa sepete ekleyin",
+            "metin": "Fiyatı yazan ürünlerde sepete ekleyip ödeme adımında havale/EFT ile ödeyin. Sitede yazan fiyatlar KDV dahildir."
           }
         },
         "teklif": {
           "type": "adim",
           "settings": {
-            "baslik": "Teklifinizi alın",
-            "metin": "Fiyat, teslim süresi ve ödeme koşullarını içeren teklifimizi genellikle 24 saat içinde iletiyoruz."
+            "baslik": "Fiyat yoksa teklif isteyin",
+            "metin": "Ürün sayfasındaki Teklif İste butonuyla formu doldurun; genellikle 24 saat içinde dönüş yapıyoruz."
           }
         }
       },
@@ -197,9 +197,9 @@
         "teklif"
       ],
       "settings": {
-        "kas": "TEKLİF SÜRECİ",
-        "baslik": "Kett cihazı için teklif nasıl alınır?",
-        "metin": "Cihazların fiyatı, teslim süresi ve ödeme koşulları teklifle iletilir. Hangi modelin uygun olduğundan emin değilseniz ölçeceğiniz ürünü yazın, birlikte seçelim."
+        "kas": "Nasıl satın alırsınız",
+        "baslik": "Kett cihazı almanın iki yolu",
+        "metin": "Fiyatı yazan cihazları sepete ekleyip havale/EFT ile ödeyebilirsiniz. Fiyatı görünmeyen modellerde fiyat, teslim süresi ve ödeme koşulları teklifle iletilir."
       }
     },
     "sss": {

@@ -730,35 +730,9 @@
         <script src="{{ 'product-model.js' | asset_url }}" defer></script>
       {%- endif -%}
 
-      {%- liquid
-        if product.selected_or_first_available_variant.featured_media
-          assign seo_media = product.selected_or_first_available_variant.featured_media
-        else
-          assign seo_media = product.featured_media
-        endif
-      -%}
-
       {%- if dg_satis_izin contains 'evet' -%}
         <script type="application/ld+json">
           {{ product | structured_data }}
-        </script>
-      {%- else -%}
-        <script type="application/ld+json">
-          {
-            "@context": "https://schema.org",
-            "@type": "Product",
-            "@id": {{ canonical_url | append: '#product' | json }},
-            "name": {{ product.title | json }},
-            "description": {{ product.description | strip_html | strip_newlines | truncate: 500 | json }},
-            "url": {{ canonical_url | json }},
-            "sku": {{ product.selected_or_first_available_variant.sku | json }},
-            "brand": {
-              "@type": "Brand",
-              "name": {{ product.vendor | json }}
-            }{% if seo_media %},
-            "image": [{{ seo_media | image_url: width: 1200 | prepend: 'https:' | json }}]
-            {% endif %}
-          }
         </script>
       {%- endif -%}
     </div>
